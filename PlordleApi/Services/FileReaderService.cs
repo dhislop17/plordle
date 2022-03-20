@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace PlordleApi.Services;
 
-public class FileReaderService
+public class FileReaderService : IFileReaderService
 {
     private string _fileName;
     public FileReaderService(IOptions<FileReaderSettings> options)
@@ -11,7 +11,7 @@ public class FileReaderService
         _fileName = options.Value.FilePath;
     }
 
-    public List<Player> parsePlayers()
+    public List<Player> ParsePlayers()
     {
         var result = new List<Player>();
         using (var reader = new StreamReader(_fileName))

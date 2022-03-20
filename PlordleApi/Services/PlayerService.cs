@@ -1,16 +1,15 @@
-﻿using PlordleApi.Dtos;
-using PlordleApi.Repositories;
+﻿using PlordleApi.Repositories;
 
 namespace PlordleApi.Services;
 
-public class PlayerService
+public class PlayerService : IPlayerService
 {
-    private readonly FileReaderService _readerService;
+    private readonly IFileReaderService _readerService;
     private readonly IPlayerRepository _playerRepo;
     private Random _random;
     private Player? _todaysPlayer;
 
-    public PlayerService(IPlayerRepository playerRepo, FileReaderService fileReaderService)
+    public PlayerService(IPlayerRepository playerRepo, IFileReaderService fileReaderService)
     {
         _readerService = fileReaderService;
         _playerRepo = playerRepo;
@@ -19,12 +18,12 @@ public class PlayerService
         _random = new Random(seed);
     }
 
-    public async void InitTodaysPlayer()
+    public async Task InitTodaysPlayer()
     {
         int count = await GetPlayerCount();
         if (count == 0)
         {
-            var playersToSeed = _readerService.parsePlayers();
+            var playersToSeed = _readerService.ParsePlayers();
             count = await SeedPlayers(playersToSeed);
         }
         var todaysPlayerId = _random.Next(count);

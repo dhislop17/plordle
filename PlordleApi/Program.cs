@@ -10,8 +10,8 @@ builder.Services.Configure<PlordleDatabaseSettings>(builder.Configuration.GetSec
 // Add services to the container.
 builder.Services.AddSingleton<MongoPlordleDBContext>();
 builder.Services.AddTransient<IPlayerRepository, PlayerRepository>();
-builder.Services.AddSingleton<FileReaderService>();
-builder.Services.AddSingleton<PlayerService>();
+builder.Services.AddTransient<IFileReaderService, FileReaderService>();
+builder.Services.AddSingleton<IPlayerService, PlayerService>();
 
 
 builder.Services.AddControllers();
@@ -30,7 +30,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var provider = app.Services.GetRequiredService<PlayerService>();
+var provider = app.Services.GetRequiredService<IPlayerService>();
 provider.InitTodaysPlayer();
 
 app.UseHttpsRedirection();
