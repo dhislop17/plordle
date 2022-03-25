@@ -6,28 +6,42 @@ public class PlayerService : IPlayerService
 {
     private readonly IFileReaderService _readerService;
     private readonly IPlayerRepository _playerRepo;
-    private Random _random;
-    private Player? _todaysPlayer;
 
     public PlayerService(IPlayerRepository playerRepo, IFileReaderService fileReaderService)
     {
         _readerService = fileReaderService;
         _playerRepo = playerRepo;
-        var date = DateTime.UtcNow.Date;
-        var seed = date.Year * 1000 + date.Month * 100 + date.DayOfYear;
-        _random = new Random(seed);
     }
 
-    public async Task InitTodaysPlayer()
+    public async Task SeedDatabase()
     {
-        int count = await GetPlayerCount();
+         int count = await GetPlayerCount();
         if (count == 0)
         {
             var playersToSeed = _readerService.ParsePlayers();
-            count = await SeedPlayers(playersToSeed);
+            await SeedPlayers(playersToSeed);
         }
-        var todaysPlayerId = _random.Next(count);
-        _todaysPlayer = await GetPlayerById(todaysPlayerId);
+    }
+
+    public async Task<Player> GetTodaysPlayer()
+    {
+        var date = DateTime.UtcNow.Date;
+        var seed = date.Year * 1000 + date.Month * 100 + date.DayOfYear;
+        
+        var random = new Random(seed);
+        var count = await GetPlayerCount();
+        var todaysId = random.Next(count);
+
+        return await GetPlayerById(todaysId);
+    }
+
+    public async Task<Player> GetRandomPlayer()
+    {
+        var random = new Random();
+        var count = await GetPlayerCount();
+        var id = random.Next(count);
+
+        return await GetPlayerById(id);
     }
 
     private async Task<int> SeedPlayers(List<Player> playersToSeed)
@@ -66,19 +80,20 @@ public class PlayerService : IPlayerService
     
     public async Task<PlayerComparisonDto> ComparePlayers(string guessName)
     {
+        Player todaysPlayer = await GetTodaysPlayer();
         Player guess = await GetPlayerByName(guessName);
 
-        if (_todaysPlayer != null && guess != null)
+        if (todaysPlayer != null && guess != null)
         {
             return new PlayerComparisonDto
             {
-                GuessName = _todaysPlayer.Name.Equals(guess.Name) ? _todaysPlayer.Name : guess.Name,
-                SameTeam = _todaysPlayer.Team.Equals(guess.Team),
-                SameType = _todaysPlayer.PositionType.Equals(guess.PositionType),
-                SamePosition = _todaysPlayer.Position.Equals(guess.Position),
-                SameCountry = _todaysPlayer.Country.Equals(guess.Country),
-                AgeDiff = Math.Abs(_todaysPlayer.Age - guess.Age),
-                ShirtNumberDiffernce = Math.Abs(_todaysPlayer.ShirtNumber - guess.ShirtNumber)
+                GuessName = todaysPlayer.Name.Equals(guess.Name) ? todaysPlayer.Name : guess.Name,
+                SameTeam = todaysPlayer.Team.Equals(guess.Team),
+                SameType = todaysPlayer.PositionType.Equals(guess.PositionType),
+                SamePosition = todaysPlayer.Position.Equals(guess.Position),
+                SameCountry = todaysPlayer.Country.Equals(guess.Country),
+                AgeDiff = Math.Abs(todaysPlayer.Age - guess.Age),
+                ShirtNumberDiffernce = Math.Abs(todaysPlayer.ShirtNumber - guess.ShirtNumber)
             };
         }
         else

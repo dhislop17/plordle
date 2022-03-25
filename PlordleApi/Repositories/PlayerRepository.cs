@@ -9,6 +9,11 @@ public class PlayerRepository : IPlayerRepository
     {
         _dbContext = context;
         _playerCollection = _dbContext.GetCollection<Player>(options.Value.PlordleCollectionName);
+        var indexDef = Builders<Player>.IndexKeys.Ascending(x => x.Name);
+        var collation = new CreateIndexOptions() {
+            Collation = new Collation(locale: "en", strength: CollationStrength.Primary)
+        };
+        _playerCollection.Indexes.CreateOne(new CreateIndexModel<Player>(indexDef, collation));
     }
 
     public async Task AddPlayersAsync(List<Player> players)
@@ -23,7 +28,8 @@ public class PlayerRepository : IPlayerRepository
 
     public async Task<Player> GetPlayerAsync(FilterDefinition<Player> searchCondition)
     {
-        return await _playerCollection.Find(searchCondition).FirstOrDefaultAsync();
+        var findOption = new FindOptions() { Collation = new Collation(locale: "en", strength: CollationStrength.Primary) };
+        return await _playerCollection.Find(searchCondition, findOption).FirstOrDefaultAsync();
     }
 
     public async Task<int> GetPlayerCountAsync()

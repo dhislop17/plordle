@@ -2,7 +2,9 @@
 
 public interface IPlayerService
 {
-    Task InitTodaysPlayer();
+    Task SeedDatabase();
+    Task<Player> GetRandomPlayer();
+    Task<Player> GetTodaysPlayer();
     Task<Player> GetPlayerById(int id);
     Task<Player> GetPlayerByName(string name);
     Task<List<Player>> GetAllPlayers();

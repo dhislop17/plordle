@@ -11,7 +11,7 @@ builder.Services.Configure<PlordleDatabaseSettings>(builder.Configuration.GetSec
 builder.Services.AddSingleton<MongoPlordleDBContext>();
 builder.Services.AddTransient<IPlayerRepository, PlayerRepository>();
 builder.Services.AddTransient<IFileReaderService, FileReaderService>();
-builder.Services.AddSingleton<IPlayerService, PlayerService>();
+builder.Services.AddTransient<IPlayerService, PlayerService>();
 
 
 builder.Services.AddControllers();
@@ -31,7 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 var provider = app.Services.GetRequiredService<IPlayerService>();
-provider.InitTodaysPlayer();
+provider.SeedDatabase();
 
 app.UseHttpsRedirection();
 
