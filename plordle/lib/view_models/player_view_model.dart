@@ -10,7 +10,7 @@ class PlayerViewModel extends ChangeNotifier {
 
   List<Player> _players = [];
   late Player _todaysPlayer;
-  List<Guess> _guesses = [];
+  final List<Guess> _guesses = [];
 
   List<Player> get players => _players;
   Player get todaysPlayer => _todaysPlayer;

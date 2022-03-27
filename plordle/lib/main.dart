@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+
 import 'package:plordle/ui/home_page.dart';
 import 'package:plordle/services/service_locator.dart';
 
@@ -26,9 +27,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PLordle',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
+      theme:
+          ThemeData(primarySwatch: Colors.purple, brightness: Brightness.light),
+      darkTheme:
+          ThemeData(primaryColor: Colors.purple, brightness: Brightness.dark),
       home: const HomePage(),
     );
   }

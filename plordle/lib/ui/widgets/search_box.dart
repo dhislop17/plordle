@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'package:plordle/ui/app_theme.dart';
+import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:provider/provider.dart';
 

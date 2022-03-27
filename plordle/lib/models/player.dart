@@ -1,3 +1,5 @@
+import 'package:plordle/ui/utils/text_constants.dart';
+
 class Player {
   final int playerId;
   final String name;
@@ -20,11 +22,14 @@ class Player {
   });
 
   factory Player.fromJson(Map<String, dynamic> json) {
+    String? teamAbbr = TextConstants.teamAbbreviations[json['team']];
+    String? pos = TextConstants.shortenedPositons[json['position']];
+
     return Player(
         playerId: json['playerId'],
         name: json['name'],
-        team: json['team'],
-        position: json['position'],
+        team: teamAbbr ?? "None",
+        position: pos ?? 'None',
         positionType: json['positionType'],
         shirtNumber: json['shirtNumber'],
         age: json['age'],
@@ -33,6 +38,7 @@ class Player {
 
   @override
   String toString() {
+    //return name + ' ' + position + ' ' + team;
     return name;
   }
 }
