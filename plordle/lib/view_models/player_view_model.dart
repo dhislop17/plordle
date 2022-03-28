@@ -35,7 +35,7 @@ class PlayerViewModel extends ChangeNotifier {
     }).toList();
     return result;
   }
-
+/* 
   void comparePlayers(String name) {
     Player guessedPlayer =
         _players.firstWhere((element) => element.name == name);
@@ -65,5 +65,5 @@ class PlayerViewModel extends ChangeNotifier {
   void clearGuesses() {
     _guesses.clear();
     notifyListeners();
-  }
+  } */
 }

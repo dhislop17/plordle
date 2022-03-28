@@ -38,7 +38,6 @@ class Player {
 
   @override
   String toString() {
-    //return name + ' ' + position + ' ' + team;
     return name;
   }
 }

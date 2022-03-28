@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/view_models/player_view_model.dart';
+import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class SearchBox extends StatelessWidget {
@@ -12,7 +13,8 @@ class SearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Access the model but dont listen for changes
-    var model = Provider.of<PlayerViewModel>(context);
+    var pModel = Provider.of<PlayerViewModel>(context, listen: false);
+    var uModel = Provider.of<UserViewModel>(context);
     return TypeAheadField(
       textFieldConfiguration: const TextFieldConfiguration(
         cursorColor: Themes.premPurple,
@@ -22,7 +24,7 @@ class SearchBox extends StatelessWidget {
             labelText: "Guess a player"),
       ),
       suggestionsCallback: (pattern) async {
-        return model.filterPlayerList(pattern);
+        return pModel.filterPlayerList(pattern);
       },
       itemBuilder: (context, itemData) {
         return ListTile(
@@ -31,7 +33,7 @@ class SearchBox extends StatelessWidget {
       },
       onSuggestionSelected: (suggestion) {
         //Guess player
-        model.comparePlayers(suggestion.toString());
+        uModel.comparePlayers(suggestion.toString());
       },
       minCharsForSuggestions: 3,
       hideOnEmpty: true,

@@ -15,7 +15,7 @@ class PlayerService implements DataService {
     final response = await http.get(Uri.parse(_baseRoute + 'Players/random'));
 
     if (response.statusCode == 200) {
-      return compute(_parsePlayer, response.body);
+      return _parsePlayer(response.body);
     } else {
       throw Exception('Failed to get a random player');
     }

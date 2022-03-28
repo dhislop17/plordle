@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/widgets/grid_row.dart';
 import 'package:plordle/ui/widgets/search_box.dart';
 import 'package:plordle/view_models/player_view_model.dart';
+import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -63,155 +65,80 @@ class HomePage extends StatelessWidget {
       Text("Bosnia-Herzegovina", maxLines: 1, overflow: TextOverflow.ellipsis),
     ];
 
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Themes.premPurple,
-        title: const Text(
-          TextConstants.gameTitle,
-          style: TextStyle(fontSize: 32),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<PlayerViewModel>(
+            create: (context) => PlayerViewModel()),
+        ChangeNotifierProxyProvider<PlayerViewModel, UserViewModel>(
+            create: (_) => UserViewModel(),
+            update: (_, player, user) => user!.update(player))
+      ],
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Themes.premPurple,
+          title: const Text(
+            TextConstants.gameTitle,
+            style: TextStyle(fontSize: 32),
+          ),
+          centerTitle: true,
+          actions: [
+            IconButton(
+                icon: const Icon(Icons.help),
+                onPressed: () {
+                  //Bring up help widget
+                })
+          ],
         ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-              icon: const Icon(Icons.help),
-              onPressed: () {
-                //Bring up help widget
-              })
-        ],
-      ),
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: ChangeNotifierProvider<PlayerViewModel>(
-          create: (context) => PlayerViewModel(),
+        body: SizedBox(
+          width: MediaQuery.of(context).size.width,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.width * .1,
-                        bottom: MediaQuery.of(context).size.width * .1),
-                    child: const Text(
-                      TextConstants.gameSubtitle,
-                      style: TextStyle(fontSize: 24),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * .1,
-                        right: MediaQuery.of(context).size.width * .1),
-                    child: const SearchBox(),
-                  ),
-                  /* Padding(
-                      padding: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.width * .1),
-                      child: const Text('Blocks will go from here to bottom',
-                          style: TextStyle(
-                              fontSize: 24,
-                              backgroundColor: Themes.premGreen))), */
-                  /*
-                  DataTable
-                   DataTable(columnSpacing: 10, columns: const [
-                    DataColumn(label: Text('Name')),
-                    DataColumn(label: Text("Team")),
-                    DataColumn(label: Text("Position")),
-                    DataColumn(label: Text("Number")),
-                    DataColumn(label: Text("Age")),
-                    DataColumn(label: Text("Country"))
-                  ], rows: const [
-                    DataRow(cells: [
-                      DataCell(Text("Alex Oxlade-Chamberlain")),
-                      DataCell(Text(
-                        "BHA",
-                        style: TextStyle(backgroundColor: Themes.guessGreen),
-                      )),
-                      DataCell(Text("AM")),
-                      DataCell(Text("99")),
-                      DataCell(Text("99")),
-                      DataCell(Text("Dominican Republic")),
-                    ])
-                  ]) */
-                  /* Expandable/Flexible Rows
-                  Row(
-                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text("Name"),
-                        Spacer(),
-                        Text("Team"),
-                        Spacer(),
-                        Text("Position"),
-                        Spacer(),
-                        Text("Number"),
-                        Spacer(),
-                        Text("Age"),
-                        Spacer(),
-                        Text("Country"),
-                      ]),
-                  //Example Row with extremes
-                  Row(
-                      //crossAxisAlignment: CrossAxisAlignment.start,
-                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Flexible(child: Text("Alex Oxlade-Chamberlain"), flex: 2),
-                        Spacer(),
-                        Text("BHA"),
-                        Spacer(),
-                        Text("AM"),
-                        Spacer(),
-                        Text("18"),
-                        Spacer(),
-                        Text("27"),
-                        Spacer(),
-                        Text("Dominican Republic"),
-                      ]), */
-                  /* Row(
-                      //crossAxisAlignment: CrossAxisAlignment.start,
-                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Flexible(
-                          child: Text("Alex Oxlade-Chamberlain"),
-                          flex: 2,
-                        ),
-                        Flexible(child: Text("BHA")),
-                        Flexible(child: Text("AM")),
-                        Flexible(child: Text("18")),
-                        Flexible(child: Text("27")),
-                        Flexible(child: Text("Dominican Republic"), flex: 2),
-                      ]) ,*/
-                  /* Dynamic test
-                   Consumer<PlayerViewModel>(
-                    builder: (context, model, child) {
-                      return Row(children: [
-                        Expanded(
-                            child: Text(
-                          model.todaysPlayer.name,
-                          style: TextStyle(fontSize: 10),
-                        )),
-                        Expanded(child: Text(model.todaysPlayer.team)),
-                        Expanded(child: Text(model.todaysPlayer.position)),
-                        Expanded(
-                            child: Text(model.todaysPlayer.shirtNumber.toString())),
-                        Expanded(child: Text(model.todaysPlayer.age.toString())),
-                        Expanded(child: Text(model.todaysPlayer.country)),
-                      ]);
-                    },
-                    //child: ,
-                  ), */
-                ],
+              Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.width * .1,
+                    bottom: MediaQuery.of(context).size.width * .1),
+                child: const Text(
+                  TextConstants.gameSubtitle,
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * .1,
+                    right: MediaQuery.of(context).size.width * .1),
+                child: const SearchBox(),
               ),
               Padding(
                 padding: EdgeInsets.only(
                     top: MediaQuery.of(context).size.width * .1),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text("Name"),
-                      Text("Team"),
-                      Text("Position"),
-                      Text("Number"),
-                      Text("Age"),
-                      Text("Country"),
+                    children: [
+                      Container(
+                          width: 55,
+                          alignment: Alignment.center,
+                          child: Text("Name")),
+                      Container(
+                          width: 55,
+                          alignment: Alignment.center,
+                          child: Text("Team")),
+                      Container(
+                          width: 55,
+                          alignment: Alignment.center,
+                          child: Text("Position")),
+                      Container(
+                          width: 55,
+                          alignment: Alignment.center,
+                          child: Text("Number")),
+                      Container(
+                          width: 55,
+                          alignment: Alignment.center,
+                          child: Text("Age")),
+                      Container(
+                          width: 55,
+                          alignment: Alignment.center,
+                          child: Text("Country")),
                     ]),
               ),
               const Divider(
@@ -220,26 +147,101 @@ class HomePage extends StatelessWidget {
                 color: Themes.premPurple,
               ),
               Expanded(
-                child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 6,
-                      childAspectRatio:
-                          (MediaQuery.of(context).size.width * 1.66) /
-                              MediaQuery.of(context).size.height,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                    ),
-                    itemCount: data.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                          alignment: Alignment.center,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
-                            color: Themes.guessYellow,
-                          ),
-                          child: data[index]);
-                    }),
+                child: Consumer<UserViewModel>(
+                  builder: (context, model, child) {
+                    return ListView.builder(
+                        itemCount: model.guesses.length,
+                        itemBuilder: (context, index) {
+                          return GridRow(
+                            index: index,
+                            model: model,
+                          );
+                        });
+                  },
+                ),
               ),
+              /* Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Expanded(
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                        alignment: Alignment.center,
+                        //height: 50,
+                        //width: 50,
+                        child: const Text(
+                          "Alex Oxlade-Chamberlain",
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        )),
+                  ),
+                ),
+                Expanded(
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                          color: Themes.guessYellow,
+                        ),
+                        //height: 50,
+                        //width: 50,
+                        child: const Text("BHA")),
+                  ),
+                ),
+                Expanded(
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                          color: Themes.guessYellow,
+                        ),
+                        //height: 50,
+                        //width: 50,
+                        child: const Text("AM")),
+                  ),
+                ),
+                Expanded(
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                          color: Themes.guessYellow,
+                        ),
+                        //height: 50,
+                        //width: 50,
+                        child: const Text("18")),
+                  ),
+                ),
+                Expanded(
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                          color: Themes.guessGreen,
+                        ),
+                        //height: 50,
+                        //width: 50,
+                        child: const Text("17")),
+                  ),
+                ),
+                Expanded(
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                        alignment: Alignment.center,
+                        decoration: const BoxDecoration(
+                          color: Themes.guessYellow,
+                        ),
+                        //height: 50,
+                        //width: 50,
+                        child: const Text("Dominican Republic",
+                            maxLines: 1, overflow: TextOverflow.ellipsis)),
+                  ),
+                ),
+              ]), */
             ],
           ),
         ),

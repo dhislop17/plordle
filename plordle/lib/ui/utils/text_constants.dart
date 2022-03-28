@@ -1,13 +1,16 @@
 class TextConstants {
+  //Titles and info strings
   static const String gameTitle = 'PLORDLE';
   static const String gameSubtitle = 'EPL Player Guessing Game';
+
+  //Abbreviations Maps
   static final Map<String, String> shortenedPositons = {
     'Goalkeeper': 'GK',
     'Right-Back': 'RB',
     'Centre-Back': 'CB',
     'Left-Back': 'LB',
     'Right Midfield': 'RM',
-    'Defensive-Midfield': 'DM',
+    'Defensive Midfield': 'DM',
     'Central Midfield': 'CM',
     'Left Midfield': 'LM',
     'Right Winger': 'RW',
