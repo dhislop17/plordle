@@ -2,6 +2,12 @@ class TextConstants {
   //Titles and info strings
   static const String gameTitle = 'PLORDLE';
   static const String gameSubtitle = 'EPL Player Guessing Game';
+  static const String gridNameHeader = 'Name';
+  static const String gridTeamHeader = 'Team';
+  static const String gridPositionHeader = 'Position';
+  static const String gridNumberHeader = 'Number';
+  static const String gridAgeHeader = 'Age';
+  static const String gridCountryHeader = 'Country';
 
   //Abbreviations Maps
   static final Map<String, String> shortenedPositons = {

@@ -10,61 +10,11 @@ import 'package:provider/provider.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  //TODO: Refactor this page for win and lose states
+  // Could use a method wrapped in a listener?
+
   @override
   Widget build(BuildContext context) {
-    const data = [
-      Text("Alex Oxlade-Chamberlain",
-          maxLines: 2, overflow: TextOverflow.ellipsis),
-      Text("LIV"),
-      Text("AM"),
-      Text("15"),
-      Text("30"),
-      Text("England", maxLines: 2),
-      Text("Donny van de Beek", maxLines: 2, overflow: TextOverflow.ellipsis),
-      Text("EVE"),
-      Text("CM"),
-      Text("30"),
-      Text("24"),
-      Text("Netherlands", maxLines: 2),
-      Text("Jonny Evans", maxLines: 2, overflow: TextOverflow.ellipsis),
-      Text("LEI"),
-      Text("CB"),
-      Text("6"),
-      Text("34"),
-      Text("Northern Ireland", maxLines: 2),
-      Text("Trent Alexander-Arnold",
-          maxLines: 2, overflow: TextOverflow.ellipsis),
-      Text("LIV"),
-      Text("RB"),
-      Text("66"),
-      Text("21"),
-      Text("England", maxLines: 2),
-      Text("Andrew Robertson", maxLines: 2, overflow: TextOverflow.ellipsis),
-      Text("LIV"),
-      Text("LB"),
-      Text("27"),
-      Text("30"),
-      Text("Scotland", maxLines: 2),
-      Text("Timo Werner", maxLines: 2, overflow: TextOverflow.ellipsis),
-      Text("CHE"),
-      Text("AM"),
-      Text("11"),
-      Text("25"),
-      Text("Germany", maxLines: 2),
-      Text("Heung-Min Son", maxLines: 2, overflow: TextOverflow.ellipsis),
-      Text("TOT"),
-      Text("LW"),
-      Text("7"),
-      Text("29"),
-      Text("Korea, South", maxLines: 2),
-      Text("Asmir Begovic", maxLines: 2, overflow: TextOverflow.ellipsis),
-      Text("EVE"),
-      Text("GK"),
-      Text("15"),
-      Text("34"),
-      Text("Bosnia-Herzegovina", maxLines: 1, overflow: TextOverflow.ellipsis),
-    ];
-
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<PlayerViewModel>(
@@ -83,7 +33,9 @@ class HomePage extends StatelessWidget {
           centerTitle: true,
           actions: [
             IconButton(
-                icon: const Icon(Icons.help),
+                icon: const Icon(
+                  Icons.help,
+                ),
                 onPressed: () {
                   //Bring up help widget
                 })
@@ -118,27 +70,27 @@ class HomePage extends StatelessWidget {
                       Container(
                           width: 55,
                           alignment: Alignment.center,
-                          child: Text("Name")),
+                          child: const Text(TextConstants.gridNameHeader)),
                       Container(
                           width: 55,
                           alignment: Alignment.center,
-                          child: Text("Team")),
+                          child: const Text(TextConstants.gridTeamHeader)),
                       Container(
                           width: 55,
                           alignment: Alignment.center,
-                          child: Text("Position")),
+                          child: const Text(TextConstants.gridPositionHeader)),
                       Container(
                           width: 55,
                           alignment: Alignment.center,
-                          child: Text("Number")),
+                          child: const Text(TextConstants.gridNumberHeader)),
                       Container(
                           width: 55,
                           alignment: Alignment.center,
-                          child: Text("Age")),
+                          child: const Text(TextConstants.gridAgeHeader)),
                       Container(
                           width: 55,
                           alignment: Alignment.center,
-                          child: Text("Country")),
+                          child: const Text(TextConstants.gridCountryHeader)),
                     ]),
               ),
               const Divider(
@@ -160,88 +112,6 @@ class HomePage extends StatelessWidget {
                   },
                 ),
               ),
-              /* Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Expanded(
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: Container(
-                        alignment: Alignment.center,
-                        //height: 50,
-                        //width: 50,
-                        child: const Text(
-                          "Alex Oxlade-Chamberlain",
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        )),
-                  ),
-                ),
-                Expanded(
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: Container(
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                          color: Themes.guessYellow,
-                        ),
-                        //height: 50,
-                        //width: 50,
-                        child: const Text("BHA")),
-                  ),
-                ),
-                Expanded(
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: Container(
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                          color: Themes.guessYellow,
-                        ),
-                        //height: 50,
-                        //width: 50,
-                        child: const Text("AM")),
-                  ),
-                ),
-                Expanded(
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: Container(
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                          color: Themes.guessYellow,
-                        ),
-                        //height: 50,
-                        //width: 50,
-                        child: const Text("18")),
-                  ),
-                ),
-                Expanded(
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: Container(
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                          color: Themes.guessGreen,
-                        ),
-                        //height: 50,
-                        //width: 50,
-                        child: const Text("17")),
-                  ),
-                ),
-                Expanded(
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: Container(
-                        alignment: Alignment.center,
-                        decoration: const BoxDecoration(
-                          color: Themes.guessYellow,
-                        ),
-                        //height: 50,
-                        //width: 50,
-                        child: const Text("Dominican Republic",
-                            maxLines: 1, overflow: TextOverflow.ellipsis)),
-                  ),
-                ),
-              ]), */
             ],
           ),
         ),

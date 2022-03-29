@@ -3,14 +3,23 @@ import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 
+enum GameState { inProgress, won, lost, doneForTheDay }
+
 class UserViewModel extends ChangeNotifier {
   final List<Guess> _guesses = [];
   final List<Player> _guessedPlayers = [];
   late PlayerViewModel playerViewModel;
+  int _numberOfGuesses = 1;
+  int _maxNumOfGuesses = 10;
+  GameState _currentState = GameState.inProgress;
+  bool _inUnlimitedMode = false;
 
   List<Guess> get guesses => _guesses;
   List<Player> get guessedPlayers => _guessedPlayers;
-  //PlayerViewModel get playerViewModel => _playerViewModel;
+  int get numberOfGuesses => _numberOfGuesses;
+  int get maxNumOfGuesses => _maxNumOfGuesses;
+  GameState get currentState => _currentState;
+  bool get isUnlimitedMode => _inUnlimitedMode;
 
   /*
   UserViewModel(){
@@ -28,7 +37,18 @@ class UserViewModel extends ChangeNotifier {
         playerViewModel.players.firstWhere((element) => element.name == name);
     _guessedPlayers.add(guessedPlayer);
     Guess guess = _createGuess(guessedPlayer);
-    _addGuess(guess);
+    _numberOfGuesses++;
+    if (_numberOfGuesses >= 11 && guess.guessName == 'True') {
+      _currentState = GameState.won;
+      notifyListeners();
+    } else if (_numberOfGuesses == 11 && guess.guessName != 'True') {
+      _currentState = GameState.lost;
+      notifyListeners();
+    } else {
+      _addGuess(guess);
+    }
+    //Do state checking here
+
     //notifyListeners();
   }
 
@@ -56,6 +76,10 @@ class UserViewModel extends ChangeNotifier {
 
   void clearGuesses() {
     _guesses.clear();
+    _guessedPlayers.clear();
+    _numberOfGuesses = 1;
+    // Should this be done here
+    _currentState = GameState.inProgress;
     notifyListeners();
   }
 }

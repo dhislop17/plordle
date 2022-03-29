@@ -16,14 +16,16 @@ class SearchBox extends StatelessWidget {
     var pModel = Provider.of<PlayerViewModel>(context, listen: false);
     var uModel = Provider.of<UserViewModel>(context);
     return TypeAheadField(
-      textFieldConfiguration: const TextFieldConfiguration(
-        cursorColor: Themes.premPurple,
+      textFieldConfiguration: TextFieldConfiguration(
+        cursorColor: Themes.premGreen,
         decoration: InputDecoration(
-            border: OutlineInputBorder(),
+            border: const OutlineInputBorder(
+                borderSide: BorderSide(color: Themes.premPurple)),
             focusColor: Themes.premPurple,
-            labelText: "Guess a player"),
+            labelText:
+                "Guess ${uModel.numberOfGuesses} out of ${uModel.maxNumOfGuesses}"),
       ),
-      suggestionsCallback: (pattern) async {
+      suggestionsCallback: (pattern) {
         return pModel.filterPlayerList(pattern);
       },
       itemBuilder: (context, itemData) {
