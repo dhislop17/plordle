@@ -9,6 +9,10 @@ class TextConstants {
   static const String gridAgeHeader = 'Age';
   static const String gridCountryHeader = 'Country';
 
+  //Grid number boxes arrows
+  static const String downArrow = '\u{2193}';
+  static const String upArrow = '\u{2191}';
+
   //Abbreviations Maps
   static final Map<String, String> shortenedPositons = {
     'Goalkeeper': 'GK',
