@@ -1,16 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:plordle/models/player.dart';
-import 'package:plordle/services/data_service.dart';
 
-class PlayerService implements DataService {
+class PlayerService {
   final String _baseRoute = (Platform.isAndroid)
       ? 'https://10.0.2.2:7160/api/'
       : 'https://localhost:7160/api/';
 
-  @override
   Future<Player> getRandomPlayer() async {
     final response = await http.get(Uri.parse(_baseRoute + 'Players/random'));
 
@@ -21,7 +18,6 @@ class PlayerService implements DataService {
     }
   }
 
-  @override
   Future<Player> getTodaysPlayer() async {
     final response = await http.get(Uri.parse(_baseRoute + 'Players/today'));
 
@@ -39,7 +35,7 @@ class PlayerService implements DataService {
   }
 
   //Method for geting players
-  @override
+
   Future<List<Player>> getPlayers() async {
     final response = await http.get(Uri.parse(_baseRoute + 'Players'));
 

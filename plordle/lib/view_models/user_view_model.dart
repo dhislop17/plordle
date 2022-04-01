@@ -39,10 +39,11 @@ class UserViewModel extends ChangeNotifier {
     _guessedPlayers.add(guessedPlayer);
     Guess guess = _createGuess(guessedPlayer);
     _numberOfGuesses++;
-    if (_numberOfGuesses <= 11 && guess.guessName == 'True') {
+    if (_numberOfGuesses <= _maxNumOfGuesses + 1 && guess.guessName == 'True') {
       _currentState = GameState.won;
       //notifyListeners();
-    } else if (_numberOfGuesses == 11 && guess.guessName != 'True') {
+    } else if (_numberOfGuesses == _maxNumOfGuesses + 1 &&
+        guess.guessName != 'True') {
       _currentState = GameState.lost;
       //notifyListeners();
     }
@@ -81,6 +82,12 @@ class UserViewModel extends ChangeNotifier {
     _numberOfGuesses = 1;
     // Should this be done here
     _currentState = GameState.inProgress;
+    playerViewModel.getNextRandom();
+    notifyListeners();
+  }
+
+  void resetToWait() {
+    _currentState = GameState.doneForTheDay;
     notifyListeners();
   }
 }

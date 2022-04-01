@@ -36,8 +36,19 @@ class Player {
         country: json['country']);
   }
 
+  String getFullTeamName() {
+    return TextConstants.teamAbbreviations.keys.firstWhere(
+        (fullName) => TextConstants.teamAbbreviations[fullName] == team);
+  }
+
+  String getFullPosition() {
+    return TextConstants.shortenedPositons.keys.firstWhere(
+        (fullName) => TextConstants.shortenedPositons[fullName] == position);
+  }
+
   @override
   String toString() {
-    return name;
+    return name + " - " + getFullTeamName();
+    //return name + " - " + position + " - " + getFullTeamName();
   }
 }

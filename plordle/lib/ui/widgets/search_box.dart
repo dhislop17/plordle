@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
+import 'package:plordle/ui/utils/text_constants.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
@@ -17,12 +18,15 @@ class SearchBox extends StatelessWidget {
     return TypeAheadField(
       textFieldConfiguration: TextFieldConfiguration(
         cursorColor: Themes.premGreen,
+        enabled:
+            (uModel.currentState == GameState.doneForTheDay) ? false : true,
         decoration: InputDecoration(
             border: const OutlineInputBorder(
                 borderSide: BorderSide(color: Themes.premPurple)),
             focusColor: Themes.premPurple,
-            labelText:
-                "Guess ${uModel.numberOfGuesses} out of ${uModel.maxNumOfGuesses}"),
+            labelText: (uModel.currentState == GameState.doneForTheDay)
+                ? "No Guesses Remaining"
+                : "Guess ${uModel.numberOfGuesses} out of ${uModel.maxNumOfGuesses}"),
       ),
       suggestionsCallback: (pattern) {
         return uModel.playerViewModel.filterPlayerList(pattern);
@@ -33,6 +37,7 @@ class SearchBox extends StatelessWidget {
         );
       },
       onSuggestionSelected: (suggestion) {
+        FocusManager.instance.primaryFocus?.unfocus();
         //Guess player
         uModel.comparePlayers(suggestion.toString());
         if (uModel.currentState == GameState.lost ||
@@ -43,6 +48,7 @@ class SearchBox extends StatelessWidget {
       minCharsForSuggestions: 3,
       hideOnEmpty: true,
       hideOnError: true,
+      keepSuggestionsOnLoading: false,
     );
   }
 
@@ -50,41 +56,59 @@ class SearchBox extends StatelessWidget {
       BuildContext context, UserViewModel model) async {
     return showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (context) {
           if (model.currentState == GameState.won) {
             return AlertDialog(
-              title: const Text("YOU WIN"),
+              title: const Text(TextConstants.winnerText),
               content: Container(
                 child: const SingleChildScrollView(
                   child: Text("Time remaining is: time_goes_here"),
                 ),
               ),
               actions: [
-                TextButton(onPressed: () {}, child: const Text("Wait")),
                 TextButton(
-                    onPressed: () {},
-                    child: const Text("Switch to unlimited mode"))
+                    onPressed: () {
+                      model.resetToWait();
+                      Navigator.pop(context);
+                    },
+                    child: const Text(TextConstants.waitForNextGame)),
+                TextButton(
+                    onPressed: () {
+                      model.clearGuesses();
+                      Navigator.pop(context);
+                    },
+                    child: const Text(TextConstants.continueGameText))
               ],
             );
           } else {
             return AlertDialog(
-                title: const Text("YOU LOST"),
+                title: const Text(TextConstants.loserText),
                 content: SingleChildScrollView(
                   child: ListBody(
                     children: [
-                      Text("The correct player was:"),
-                      Text(model.playerViewModel.todaysPlayer.name +
-                          " for " +
-                          model.playerViewModel.todaysPlayer.team),
-                      Text("Time remaining is: time_goes_here"),
+                      const Text(TextConstants.playerHint),
+                      Text(model.playerViewModel.todaysPlayer.toString()),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text("Try again in: time_goes_here"),
+                      ),
                     ],
                   ),
                 ),
                 actions: [
-                  TextButton(onPressed: () {}, child: const Text("Wait")),
                   TextButton(
-                      onPressed: () {},
-                      child: const Text("Switch to unlimited mode"))
+                      onPressed: () {
+                        model.resetToWait();
+                        Navigator.pop(context);
+                      },
+                      child: const Text(TextConstants.waitForNextGame)),
+                  TextButton(
+                      onPressed: () {
+                        model.clearGuesses();
+                        Navigator.pop(context);
+                      },
+                      child: const Text(TextConstants.continueGameText))
                 ]);
           }
         });

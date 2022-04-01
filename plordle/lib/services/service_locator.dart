@@ -1,5 +1,4 @@
 import 'package:get_it/get_it.dart';
-import 'package:plordle/services/data_service.dart';
 import 'package:plordle/services/player_service.dart';
 
 final serviceLocator = GetIt.instance;

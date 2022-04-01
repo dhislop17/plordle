@@ -67,6 +67,8 @@ class NumberSquare extends StatelessWidget {
   Color _colorNumberSquare(int index, UserViewModel model) {
     if (model.guesses[index].shirtNumberDiff == 0) {
       return Themes.guessGreen;
+    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
+      return Themes.guessRed;
     } else if (model.guesses[index].shirtNumberDiff.abs() <= 5) {
       return Themes.guessYellow;
     } else {

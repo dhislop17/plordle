@@ -16,13 +16,21 @@ class CountrySquare extends StatelessWidget {
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: model.guesses[index].sameCountry
-                  ? Themes.guessGreen
-                  : Themes.guessGrey,
+              color: _colorCountrySquare(index, model),
             ),
             child: Text(model.guessedPlayers[index].country,
                 maxLines: 1, overflow: TextOverflow.ellipsis)),
       ),
     );
+  }
+
+  Color? _colorCountrySquare(int index, UserViewModel model) {
+    if (model.guesses[index].sameCountry) {
+      return Themes.guessGreen;
+    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
+      return Themes.guessRed;
+    } else {
+      return Themes.guessGrey;
+    }
   }
 }

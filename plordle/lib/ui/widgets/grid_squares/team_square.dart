@@ -16,12 +16,20 @@ class TeamSquare extends StatelessWidget {
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: model.guesses[index].sameTeam
-                  ? Themes.guessGreen
-                  : Themes.guessGrey,
+              color: _colorTeamSquare(index, model),
             ),
             child: Text(model.guessedPlayers[index].team)),
       ),
     );
+  }
+
+  Color? _colorTeamSquare(int index, UserViewModel model) {
+    if (model.guesses[index].sameTeam) {
+      return Themes.guessGreen;
+    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
+      return Themes.guessRed;
+    } else {
+      return Themes.guessGrey;
+    }
   }
 }

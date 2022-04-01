@@ -101,14 +101,16 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: Consumer<UserViewModel>(
                   builder: (context, model, child) {
-                    return ListView.builder(
-                        itemCount: model.guesses.length,
-                        itemBuilder: (context, index) {
-                          return GridRow(
-                            index: index,
-                            model: model,
-                          );
-                        });
+                    return Scrollbar(
+                      child: ListView.builder(
+                          itemCount: model.guesses.length,
+                          itemBuilder: (context, index) {
+                            return GridRow(
+                              index: index,
+                              model: model,
+                            );
+                          }),
+                    );
                   },
                 ),
               ),

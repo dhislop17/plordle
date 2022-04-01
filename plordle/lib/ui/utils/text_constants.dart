@@ -9,6 +9,13 @@ class TextConstants {
   static const String gridAgeHeader = 'Age';
   static const String gridCountryHeader = 'Country';
 
+  //Gameover Dialog
+  static const String winnerText = 'You Win';
+  static const String loserText = 'Game Over';
+  static const String waitForNextGame = 'Wait for next PLordle';
+  static const String continueGameText = 'Enter Unlimited Mode';
+  static const String playerHint = 'The correct player was:';
+
   //Grid number boxes arrows
   static const String downArrow = '\u{2193}';
   static const String upArrow = '\u{2191}';

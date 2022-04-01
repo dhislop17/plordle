@@ -16,9 +16,7 @@ class NameSquare extends StatelessWidget {
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: model.guesses[index].guessName == 'True'
-                  ? Themes.guessGreen
-                  : null,
+              color: _colorNameSquare(index, model),
             ),
             child: Text(
               model.guessedPlayers[index].name,
@@ -27,5 +25,15 @@ class NameSquare extends StatelessWidget {
             )),
       ),
     );
+  }
+
+  Color? _colorNameSquare(int index, UserViewModel model) {
+    if (model.guesses[index].guessName == 'True') {
+      return Themes.guessGreen;
+    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
+      return Themes.guessRed;
+    } else {
+      return null;
+    }
   }
 }
