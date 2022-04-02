@@ -30,8 +30,6 @@ class NameSquare extends StatelessWidget {
   Color? _colorNameSquare(int index, UserViewModel model) {
     if (model.guesses[index].guessName == 'True') {
       return Themes.guessGreen;
-    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
-      return Themes.guessRed;
     } else {
       return null;
     }

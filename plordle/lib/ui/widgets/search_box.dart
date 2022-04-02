@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
-import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -13,42 +12,45 @@ class SearchBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Access the model but dont listen for changes
-    var uModel = Provider.of<UserViewModel>(context);
-    return TypeAheadField(
-      textFieldConfiguration: TextFieldConfiguration(
-        cursorColor: Themes.premGreen,
-        enabled:
-            (uModel.currentState == GameState.doneForTheDay) ? false : true,
-        decoration: InputDecoration(
-            border: const OutlineInputBorder(
-                borderSide: BorderSide(color: Themes.premPurple)),
-            focusColor: Themes.premPurple,
-            labelText: (uModel.currentState == GameState.doneForTheDay)
-                ? "No Guesses Remaining"
-                : "Guess ${uModel.numberOfGuesses} out of ${uModel.maxNumOfGuesses}"),
-      ),
-      suggestionsCallback: (pattern) {
-        return uModel.playerViewModel.filterPlayerList(pattern);
-      },
-      itemBuilder: (context, itemData) {
-        return ListTile(
-          title: Text(itemData.toString()),
+    return Consumer<UserViewModel>(
+      builder: (context, model, child) {
+        return TypeAheadField(
+          getImmediateSuggestions: false,
+          textFieldConfiguration: TextFieldConfiguration(
+            cursorColor: Themes.premGreen,
+            enabled:
+                (model.currentState == GameState.doneForTheDay) ? false : true,
+            decoration: InputDecoration(
+                border: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Themes.premPurple)),
+                focusColor: Themes.premPurple,
+                labelText: (model.currentState == GameState.doneForTheDay)
+                    ? "No Guesses Remaining"
+                    : "Guess ${model.numberOfGuesses} out of ${model.maxNumOfGuesses}"),
+          ),
+          suggestionsCallback: (pattern) {
+            return model.playerViewModel.filterPlayerList(pattern);
+          },
+          itemBuilder: (context, itemData) {
+            return ListTile(
+              title: Text(itemData.toString()),
+            );
+          },
+          onSuggestionSelected: (suggestion) {
+            FocusManager.instance.primaryFocus?.unfocus();
+            //Guess player
+            model.comparePlayers(suggestion.toString());
+            if (model.currentState == GameState.lost ||
+                model.currentState == GameState.won) {
+              _showGameEndDialog(context, model);
+            }
+          },
+          minCharsForSuggestions: 3,
+          hideOnEmpty: true,
+          hideOnError: true,
+          keepSuggestionsOnLoading: false,
         );
       },
-      onSuggestionSelected: (suggestion) {
-        FocusManager.instance.primaryFocus?.unfocus();
-        //Guess player
-        uModel.comparePlayers(suggestion.toString());
-        if (uModel.currentState == GameState.lost ||
-            uModel.currentState == GameState.won) {
-          _showGameEndDialog(context, uModel);
-        }
-      },
-      minCharsForSuggestions: 3,
-      hideOnEmpty: true,
-      hideOnError: true,
-      keepSuggestionsOnLoading: false,
     );
   }
 

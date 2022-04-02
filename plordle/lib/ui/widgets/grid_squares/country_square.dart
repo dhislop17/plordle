@@ -27,8 +27,6 @@ class CountrySquare extends StatelessWidget {
   Color? _colorCountrySquare(int index, UserViewModel model) {
     if (model.guesses[index].sameCountry) {
       return Themes.guessGreen;
-    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
-      return Themes.guessRed;
     } else {
       return Themes.guessGrey;
     }

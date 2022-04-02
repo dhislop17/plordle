@@ -24,10 +24,8 @@ class PositionSquare extends StatelessWidget {
   }
 
   Color _colorPositionSquare(int index, UserViewModel model) {
-    if (model.guesses[index].sameType && model.guesses[index].samePosition) {
+    if (model.guesses[index].samePosition) {
       return Themes.guessGreen;
-    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
-      return Themes.guessRed;
     } else if (model.guesses[index].sameType) {
       return Themes.guessYellow;
     } else {

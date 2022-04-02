@@ -26,8 +26,6 @@ class TeamSquare extends StatelessWidget {
   Color? _colorTeamSquare(int index, UserViewModel model) {
     if (model.guesses[index].sameTeam) {
       return Themes.guessGreen;
-    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
-      return Themes.guessRed;
     } else {
       return Themes.guessGrey;
     }

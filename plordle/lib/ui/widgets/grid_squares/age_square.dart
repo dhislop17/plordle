@@ -62,8 +62,6 @@ class AgeSquare extends StatelessWidget {
   Color _colorAgeSquare(int index, UserViewModel model) {
     if (model.guesses[index].ageDiff == 0) {
       return Themes.guessGreen;
-    } else if (model.numberOfGuesses == model.maxNumOfGuesses + 1) {
-      return Themes.guessRed;
     } else if (model.guesses[index].ageDiff.abs() <= 5) {
       return Themes.guessYellow;
     } else {
