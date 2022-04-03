@@ -16,6 +16,21 @@ class TextConstants {
   static const String continueGameText = 'Enter Unlimited Mode';
   static const String playerHint = 'The correct player was:';
 
+  //Help Dialog
+  static const String helpDialogTitle = 'How To Play';
+  static const String helpDialogSubtitle = 'Guess the player in 10 tries';
+  static const String helpDialogInfoText =
+      'The column color after each guess will inidicate how close the guess was to the correct answer';
+  static const String helpDialogGreenText = 'Green in any column';
+  static const String helpDialogGreenSub = ' means a successful match';
+  static const String helpDialogPositionText = 'Yellow in the position column';
+  static const String helpDialogPositionSubtext =
+      ' means the mystery player has the same position type but plays in a different role';
+  static const String helpDialogNumberText =
+      'Yellow in the age or number column';
+  static const String helpDialogNumberSubtext =
+      " means guessed player is within 5 of the mystery player's age or shirt number";
+
   //Grid number boxes arrows
   static const String downArrow = '\u{2193}';
   static const String upArrow = '\u{2191}';

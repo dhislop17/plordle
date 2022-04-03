@@ -10,7 +10,7 @@ class UserViewModel extends ChangeNotifier {
   final List<Player> _guessedPlayers = [];
   late PlayerViewModel playerViewModel;
   int _numberOfGuesses = 1;
-  int _maxNumOfGuesses = 10;
+  final int _maxNumOfGuesses = 10;
   GameState _currentState = GameState.inProgress;
   bool _inUnlimitedMode = false;
   //Number of wins per guesses?
@@ -41,11 +41,9 @@ class UserViewModel extends ChangeNotifier {
     _numberOfGuesses++;
     if (_numberOfGuesses <= _maxNumOfGuesses + 1 && guess.guessName == 'True') {
       _currentState = GameState.won;
-      //notifyListeners();
     } else if (_numberOfGuesses == _maxNumOfGuesses + 1 &&
         guess.guessName != 'True') {
       _currentState = GameState.lost;
-      //notifyListeners();
     }
     _addGuess(guess);
 
@@ -80,7 +78,7 @@ class UserViewModel extends ChangeNotifier {
     _guesses.clear();
     _guessedPlayers.clear();
     _numberOfGuesses = 1;
-    // Should this be done here
+    _inUnlimitedMode = true;
     _currentState = GameState.inProgress;
     playerViewModel.getNextRandom();
     notifyListeners();

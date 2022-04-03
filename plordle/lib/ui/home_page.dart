@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
-import 'package:plordle/ui/widgets/grid_header.dart';
-import 'package:plordle/ui/widgets/grid_row.dart';
+import 'package:plordle/ui/widgets/grid/grid_header.dart';
+import 'package:plordle/ui/widgets/grid/grid_row.dart';
+import 'package:plordle/ui/widgets/dialogs/help_dialog.dart';
 import 'package:plordle/ui/widgets/search_box.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
@@ -13,8 +14,6 @@ import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-  //TODO: Refactor this page for win and lose states
-  // Could use a method wrapped in a listener?
 
   @override
   Widget build(BuildContext context) {
@@ -43,54 +42,10 @@ class HomePage extends StatelessWidget {
                   Icons.help,
                 ),
                 onPressed: () {
-                  //Bring up help widget
                   showDialog(
                       context: context,
                       builder: (context) {
-                        return BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
-                          child: Dialog(
-                            shape: const RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(24))),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30)),
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 10),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  const Text("How To Play",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 28)),
-                                  const SizedBox(height: 20),
-                                  const Text(
-                                    "Guess the player in 10 tries",
-                                    style: TextStyle(fontSize: 16),
-                                  ),
-                                  const SizedBox(height: 15),
-                                  const Text(
-                                    "The column color after each guess will inidicate how close the guess was to the correct answer",
-                                    style: TextStyle(fontSize: 16),
-                                  ),
-                                  const SizedBox(height: 15),
-                                  Row(
-                                    children: const [
-                                      Text("Green in any column",
-                                          style: TextStyle(
-                                              backgroundColor:
-                                                  Themes.guessGreen,
-                                              fontSize: 16)),
-                                      //Text("means a successful match")
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
+                        return const HelpDialog();
                       });
                 }),
             IconButton(
@@ -119,7 +74,7 @@ class HomePage extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: paddingHeight),
-                child: GridHeader(),
+                child: const GridHeader(),
               ),
               const Divider(
                 height: 10,
@@ -134,17 +89,15 @@ class HomePage extends StatelessWidget {
                       _scrollController
                           .jumpTo(_scrollController.position.maxScrollExtent);
                     });
-                    return Scrollbar(
-                      child: ListView.builder(
-                          controller: _scrollController,
-                          itemCount: model.guesses.length,
-                          itemBuilder: (context, index) {
-                            return GridRow(
-                              index: index,
-                              model: model,
-                            );
-                          }),
-                    );
+                    return ListView.builder(
+                        controller: _scrollController,
+                        itemCount: model.guesses.length,
+                        itemBuilder: (context, index) {
+                          return GridRow(
+                            index: index,
+                            model: model,
+                          );
+                        });
                   },
                 ),
               ),

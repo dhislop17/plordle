@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:plordle/ui/widgets/grid_squares/age_square.dart';
-import 'package:plordle/ui/widgets/grid_squares/country_square.dart';
-import 'package:plordle/ui/widgets/grid_squares/name_square.dart';
-import 'package:plordle/ui/widgets/grid_squares/number_square.dart';
-import 'package:plordle/ui/widgets/grid_squares/position_square.dart';
-import 'package:plordle/ui/widgets/grid_squares/team_square.dart';
+import 'package:plordle/ui/widgets/grid/grid_squares/age_square.dart';
+import 'package:plordle/ui/widgets/grid/grid_squares/country_square.dart';
+import 'package:plordle/ui/widgets/grid/grid_squares/name_square.dart';
+import 'package:plordle/ui/widgets/grid/grid_squares/number_square.dart';
+import 'package:plordle/ui/widgets/grid/grid_squares/position_square.dart';
+import 'package:plordle/ui/widgets/grid/grid_squares/team_square.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 
 class GridRow extends StatelessWidget {
