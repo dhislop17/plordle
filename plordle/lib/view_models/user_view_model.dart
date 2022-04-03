@@ -46,10 +46,6 @@ class UserViewModel extends ChangeNotifier {
       _currentState = GameState.lost;
     }
     _addGuess(guess);
-
-    //Do state checking here
-
-    //notifyListeners();
   }
 
   Guess _createGuess(Player guessedPlayer) {
@@ -74,7 +70,7 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void clearGuesses() {
+  void getNewRandomPlayer() {
     _guesses.clear();
     _guessedPlayers.clear();
     _numberOfGuesses = 1;
@@ -84,7 +80,18 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void getNewMysteryPlayer() async {
+    _guesses.clear();
+    _guessedPlayers.clear();
+    _inUnlimitedMode = false;
+    _numberOfGuesses = 1;
+    _currentState = GameState.inProgress;
+    playerViewModel.getNewMysteryPlayer();
+    notifyListeners();
+  }
+
   void resetToWait() {
+    _inUnlimitedMode = false;
     _currentState = GameState.doneForTheDay;
     notifyListeners();
   }

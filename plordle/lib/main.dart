@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 
 import 'package:plordle/ui/home_page.dart';
 import 'package:plordle/services/service_locator.dart';
+import 'package:plordle/view_models/player_view_model.dart';
+import 'package:plordle/view_models/user_view_model.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   setupServiceLocator();
@@ -25,13 +28,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'PLordle',
-      theme:
-          ThemeData(primarySwatch: Colors.purple, brightness: Brightness.light),
-      darkTheme:
-          ThemeData(primaryColor: Colors.purple, brightness: Brightness.dark),
-      home: const HomePage(),
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider<PlayerViewModel>(
+              create: (context) => PlayerViewModel()),
+          ChangeNotifierProxyProvider<PlayerViewModel, UserViewModel>(
+              create: (_) => UserViewModel(),
+              update: (_, player, user) => user!.update(player))
+        ],
+        child: MaterialApp(
+          title: 'PLordle',
+          theme: ThemeData(
+              primarySwatch: Colors.purple, brightness: Brightness.light),
+          darkTheme: ThemeData(
+              primaryColor: Colors.purple, brightness: Brightness.dark),
+          home: const HomePage(),
+        ));
   }
 }

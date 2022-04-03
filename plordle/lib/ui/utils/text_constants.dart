@@ -13,7 +13,7 @@ class TextConstants {
   static const String winnerText = 'You Win';
   static const String loserText = 'Game Over';
   static const String waitForNextGame = 'Wait for next PLordle';
-  static const String continueGameText = 'Enter Unlimited Mode';
+  static const String continueGameText = 'Unlimited Mode';
   static const String playerHint = 'The correct player was:';
 
   //Help Dialog
@@ -30,6 +30,8 @@ class TextConstants {
       'Yellow in the age or number column';
   static const String helpDialogNumberSubtext =
       " means guessed player is within 5 of the mystery player's age or shirt number";
+  static const String helpDialogGameInfo =
+      "New mystery player at midnight in your timezone, or play in unlimited mode to keep getting a new mystery player";
 
   //Grid number boxes arrows
   static const String downArrow = '\u{2193}';

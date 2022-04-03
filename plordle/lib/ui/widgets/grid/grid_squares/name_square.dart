@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:plordle/models/guess.dart';
+import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
-import 'package:plordle/view_models/user_view_model.dart';
 
 class NameSquare extends StatelessWidget {
-  final int index;
-  final UserViewModel model;
-  const NameSquare({Key? key, required this.index, required this.model})
+  final Player player;
+  final Guess guess;
+  const NameSquare({Key? key, required this.player, required this.guess})
       : super(key: key);
 
   @override
@@ -16,10 +17,10 @@ class NameSquare extends StatelessWidget {
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: _colorNameSquare(index, model),
+              color: _colorNameSquare(player, guess),
             ),
             child: Text(
-              model.guessedPlayers[index].name,
+              player.name,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             )),
@@ -27,8 +28,8 @@ class NameSquare extends StatelessWidget {
     );
   }
 
-  Color? _colorNameSquare(int index, UserViewModel model) {
-    if (model.guesses[index].guessName == 'True') {
+  Color? _colorNameSquare(Player player, Guess guess) {
+    if (guess.guessName == 'True') {
       return Themes.guessGreen;
     } else {
       return null;

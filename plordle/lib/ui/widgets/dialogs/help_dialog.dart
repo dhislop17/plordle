@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
 
+//TODO: Make this popup on game startup if they have never played before
 class HelpDialog extends StatelessWidget {
   const HelpDialog({
     Key? key,
@@ -67,7 +68,14 @@ class HelpDialog extends StatelessWidget {
                         text: TextConstants.helpDialogNumberText,
                         style: TextStyle(backgroundColor: Themes.guessYellow)),
                     TextSpan(text: TextConstants.helpDialogNumberSubtext)
-                  ]))
+                  ])),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                TextConstants.helpDialogGameInfo,
+                style: TextStyle(fontSize: 16),
+              )
             ],
           ),
         ),

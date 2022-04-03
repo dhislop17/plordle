@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:plordle/models/guess.dart';
+import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
-import 'package:plordle/view_models/user_view_model.dart';
 
 class TeamSquare extends StatelessWidget {
-  final int index;
-  final UserViewModel model;
-  const TeamSquare({Key? key, required this.index, required this.model})
+  final Player player;
+  final Guess guess;
+  const TeamSquare({Key? key, required this.player, required this.guess})
       : super(key: key);
 
   @override
@@ -16,15 +17,15 @@ class TeamSquare extends StatelessWidget {
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: _colorTeamSquare(index, model),
+              color: _colorTeamSquare(player, guess),
             ),
-            child: Text(model.guessedPlayers[index].team)),
+            child: Text(player.team)),
       ),
     );
   }
 
-  Color? _colorTeamSquare(int index, UserViewModel model) {
-    if (model.guesses[index].sameTeam) {
+  Color? _colorTeamSquare(Player player, Guess guess) {
+    if (guess.sameTeam) {
       return Themes.guessGreen;
     } else {
       return Themes.guessGrey;

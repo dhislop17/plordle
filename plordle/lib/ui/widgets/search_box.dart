@@ -6,9 +6,7 @@ import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class SearchBox extends StatelessWidget {
-  const SearchBox({
-    Key? key,
-  }) : super(key: key);
+  const SearchBox({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,7 @@ class SearchBox extends StatelessWidget {
                     borderSide: BorderSide(color: Themes.premPurple)),
                 focusColor: Themes.premPurple,
                 labelText: (model.currentState == GameState.doneForTheDay)
-                    ? "No Guesses Remaining"
+                    ? "Game Over"
                     : "Guess ${model.numberOfGuesses} out of ${model.maxNumOfGuesses}"),
           ),
           suggestionsCallback: (pattern) {
@@ -42,7 +40,7 @@ class SearchBox extends StatelessWidget {
             model.comparePlayers(suggestion.toString());
             if (model.currentState == GameState.lost ||
                 model.currentState == GameState.won) {
-              _showGameEndDialog(context, model);
+              _showGameEndDialog(context);
             }
           },
           minCharsForSuggestions: 3,
@@ -54,13 +52,12 @@ class SearchBox extends StatelessWidget {
     );
   }
 
-  Future<void> _showGameEndDialog(
-      BuildContext context, UserViewModel model) async {
+  Future<void> _showGameEndDialog(BuildContext context) async {
     return showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (context) {
-          return EndOfGameDialog(model: model);
+        builder: (_) {
+          return const EndOfGameDialog();
         });
   }
 }

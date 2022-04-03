@@ -1,66 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/widgets/mystery_player_timer.dart';
 import 'package:plordle/view_models/user_view_model.dart';
+import 'package:provider/provider.dart';
 
 class EndOfGameDialog extends StatelessWidget {
-  final UserViewModel model;
-
-  const EndOfGameDialog({Key? key, required this.model}) : super(key: key);
+  const EndOfGameDialog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (model.currentState == GameState.won) {
-      return AlertDialog(
-        title: const Text(TextConstants.winnerText),
-        content: Container(
-          child: const SingleChildScrollView(
-            child: Text("Time remaining is: time_goes_here"),
-          ),
-        ),
-        actions: [
-          TextButton(
-              onPressed: () {
-                model.resetToWait();
-                Navigator.pop(context);
-              },
-              child: const Text(TextConstants.waitForNextGame)),
-          TextButton(
-              onPressed: () {
-                model.clearGuesses();
-                Navigator.pop(context);
-              },
-              child: const Text(TextConstants.continueGameText))
-        ],
-      );
-    } else {
-      return AlertDialog(
-          title: const Text(TextConstants.loserText),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: [
-                const Text(TextConstants.playerHint),
-                Text(model.playerViewModel.todaysPlayer.toString()),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: Text("Try again in: time_goes_here"),
-                ),
-              ],
-            ),
-          ),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  model.resetToWait();
-                  Navigator.pop(context);
-                },
-                child: const Text(TextConstants.waitForNextGame)),
-            TextButton(
-                onPressed: () {
-                  model.clearGuesses();
-                  Navigator.pop(context);
-                },
-                child: const Text(TextConstants.continueGameText))
-          ]);
-    }
+    var model = Provider.of<UserViewModel>(context, listen: false);
+
+    return AlertDialog(
+      title: Center(
+          child: (model.currentState == GameState.won)
+              ? const Text(TextConstants.winnerText)
+              : const Text(TextConstants.loserText)),
+      content: SingleChildScrollView(
+        child: (model.currentState == GameState.won)
+            ? const MysteryPlayerTimer()
+            : ListBody(
+                children: [
+                  const Text(TextConstants.playerHint),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(model.playerViewModel.todaysPlayer.toString()),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const MysteryPlayerTimer()
+                ],
+              ),
+      ),
+      actions: [
+        TextButton(
+            onPressed: () {
+              model.resetToWait();
+              Navigator.pop(context);
+            },
+            child: const Text(TextConstants.waitForNextGame)),
+        TextButton(
+            onPressed: () {
+              model.getNewRandomPlayer();
+              Navigator.pop(context);
+            },
+            child: const Text(TextConstants.continueGameText))
+      ],
+    );
   }
 }

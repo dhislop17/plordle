@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:plordle/models/guess.dart';
+import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
-import 'package:plordle/view_models/user_view_model.dart';
 
 class NumberSquare extends StatelessWidget {
-  final int index;
-  final UserViewModel model;
-  const NumberSquare({Key? key, required this.index, required this.model})
+  final Player player;
+  final Guess guess;
+  const NumberSquare({Key? key, required this.player, required this.guess})
       : super(key: key);
 
   @override
@@ -17,29 +18,27 @@ class NumberSquare extends StatelessWidget {
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: _colorNumberSquare(index, model),
+              color: _colorNumberSquare(player, guess),
             ),
-            child: _createNumberContainer(index, model)),
+            child: _createNumberContainer(player, guess)),
       ),
     );
   }
 
-  Container _createNumberContainer(int index, UserViewModel model) {
+  Container _createNumberContainer(Player player, Guess guess) {
     return Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: _colorNumberSquare(index, model),
+          color: _colorNumberSquare(player, guess),
         ),
-        child: _numberSquareChild(index, model));
+        child: _numberSquareChild(player, guess));
   }
 
-  Widget _numberSquareChild(int index, UserViewModel model) {
-    String guessedNumber = model.guessedPlayers[index].shirtNumber.toString();
-    if (model.guesses[index].shirtNumberDiff == 0 ||
-        model.guesses[index].shirtNumberDiff.abs() > 5) {
-      return Container(child: Text(guessedNumber));
-    } else if (model.guesses[index].shirtNumberDiff.abs() <= 5 &&
-        model.guesses[index].shirtNumberDiff > 0) {
+  Widget _numberSquareChild(Player player, Guess guess) {
+    String guessedNumber = player.shirtNumber.toString();
+    if (guess.shirtNumberDiff == 0 || guess.shirtNumberDiff.abs() > 5) {
+      return Text(guessedNumber);
+    } else if (guess.shirtNumberDiff.abs() <= 5 && guess.shirtNumberDiff > 0) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -64,10 +63,10 @@ class NumberSquare extends StatelessWidget {
     }
   }
 
-  Color _colorNumberSquare(int index, UserViewModel model) {
-    if (model.guesses[index].shirtNumberDiff == 0) {
+  Color _colorNumberSquare(Player player, Guess guess) {
+    if (guess.shirtNumberDiff == 0) {
       return Themes.guessGreen;
-    } else if (model.guesses[index].shirtNumberDiff.abs() <= 5) {
+    } else if (guess.shirtNumberDiff.abs() <= 5) {
       return Themes.guessYellow;
     } else {
       return Themes.guessGrey;

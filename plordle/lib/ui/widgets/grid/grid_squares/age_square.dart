@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:plordle/models/guess.dart';
+import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
-import 'package:plordle/view_models/user_view_model.dart';
 
 class AgeSquare extends StatelessWidget {
-  final int index;
-  final UserViewModel model;
-  const AgeSquare({Key? key, required this.index, required this.model})
+  final Player player;
+  final Guess guess;
+  const AgeSquare({Key? key, required this.player, required this.guess})
       : super(key: key);
 
   @override
@@ -14,31 +15,29 @@ class AgeSquare extends StatelessWidget {
     return Expanded(
       child: AspectRatio(
         aspectRatio: 1,
-        child: _createAgeContainer(index, model),
+        child: _createAgeContainer(player, guess),
       ),
     );
   }
 
-  Container _createAgeContainer(int index, UserViewModel model) {
+  Container _createAgeContainer(Player player, Guess guess) {
     return Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: _colorAgeSquare(index, model),
+          color: _colorAgeSquare(player, guess),
         ),
-        child: _ageSquareChild(index, model));
+        child: _ageSquareChild(player, guess));
   }
 
-  Widget _ageSquareChild(int index, UserViewModel model) {
-    String guessedNumber = model.guessedPlayers[index].age.toString();
-    if (model.guesses[index].ageDiff == 0 ||
-        model.guesses[index].ageDiff.abs() > 5) {
-      return Container(child: Text(guessedNumber));
-    } else if (model.guesses[index].ageDiff.abs() <= 5 &&
-        model.guesses[index].ageDiff > 0) {
+  Widget _ageSquareChild(Player player, Guess guess) {
+    String guessedAge = player.age.toString();
+    if (guess.ageDiff == 0 || guess.ageDiff.abs() > 5) {
+      return Text(guessedAge);
+    } else if (guess.ageDiff.abs() <= 5 && guess.ageDiff > 0) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(guessedNumber),
+          Text(guessedAge),
           const Text(
             TextConstants.downArrow,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -53,16 +52,16 @@ class AgeSquare extends StatelessWidget {
             TextConstants.upArrow,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          Text(guessedNumber),
+          Text(guessedAge),
         ],
       );
     }
   }
 
-  Color _colorAgeSquare(int index, UserViewModel model) {
-    if (model.guesses[index].ageDiff == 0) {
+  Color _colorAgeSquare(Player player, Guess guess) {
+    if (guess.ageDiff == 0) {
       return Themes.guessGreen;
-    } else if (model.guesses[index].ageDiff.abs() <= 5) {
+    } else if (guess.ageDiff.abs() <= 5) {
       return Themes.guessYellow;
     } else {
       return Themes.guessGrey;

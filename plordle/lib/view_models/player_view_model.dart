@@ -31,6 +31,11 @@ class PlayerViewModel extends ChangeNotifier {
     _todaysPlayer = await _playerService.getRandomPlayer();
   }
 
+  void getNewMysteryPlayer() async {
+    _todaysPlayer = await _playerService.getTodaysPlayer();
+    notifyListeners();
+  }
+
   List<String> filterPlayerList(String suggestion) {
     List<String> result = _players.map((player) => player.name).where((val) {
       var stripped = removeDiacritics(val);

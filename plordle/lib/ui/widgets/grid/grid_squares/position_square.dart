@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:plordle/models/guess.dart';
+import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
-import 'package:plordle/view_models/user_view_model.dart';
 
 class PositionSquare extends StatelessWidget {
-  final int index;
-  final UserViewModel model;
-  const PositionSquare({Key? key, required this.index, required this.model})
+  final Player player;
+  final Guess guess;
+  const PositionSquare({Key? key, required this.player, required this.guess})
       : super(key: key);
 
   @override
@@ -16,17 +17,17 @@ class PositionSquare extends StatelessWidget {
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: _colorPositionSquare(index, model),
+              color: _colorPositionSquare(player, guess),
             ),
-            child: Text(model.guessedPlayers[index].position)),
+            child: Text(player.position)),
       ),
     );
   }
 
-  Color _colorPositionSquare(int index, UserViewModel model) {
-    if (model.guesses[index].samePosition) {
+  Color _colorPositionSquare(Player player, Guess guess) {
+    if (guess.samePosition) {
       return Themes.guessGreen;
-    } else if (model.guesses[index].sameType) {
+    } else if (guess.sameType) {
       return Themes.guessYellow;
     } else {
       return Themes.guessGrey;
