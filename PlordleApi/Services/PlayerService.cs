@@ -25,7 +25,7 @@ public class PlayerService : IPlayerService
 
     public async Task<Player> GetTodaysPlayer()
     {
-        var date = DateTime.UtcNow.Date;
+        var date = DateTime.Now.Date;
         var seed = date.Year * 1000 + date.Month * 100 + date.DayOfYear;
         
         var random = new Random(seed);
