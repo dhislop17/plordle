@@ -41,7 +41,10 @@ class HomePage extends StatelessWidget {
               }),
           IconButton(
             icon: const Icon(Icons.settings),
-            onPressed: () {},
+            onPressed: () {
+              var model = Provider.of<UserViewModel>(context, listen: false);
+              model.clearStats();
+            },
           )
         ],
       ),

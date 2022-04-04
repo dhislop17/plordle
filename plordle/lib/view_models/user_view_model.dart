@@ -1,11 +1,16 @@
 import 'package:flutter/foundation.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
+import 'package:plordle/models/stat.dart';
+import 'package:plordle/services/service_locator.dart';
+import 'package:plordle/services/storage_service.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 
 enum GameState { inProgress, won, lost, doneForTheDay }
 
 class UserViewModel extends ChangeNotifier {
+  final StorageService _storageService = serviceLocator<StorageService>();
+
   final List<Guess> _guesses = [];
   final List<Player> _guessedPlayers = [];
   late PlayerViewModel playerViewModel;
@@ -13,6 +18,9 @@ class UserViewModel extends ChangeNotifier {
   final int _maxNumOfGuesses = 10;
   GameState _currentState = GameState.inProgress;
   bool _inUnlimitedMode = false;
+  late Stat _mysteryModeStat;
+  late Stat _unlimitedModeStat;
+  late bool _solvedMystery;
   //Number of wins per guesses?
 
   List<Guess> get guesses => _guesses;
@@ -21,16 +29,35 @@ class UserViewModel extends ChangeNotifier {
   int get maxNumOfGuesses => _maxNumOfGuesses;
   GameState get currentState => _currentState;
   bool get isUnlimitedMode => _inUnlimitedMode;
+  bool get solvedMystery => _solvedMystery;
+  Stat get mysteryModeStat => _mysteryModeStat;
+  Stat get unlimitedModeStat => _unlimitedModeStat;
 
-  /*
-  UserViewModel(){
+  UserViewModel() {
     //call shared prefs service
+    _loadSavedData();
   }
-  */
 
   UserViewModel update(PlayerViewModel playerViewModel) {
     this.playerViewModel = playerViewModel;
     return this;
+  }
+
+  void _loadSavedData() async {
+    _mysteryModeStat = await _storageService.getMysteryModeStat();
+    _unlimitedModeStat = await _storageService.getUnlimitedModeStat();
+    _solvedMystery = await _storageService.getSolvedMystery();
+
+    print(_mysteryModeStat.toString() + " MYSTERY");
+    print(_unlimitedModeStat.toString() + " UNLIMITED");
+    print(_solvedMystery);
+    notifyListeners();
+  }
+
+  void saveData() async {
+    _storageService.saveMysteryModeStat(_mysteryModeStat);
+    _storageService.saveUnlimitedModeStat(_unlimitedModeStat);
+    _storageService.saveSolvedMystery(_solvedMystery);
   }
 
   void comparePlayers(String name) {
@@ -41,11 +68,30 @@ class UserViewModel extends ChangeNotifier {
     _numberOfGuesses++;
     if (_numberOfGuesses <= _maxNumOfGuesses + 1 && guess.guessName == 'True') {
       _currentState = GameState.won;
+      _updateStat();
     } else if (_numberOfGuesses == _maxNumOfGuesses + 1 &&
         guess.guessName != 'True') {
       _currentState = GameState.lost;
+      _updateStat();
     }
     _addGuess(guess);
+  }
+
+  void _updateStat() async {
+    if (_inUnlimitedMode) {
+      if (_currentState == GameState.won) {
+        _unlimitedModeStat.wins++;
+      } else {
+        _unlimitedModeStat.losses++;
+      }
+    } else {
+      if (_currentState == GameState.won) {
+        _mysteryModeStat.wins++;
+      } else {
+        _mysteryModeStat.losses++;
+      }
+    }
+    saveData();
   }
 
   Guess _createGuess(Player guessedPlayer) {
@@ -93,6 +139,13 @@ class UserViewModel extends ChangeNotifier {
   void resetToWait() {
     _inUnlimitedMode = false;
     _currentState = GameState.doneForTheDay;
+    notifyListeners();
+  }
+
+  void clearStats() async {
+    _storageService.clearSavedData();
+    _unlimitedModeStat = Stat(wins: 0, losses: 0);
+    _mysteryModeStat = Stat(wins: 0, losses: 0);
     notifyListeners();
   }
 }
