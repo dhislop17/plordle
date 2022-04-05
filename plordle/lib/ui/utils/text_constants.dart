@@ -12,7 +12,7 @@ class TextConstants {
   //Gameover Dialog
   static const String winnerText = 'You Win';
   static const String loserText = 'Game Over';
-  static const String waitForNextGame = 'Wait for next PLordle';
+  static const String viewStats = 'View Stats';
   static const String continueGameText = 'Unlimited Mode';
   static const String playerHint = 'The correct player was:';
 

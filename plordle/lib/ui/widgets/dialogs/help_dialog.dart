@@ -23,23 +23,23 @@ class HelpDialog extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(TextConstants.helpDialogTitle,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28)),
+              Text(TextConstants.helpDialogTitle,
+                  style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 20),
-              const Text(
+              Text(
                 TextConstants.helpDialogSubtitle,
-                style: TextStyle(fontSize: 16),
+                style: Theme.of(context).textTheme.bodyText2,
               ),
               const SizedBox(height: 15),
-              const Text(
+              Text(
                 TextConstants.helpDialogInfoText,
-                style: TextStyle(fontSize: 16),
+                style: Theme.of(context).textTheme.bodyText2,
               ),
               const SizedBox(height: 15),
               RichText(
-                  text: const TextSpan(
-                      style: TextStyle(fontSize: 16, color: Colors.black),
-                      children: [
+                  text: TextSpan(
+                      style: Theme.of(context).textTheme.bodyText2,
+                      children: const [
                     TextSpan(
                         text: TextConstants.helpDialogGreenText,
                         style: TextStyle(backgroundColor: Themes.guessGreen)),
@@ -49,9 +49,9 @@ class HelpDialog extends StatelessWidget {
                 height: 10,
               ),
               RichText(
-                  text: const TextSpan(
-                      style: TextStyle(fontSize: 16, color: Colors.black),
-                      children: [
+                  text: TextSpan(
+                      style: Theme.of(context).textTheme.bodyText2,
+                      children: const [
                     TextSpan(
                         text: TextConstants.helpDialogPositionText,
                         style: TextStyle(backgroundColor: Themes.guessYellow)),
@@ -61,9 +61,9 @@ class HelpDialog extends StatelessWidget {
                 height: 10,
               ),
               RichText(
-                  text: const TextSpan(
-                      style: TextStyle(fontSize: 16, color: Colors.black),
-                      children: [
+                  text: TextSpan(
+                      style: Theme.of(context).textTheme.bodyText2,
+                      children: const [
                     TextSpan(
                         text: TextConstants.helpDialogNumberText,
                         style: TextStyle(backgroundColor: Themes.guessYellow)),
@@ -72,9 +72,9 @@ class HelpDialog extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
+              Text(
                 TextConstants.helpDialogGameInfo,
-                style: TextStyle(fontSize: 16),
+                style: Theme.of(context).textTheme.bodyText2,
               )
             ],
           ),

@@ -34,7 +34,6 @@ class UserViewModel extends ChangeNotifier {
   Stat get unlimitedModeStat => _unlimitedModeStat;
 
   UserViewModel() {
-    //call shared prefs service
     _loadSavedData();
   }
 
@@ -54,10 +53,43 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void getNewRandomPlayer() {
+    _guesses.clear();
+    _guessedPlayers.clear();
+    _numberOfGuesses = 1;
+    _inUnlimitedMode = true;
+    _currentState = GameState.inProgress;
+    playerViewModel.getNextRandom();
+    notifyListeners();
+  }
+
   void saveData() async {
     _storageService.saveMysteryModeStat(_mysteryModeStat);
     _storageService.saveUnlimitedModeStat(_unlimitedModeStat);
     _storageService.saveSolvedMystery(_solvedMystery);
+  }
+
+  void getNewMysteryPlayer() async {
+    _guesses.clear();
+    _guessedPlayers.clear();
+    _inUnlimitedMode = false;
+    _numberOfGuesses = 1;
+    _currentState = GameState.inProgress;
+    playerViewModel.getNewMysteryPlayer();
+    notifyListeners();
+  }
+
+  void resetToWait() {
+    _inUnlimitedMode = false;
+    _currentState = GameState.doneForTheDay;
+    notifyListeners();
+  }
+
+  void clearStats() async {
+    _storageService.clearSavedData();
+    _unlimitedModeStat = Stat(wins: 0, losses: 0);
+    _mysteryModeStat = Stat(wins: 0, losses: 0);
+    notifyListeners();
   }
 
   void comparePlayers(String name) {
@@ -68,16 +100,16 @@ class UserViewModel extends ChangeNotifier {
     _numberOfGuesses++;
     if (_numberOfGuesses <= _maxNumOfGuesses + 1 && guess.guessName == 'True') {
       _currentState = GameState.won;
-      _updateStat();
+      _completeGame();
     } else if (_numberOfGuesses == _maxNumOfGuesses + 1 &&
         guess.guessName != 'True') {
       _currentState = GameState.lost;
-      _updateStat();
+      _completeGame();
     }
     _addGuess(guess);
   }
 
-  void _updateStat() async {
+  void _completeGame() async {
     if (_inUnlimitedMode) {
       if (_currentState == GameState.won) {
         _unlimitedModeStat.wins++;
@@ -90,6 +122,7 @@ class UserViewModel extends ChangeNotifier {
       } else {
         _mysteryModeStat.losses++;
       }
+      _solvedMystery = true;
     }
     saveData();
   }
@@ -113,39 +146,6 @@ class UserViewModel extends ChangeNotifier {
 
   void _addGuess(Guess guess) {
     _guesses.add(guess);
-    notifyListeners();
-  }
-
-  void getNewRandomPlayer() {
-    _guesses.clear();
-    _guessedPlayers.clear();
-    _numberOfGuesses = 1;
-    _inUnlimitedMode = true;
-    _currentState = GameState.inProgress;
-    playerViewModel.getNextRandom();
-    notifyListeners();
-  }
-
-  void getNewMysteryPlayer() async {
-    _guesses.clear();
-    _guessedPlayers.clear();
-    _inUnlimitedMode = false;
-    _numberOfGuesses = 1;
-    _currentState = GameState.inProgress;
-    playerViewModel.getNewMysteryPlayer();
-    notifyListeners();
-  }
-
-  void resetToWait() {
-    _inUnlimitedMode = false;
-    _currentState = GameState.doneForTheDay;
-    notifyListeners();
-  }
-
-  void clearStats() async {
-    _storageService.clearSavedData();
-    _unlimitedModeStat = Stat(wins: 0, losses: 0);
-    _mysteryModeStat = Stat(wins: 0, losses: 0);
     notifyListeners();
   }
 }

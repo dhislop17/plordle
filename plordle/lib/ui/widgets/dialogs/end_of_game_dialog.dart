@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
 import 'package:plordle/ui/widgets/mystery_player_timer.dart';
@@ -37,9 +39,27 @@ class EndOfGameDialog extends StatelessWidget {
         TextButton(
             onPressed: () {
               model.resetToWait();
-              Navigator.pop(context);
+              //Navigator.pop(context);
+              showDialog(
+                  context: context,
+                  builder: (_) {
+                    return BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
+                      child: Dialog(
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(24))),
+                        child: Container(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [Text("Hello")],
+                          ),
+                        ),
+                      ),
+                    );
+                  });
             },
-            child: const Text(TextConstants.waitForNextGame)),
+            child: const Text(TextConstants.viewStats)),
         TextButton(
             onPressed: () {
               model.getNewRandomPlayer();
