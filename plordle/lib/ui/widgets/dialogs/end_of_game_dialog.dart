@@ -24,13 +24,9 @@ class EndOfGameDialog extends StatelessWidget {
             : ListBody(
                 children: [
                   const Text(TextConstants.playerHint),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   Text(model.playerViewModel.todaysPlayer.toString()),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   const MysteryPlayerTimer()
                 ],
               ),
@@ -39,20 +35,33 @@ class EndOfGameDialog extends StatelessWidget {
         TextButton(
             onPressed: () {
               model.resetToWait();
-              //Navigator.pop(context);
               showDialog(
                   context: context,
                   builder: (_) {
                     return BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 8.0, sigmaY: 8.0),
                       child: Dialog(
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(24))),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
                         child: Container(
+                          padding: const EdgeInsets.only(top: 20, bottom: 20),
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
-                            children: [Text("Hello")],
+                            children: [
+                              const Text("Player Stats",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20)),
+                              const SizedBox(height: 20),
+                              /* MysteryPlayerTimer(),
+                              const SizedBox(height: 20), */
+                              const Text("Mystery Mode Stats:"),
+                              Text(model.mysteryModeStat.toString()),
+                              const SizedBox(height: 20),
+                              const Text("Unlimited Mode Stats:"),
+                              Text(model.unlimitedModeStat.toString()),
+                            ],
                           ),
                         ),
                       ),

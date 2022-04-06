@@ -21,6 +21,7 @@ class UserViewModel extends ChangeNotifier {
   late Stat _mysteryModeStat;
   late Stat _unlimitedModeStat;
   late bool _solvedMystery;
+  late bool _onboardingDone;
   //Number of wins per guesses?
 
   List<Guess> get guesses => _guesses;
@@ -30,6 +31,7 @@ class UserViewModel extends ChangeNotifier {
   GameState get currentState => _currentState;
   bool get isUnlimitedMode => _inUnlimitedMode;
   bool get solvedMystery => _solvedMystery;
+  bool get onboardingDone => _onboardingDone;
   Stat get mysteryModeStat => _mysteryModeStat;
   Stat get unlimitedModeStat => _unlimitedModeStat;
 
@@ -43,6 +45,7 @@ class UserViewModel extends ChangeNotifier {
   }
 
   void _loadSavedData() async {
+    _onboardingDone = await _storageService.getOnboardingStatus();
     _mysteryModeStat = await _storageService.getMysteryModeStat();
     _unlimitedModeStat = await _storageService.getUnlimitedModeStat();
     _solvedMystery = await _storageService.getSolvedMystery();
@@ -50,6 +53,7 @@ class UserViewModel extends ChangeNotifier {
     print(_mysteryModeStat.toString() + " MYSTERY");
     print(_unlimitedModeStat.toString() + " UNLIMITED");
     print(_solvedMystery);
+    print(_onboardingDone);
     notifyListeners();
   }
 
@@ -64,9 +68,9 @@ class UserViewModel extends ChangeNotifier {
   }
 
   void saveData() async {
-    _storageService.saveMysteryModeStat(_mysteryModeStat);
-    _storageService.saveUnlimitedModeStat(_unlimitedModeStat);
-    _storageService.saveSolvedMystery(_solvedMystery);
+    await _storageService.saveMysteryModeStat(_mysteryModeStat);
+    await _storageService.saveUnlimitedModeStat(_unlimitedModeStat);
+    await _storageService.saveSolvedMystery(_solvedMystery);
   }
 
   void getNewMysteryPlayer() async {
@@ -87,8 +91,14 @@ class UserViewModel extends ChangeNotifier {
 
   void clearStats() async {
     _storageService.clearSavedData();
-    _unlimitedModeStat = Stat(wins: 0, losses: 0);
-    _mysteryModeStat = Stat(wins: 0, losses: 0);
+    _unlimitedModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
+    _mysteryModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
+    notifyListeners();
+  }
+
+  void completeOnboarding() async {
+    _onboardingDone = true;
+    _storageService.saveOnboardingStatus(_onboardingDone);
     notifyListeners();
   }
 
@@ -116,12 +126,14 @@ class UserViewModel extends ChangeNotifier {
       } else {
         _unlimitedModeStat.losses++;
       }
+      _unlimitedModeStat.gamesPlayed++;
     } else {
       if (_currentState == GameState.won) {
         _mysteryModeStat.wins++;
       } else {
         _mysteryModeStat.losses++;
       }
+      _mysteryModeStat.gamesPlayed++;
       _solvedMystery = true;
     }
     saveData();

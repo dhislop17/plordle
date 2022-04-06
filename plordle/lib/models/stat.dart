@@ -1,11 +1,12 @@
 class Stat {
   int wins;
   int losses;
+  int gamesPlayed;
 
-  Stat({required this.wins, required this.losses});
+  Stat({required this.gamesPlayed, required this.wins, required this.losses});
 
   @override
   String toString() {
-    return "Wins: $wins, Losses: $losses";
+    return "Games Played: $gamesPlayed, Wins: $wins, Losses: $losses";
   }
 }

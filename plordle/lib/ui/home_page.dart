@@ -11,8 +11,26 @@ import 'package:plordle/ui/widgets/search_box.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    var model = Provider.of<UserViewModel>(context, listen: false);
+    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return const HelpDialog();
+          }).then((value) => model.completeOnboarding());
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
