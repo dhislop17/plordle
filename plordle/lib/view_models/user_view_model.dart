@@ -45,16 +45,22 @@ class UserViewModel extends ChangeNotifier {
   }
 
   void _loadSavedData() async {
-    _onboardingDone = await _storageService.getOnboardingStatus();
     _mysteryModeStat = await _storageService.getMysteryModeStat();
     _unlimitedModeStat = await _storageService.getUnlimitedModeStat();
-    _solvedMystery = await _storageService.getSolvedMystery();
+    //_solvedMystery = await _storageService.getSolvedMystery();
+    //_onboardingDone = await _storageService.getOnboardingStatus();
 
     print(_mysteryModeStat.toString() + " MYSTERY");
     print(_unlimitedModeStat.toString() + " UNLIMITED");
-    print(_solvedMystery);
-    print(_onboardingDone);
+    //print(_solvedMystery);
+    //print(_onboardingDone);
     notifyListeners();
+  }
+
+  Future<bool> getDialogStatuses() async {
+    _onboardingDone = await _storageService.getOnboardingStatus();
+    _solvedMystery = await _storageService.getSolvedMystery();
+    return true;
   }
 
   void getNewRandomPlayer() {
@@ -97,6 +103,7 @@ class UserViewModel extends ChangeNotifier {
   }
 
   void completeOnboarding() async {
+    print("completing");
     _onboardingDone = true;
     _storageService.saveOnboardingStatus(_onboardingDone);
     notifyListeners();
@@ -141,19 +148,19 @@ class UserViewModel extends ChangeNotifier {
 
   Guess _createGuess(Player guessedPlayer) {
     return Guess(
-        guessName: guessedPlayer.name == playerViewModel.todaysPlayer.name
+        guessName: guessedPlayer.name == playerViewModel.currentPlayer!.name
             ? 'True'
             : guessedPlayer.name,
-        sameTeam: guessedPlayer.team == playerViewModel.todaysPlayer.team,
+        sameTeam: guessedPlayer.team == playerViewModel.currentPlayer!.team,
         sameType: guessedPlayer.positionType ==
-            playerViewModel.todaysPlayer.positionType,
+            playerViewModel.currentPlayer!.positionType,
         samePosition:
-            guessedPlayer.position == playerViewModel.todaysPlayer.position,
+            guessedPlayer.position == playerViewModel.currentPlayer!.position,
         shirtNumberDiff: guessedPlayer.shirtNumber -
-            playerViewModel.todaysPlayer.shirtNumber,
-        ageDiff: guessedPlayer.age - playerViewModel.todaysPlayer.age,
+            playerViewModel.currentPlayer!.shirtNumber,
+        ageDiff: guessedPlayer.age - playerViewModel.currentPlayer!.age,
         sameCountry:
-            guessedPlayer.country == playerViewModel.todaysPlayer.country);
+            guessedPlayer.country == playerViewModel.currentPlayer!.country);
   }
 
   void _addGuess(Guess guess) {

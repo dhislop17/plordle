@@ -9,11 +9,11 @@ class PlayerViewModel extends ChangeNotifier {
   final PlayerService _playerService = serviceLocator<PlayerService>();
 
   List<Player> _players = [];
-  late Player _todaysPlayer;
+  Player? _currentPlayer;
   final List<Guess> _guesses = [];
 
   List<Player> get players => _players;
-  Player get todaysPlayer => _todaysPlayer;
+  Player? get currentPlayer => _currentPlayer;
   List<Guess> get guesses => _guesses;
 
   PlayerViewModel() {
@@ -23,16 +23,16 @@ class PlayerViewModel extends ChangeNotifier {
   void _loadData() async {
     _players = await _playerService.getPlayers();
     //might need to do something special for todays player to update
-    _todaysPlayer = await _playerService.getTodaysPlayer();
+    _currentPlayer = await _playerService.getTodaysPlayer();
     notifyListeners();
   }
 
   void getNextRandom() async {
-    _todaysPlayer = await _playerService.getRandomPlayer();
+    _currentPlayer = await _playerService.getRandomPlayer();
   }
 
   void getNewMysteryPlayer() async {
-    _todaysPlayer = await _playerService.getTodaysPlayer();
+    _currentPlayer = await _playerService.getTodaysPlayer();
     notifyListeners();
   }
 

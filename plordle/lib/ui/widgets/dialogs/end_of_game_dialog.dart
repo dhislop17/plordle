@@ -11,7 +11,7 @@ class EndOfGameDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var model = Provider.of<UserViewModel>(context, listen: false);
+    var model = Provider.of<UserViewModel>(context);
 
     return AlertDialog(
       title: Center(
@@ -25,7 +25,7 @@ class EndOfGameDialog extends StatelessWidget {
                 children: [
                   const Text(TextConstants.playerHint),
                   const SizedBox(height: 20),
-                  Text(model.playerViewModel.todaysPlayer.toString()),
+                  Text(model.playerViewModel.currentPlayer.toString()),
                   const SizedBox(height: 20),
                   const MysteryPlayerTimer()
                 ],
