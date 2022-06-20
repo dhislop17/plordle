@@ -1,0 +1,28 @@
+version: "3.9"  # optional since v1.27.0
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo
+
+  plordleapi:
+    build: 
+      context: ..
+      dockerfile: ./PlordleApi/Dockerfile
+    restart: always
+    ports: 
+      - 8080:80
+    environment:
+      PlordleDatabase__Host: mongo
+    depends_on:
+      - mongo
+    container_name: plordleapi
