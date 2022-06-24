@@ -10,27 +10,33 @@ class GridHeader extends StatelessWidget {
       Container(
           width: 55,
           alignment: Alignment.center,
-          child: const Text(TextConstants.gridNameHeader)),
+          child: const Text(TextConstants.gridNameHeader,
+              maxLines: 1, overflow: TextOverflow.ellipsis)),
       Container(
           width: 55,
           alignment: Alignment.center,
-          child: const Text(TextConstants.gridTeamHeader)),
+          child: const Text(TextConstants.gridTeamHeader,
+              maxLines: 1, overflow: TextOverflow.ellipsis)),
       Container(
           width: 55,
           alignment: Alignment.center,
-          child: const Text(TextConstants.gridPositionHeader)),
+          child: const Text(TextConstants.gridPositionHeader,
+              maxLines: 1, overflow: TextOverflow.ellipsis)),
       Container(
           width: 55,
           alignment: Alignment.center,
-          child: const Text(TextConstants.gridNumberHeader)),
+          child: const Text(TextConstants.gridNumberHeader,
+              maxLines: 1, overflow: TextOverflow.ellipsis)),
       Container(
           width: 55,
           alignment: Alignment.center,
-          child: const Text(TextConstants.gridAgeHeader)),
+          child: const Text(TextConstants.gridAgeHeader,
+              maxLines: 1, overflow: TextOverflow.ellipsis)),
       Container(
           width: 55,
           alignment: Alignment.center,
-          child: const Text(TextConstants.gridCountryHeader)),
+          child: const Text(TextConstants.gridCountryHeader,
+              maxLines: 1, overflow: TextOverflow.ellipsis)),
     ]);
   }
 }

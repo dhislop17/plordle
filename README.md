@@ -10,7 +10,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 
 ## To-Do
 - [ ] Finish Readme/Add screenshots/gifs
-- [ ] Finish Containerization of API
-- [ ] Deploy API container to AWS
+- [x] Finish Containerization of API
+- [x] Deploy API container to AWS
 - [ ] Finish App onboarding flow
 - [ ] UI Cleanup

@@ -1,6 +1,6 @@
 # plordle
 
-A new Flutter project.
+Front-end for the app
 
 ## Getting Started
 
