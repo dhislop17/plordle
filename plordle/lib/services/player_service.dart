@@ -5,10 +5,6 @@ import 'package:http/http.dart' as http;
 import 'package:plordle/models/player.dart';
 
 class PlayerService {
-  /* final String _baseRoute = (Platform.isAndroid)
-      ? 'https://10.0.2.2:7160/api/'
-      : 'https://localhost:7160/api/'; */
-
   String _baseRoute() {
     String route;
     if (Platform.isAndroid) {
