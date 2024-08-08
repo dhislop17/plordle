@@ -3,7 +3,7 @@
 An English Premier League themed Wordle game to practice my Flutter skills and try out some new technologies
 
 ## Features
-- Player database populated from all 20 Premier League teams' 2021-22 squads (up to date as of the Winter Transfer period)
+- Player database populated from all 20 Premier League teams' 2024-25 squads (up to date as of August 7, 2024)
 - Option to guess the daily mystery player or a random one
 - Stat tracking
 - Dockerized API
