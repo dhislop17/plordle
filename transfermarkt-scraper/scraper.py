@@ -17,7 +17,7 @@ class Player:
     country: str
 
 def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: list):
-    attacker_types = {"Centre-Forward", "Right Winger", "Left Winger"}
+    attacker_types = {"Centre-Forward", "Second Striker", "Right Winger", "Left Winger"}
     midfield_types = {"Attacking Midfield", "Central Midfield", "Defensive Midfield"}
     defender_types = {"Right-Back", "Centre-Back", "Left-Back"}
 

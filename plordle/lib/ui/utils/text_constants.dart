@@ -57,23 +57,31 @@ class TextConstants {
   static final Map<String, String> teamAbbreviations = {
     'Arsenal FC': 'ARS',
     'Aston Villa': 'AVL',
+    'AFC Bournemouth': 'BOU',
     'Brentford FC': 'BRE',
     'Brighton & Hove Albion': 'BHA',
     'Burnley FC': 'BUR',
     'Chelsea FC': 'CHE',
     'Crystal Palace': 'CRY',
     'Everton FC': 'EVE',
+    'Fulham FC': 'FUL',
+    'Ipswich Town': 'IPS',
     'Leeds United': 'LEE',
     'Leicester City': 'LEI',
     'Liverpool FC': 'LIV',
+    'Luton Town': 'LUT',
     'Manchester City': 'MCI',
     'Manchester United': 'MUN',
+    'Middlesbrough FC': 'MID',
     'Newcastle United': 'NEW',
     'Norwich City': 'NOR',
+    'Nottingham Forest': 'NFO',
+    'Sheffield United': 'SHU',
     'Southampton FC': 'SOU',
     'Tottenham Hotspur': 'TOT',
     'Watford FC': 'WAT',
     'West Ham United': 'WHU',
-    'Wolverhampton Wanderers': 'WOL'
+    'Wolverhampton Wanderers': 'WOL',
+    'West Bromwich Albion': 'WBA'
   };
 }
