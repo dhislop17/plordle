@@ -138,41 +138,41 @@ PlayerId,Name,Team,PositionType,ShirtNumber,Position,Age,Country
 254,Odel Offiah,Brighton & Hove Albion,defender,42,Right-Back,21,England
 259,Cameron Peupion,Brighton & Hove Albion,midfielder,44,Attacking Midfield,21,Australia
 51,Robert Sánchez,Chelsea FC,goalkeeper,1,Goalkeeper,26,Spain
-72,Axel Disasi,Chelsea FC,defender,2,Centre-Back,26,France
-57,Marc Cucurella,Chelsea FC,defender,3,Left-Back,26,Spain
-56,Tosin Adarabioyo,Chelsea FC,defender,4,Centre-Back,26,England
-55,Benoît Badiashile,Chelsea FC,defender,5,Centre-Back,23,France
-54,Levi Colwill,Chelsea FC,defender,6,Centre-Back,21,England
-83,Raheem Sterling,Chelsea FC,attacker,7,Left Winger,29,England
-79,Enzo Fernández,Chelsea FC,midfielder,8,Central Midfield,23,Argentina
-65,Mykhaylo Mudryk,Chelsea FC,attacker,10,Left Winger,23,Ukraine
-66,Noni Madueke,Chelsea FC,attacker,11,Right Winger,22,England
-70,Filip Jørgensen,Chelsea FC,goalkeeper,12,Goalkeeper,22,Denmark
+54,Axel Disasi,Chelsea FC,defender,2,Centre-Back,26,France
+74,Marc Cucurella,Chelsea FC,defender,3,Left-Back,26,Spain
+73,Tosin Adarabioyo,Chelsea FC,defender,4,Centre-Back,26,England
+72,Benoît Badiashile,Chelsea FC,defender,5,Centre-Back,23,France
+71,Levi Colwill,Chelsea FC,defender,6,Centre-Back,21,England
+65,Raheem Sterling,Chelsea FC,attacker,7,Left Winger,29,England
+61,Enzo Fernández,Chelsea FC,midfielder,8,Central Midfield,23,Argentina
+82,Mykhaylo Mudryk,Chelsea FC,attacker,10,Left Winger,23,Ukraine
+83,Noni Madueke,Chelsea FC,attacker,11,Right Winger,22,England
+69,Filip Jørgensen,Chelsea FC,goalkeeper,12,Goalkeeper,22,Denmark
 53,Marcus Bettinelli,Chelsea FC,goalkeeper,13,Goalkeeper,32,England
-74,Trevoh Chalobah,Chelsea FC,defender,14,Centre-Back,25,England
-67,Nicolas Jackson,Chelsea FC,attacker,15,Centre-Forward,23,Senegal
-78,Lesley Ugochukwu,Chelsea FC,midfielder,16,Defensive Midfield,20,France
-62,Carney Chukwuemeka,Chelsea FC,midfielder,17,Central Midfield,20,England
-82,Christopher Nkunku,Chelsea FC,midfielder,18,Attacking Midfield,26,France
-68,Armando Broja,Chelsea FC,attacker,19,Centre-Forward,22,Albania
-63,Cole Palmer,Chelsea FC,midfielder,20,Attacking Midfield,22,England
-75,Ben Chilwell,Chelsea FC,defender,21,Left-Back,27,England
-80,Kiernan Dewsbury-Hall,Chelsea FC,midfielder,22,Central Midfield,25,England
-61,Conor Gallagher,Chelsea FC,midfielder,23,Central Midfield,24,England
-76,Reece James,Chelsea FC,defender,24,Right-Back,24,England
-77,Moisés Caicedo,Chelsea FC,midfielder,25,Defensive Midfield,22,Ecuador
-58,Malo Gusto,Chelsea FC,defender,27,Right-Back,21,France
+56,Trevoh Chalobah,Chelsea FC,defender,14,Centre-Back,25,England
+84,Nicolas Jackson,Chelsea FC,attacker,15,Centre-Forward,23,Senegal
+60,Lesley Ugochukwu,Chelsea FC,midfielder,16,Defensive Midfield,20,France
+79,Carney Chukwuemeka,Chelsea FC,midfielder,17,Central Midfield,20,England
+64,Christopher Nkunku,Chelsea FC,midfielder,18,Attacking Midfield,26,France
+85,Armando Broja,Chelsea FC,attacker,19,Centre-Forward,22,Albania
+80,Cole Palmer,Chelsea FC,midfielder,20,Attacking Midfield,22,England
+57,Ben Chilwell,Chelsea FC,defender,21,Left-Back,27,England
+62,Kiernan Dewsbury-Hall,Chelsea FC,midfielder,22,Central Midfield,25,England
+78,Conor Gallagher,Chelsea FC,midfielder,23,Central Midfield,24,England
+58,Reece James,Chelsea FC,defender,24,Right-Back,24,England
+59,Moisés Caicedo,Chelsea FC,midfielder,25,Defensive Midfield,22,Ecuador
+75,Malo Gusto,Chelsea FC,defender,27,Right-Back,21,France
 52,Djordje Petrovic,Chelsea FC,goalkeeper,28,Goalkeeper,24,Serbia
-73,Wesley Fofana,Chelsea FC,defender,29,Centre-Back,23,France
-81,Cesare Casadei,Chelsea FC,midfielder,31,Central Midfield,21,Italy
-69,Deivid Washington,Chelsea FC,attacker,36,Centre-Forward,19,Brazil
-64,Omari Kellyman,Chelsea FC,midfielder,37,Attacking Midfield,18,England
-86,Marc Guiu,Chelsea FC,attacker,38,Centre-Forward,18,Spain
-60,Renato Veiga,Chelsea FC,midfielder,40,Defensive Midfield,21,Portugal
-85,Ângelo,Chelsea FC,attacker,41,Right Winger,19,Brazil
-84,Diego Moreira,Chelsea FC,attacker,43,Left Winger,20,Portugal
-59,Roméo Lavia,Chelsea FC,midfielder,45,Defensive Midfield,20,Belgium
-71,Lucas Bergström,Chelsea FC,goalkeeper,47,Goalkeeper,21,Finland
+55,Wesley Fofana,Chelsea FC,defender,29,Centre-Back,23,France
+63,Cesare Casadei,Chelsea FC,midfielder,31,Central Midfield,21,Italy
+86,Deivid Washington,Chelsea FC,attacker,36,Centre-Forward,19,Brazil
+81,Omari Kellyman,Chelsea FC,midfielder,37,Attacking Midfield,18,England
+68,Marc Guiu,Chelsea FC,attacker,38,Centre-Forward,18,Spain
+77,Renato Veiga,Chelsea FC,midfielder,40,Defensive Midfield,21,Portugal
+67,Ângelo,Chelsea FC,attacker,41,Right Winger,19,Brazil
+66,Diego Moreira,Chelsea FC,attacker,43,Left Winger,20,Portugal
+76,Roméo Lavia,Chelsea FC,midfielder,45,Defensive Midfield,20,Belgium
+70,Lucas Bergström,Chelsea FC,goalkeeper,47,Goalkeeper,21,Finland
 299,Sam Johnstone,Crystal Palace,goalkeeper,1,Goalkeeper,31,England
 304,Joel Ward,Crystal Palace,defender,2,Right-Back,34,England
 290,Tyrick Mitchell,Crystal Palace,defender,3,Left-Back,24,England
@@ -253,7 +253,7 @@ PlayerId,Name,Team,PositionType,ShirtNumber,Position,Age,Country
 533,Luke Woolfenden,Ipswich Town,defender,6,Centre-Back,25,England
 538,Wes Burns,Ipswich Town,goalkeeper,7,Right Midfield,29,Wales
 542,Freddie Ladapo,Ipswich Town,attacker,9,Centre-Forward,31,England
-540,Conor Chaplin,Ipswich Town,goalkeeper,10,Second Striker,27,England
+540,Conor Chaplin,Ipswich Town,attacker,10,Second Striker,27,England
 539,Marcus Harness,Ipswich Town,attacker,11,Left Winger,28,Ireland
 521,Cieran Slicker,Ipswich Town,goalkeeper,13,Goalkeeper,21,Scotland
 536,Jack Taylor,Ipswich Town,midfielder,14,Central Midfield,26,Ireland
