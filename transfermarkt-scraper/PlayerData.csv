@@ -1,4 +1,4 @@
-playerId,name,team,positionType,shirtNumber,position,age,country
+PlayerId,Name,Team,PositionType,ShirtNumber,Position,Age,Country
 386,Neto,AFC Bournemouth,goalkeeper,1,Goalkeeper,35,Brazil
 374,Dean Huijsen,AFC Bournemouth,defender,2,Centre-Back,19,Spain
 389,Milos Kerkez,AFC Bournemouth,defender,3,Left-Back,20,Hungary

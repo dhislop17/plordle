@@ -82,14 +82,21 @@ def main():
         scrape_player_data(teamTree, ".items tbody tr.even", team, player_list)
 
         player_data = pd.DataFrame(player_list)
-        player_data.rename(columns= {'position_type': 'positionType',
-                                    'shirt_number': 'shirtNumber',
-                                    'country': 'country'}, inplace= True)
+
+        #Fix column names to line up with what the API is expecting
+        player_data.rename(columns= {
+                                    'name':'Name',
+                                    'team': 'Team',
+                                    'position': 'Position',
+                                    'position_type': 'PositionType',
+                                    'shirt_number': 'ShirtNumber',
+                                    'age': 'Age',
+                                    'country': 'Country'}, inplace= True)
 
     #The teams on Transfermarkt are listed by finishing position from the previous season
     #Sort the list to be alphabetical by team name then by the player's shirt number
-    player_data = player_data.sort_values(by=['team', 'shirtNumber'])
-    player_data.to_csv("PlayerData.csv", index_label= "playerId")
+    player_data = player_data.sort_values(by=['Team', 'ShirtNumber'])
+    player_data.to_csv("PlayerData.csv", index_label= "PlayerId")
     print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == "__main__":
