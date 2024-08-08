@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 var provider = app.Services.GetRequiredService<IPlayerService>();
-provider.SeedDatabase();
+await provider.SeedDatabase();
 
 app.UseHttpsRedirection();
 
