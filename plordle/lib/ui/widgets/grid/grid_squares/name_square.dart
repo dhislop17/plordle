@@ -6,8 +6,7 @@ import 'package:plordle/ui/utils/app_theme.dart';
 class NameSquare extends StatelessWidget {
   final Player player;
   final Guess guess;
-  const NameSquare({Key? key, required this.player, required this.guess})
-      : super(key: key);
+  const NameSquare({super.key, required this.player, required this.guess});
 
   @override
   Widget build(BuildContext context) {

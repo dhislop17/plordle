@@ -50,8 +50,8 @@ class UserViewModel extends ChangeNotifier {
     _unlimitedModeStat = await _storageService.getUnlimitedModeStat();
     _solvedMystery = await _storageService.getSolvedMystery();
 
-    print(_mysteryModeStat.toString() + " MYSTERY");
-    print(_unlimitedModeStat.toString() + " UNLIMITED");
+    print("$_mysteryModeStat MYSTERY");
+    print("$_unlimitedModeStat UNLIMITED");
     print(_solvedMystery);
     print(_onboardingDone);
     notifyListeners();

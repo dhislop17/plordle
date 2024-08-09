@@ -7,8 +7,8 @@ import 'package:plordle/ui/utils/text_constants.dart';
 //TODO: Make this popup on game startup if they have never played before
 class HelpDialog extends StatelessWidget {
   const HelpDialog({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +28,17 @@ class HelpDialog extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 TextConstants.helpDialogSubtitle,
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 15),
               Text(
                 TextConstants.helpDialogInfoText,
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 15),
               RichText(
                   text: TextSpan(
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                       children: const [
                     TextSpan(
                         text: TextConstants.helpDialogGreenText,
@@ -50,7 +50,7 @@ class HelpDialog extends StatelessWidget {
               ),
               RichText(
                   text: TextSpan(
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                       children: const [
                     TextSpan(
                         text: TextConstants.helpDialogPositionText,
@@ -62,7 +62,7 @@ class HelpDialog extends StatelessWidget {
               ),
               RichText(
                   text: TextSpan(
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                       children: const [
                     TextSpan(
                         text: TextConstants.helpDialogNumberText,
@@ -74,7 +74,7 @@ class HelpDialog extends StatelessWidget {
               ),
               Text(
                 TextConstants.helpDialogGameInfo,
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyMedium,
               )
             ],
           ),

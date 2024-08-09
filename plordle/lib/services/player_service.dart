@@ -19,7 +19,7 @@ class PlayerService {
   }
 
   Future<Player> getRandomPlayer() async {
-    final response = await http.get(Uri.parse(_baseRoute() + 'Players/random'));
+    final response = await http.get(Uri.parse('${_baseRoute()}Players/random'));
 
     if (response.statusCode == 200) {
       return _parsePlayer(response.body);
@@ -29,7 +29,7 @@ class PlayerService {
   }
 
   Future<Player> getTodaysPlayer() async {
-    final response = await http.get(Uri.parse(_baseRoute() + 'Players/today'));
+    final response = await http.get(Uri.parse('${_baseRoute()}Players/today'));
 
     if (response.statusCode == 200) {
       return _parsePlayer(response.body);
@@ -47,7 +47,7 @@ class PlayerService {
   //Method for geting players
 
   Future<List<Player>> getPlayers() async {
-    final response = await http.get(Uri.parse(_baseRoute() + 'Players'));
+    final response = await http.get(Uri.parse('${_baseRoute()}Players'));
 
     List<Player> result = [];
     if (response.statusCode == 200) {

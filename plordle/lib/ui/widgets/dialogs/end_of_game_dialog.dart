@@ -7,7 +7,7 @@ import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class EndOfGameDialog extends StatelessWidget {
-  const EndOfGameDialog({Key? key}) : super(key: key);
+  const EndOfGameDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

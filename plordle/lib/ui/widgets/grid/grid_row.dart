@@ -11,8 +11,7 @@ import 'package:plordle/ui/widgets/grid/grid_squares/team_square.dart';
 class GridRow extends StatelessWidget {
   final Player player;
   final Guess guess;
-  const GridRow({Key? key, required this.player, required this.guess})
-      : super(key: key);
+  const GridRow({super.key, required this.player, required this.guess});
 
   @override
   Widget build(BuildContext context) {

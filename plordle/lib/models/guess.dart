@@ -19,10 +19,6 @@ class Guess {
 
   @override
   String toString() {
-    return guessName +
-        ' Team:' +
-        sameTeam.toString() +
-        ' Position:' +
-        samePosition.toString();
+    return '$guessName Team:$sameTeam Position:$samePosition';
   }
 }
