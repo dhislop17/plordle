@@ -5,7 +5,7 @@ import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class MysteryPlayerTimer extends StatelessWidget {
-  const MysteryPlayerTimer({Key? key}) : super(key: key);
+  const MysteryPlayerTimer({super.key});
 
   @override
   Widget build(BuildContext context) {

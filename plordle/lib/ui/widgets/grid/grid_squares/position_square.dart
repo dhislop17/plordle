@@ -6,8 +6,7 @@ import 'package:plordle/ui/utils/app_theme.dart';
 class PositionSquare extends StatelessWidget {
   final Player player;
   final Guess guess;
-  const PositionSquare({Key? key, required this.player, required this.guess})
-      : super(key: key);
+  const PositionSquare({super.key, required this.player, required this.guess});
 
   @override
   Widget build(BuildContext context) {

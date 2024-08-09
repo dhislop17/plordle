@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
 
 class GridHeader extends StatelessWidget {
-  const GridHeader({Key? key}) : super(key: key);
+  const GridHeader({super.key});
 
   @override
   Widget build(BuildContext context) {

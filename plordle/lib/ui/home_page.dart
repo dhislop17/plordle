@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -12,7 +11,7 @@ import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -23,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     var model = Provider.of<UserViewModel>(context, listen: false);
-    SchedulerBinding.instance!.addPostFrameCallback((timeStamp) {
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
       showDialog(
           context: context,
           builder: (context) {
@@ -95,13 +94,13 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: Consumer<UserViewModel>(
                 builder: (context, model, child) {
-                  ScrollController _scrollController = ScrollController();
-                  SchedulerBinding.instance!.addPostFrameCallback((_) {
-                    _scrollController
-                        .jumpTo(_scrollController.position.maxScrollExtent);
+                  ScrollController scrollController = ScrollController();
+                  SchedulerBinding.instance.addPostFrameCallback((_) {
+                    scrollController
+                        .jumpTo(scrollController.position.maxScrollExtent);
                   });
                   return ListView.builder(
-                      controller: _scrollController,
+                      controller: scrollController,
                       itemCount: model.guesses.length,
                       itemBuilder: (context, index) {
                         return GridRow(

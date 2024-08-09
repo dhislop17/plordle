@@ -48,7 +48,7 @@ class Player {
 
   @override
   String toString() {
-    return name + " - " + getFullTeamName();
+    return "$name - ${getFullTeamName()}";
     //return name + " - " + position + " - " + getFullTeamName();
   }
 }

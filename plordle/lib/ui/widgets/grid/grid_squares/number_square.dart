@@ -7,8 +7,7 @@ import 'package:plordle/ui/utils/text_constants.dart';
 class NumberSquare extends StatelessWidget {
   final Player player;
   final Guess guess;
-  const NumberSquare({Key? key, required this.player, required this.guess})
-      : super(key: key);
+  const NumberSquare({super.key, required this.player, required this.guess});
 
   @override
   Widget build(BuildContext context) {
