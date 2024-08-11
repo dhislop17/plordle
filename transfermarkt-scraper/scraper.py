@@ -5,6 +5,7 @@ import pandas as pd
 import re
 import time
 import constants
+import country_converter as coco
 
 @dataclass
 class Player:
@@ -15,11 +16,11 @@ class Player:
     position: str
     age: int
     country: str
+    country_code: str
 
 def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: list):
-    attacker_types = {"Centre-Forward", "Second Striker", "Right Winger", "Left Winger"}
-    midfield_types = {"Attacking Midfield", "Central Midfield", "Defensive Midfield"}
-    defender_types = {"Right-Back", "Centre-Back", "Left-Back"}
+    #The Home Nations don't have offical codes
+    country_code_map = {"England": "ENG", "Scotland" : "SCT", "Wales": "WLS", "Northern Ireland": "NIR"}
 
     for player in team_tree.cssselect(css_row_type):
 
@@ -32,11 +33,11 @@ def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: lis
 
             #Map position to position type to help with player guesses 
             #Transfermarkt changed how this information is stored on the team page
-            if position in defender_types:
+            if position in constants.DEFENDER_TYPES:
                 position_type = constants.DEFENDER
-            elif position in midfield_types:
+            elif position in constants.MIDFIELD_TYPES:
                 position_type = constants.MIDFIELD
-            elif position in attacker_types:
+            elif position in constants.ATTACKER_TYPES:
                 position_type = constants.ATTACK
             else:
                 position_type = constants.GOALKEEPER
@@ -49,6 +50,14 @@ def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: lis
             if country == "Korea, South":
                 country = "South Korea"
 
+            #Retrieve the country code if we've already seen it
+            if country in country_code_map:
+                country_code = country_code_map[country]
+            else:
+                #Convert the country name to its country code
+                country_code = coco.convert(names=[country], to="ISO3")
+                country_code_map[country] = country_code
+
             player_list.append(Player(
                 name=name,
                 shirt_number=int(shirt_number),
@@ -56,7 +65,8 @@ def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: lis
                 position_type=position_type,
                 position=position, 
                 age=int(strippedAge), 
-                country=country))
+                country=country,
+                country_code=country_code))
 
 def main():
     teamMap = {}
@@ -91,7 +101,8 @@ def main():
                                     'position_type': 'PositionType',
                                     'shirt_number': 'ShirtNumber',
                                     'age': 'Age',
-                                    'country': 'Country'}, inplace= True)
+                                    'country': 'Country',
+                                    'country_code': 'CountryCode'}, inplace= True)
 
     #The teams on Transfermarkt are listed by finishing position from the previous season
     #Sort the list to be alphabetical by team name then by the player's shirt number

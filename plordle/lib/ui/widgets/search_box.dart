@@ -31,6 +31,7 @@ class SearchBox extends StatelessWidget {
             );
           },
           suggestionsCallback: (pattern) {
+            //Don't show suggestions until the player has entered 3 characters
             if (pattern.length < 3) {
               return List.empty();
             } else {

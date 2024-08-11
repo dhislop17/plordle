@@ -22,5 +22,7 @@ public class Player
     public int Age { get; set; }
     [BsonElement("country")]
     public string Country { get; set; } = null!;
+    [BsonElement("countryCode")]
+    public string CountryCode { get; set; } = null!;
 
 }

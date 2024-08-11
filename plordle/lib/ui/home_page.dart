@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
@@ -106,6 +105,7 @@ class _HomePageState extends State<HomePage> {
                         return GridRow(
                           player: model.guessedPlayers[index],
                           guess: model.guesses[index],
+                          countryCoder: model.countryCoder,
                         );
                       });
                 },

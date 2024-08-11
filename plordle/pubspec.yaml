@@ -37,6 +37,7 @@ dependencies:
   get_it: ^7.7.0
   flutter_timer_countdown: ^1.0.7
   flutter_dotenv: ^5.1.0
+  country_coder: ^1.2.0
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,3 +1,4 @@
+import 'package:country_coder/country_coder.dart';
 import 'package:flutter/material.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
@@ -11,7 +12,12 @@ import 'package:plordle/ui/widgets/grid/grid_squares/team_square.dart';
 class GridRow extends StatelessWidget {
   final Player player;
   final Guess guess;
-  const GridRow({super.key, required this.player, required this.guess});
+  final CountryCoder countryCoder;
+  const GridRow(
+      {super.key,
+      required this.player,
+      required this.guess,
+      required this.countryCoder});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,11 @@ class GridRow extends StatelessWidget {
         PositionSquare(player: player, guess: guess),
         NumberSquare(player: player, guess: guess),
         AgeSquare(player: player, guess: guess),
-        CountrySquare(player: player, guess: guess),
+        CountrySquare(
+          player: player,
+          guess: guess,
+          countryCoder: countryCoder,
+        ),
       ],
     );
   }
