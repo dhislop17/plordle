@@ -9,3 +9,7 @@ GOALKEEPER = "goalkeeper"
 DEFENDER = "defender"
 MIDFIELD = "midfielder"
 ATTACK = "attacker"
+
+ATTACKER_TYPES = {"Centre-Forward", "Second Striker", "Right Winger", "Left Winger"}
+MIDFIELD_TYPES = {"Attacking Midfield", "Central Midfield", "Defensive Midfield"}
+DEFENDER_TYPES = {"Right-Back", "Centre-Back", "Left-Back"}
