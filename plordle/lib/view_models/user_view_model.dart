@@ -1,3 +1,4 @@
+import 'package:country_coder/country_coder.dart';
 import 'package:flutter/foundation.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
@@ -14,6 +15,7 @@ class UserViewModel extends ChangeNotifier {
   final List<Guess> _guesses = [];
   final List<Player> _guessedPlayers = [];
   late PlayerViewModel playerViewModel;
+  late CountryCoder _countryCoder;
   int _numberOfGuesses = 1;
   final int _maxNumOfGuesses = 10;
   GameState _currentState = GameState.inProgress;
@@ -28,6 +30,7 @@ class UserViewModel extends ChangeNotifier {
   List<Player> get guessedPlayers => _guessedPlayers;
   int get numberOfGuesses => _numberOfGuesses;
   int get maxNumOfGuesses => _maxNumOfGuesses;
+  CountryCoder get countryCoder => _countryCoder;
   GameState get currentState => _currentState;
   bool get isUnlimitedMode => _inUnlimitedMode;
   bool get solvedMystery => _solvedMystery;
@@ -49,6 +52,8 @@ class UserViewModel extends ChangeNotifier {
     _mysteryModeStat = await _storageService.getMysteryModeStat();
     _unlimitedModeStat = await _storageService.getUnlimitedModeStat();
     _solvedMystery = await _storageService.getSolvedMystery();
+    _countryCoder = CountryCoder.instance
+        .load(await compute(CountryCoder.prepareData, null));
 
     print("$_mysteryModeStat MYSTERY");
     print("$_unlimitedModeStat UNLIMITED");

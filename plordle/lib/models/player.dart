@@ -9,6 +9,7 @@ class Player {
   final int shirtNumber;
   final int age;
   final String country;
+  final String countryCode;
 
   const Player({
     required this.playerId,
@@ -19,6 +20,7 @@ class Player {
     required this.shirtNumber,
     required this.age,
     required this.country,
+    required this.countryCode,
   });
 
   factory Player.fromJson(Map<String, dynamic> json) {
@@ -33,7 +35,8 @@ class Player {
         positionType: json['positionType'],
         shirtNumber: json['shirtNumber'],
         age: json['age'],
-        country: json['country']);
+        country: json['country'],
+        countryCode: json['countryCode']);
   }
 
   String getFullTeamName() {

@@ -37,6 +37,24 @@ class TextConstants {
   static const String downArrow = '\u{2193}';
   static const String upArrow = '\u{2191}';
 
+  //Home Nations Emoji Flag Data - UK's subcountires don't
+  //have offical flag emojis
+
+  //England, Scotland, and Wales all have to use converted unicode values
+  //to have their flag represented
+  static const Map<String, List<int>> albionNationsFlagMap = {
+    "ENG": [127988, 917607, 917602, 917605, 917614, 917607, 917631],
+    "SCT": [127988, 917607, 917602, 917619, 917603, 917620, 917631],
+    "WLS": [127988, 917607, 917602, 917623, 917612, 917619, 917631],
+  };
+
+  //Northern Ireland doesn't  have a flag emoji so mimic the
+  //Red Hand of Ulster as two emojis (red circle, hand)
+  static const List<String> northernIrelandCharSequence = [
+    "\u{1F534}",
+    "\u{270B}"
+  ];
+
   //Abbreviations Maps
   static final Map<String, String> shortenedPositons = {
     'Goalkeeper': 'GK',
