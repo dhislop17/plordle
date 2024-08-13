@@ -36,12 +36,18 @@ class PlayerViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<String> filterPlayerList(String suggestion) {
-    List<String> result = _players.map((player) => player.name).where((val) {
-      var stripped = removeDiacritics(val);
-      var strippedSug = removeDiacritics(suggestion);
-      return stripped.toLowerCase().contains(strippedSug.toLowerCase());
+  //Build a list of players to suggest to the user for guesses
+  //based on what they have typed so far
+  List<Player> buildPlayerSuggestionList(String userInput) {
+    List<Player> players = _players.map((player) => player).where((player) {
+      //remove diacritical marks from the user input and
+      //player names to simplify filtering and searching for players
+      var strippedInput = removeDiacritics(userInput);
+      var strippedPlayerName = removeDiacritics(player.name);
+      return strippedPlayerName
+          .toLowerCase()
+          .contains(strippedInput.toLowerCase());
     }).toList();
-    return result;
+    return players;
   }
 }

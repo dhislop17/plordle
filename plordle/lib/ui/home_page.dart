@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Themes.premPurple,
+        foregroundColor: Colors.white,
         title: const Text(
           TextConstants.gameTitle,
           style: TextStyle(fontSize: 32),
