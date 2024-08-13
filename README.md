@@ -1,5 +1,5 @@
 # Plordle
-
+(Updates in progress ahead of the new season) <br>
 An English Premier League themed Wordle game to practice my Flutter skills and try out some new technologies
 
 ## Features
@@ -29,12 +29,14 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 ## To-Do
 - [x] Finish Readme
 - [x] Finish Containerization of API
-- [x] Deploy API container to AWS
-- [ ] Finish App onboarding flow
+- [ ] Finish Updates For 2024-25 Season
+    - [ ] Update the players list once the transfer window closes
+    - [ ] Update Readme GIF
 - [ ] UI Cleanup
+- [ ] Finish App onboarding flow
 
 ## Stretch Goals
 - Variable difficulties that change how much detail is provided in hints
 - Support for historical squads 
-    - Support for squads after the summer or winter window within a season
+    - Support for squads after specific points during a season (after the summer or winter transfer windows)
     - Support for multiple seasons

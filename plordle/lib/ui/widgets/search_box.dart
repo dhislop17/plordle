@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/widgets/dialogs/end_of_game_dialog.dart';
 import 'package:plordle/view_models/user_view_model.dart';
@@ -10,9 +11,12 @@ class SearchBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController textFieldController = TextEditingController();
+
     return Consumer<UserViewModel>(
       builder: (context, model, child) {
-        return TypeAheadField(
+        return TypeAheadField<Player>(
+          controller: textFieldController,
           builder: (context, controller, focusNode) {
             return TextField(
               controller: controller,
@@ -25,28 +29,30 @@ class SearchBox extends StatelessWidget {
                   border: const OutlineInputBorder(
                       borderSide: BorderSide(color: Themes.premPurple)),
                   focusColor: Themes.premPurple,
-                  labelText: (model.currentState == GameState.doneForTheDay)
-                      ? "Game Over"
-                      : "Guess ${model.numberOfGuesses} out of ${model.maxNumOfGuesses}"),
+                  labelText: _buildTextFieldLabel(model)),
             );
           },
-          suggestionsCallback: (pattern) {
-            //Don't show suggestions until the player has entered 3 characters
-            if (pattern.length < 3) {
+          suggestionsCallback: (userInput) {
+            //Don't show suggestions until the user has entered 3 characters
+            if (userInput.length < 3) {
               return List.empty();
             } else {
-              return model.playerViewModel.filterPlayerList(pattern);
+              return model.playerViewModel.buildPlayerSuggestionList(userInput);
             }
           },
-          itemBuilder: (context, itemData) {
+          itemBuilder: (context, player) {
             return ListTile(
-              title: Text(itemData.toString()),
+              title: Text(player.name),
+              subtitle: Text(player.getSecondaryPlayerInfo()),
             );
           },
-          onSelected: (suggestion) {
+          onSelected: (selectedPlayer) {
             FocusManager.instance.primaryFocus?.unfocus();
-            //Guess player
-            model.comparePlayers(suggestion.toString());
+
+            //Clear the textfield after selecting an answer
+            textFieldController.clear();
+
+            model.comparePlayers(selectedPlayer.name);
             if (model.currentState == GameState.lost ||
                 model.currentState == GameState.won) {
               _showGameEndDialog(context);
@@ -67,5 +73,18 @@ class SearchBox extends StatelessWidget {
         builder: (_) {
           return const EndOfGameDialog();
         });
+  }
+
+  String _buildTextFieldLabel(UserViewModel model) {
+    if (model.currentState == GameState.lost) {
+      return "Game Over";
+    } else {
+      int guesses = model.numberOfGuesses;
+      if (guesses < 10) {
+        return "Guess ${model.numberOfGuesses} out of ${model.maxNumOfGuesses}";
+      } else {
+        return "Final Guess";
+      }
+    }
   }
 }

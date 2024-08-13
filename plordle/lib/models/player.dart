@@ -51,7 +51,10 @@ class Player {
 
   @override
   String toString() {
-    return "$name - ${getFullTeamName()}";
-    //return name + " - " + position + " - " + getFullTeamName();
+    return "#$shirtNumber - $name - $position - ${getFullTeamName()} - $age y/o - $country";
+  }
+
+  String getSecondaryPlayerInfo() {
+    return "#$shirtNumber - $position - ${getFullTeamName()} - $age y/o - $country";
   }
 }
