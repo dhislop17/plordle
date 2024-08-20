@@ -1,5 +1,6 @@
 import 'package:country_coder/country_coder.dart';
 import 'package:flutter/foundation.dart';
+import 'package:logger/logger.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
 import 'package:plordle/models/stat.dart';
@@ -11,6 +12,7 @@ enum GameState { inProgress, won, lost, doneForTheDay }
 
 class UserViewModel extends ChangeNotifier {
   final StorageService _storageService = serviceLocator<StorageService>();
+  final Logger logger = Logger(printer: PrettyPrinter());
 
   final List<Guess> _guesses = [];
   final List<Player> _guessedPlayers = [];
@@ -55,10 +57,10 @@ class UserViewModel extends ChangeNotifier {
     _countryCoder = CountryCoder.instance
         .load(await compute(CountryCoder.prepareData, null));
 
-    print("$_mysteryModeStat MYSTERY");
-    print("$_unlimitedModeStat UNLIMITED");
-    print(_solvedMystery);
-    print(_onboardingDone);
+    logger.i("Mystery Mode Stat: $_mysteryModeStat");
+    logger.i("Unlimited Mode Stat: $_unlimitedModeStat");
+    logger.i("Onboarding complete: $_onboardingDone");
+    logger.i("Solved Today's Mystery Player: $_solvedMystery");
     notifyListeners();
   }
 
@@ -94,7 +96,8 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void clearStats() async {
+  //TODO: make model specific version of this method
+  void deleteSavedData() async {
     _storageService.clearSavedData();
     _unlimitedModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
     _mysteryModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
@@ -104,6 +107,7 @@ class UserViewModel extends ChangeNotifier {
   void completeOnboarding() async {
     _onboardingDone = true;
     _storageService.saveOnboardingStatus(_onboardingDone);
+    logger.i("Onboarding Complete");
     notifyListeners();
   }
 
