@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:plordle/models/player.dart';
-import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/widgets/dialogs/end_of_game_dialog.dart';
+import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +12,7 @@ class SearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController textFieldController = TextEditingController();
+    ThemeViewModel themeViewModel = Provider.of<ThemeViewModel>(context);
 
     return Consumer<UserViewModel>(
       builder: (context, model, child) {
@@ -21,14 +22,17 @@ class SearchBox extends StatelessWidget {
             return TextField(
               controller: controller,
               focusNode: focusNode,
-              cursorColor: Themes.premGreen,
+              cursorColor: themeViewModel.primarySelectedThemeColor,
               enabled: (model.currentState == GameState.doneForTheDay)
                   ? false
                   : true,
               decoration: InputDecoration(
-                  border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Themes.premPurple)),
-                  focusColor: Themes.premPurple,
+                  hintStyle: TextStyle(
+                      color: themeViewModel.primarySelectedThemeColor),
+                  border: const OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: themeViewModel.primarySelectedThemeColor)),
                   labelText: _buildTextFieldLabel(model)),
             );
           },

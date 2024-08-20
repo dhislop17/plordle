@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
 import 'package:plordle/ui/widgets/grid/grid_header.dart';
 import 'package:plordle/ui/widgets/grid/grid_row.dart';
 import 'package:plordle/ui/widgets/dialogs/help_dialog.dart';
 import 'package:plordle/ui/widgets/search_box.dart';
+import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -20,13 +20,13 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    var model = Provider.of<UserViewModel>(context, listen: false);
+    //var model = Provider.of<UserViewModel>(context, listen: false);
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
       showDialog(
           context: context,
           builder: (context) {
             return const HelpDialog();
-          }).then((value) => model.completeOnboarding());
+          }); //.then((value) => model.completeOnboarding());
     });
   }
 
@@ -37,14 +37,28 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Themes.premPurple,
-        foregroundColor: Colors.white,
+        backgroundColor: //Colors.black,
+            Provider.of<ThemeViewModel>(context).primarySelectedThemeColor,
+        foregroundColor: Provider.of<ThemeViewModel>(context)
+            .secondarySelectedThemeColor, //Colors.white,
         title: const Text(
           TextConstants.gameTitle,
           style: TextStyle(fontSize: 32),
         ),
         centerTitle: true,
         actions: [
+          //TODO: Make Cancel Button appear conditionally after the first guess
+          IconButton(
+            icon: const Icon(Icons.cancel),
+            onPressed: () {
+              //On pressed this should show a confirmation for giving up before
+              //showing the game over dialog
+
+              //TODO: Remember to move this call
+              var model = Provider.of<UserViewModel>(context, listen: false);
+              model.deleteSavedData();
+            },
+          ),
           IconButton(
               icon: const Icon(
                 Icons.help,
@@ -59,8 +73,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              var model = Provider.of<UserViewModel>(context, listen: false);
-              model.clearStats();
+              Navigator.pushNamed(context, 'themeSelect');
             },
           )
         ],
@@ -86,11 +99,10 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: paddingHeight),
               child: const GridHeader(),
             ),
-            const Divider(
-              height: 10,
-              thickness: 10,
-              color: Themes.premPurple,
-            ),
+            Divider(
+                height: 10,
+                thickness: 10,
+                color: Provider.of<ThemeViewModel>(context).accentColor),
             Expanded(
               child: Consumer<UserViewModel>(
                 builder: (context, model, child) {
