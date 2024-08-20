@@ -46,7 +46,7 @@ class ThemeViewModel extends ChangeNotifier {
       _accentColor = _primarySelectedThemeColor;
     } //Team only has two colors but there is enough contrast
     else {
-      _accentColor = teamColors[1];
+      _accentColor = _secondarySelectedThemeColor;
     }
 
     notifyListeners();
