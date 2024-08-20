@@ -1,5 +1,6 @@
 class TextConstants {
   //Titles and info strings
+  static const String onboardingPageTitle = 'Welcome to Plordle';
   static const String gameTitle = 'PLORDLE';
   static const String gameSubtitle = 'EPL Player Guessing Game';
   static const String gridNameHeader = 'Name';
@@ -78,28 +79,28 @@ class TextConstants {
     'AFC Bournemouth': 'BOU',
     'Brentford FC': 'BRE',
     'Brighton & Hove Albion': 'BHA',
-    'Burnley FC': 'BUR',
+    'Burnley FC': 'BUR', //Championship
     'Chelsea FC': 'CHE',
     'Crystal Palace': 'CRY',
     'Everton FC': 'EVE',
     'Fulham FC': 'FUL',
     'Ipswich Town': 'IPS',
-    'Leeds United': 'LEE',
+    'Leeds United': 'LEE', //Championship
     'Leicester City': 'LEI',
     'Liverpool FC': 'LIV',
-    'Luton Town': 'LUT',
+    'Luton Town': 'LUT', //Championship
     'Manchester City': 'MCI',
     'Manchester United': 'MUN',
-    'Middlesbrough FC': 'MID',
+    'Middlesbrough FC': 'MID', //Championship
     'Newcastle United': 'NEW',
-    'Norwich City': 'NOR',
+    'Norwich City': 'NOR', //Championship
     'Nottingham Forest': 'NFO',
-    'Sheffield United': 'SHU',
+    'Sheffield United': 'SHU', //Championship
     'Southampton FC': 'SOU',
     'Tottenham Hotspur': 'TOT',
-    'Watford FC': 'WAT',
+    'Watford FC': 'WAT', //Championship
     'West Ham United': 'WHU',
     'Wolverhampton Wanderers': 'WOL',
-    'West Bromwich Albion': 'WBA'
+    'West Bromwich Albion': 'WBA' //Championship
   };
 }

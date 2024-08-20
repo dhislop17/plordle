@@ -3,9 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import 'package:plordle/ui/home_page.dart';
+import 'package:plordle/ui/pages/home_page.dart';
 import 'package:plordle/services/service_locator.dart';
+import 'package:plordle/ui/pages/landing_page.dart';
+import 'package:plordle/ui/pages/theme_selection_page.dart';
 import 'package:plordle/view_models/player_view_model.dart';
+import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -34,17 +37,22 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider<PlayerViewModel>(
               create: (context) => PlayerViewModel()),
+          ChangeNotifierProvider<ThemeViewModel>(
+              create: (context) => ThemeViewModel()),
           ChangeNotifierProxyProvider<PlayerViewModel, UserViewModel>(
               create: (_) => UserViewModel(),
               update: (_, player, user) => user!.update(player))
         ],
         child: MaterialApp(
-          title: 'PLordle',
-          theme: ThemeData(
-              primarySwatch: Colors.purple, brightness: Brightness.light),
-          darkTheme: ThemeData(
-              primaryColor: Colors.purple, brightness: Brightness.dark),
-          home: const HomePage(),
-        ));
+            title: 'PLordle',
+            theme: ThemeData(
+                primarySwatch: Colors.purple, brightness: Brightness.light),
+            darkTheme: ThemeData(
+                primaryColor: Colors.purple, brightness: Brightness.dark),
+            home: LandingPage(),
+            routes: {
+              'game': (context) => const HomePage(),
+              'themeSelect': (context) => const ThemeSelectionPage(),
+            }));
   }
 }

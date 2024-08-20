@@ -11,6 +11,13 @@ class StorageService {
     return Stat(gamesPlayed: gamesPlayed, wins: wins, losses: losses);
   }
 
+  Future<void> saveUnlimitedModeStat(Stat stat) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setInt('unlimited_gp', stat.gamesPlayed);
+    prefs.setInt('unlimited_wins', stat.wins);
+    prefs.setInt('unlimited_losses', stat.losses);
+  }
+
   Future<Stat> getMysteryModeStat() async {
     final prefs = await SharedPreferences.getInstance();
     int gamesPlayed = prefs.getInt('mystery_gp') ?? 0;
@@ -18,13 +25,6 @@ class StorageService {
     int losses = prefs.getInt('mystery_losses') ?? 0;
 
     return Stat(gamesPlayed: gamesPlayed, wins: wins, losses: losses);
-  }
-
-  Future<void> saveUnlimitedModeStat(Stat stat) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setInt('unlimited_gp', stat.gamesPlayed);
-    prefs.setInt('unlimited_wins', stat.wins);
-    prefs.setInt('unlimited_losses', stat.losses);
   }
 
   Future<void> saveMysteryModeStat(Stat stat) async {
@@ -52,6 +52,19 @@ class StorageService {
   Future<void> saveOnboardingStatus(bool onboardingFinished) async {
     final prefs = await SharedPreferences.getInstance();
     prefs.setBool('onboarding_done', onboardingFinished);
+  }
+
+  /// Gets the name of the theme saved in data or defaults
+  /// to the Premier League theme
+  Future<String> getThemeName() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('theme_name') ?? 'Premier League';
+  }
+
+  /// Saves the name of the theme in use
+  Future<void> saveThemeName(String themeName) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString('theme_name', themeName);
   }
 
   void clearSavedData() async {
