@@ -35,15 +35,17 @@ class ThemeViewModel extends ChangeNotifier {
     _primarySelectedThemeColor = teamColors[0];
     _secondarySelectedThemeColor = teamColors[1];
 
-    //get accent colors
+    //TODO: Consider what to do where black is a color and the app is in dark mode
 
-    //Case where team only has two colors and its white --> use the main again
-    if (teamColors.length == 2 &&
+    //Team has an accent color so use it
+    if (teamColors.length == 3) {
+      _accentColor = teamColors[2];
+    } //Case where team only has two colors and its white --> use the main color again
+    else if (teamColors.length == 2 &&
         _secondarySelectedThemeColor == Colors.white) {
       _accentColor = _primarySelectedThemeColor;
-    } else if (teamColors.length == 3) {
-      _accentColor = teamColors[2];
-    } else {
+    } //Team only has two colors but there is enough contrast
+    else {
       _accentColor = teamColors[1];
     }
 
