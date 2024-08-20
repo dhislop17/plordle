@@ -13,7 +13,6 @@ class ThemeSelectionList extends StatelessWidget {
     return ListView.builder(
         shrinkWrap: true,
         itemBuilder: (context, index) => _buildTeamRow(teams[index]),
-        //separatorBuilder: (context, index) => const Divider(),
         itemCount: Themes.teamThemes.length);
   }
 
