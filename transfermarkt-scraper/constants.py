@@ -11,5 +11,5 @@ MIDFIELD = "midfielder"
 ATTACK = "attacker"
 
 ATTACKER_TYPES = {"Centre-Forward", "Second Striker", "Right Winger", "Left Winger"}
-MIDFIELD_TYPES = {"Attacking Midfield", "Central Midfield", "Defensive Midfield"}
+MIDFIELD_TYPES = {"Attacking Midfield", "Central Midfield", "Left Midfield", "Right Midfield", "Defensive Midfield"}
 DEFENDER_TYPES = {"Right-Back", "Centre-Back", "Left-Back"}
