@@ -44,16 +44,15 @@ class TextConstants {
   //England, Scotland, and Wales all have to use converted unicode values
   //to have their flag represented
   static const Map<String, List<int>> albionNationsFlagMap = {
-    "ENG": [127988, 917607, 917602, 917605, 917614, 917607, 917631],
-    "SCT": [127988, 917607, 917602, 917619, 917603, 917620, 917631],
-    "WLS": [127988, 917607, 917602, 917623, 917612, 917619, 917631],
+    'ENG': [127988, 917607, 917602, 917605, 917614, 917607, 917631],
+    'SCT': [127988, 917607, 917602, 917619, 917603, 917620, 917631],
+    'WLS': [127988, 917607, 917602, 917623, 917612, 917619, 917631],
   };
 
-  //Northern Ireland doesn't  have a flag emoji so mimic the
-  //Red Hand of Ulster as two emojis (red circle, hand)
+  //Northern Ireland doesn't have a flag emoji just use a shamrock
   static const List<String> northernIrelandCharSequence = [
-    "\u{1F534}",
-    "\u{270B}"
+    '\u{2618}',
+    '\u{FE0F}'
   ];
 
   //Abbreviations Maps
@@ -72,6 +71,29 @@ class TextConstants {
     'Second Striker': 'SS',
     'Centre-Forward': 'CF'
   };
+
+  static final List<String> teamsList = [
+    'Arsenal FC',
+    'Aston Villa',
+    'AFC Bournemouth',
+    'Brentford FC',
+    'Brighton & Hove Albion',
+    'Chelsea FC',
+    'Crystal Palace',
+    'Everton FC',
+    'Fulham FC',
+    'Ipswich Town',
+    'Leicester City',
+    'Liverpool FC',
+    'Manchester City',
+    'Manchester United',
+    'Newcastle United',
+    'Nottingham Forest',
+    'Southampton FC',
+    'Tottenham Hotspur',
+    'West Ham United',
+    'Wolverhampton Wandrers'
+  ];
 
   static final Map<String, String> teamAbbreviations = {
     'Arsenal FC': 'ARS',
