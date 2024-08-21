@@ -56,7 +56,7 @@ class SearchBox extends StatelessWidget {
             //Clear the textfield after selecting an answer
             textFieldController.clear();
 
-            model.comparePlayers(selectedPlayer.name);
+            model.comparePlayers(selectedPlayer);
             if (model.currentState == GameState.lost ||
                 model.currentState == GameState.won) {
               _showGameEndDialog(context);
