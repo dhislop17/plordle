@@ -1,6 +1,5 @@
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter/foundation.dart';
-import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
 import 'package:plordle/services/player_service.dart';
 import 'package:plordle/services/service_locator.dart';
@@ -10,11 +9,9 @@ class PlayerViewModel extends ChangeNotifier {
 
   List<Player> _players = [];
   late Player _todaysPlayer;
-  final List<Guess> _guesses = [];
 
   List<Player> get players => _players;
   Player get todaysPlayer => _todaysPlayer;
-  List<Guess> get guesses => _guesses;
 
   PlayerViewModel() {
     _loadData();
