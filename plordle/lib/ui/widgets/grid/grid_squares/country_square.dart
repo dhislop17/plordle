@@ -54,18 +54,19 @@ class CountrySquare extends StatelessWidget {
         Text(String.fromCharCodes(homeNationFlagData))
       ];
     } else if (player.countryCode == "NIR") {
-      //"Right Hand of Ulster" for NIR
-      var homeNationFlagDatag = TextConstants.northernIrelandCharSequence;
+      //Shamrock for NIR
+      var homeNationFlagData = TextConstants.northernIrelandCharSequence;
 
       columnData = [
         Text(
+          textAlign: TextAlign.center,
           player.country,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
-        Row(children: [
-          Text(homeNationFlagDatag[0]),
-          Text(homeNationFlagDatag[1])
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Text(homeNationFlagData[0]),
+          Text(homeNationFlagData[1])
         ])
       ];
     } else {

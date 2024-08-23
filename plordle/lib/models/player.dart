@@ -4,6 +4,7 @@ class Player {
   final int playerId;
   final String name;
   final String team;
+  final String teamAbbr;
   final String position;
   final String positionType;
   final int shirtNumber;
@@ -15,6 +16,7 @@ class Player {
     required this.playerId,
     required this.name,
     required this.team,
+    required this.teamAbbr,
     required this.position,
     required this.positionType,
     required this.shirtNumber,
@@ -30,7 +32,8 @@ class Player {
     return Player(
         playerId: json['playerId'],
         name: json['name'],
-        team: teamAbbr ?? "None",
+        team: json['team'],
+        teamAbbr: teamAbbr ?? "None",
         position: pos ?? 'None',
         positionType: json['positionType'],
         shirtNumber: json['shirtNumber'],
@@ -51,10 +54,10 @@ class Player {
 
   @override
   String toString() {
-    return "#$shirtNumber - $name - $position - ${getFullTeamName()} - $age y/o - $country";
+    return "#$shirtNumber - $name - $position - $team - $age y/o - $country";
   }
 
   String getSecondaryPlayerInfo() {
-    return "#$shirtNumber - $position - ${getFullTeamName()} - $age y/o - $country";
+    return "#$shirtNumber - $position - $team - $age y/o - $country";
   }
 }

@@ -24,6 +24,7 @@ public class PlayersController : ControllerBase
         return players;
     }
 
+    //For Testing API directly, not used by front end
     //[HttpGet("player/{id:int}")]
     //public async Task<ActionResult<Player>> GetPlayerById(int id)
     //{
@@ -31,6 +32,7 @@ public class PlayersController : ControllerBase
     //    return player;
     //}
 
+    //For Testing API directly, not used by front end
     //[HttpGet("player/{name}")]
     //public async Task<ActionResult<Player>> GetPlayerByName(string name)
     //{
@@ -39,22 +41,36 @@ public class PlayersController : ControllerBase
     //}
 
     [HttpGet("random")]
-    public async Task<ActionResult<Player>> GetRandomPlayer()
+    public async Task<ActionResult<Player>> GetRandomPlayer([FromQuery] List<String> excludedTeams)
     {
-        var player = await _playerService.GetRandomPlayer();
+        
+        foreach (var team in excludedTeams)
+        {
+            _logger.LogDebug($"Excluded: {team}");
+        }
+        var player = await _playerService.GetRandomPlayer(excludedTeams);
         return player;
     }
 
     [HttpGet("today")]
-    public async Task<ActionResult<Player>> GetTodaysPlayer()
+    public async Task<ActionResult<Player>> GetTodaysPlayer([FromQuery] List<String> excludedTeams)
     {
-        var player = await _playerService.GetTodaysPlayer();
+        foreach (var team in excludedTeams)
+        {
+            _logger.LogDebug($"Excluded: {team}");
+        }
+        var player = await _playerService.GetTodaysPlayer(excludedTeams);
         return player;
     }
 
+    //For Testing API directly, not used by front end
     [HttpGet("guess/{name}")]
-    public async Task<ActionResult<PlayerComparisonDto>> ComparePlayers(string name)
+    public async Task<ActionResult<PlayerComparisonDto>> ComparePlayers(string name, [FromQuery] List<String> excludedTeams)
     {
-        return await _playerService.ComparePlayers(name);
+        foreach (var team in excludedTeams)
+        {
+            _logger.LogDebug($"Excluded: {team}");
+        }
+        return await _playerService.ComparePlayers(name, excludedTeams);
     }
 }

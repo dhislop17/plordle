@@ -26,6 +26,12 @@ public class PlayerRepository : IPlayerRepository
         return await _playerCollection.Find(_ => true).ToListAsync();
     }
 
+    public async Task<List<Player>> GetPlayersUsingFilter(FilterDefinition<Player> filterCondition)
+    {
+
+        return await _playerCollection.Find(filterCondition).ToListAsync();
+    }
+
     public async Task<Player> GetPlayerAsync(FilterDefinition<Player> searchCondition)
     {
         var findOption = new FindOptions() { Collation = new Collation(locale: "en", strength: CollationStrength.Primary) };

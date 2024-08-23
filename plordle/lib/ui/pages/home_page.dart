@@ -20,13 +20,12 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    //var model = Provider.of<UserViewModel>(context, listen: false);
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
       showDialog(
           context: context,
           builder: (context) {
             return const HelpDialog();
-          }); //.then((value) => model.completeOnboarding());
+          });
     });
   }
 
@@ -37,10 +36,10 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: //Colors.black,
+        backgroundColor:
             Provider.of<ThemeViewModel>(context).primarySelectedThemeColor,
-        foregroundColor: Provider.of<ThemeViewModel>(context)
-            .secondarySelectedThemeColor, //Colors.white,
+        foregroundColor:
+            Provider.of<ThemeViewModel>(context).secondarySelectedThemeColor,
         title: const Text(
           TextConstants.gameTitle,
           style: TextStyle(fontSize: 32),
@@ -73,7 +72,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              Navigator.pushNamed(context, 'themeSelect');
+              Navigator.pushNamed(context, 'filter');
             },
           )
         ],
