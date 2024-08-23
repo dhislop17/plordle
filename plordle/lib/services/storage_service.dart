@@ -1,6 +1,7 @@
 import 'package:plordle/models/stat.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+//TODO: Migrate all methods to new async shared prefrences interface
 class StorageService {
   Future<Stat> getUnlimitedModeStat() async {
     final prefs = await SharedPreferences.getInstance();
@@ -70,6 +71,16 @@ class StorageService {
   void clearSavedData() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
+  }
+
+  Future<List<String>> getExcludedTeams() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getStringList('excluded_teams') ?? [];
+  }
+
+  Future<void> saveExcludedTeams(List<String> excludedTeams) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setStringList('excluded_teams', excludedTeams);
   }
 
   //TODO: implement saving guesses and loading guess

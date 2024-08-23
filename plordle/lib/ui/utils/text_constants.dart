@@ -3,6 +3,7 @@ class TextConstants {
   static const String onboardingPageTitle = 'Welcome to Plordle';
   static const String gameTitle = 'PLORDLE';
   static const String gameSubtitle = 'EPL Player Guessing Game';
+  static const String filterPageTitle = 'Choose Teams to Include';
   static const String gridNameHeader = 'Name';
   static const String gridTeamHeader = 'Team';
   static const String gridPositionHeader = 'Position';
@@ -92,7 +93,7 @@ class TextConstants {
     'Southampton FC',
     'Tottenham Hotspur',
     'West Ham United',
-    'Wolverhampton Wandrers'
+    'Wolverhampton Wanderers'
   ];
 
   static final Map<String, String> teamAbbreviations = {

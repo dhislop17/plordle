@@ -18,7 +18,7 @@ class TeamSquare extends StatelessWidget {
             decoration: BoxDecoration(
               color: _colorTeamSquare(player, guess),
             ),
-            child: Text(player.team)),
+            child: Text(player.teamAbbr)),
       ),
     );
   }
