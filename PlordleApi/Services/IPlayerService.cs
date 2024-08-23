@@ -1,6 +1,4 @@
-﻿using MongoDB.Bson;
-
-namespace PlordleApi.Services;
+﻿namespace PlordleApi.Services;
 
 public interface IPlayerService
 {
