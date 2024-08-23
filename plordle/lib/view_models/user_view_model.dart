@@ -111,12 +111,11 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void comparePlayers(String name) {
-    Player guessedPlayer =
-        playerViewModel.players.firstWhere((element) => element.name == name);
+  void comparePlayers(Player guessedPlayer) {
     _guessedPlayers.add(guessedPlayer);
     Guess guess = _createGuess(guessedPlayer);
     _numberOfGuesses++;
+
     if (_numberOfGuesses <= _maxNumOfGuesses + 1 && guess.guessName == 'True') {
       _currentState = GameState.won;
       _completeGame();
