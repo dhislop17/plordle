@@ -5,6 +5,7 @@ import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
 
 //TODO: Make this popup on game startup if they have never played before
+//TODO: Update dialog to include info about filtering players, themes, etc.
 class HelpDialog extends StatelessWidget {
   const HelpDialog({
     super.key,
