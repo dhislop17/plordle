@@ -1,4 +1,6 @@
-﻿namespace PlordleApi.Repositories;
+﻿using MongoDB.Bson;
+
+namespace PlordleApi.Repositories;
 
 public class PlayerRepository : IPlayerRepository
 {
@@ -24,6 +26,12 @@ public class PlayerRepository : IPlayerRepository
     public async Task<List<Player>> GetAllPlayersAsync()
     {
         return await _playerCollection.Find(_ => true).ToListAsync();
+    }
+
+    public async Task<List<Player>> GetPlayersUsingFilter(FilterDefinition<Player> filterCondition)
+    {
+
+        return await _playerCollection.Find(filterCondition).ToListAsync();
     }
 
     public async Task<Player> GetPlayerAsync(FilterDefinition<Player> searchCondition)
