@@ -1,6 +1,4 @@
-﻿using MongoDB.Bson;
-
-namespace PlordleApi.Repositories;
+﻿namespace PlordleApi.Repositories;
 
 public interface IPlayerRepository
 {
