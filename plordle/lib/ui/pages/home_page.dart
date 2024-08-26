@@ -52,10 +52,6 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               //On pressed this should show a confirmation for giving up before
               //showing the game over dialog
-
-              //TODO: Remember to move this call
-              var model = Provider.of<UserViewModel>(context, listen: false);
-              model.deleteSavedData();
             },
           ),
           IconButton(
@@ -72,7 +68,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              Navigator.pushNamed(context, 'filter');
+              Navigator.pushNamed(context, 'settings');
             },
           )
         ],
