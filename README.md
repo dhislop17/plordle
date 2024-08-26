@@ -30,7 +30,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 - [x] Finish Readme
 - [x] Finish Containerization of API
 - [ ] Finish Updates For 2024-25 Season
-    - [ ] UI Updates (Flag Emojis, Variable Themes)
+    - [x] UI Updates (Flag Emojis, Variable Themes)
     - [x] Filtering The List of Teams to Play Against
     - [ ] Migrate away from default SharedPreferences API
     - [ ] Difficulty Options 
