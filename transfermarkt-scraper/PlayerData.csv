@@ -1,33 +1,33 @@
 PlayerId,Name,Team,PositionType,ShirtNumber,Position,Age,Country,CountryCode
-388,Neto,AFC Bournemouth,goalkeeper,1,Goalkeeper,35,Brazil,BRA
-390,Dean Huijsen,AFC Bournemouth,defender,2,Centre-Back,19,Spain,ESP
-377,Milos Kerkez,AFC Bournemouth,defender,3,Left-Back,20,Hungary,HUN
-395,Lewis Cook,AFC Bournemouth,midfielder,4,Central Midfield,27,England,ENG
-375,Marcos Senesi,AFC Bournemouth,defender,5,Centre-Back,27,Argentina,ARG
-376,Chris Mepham,AFC Bournemouth,defender,6,Centre-Back,26,Wales,WLS
-400,David Brooks,AFC Bournemouth,attacker,7,Right Winger,27,Wales,WLS
-386,Evanilson,AFC Bournemouth,attacker,9,Centre-Forward,24,Brazil,BRA
-381,Ryan Christie,AFC Bournemouth,midfielder,10,Central Midfield,29,Scotland,SCT
-383,Dango Ouattara,AFC Bournemouth,attacker,11,Left Winger,22,Burkina Faso,BFA
-379,Tyler Adams,AFC Bournemouth,midfielder,12,Defensive Midfield,25,United States,USA
-380,Alex Scott,AFC Bournemouth,midfielder,14,Central Midfield,20,England,ENG
-393,Adam Smith,AFC Bournemouth,defender,15,Right-Back,33,England,ENG
-382,Marcus Tavernier,AFC Bournemouth,midfielder,16,Left Midfield,25,England,ENG
-398,Luis Sinisterra,AFC Bournemouth,attacker,17,Left Winger,25,Colombia,COL
-384,Justin Kluivert,AFC Bournemouth,attacker,19,Left Winger,25,Netherlands,NLD
-387,Daniel Jebbison,AFC Bournemouth,attacker,21,Centre-Forward,21,Canada,CAN
-397,Hamed Junior Traorè,AFC Bournemouth,midfielder,22,Attacking Midfield,24,Cote d'Ivoire,CIV
-391,James Hill,AFC Bournemouth,defender,23,Centre-Back,22,England,ENG
-385,Antoine Semenyo,AFC Bournemouth,attacker,24,Right Winger,24,Ghana,GHA
-401,Enes Ünal,AFC Bournemouth,attacker,26,Centre-Forward,27,Türkiye,TUR
-389,Ilya Zabarnyi,AFC Bournemouth,defender,27,Centre-Back,21,Ukraine,UKR
-378,Julián Araujo,AFC Bournemouth,defender,28,Right-Back,23,Mexico,MEX
-396,Gavin Kilkenny,AFC Bournemouth,midfielder,28,Central Midfield,24,Ireland,IRL
-394,Philip Billing,AFC Bournemouth,midfielder,29,Central Midfield,28,Denmark,DNK
-399,Jaidon Anthony,AFC Bournemouth,attacker,32,Left Winger,24,England,ENG
-392,Max Aarons,AFC Bournemouth,defender,37,Right-Back,24,England,ENG
-374,Will Dennis,AFC Bournemouth,goalkeeper,40,Goalkeeper,24,England,ENG
-373,Mark Travers,AFC Bournemouth,goalkeeper,42,Goalkeeper,25,Ireland,IRL
+384,Neto,AFC Bournemouth,goalkeeper,1,Goalkeeper,35,Brazil,BRA
+386,Dean Huijsen,AFC Bournemouth,defender,2,Centre-Back,19,Spain,ESP
+373,Milos Kerkez,AFC Bournemouth,defender,3,Left-Back,20,Hungary,HUN
+391,Lewis Cook,AFC Bournemouth,midfielder,4,Central Midfield,27,England,ENG
+371,Marcos Senesi,AFC Bournemouth,defender,5,Centre-Back,27,Argentina,ARG
+372,Chris Mepham,AFC Bournemouth,defender,6,Centre-Back,26,Wales,WLS
+396,David Brooks,AFC Bournemouth,attacker,7,Right Winger,27,Wales,WLS
+382,Evanilson,AFC Bournemouth,attacker,9,Centre-Forward,24,Brazil,BRA
+377,Ryan Christie,AFC Bournemouth,midfielder,10,Central Midfield,29,Scotland,SCT
+379,Dango Ouattara,AFC Bournemouth,attacker,11,Left Winger,22,Burkina Faso,BFA
+375,Tyler Adams,AFC Bournemouth,midfielder,12,Defensive Midfield,25,United States,USA
+376,Alex Scott,AFC Bournemouth,midfielder,14,Central Midfield,21,England,ENG
+389,Adam Smith,AFC Bournemouth,defender,15,Right-Back,33,England,ENG
+378,Marcus Tavernier,AFC Bournemouth,midfielder,16,Left Midfield,25,England,ENG
+394,Luis Sinisterra,AFC Bournemouth,attacker,17,Left Winger,25,Colombia,COL
+380,Justin Kluivert,AFC Bournemouth,attacker,19,Left Winger,25,Netherlands,NLD
+383,Daniel Jebbison,AFC Bournemouth,attacker,21,Centre-Forward,21,Canada,CAN
+393,Hamed Junior Traorè,AFC Bournemouth,midfielder,22,Attacking Midfield,24,Cote d'Ivoire,CIV
+387,James Hill,AFC Bournemouth,defender,23,Centre-Back,22,England,ENG
+381,Antoine Semenyo,AFC Bournemouth,attacker,24,Right Winger,24,Ghana,GHA
+397,Enes Ünal,AFC Bournemouth,attacker,26,Centre-Forward,27,Türkiye,TUR
+385,Ilya Zabarnyi,AFC Bournemouth,defender,27,Centre-Back,21,Ukraine,UKR
+374,Julián Araujo,AFC Bournemouth,defender,28,Right-Back,23,Mexico,MEX
+392,Gavin Kilkenny,AFC Bournemouth,midfielder,28,Central Midfield,24,Ireland,IRL
+390,Philip Billing,AFC Bournemouth,midfielder,29,Central Midfield,28,Denmark,DNK
+395,Jaidon Anthony,AFC Bournemouth,attacker,32,Left Winger,24,England,ENG
+388,Max Aarons,AFC Bournemouth,defender,37,Right-Back,24,England,ENG
+370,Will Dennis,AFC Bournemouth,goalkeeper,40,Goalkeeper,24,England,ENG
+369,Mark Travers,AFC Bournemouth,goalkeeper,42,Goalkeeper,25,Ireland,IRL
 38,Aaron Ramsdale,Arsenal FC,goalkeeper,1,Goalkeeper,26,England,ENG
 27,William Saliba,Arsenal FC,defender,2,Centre-Back,23,France,FRA
 30,Kieran Tierney,Arsenal FC,defender,3,Left-Back,27,Scotland,SCT
@@ -51,300 +51,305 @@ PlayerId,Name,Team,PositionType,ShirtNumber,Position,Age,Country,CountryCode
 45,Kai Havertz,Arsenal FC,midfielder,29,Attacking Midfield,25,Germany,DEU
 28,Riccardo Calafiori,Arsenal FC,defender,33,Centre-Back,22,Italy,ITA
 43,Declan Rice,Arsenal FC,midfielder,41,Defensive Midfield,25,England,ENG
-225,Matty Cash,Aston Villa,defender,2,Right-Back,27,Poland,POL
-222,Diego Carlos,Aston Villa,defender,3,Centre-Back,31,Brazil,BRA
-208,Ezri Konsa,Aston Villa,defender,4,Centre-Back,26,England,ENG
-209,Tyrone Mings,Aston Villa,defender,5,Centre-Back,31,England,ENG
-229,Ross Barkley,Aston Villa,midfielder,6,Central Midfield,30,England,ENG
-228,John McGinn,Aston Villa,midfielder,7,Central Midfield,29,Scotland,SCT
-215,Youri Tielemans,Aston Villa,midfielder,8,Central Midfield,27,Belgium,BEL
-233,Jhon Durán,Aston Villa,attacker,9,Centre-Forward,20,Colombia,COL
-232,Emiliano Buendía,Aston Villa,attacker,10,Right Winger,27,Argentina,ARG
-219,Ollie Watkins,Aston Villa,attacker,11,Centre-Forward,28,England,ENG
-211,Lucas Digne,Aston Villa,defender,12,Left-Back,31,France,FRA
-221,Pau Torres,Aston Villa,defender,14,Centre-Back,27,Spain,ESP
-224,Álex Moreno,Aston Villa,defender,15,Left-Back,31,Spain,ESP
-231,Samuel Iling-Junior,Aston Villa,attacker,17,Left Winger,20,England,ENG
-220,Joe Gauci,Aston Villa,goalkeeper,18,Goalkeeper,24,Australia,AUS
-230,Jaden Philogene,Aston Villa,attacker,19,Left Winger,22,England,ENG
-212,Kosta Nedeljkovic,Aston Villa,defender,20,Right-Back,18,Serbia,SRB
-227,Enzo Barrenechea,Aston Villa,midfielder,21,Defensive Midfield,23,Argentina,ARG
-210,Ian Maatsen,Aston Villa,defender,22,Left-Back,22,Netherlands,NLD
-206,Emiliano Martínez,Aston Villa,goalkeeper,23,Goalkeeper,31,Argentina,ARG
-226,Amadou Onana,Aston Villa,midfielder,24,Defensive Midfield,23,Belgium,BEL
-207,Robin Olsen,Aston Villa,goalkeeper,25,Goalkeeper,34,Sweden,SWE
-217,Morgan Rogers,Aston Villa,attacker,27,Left Winger,22,England,ENG
-223,Kortney Hause,Aston Villa,defender,30,Centre-Back,29,England,ENG
-218,Leon Bailey,Aston Villa,attacker,31,Right Winger,27,Jamaica,JAM
-214,Leander Dendoncker,Aston Villa,midfielder,32,Defensive Midfield,29,Belgium,BEL
-216,Jacob Ramsey,Aston Villa,midfielder,41,Attacking Midfield,23,England,ENG
-213,Boubacar Kamara,Aston Villa,midfielder,44,Defensive Midfield,24,France,FRA
-317,Mark Flekken,Brentford FC,goalkeeper,1,Goalkeeper,31,Netherlands,NLD
-336,Aaron Hickey,Brentford FC,defender,2,Right-Back,22,Scotland,SCT
-321,Rico Henry,Brentford FC,defender,3,Left-Back,27,England,ENG
-334,Ethan Pinnock,Brentford FC,defender,5,Centre-Back,31,Jamaica,JAM
-323,Christian Nørgaard,Brentford FC,midfielder,6,Defensive Midfield,30,Denmark,DNK
-343,Kevin Schade,Brentford FC,attacker,7,Left Winger,22,Germany,DEU
-324,Mathias Jensen,Brentford FC,midfielder,8,Central Midfield,28,Denmark,DNK
-331,Igor Thiago,Brentford FC,attacker,9,Centre-Forward,23,Brazil,BRA
-339,Josh Dasilva,Brentford FC,midfielder,10,Central Midfield,25,England,ENG
-328,Yoane Wissa,Brentford FC,attacker,11,Left Winger,27,DR Congo,COD
-318,Matthew Cox,Brentford FC,goalkeeper,13,Goalkeeper,21,England,ENG
-341,Fábio Carvalho,Brentford FC,midfielder,14,Attacking Midfield,21,Portugal,PRT
-325,Frank Onyeka,Brentford FC,midfielder,15,Central Midfield,26,Nigeria,NGA
-320,Ben Mee,Brentford FC,defender,16,Centre-Back,34,England,ENG
-345,Ivan Toney,Brentford FC,attacker,17,Centre-Forward,28,England,ENG
-327,Yegor Yarmolyuk,Brentford FC,midfielder,18,Attacking Midfield,20,Ukraine,UKR
-330,Bryan Mbeumo,Brentford FC,attacker,19,Right Winger,25,Cameroon,CMR
-319,Kristoffer Ajer,Brentford FC,defender,20,Centre-Back,26,Norway,NOR
-333,Nathan Collins,Brentford FC,defender,22,Centre-Back,23,Ireland,IRL
-329,Keane Lewis-Potter,Brentford FC,attacker,23,Left Winger,23,England,ENG
-344,Mikkel Damsgaard,Brentford FC,attacker,24,Left Winger,24,Denmark,DNK
-342,Myles Peart-Harris,Brentford FC,midfielder,25,Attacking Midfield,21,Jamaica,JAM
-338,Yunus Emre Konak,Brentford FC,midfielder,26,Defensive Midfield,18,Türkiye,TUR
-337,Vitaly Janelt,Brentford FC,midfielder,27,Defensive Midfield,26,Germany,DEU
-326,Ryan Trevitt,Brentford FC,midfielder,28,Central Midfield,21,England,ENG
-322,Mads Roerslev,Brentford FC,defender,30,Right-Back,25,Denmark,DNK
-332,Hákon Rafn Valdimarsson,Brentford FC,goalkeeper,31,Goalkeeper,22,Iceland,ISL
-340,Paris Maghoma,Brentford FC,midfielder,32,Central Midfield,23,England,ENG
-335,Ji-soo Kim,Brentford FC,defender,36,Centre-Back,19,South Korea,KOR
-260,Bart Verbruggen,Brighton & Hove Albion,goalkeeper,1,Goalkeeper,22,Netherlands,NLD
-282,Tariq Lamptey,Brighton & Hove Albion,defender,2,Right-Back,23,Ghana,GHA
-262,Igor,Brighton & Hove Albion,defender,3,Centre-Back,26,Brazil,BRA
-261,Adam Webster,Brighton & Hove Albion,defender,4,Centre-Back,29,England,ENG
-279,Lewis Dunk,Brighton & Hove Albion,defender,5,Centre-Back,32,England,ENG
-286,James Milner,Brighton & Hove Albion,midfielder,6,Central Midfield,38,England,ENG
-271,Solly March,Brighton & Hove Albion,attacker,7,Right Winger,30,England,ENG
-289,Brajan Gruda,Brighton & Hove Albion,attacker,8,Right Winger,20,Germany,DEU
-274,João Pedro,Brighton & Hove Albion,attacker,9,Centre-Forward,22,Brazil,BRA
-287,Julio Enciso,Brighton & Hove Albion,midfielder,10,Attacking Midfield,20,Paraguay,PRY
-267,Billy Gilmour,Brighton & Hove Albion,midfielder,11,Defensive Midfield,23,Scotland,SCT
-285,Jakub Moder,Brighton & Hove Albion,midfielder,15,Central Midfield,25,Poland,POL
-288,Jeremy Sarmiento,Brighton & Hove Albion,attacker,16,Left Winger,22,Ecuador,ECU
-290,Yankuba Minteh,Brighton & Hove Albion,attacker,17,Right Winger,20,The Gambia,GMB
-275,Danny Welbeck,Brighton & Hove Albion,attacker,18,Centre-Forward,33,England,ENG
-263,Valentín Barco,Brighton & Hove Albion,defender,19,Left-Back,20,Argentina,ARG
-284,Carlos Baleba,Brighton & Hove Albion,midfielder,20,Defensive Midfield,20,Cameroon,CMR
-269,Kaoru Mitoma,Brighton & Hove Albion,attacker,22,Left Winger,27,Japan,JPN
-276,Jason Steele,Brighton & Hove Albion,goalkeeper,23,Goalkeeper,34,England,ENG
-270,Simon Adingra,Brighton & Hove Albion,attacker,24,Right Winger,22,Cote d'Ivoire,CIV
-268,Yasin Ayari,Brighton & Hove Albion,midfielder,26,Central Midfield,20,Sweden,SWE
-266,Mats Wieffer,Brighton & Hove Albion,midfielder,27,Defensive Midfield,24,Netherlands,NLD
-291,Evan Ferguson,Brighton & Hove Albion,attacker,28,Centre-Forward,19,Ireland,IRL
-278,Jan Paul van Hecke,Brighton & Hove Albion,defender,29,Centre-Back,24,Netherlands,NLD
-280,Pervis Estupiñán,Brighton & Hove Albion,defender,30,Left-Back,26,Ecuador,ECU
-272,Abdallah Sima,Brighton & Hove Albion,attacker,31,Right Winger,23,Senegal,SEN
-273,Amario Cozier-Duberry,Brighton & Hove Albion,attacker,33,Right Winger,19,England,ENG
-265,Joël Veltman,Brighton & Hove Albion,defender,34,Right-Back,32,Netherlands,NLD
-277,Killian Cahill,Brighton & Hove Albion,goalkeeper,38,Goalkeeper,20,Ireland,IRL
-264,Jack Hinshelwood,Brighton & Hove Albion,defender,41,Right-Back,19,England,ENG
-281,Imari Samuels,Brighton & Hove Albion,defender,47,Left-Back,21,England,ENG
-283,Odel Offiah,Brighton & Hove Albion,defender,49,Right-Back,21,England,ENG
+203,Matty Cash,Aston Villa,defender,2,Right-Back,27,Poland,POL
+214,Diego Carlos,Aston Villa,defender,3,Centre-Back,31,Brazil,BRA
+200,Ezri Konsa,Aston Villa,defender,4,Centre-Back,26,England,ENG
+201,Tyrone Mings,Aston Villa,defender,5,Centre-Back,31,England,ENG
+221,Ross Barkley,Aston Villa,midfielder,6,Central Midfield,30,England,ENG
+220,John McGinn,Aston Villa,midfielder,7,Central Midfield,29,Scotland,SCT
+207,Youri Tielemans,Aston Villa,midfielder,8,Central Midfield,27,Belgium,BEL
+225,Jhon Durán,Aston Villa,attacker,9,Centre-Forward,20,Colombia,COL
+224,Emiliano Buendía,Aston Villa,attacker,10,Right Winger,27,Argentina,ARG
+211,Ollie Watkins,Aston Villa,attacker,11,Centre-Forward,28,England,ENG
+216,Lucas Digne,Aston Villa,defender,12,Left-Back,31,France,FRA
+213,Pau Torres,Aston Villa,defender,14,Centre-Back,27,Spain,ESP
+223,Samuel Iling-Junior,Aston Villa,attacker,17,Left Winger,20,England,ENG
+212,Joe Gauci,Aston Villa,goalkeeper,18,Goalkeeper,24,Australia,AUS
+222,Jaden Philogene,Aston Villa,attacker,19,Left Winger,22,England,ENG
+217,Kosta Nedeljkovic,Aston Villa,defender,20,Right-Back,18,Serbia,SRB
+205,Enzo Barrenechea,Aston Villa,midfielder,21,Defensive Midfield,23,Argentina,ARG
+202,Ian Maatsen,Aston Villa,defender,22,Left-Back,22,Netherlands,NLD
+198,Emiliano Martínez,Aston Villa,goalkeeper,23,Goalkeeper,31,Argentina,ARG
+204,Amadou Onana,Aston Villa,midfielder,24,Defensive Midfield,23,Belgium,BEL
+199,Robin Olsen,Aston Villa,goalkeeper,25,Goalkeeper,34,Sweden,SWE
+206,Lamare Bogarde,Aston Villa,midfielder,26,Defensive Midfield,20,Netherlands,NLD
+209,Morgan Rogers,Aston Villa,attacker,27,Left Winger,22,England,ENG
+215,Kortney Hause,Aston Villa,defender,30,Centre-Back,29,England,ENG
+210,Leon Bailey,Aston Villa,attacker,31,Right Winger,27,Jamaica,JAM
+219,Leander Dendoncker,Aston Villa,midfielder,32,Defensive Midfield,29,Belgium,BEL
+208,Jacob Ramsey,Aston Villa,midfielder,41,Attacking Midfield,23,England,ENG
+218,Boubacar Kamara,Aston Villa,midfielder,44,Defensive Midfield,24,France,FRA
+288,Mark Flekken,Brentford FC,goalkeeper,1,Goalkeeper,31,Netherlands,NLD
+293,Aaron Hickey,Brentford FC,defender,2,Right-Back,22,Scotland,SCT
+307,Rico Henry,Brentford FC,defender,3,Left-Back,27,England,ENG
+305,Sepp van den Berg,Brentford FC,defender,4,Centre-Back,22,Netherlands,NLD
+291,Ethan Pinnock,Brentford FC,defender,5,Centre-Back,31,Jamaica,JAM
+309,Christian Nørgaard,Brentford FC,midfielder,6,Defensive Midfield,30,Denmark,DNK
+300,Kevin Schade,Brentford FC,attacker,7,Left Winger,22,Germany,DEU
+310,Mathias Jensen,Brentford FC,midfielder,8,Central Midfield,28,Denmark,DNK
+317,Igor Thiago,Brentford FC,attacker,9,Centre-Forward,23,Brazil,BRA
+296,Josh Dasilva,Brentford FC,midfielder,10,Central Midfield,25,England,ENG
+314,Yoane Wissa,Brentford FC,attacker,11,Left Winger,27,DR Congo,COD
+303,Hákon Rafn Valdimarsson,Brentford FC,goalkeeper,12,Goalkeeper,22,Iceland,ISL
+289,Matthew Cox,Brentford FC,goalkeeper,13,Goalkeeper,21,England,ENG
+298,Fábio Carvalho,Brentford FC,midfielder,14,Attacking Midfield,21,Portugal,PRT
+311,Frank Onyeka,Brentford FC,midfielder,15,Central Midfield,26,Nigeria,NGA
+306,Ben Mee,Brentford FC,defender,16,Centre-Back,34,England,ENG
+302,Ivan Toney,Brentford FC,attacker,17,Centre-Forward,28,England,ENG
+313,Yegor Yarmolyuk,Brentford FC,midfielder,18,Attacking Midfield,20,Ukraine,UKR
+316,Bryan Mbeumo,Brentford FC,attacker,19,Right Winger,25,Cameroon,CMR
+290,Kristoffer Ajer,Brentford FC,defender,20,Centre-Back,26,Norway,NOR
+304,Nathan Collins,Brentford FC,defender,22,Centre-Back,23,Ireland,IRL
+315,Keane Lewis-Potter,Brentford FC,attacker,23,Left Winger,23,England,ENG
+301,Mikkel Damsgaard,Brentford FC,attacker,24,Left Winger,24,Denmark,DNK
+299,Myles Peart-Harris,Brentford FC,midfielder,25,Attacking Midfield,21,Jamaica,JAM
+295,Yunus Emre Konak,Brentford FC,midfielder,26,Defensive Midfield,18,Türkiye,TUR
+294,Vitaly Janelt,Brentford FC,midfielder,27,Defensive Midfield,26,Germany,DEU
+312,Ryan Trevitt,Brentford FC,midfielder,28,Central Midfield,21,England,ENG
+308,Mads Roerslev,Brentford FC,defender,30,Right-Back,25,Denmark,DNK
+297,Paris Maghoma,Brentford FC,midfielder,32,Central Midfield,23,England,ENG
+292,Ji-soo Kim,Brentford FC,defender,36,Centre-Back,19,South Korea,KOR
+252,Bart Verbruggen,Brighton & Hove Albion,goalkeeper,1,Goalkeeper,22,Netherlands,NLD
+258,Tariq Lamptey,Brighton & Hove Albion,defender,2,Right-Back,23,Ghana,GHA
+255,Igor,Brighton & Hove Albion,defender,3,Centre-Back,26,Brazil,BRA
+254,Adam Webster,Brighton & Hove Albion,defender,4,Centre-Back,29,England,ENG
+273,Lewis Dunk,Brighton & Hove Albion,defender,5,Centre-Back,32,England,ENG
+281,James Milner,Brighton & Hove Albion,midfielder,6,Central Midfield,38,England,ENG
+266,Solly March,Brighton & Hove Albion,attacker,7,Right Winger,30,England,ENG
+284,Brajan Gruda,Brighton & Hove Albion,attacker,8,Right Winger,20,Germany,DEU
+268,João Pedro,Brighton & Hove Albion,attacker,9,Centre-Forward,22,Brazil,BRA
+282,Julio Enciso,Brighton & Hove Albion,midfielder,10,Attacking Midfield,20,Paraguay,PRY
+278,Billy Gilmour,Brighton & Hove Albion,midfielder,11,Defensive Midfield,23,Scotland,SCT
+287,Georginio Rutter,Brighton & Hove Albion,attacker,14,Centre-Forward,22,France,FRA
+279,Jakub Moder,Brighton & Hove Albion,midfielder,15,Central Midfield,25,Poland,POL
+283,Jeremy Sarmiento,Brighton & Hove Albion,attacker,16,Left Winger,22,Ecuador,ECU
+285,Yankuba Minteh,Brighton & Hove Albion,attacker,17,Right Winger,20,The Gambia,GMB
+269,Danny Welbeck,Brighton & Hove Albion,attacker,18,Centre-Forward,33,England,ENG
+260,Carlos Baleba,Brighton & Hove Albion,midfielder,20,Defensive Midfield,20,Cameroon,CMR
+264,Kaoru Mitoma,Brighton & Hove Albion,attacker,22,Left Winger,27,Japan,JPN
+270,Jason Steele,Brighton & Hove Albion,goalkeeper,23,Goalkeeper,34,England,ENG
+265,Simon Adingra,Brighton & Hove Albion,attacker,24,Right Winger,22,Cote d'Ivoire,CIV
+262,Yasin Ayari,Brighton & Hove Albion,midfielder,26,Central Midfield,20,Sweden,SWE
+277,Mats Wieffer,Brighton & Hove Albion,midfielder,27,Defensive Midfield,24,Netherlands,NLD
+286,Evan Ferguson,Brighton & Hove Albion,attacker,28,Centre-Forward,19,Ireland,IRL
+272,Jan Paul van Hecke,Brighton & Hove Albion,defender,29,Centre-Back,24,Netherlands,NLD
+274,Pervis Estupiñán,Brighton & Hove Albion,defender,30,Left-Back,26,Ecuador,ECU
+267,Amario Cozier-Duberry,Brighton & Hove Albion,attacker,33,Right Winger,19,England,ENG
+276,Joël Veltman,Brighton & Hove Albion,defender,34,Right-Back,32,Netherlands,NLD
+261,Mahmoud Dahoud,Brighton & Hove Albion,midfielder,35,Central Midfield,28,Syria,SYR
+263,Jensen Weir,Brighton & Hove Albion,midfielder,37,Central Midfield,22,England,ENG
+271,Killian Cahill,Brighton & Hove Albion,goalkeeper,38,Goalkeeper,20,Ireland,IRL
+253,Carl Rushworth,Brighton & Hove Albion,goalkeeper,39,Goalkeeper,23,England,ENG
+280,Malick Junior Yalcouyé,Brighton & Hove Albion,midfielder,40,Central Midfield,18,Cote d'Ivoire,CIV
+275,Jack Hinshelwood,Brighton & Hove Albion,defender,41,Right-Back,19,England,ENG
+256,Ed Turns,Brighton & Hove Albion,defender,43,Centre-Back,21,Wales,WLS
+257,Imari Samuels,Brighton & Hove Albion,defender,47,Left-Back,21,England,ENG
+259,Odel Offiah,Brighton & Hove Albion,defender,49,Right-Back,21,England,ENG
 49,Robert Sánchez,Chelsea FC,goalkeeper,1,Goalkeeper,26,Spain,ESP
-70,Axel Disasi,Chelsea FC,defender,2,Centre-Back,26,France,FRA
-73,Marc Cucurella,Chelsea FC,defender,3,Left-Back,26,Spain,ESP
+67,Axel Disasi,Chelsea FC,defender,2,Centre-Back,26,France,FRA
+55,Marc Cucurella,Chelsea FC,defender,3,Left-Back,26,Spain,ESP
 54,Tosin Adarabioyo,Chelsea FC,defender,4,Centre-Back,26,England,ENG
 53,Benoît Badiashile,Chelsea FC,defender,5,Centre-Back,23,France,FRA
 52,Levi Colwill,Chelsea FC,defender,6,Centre-Back,21,England,ENG
-63,Raheem Sterling,Chelsea FC,attacker,7,Left Winger,29,England,ENG
-77,Enzo Fernández,Chelsea FC,midfielder,8,Central Midfield,23,Argentina,ARG
-81,Mykhaylo Mudryk,Chelsea FC,attacker,10,Left Winger,23,Ukraine,UKR
-65,Noni Madueke,Chelsea FC,attacker,11,Right Winger,22,England,ENG
-68,Filip Jørgensen,Chelsea FC,goalkeeper,12,Goalkeeper,22,Denmark,DNK
+76,Pedro Neto,Chelsea FC,attacker,7,Left Winger,24,Portugal,PRT
+72,Enzo Fernández,Chelsea FC,midfielder,8,Central Midfield,23,Argentina,ARG
+77,Mykhaylo Mudryk,Chelsea FC,attacker,10,Left Winger,23,Ukraine,UKR
+62,Noni Madueke,Chelsea FC,attacker,11,Right Winger,22,England,ENG
+65,Filip Jørgensen,Chelsea FC,goalkeeper,12,Goalkeeper,22,Denmark,DNK
 51,Marcus Bettinelli,Chelsea FC,goalkeeper,13,Goalkeeper,32,England,ENG
-72,Trevoh Chalobah,Chelsea FC,defender,14,Centre-Back,25,England,ENG
-66,Nicolas Jackson,Chelsea FC,attacker,15,Centre-Forward,23,Senegal,SEN
-60,Carney Chukwuemeka,Chelsea FC,midfielder,17,Central Midfield,20,England,ENG
-80,Christopher Nkunku,Chelsea FC,midfielder,18,Attacking Midfield,26,France,FRA
-82,Pedro Neto,Chelsea FC,attacker,19,Right Winger,24,Portugal,PRT
-61,Cole Palmer,Chelsea FC,midfielder,20,Attacking Midfield,22,England,ENG
-55,Ben Chilwell,Chelsea FC,defender,21,Left-Back,27,England,ENG
-78,Kiernan Dewsbury-Hall,Chelsea FC,midfielder,22,Central Midfield,25,England,ENG
-59,Conor Gallagher,Chelsea FC,midfielder,23,Central Midfield,24,England,ENG
-74,Reece James,Chelsea FC,defender,24,Right-Back,24,England,ENG
+63,João Félix,Chelsea FC,attacker,14,Second Striker,24,Portugal,PRT
+79,Nicolas Jackson,Chelsea FC,attacker,15,Centre-Forward,23,Senegal,SEN
+73,Carney Chukwuemeka,Chelsea FC,midfielder,17,Central Midfield,20,England,ENG
+61,Christopher Nkunku,Chelsea FC,midfielder,18,Attacking Midfield,26,France,FRA
+74,Cole Palmer,Chelsea FC,midfielder,20,Attacking Midfield,22,England,ENG
+69,Ben Chilwell,Chelsea FC,defender,21,Left-Back,27,England,ENG
+59,Kiernan Dewsbury-Hall,Chelsea FC,midfielder,22,Central Midfield,25,England,ENG
+56,Reece James,Chelsea FC,defender,24,Right-Back,24,England,ENG
 57,Moisés Caicedo,Chelsea FC,midfielder,25,Defensive Midfield,22,Ecuador,ECU
-56,Malo Gusto,Chelsea FC,defender,27,Right-Back,21,France,FRA
+70,Malo Gusto,Chelsea FC,defender,27,Right-Back,21,France,FRA
 50,Djordje Petrovic,Chelsea FC,goalkeeper,28,Goalkeeper,24,Serbia,SRB
-71,Wesley Fofana,Chelsea FC,defender,29,Centre-Back,23,France,FRA
-79,Cesare Casadei,Chelsea FC,midfielder,31,Central Midfield,21,Italy,ITA
-64,Tyrique George,Chelsea FC,attacker,32,Left Winger,18,England,ENG
-75,Josh Acheampong,Chelsea FC,defender,34,Right-Back,18,England,ENG
-67,Deivid Washington,Chelsea FC,attacker,36,Centre-Forward,19,Brazil,BRA
-62,Omari Kellyman,Chelsea FC,midfielder,37,Attacking Midfield,18,England,ENG
-84,Marc Guiu,Chelsea FC,attacker,38,Centre-Forward,18,Spain,ESP
+68,Wesley Fofana,Chelsea FC,defender,29,Centre-Back,23,France,FRA
+60,Cesare Casadei,Chelsea FC,midfielder,31,Central Midfield,21,Italy,ITA
+80,Deivid Washington,Chelsea FC,attacker,36,Centre-Forward,19,Brazil,BRA
+75,Omari Kellyman,Chelsea FC,midfielder,37,Attacking Midfield,18,England,ENG
+64,Marc Guiu,Chelsea FC,attacker,38,Centre-Forward,18,Spain,ESP
 58,Renato Veiga,Chelsea FC,midfielder,40,Defensive Midfield,21,Portugal,PRT
-83,Ângelo,Chelsea FC,attacker,41,Right Winger,19,Brazil,BRA
-76,Roméo Lavia,Chelsea FC,midfielder,45,Defensive Midfield,20,Belgium,BEL
-69,Lucas Bergström,Chelsea FC,goalkeeper,47,Goalkeeper,21,Finland,FIN
-292,Dean Henderson,Crystal Palace,goalkeeper,1,Goalkeeper,27,England,ENG
-310,Joel Ward,Crystal Palace,defender,2,Right-Back,34,England,ENG
-296,Tyrick Mitchell,Crystal Palace,defender,3,Left-Back,24,England,ENG
-308,Rob Holding,Crystal Palace,defender,4,Centre-Back,28,England,ENG
-294,Joachim Andersen,Crystal Palace,defender,5,Centre-Back,28,Denmark,DNK
-306,Marc Guéhi,Crystal Palace,defender,6,Centre-Back,24,England,ENG
-315,Ismaïla Sarr,Crystal Palace,attacker,7,Right Winger,26,Senegal,SEN
-299,Jefferson Lerma,Crystal Palace,midfielder,8,Defensive Midfield,29,Colombia,COL
-304,Jordan Ayew,Crystal Palace,attacker,9,Centre-Forward,32,Ghana,GHA
-301,Eberechi Eze,Crystal Palace,midfielder,10,Attacking Midfield,26,England,ENG
-302,Matheus França,Crystal Palace,midfielder,11,Attacking Midfield,20,Brazil,BRA
-309,Daniel Muñoz,Crystal Palace,defender,12,Right-Back,28,Colombia,COL
-303,Jean-Philippe Mateta,Crystal Palace,attacker,14,Centre-Forward,27,France,FRA
-313,Jeffrey Schlupp,Crystal Palace,midfielder,15,Left Midfield,31,Ghana,GHA
-297,Nathaniel Clyne,Crystal Palace,defender,17,Right-Back,33,England,ENG
-314,Daichi Kamada,Crystal Palace,midfielder,18,Attacking Midfield,28,Japan,JPN
-312,Will Hughes,Crystal Palace,midfielder,19,Central Midfield,29,England,ENG
-311,Adam Wharton,Crystal Palace,midfielder,20,Defensive Midfield,20,England,ENG
-316,Odsonne Edouard,Crystal Palace,attacker,22,Centre-Forward,26,France,FRA
-295,Chris Richards,Crystal Palace,defender,26,Centre-Back,24,United States,USA
-298,Cheick Doucouré,Crystal Palace,midfielder,28,Defensive Midfield,24,Mali,MLI
-300,Naouirou Ahamada,Crystal Palace,midfielder,29,Central Midfield,22,France,FRA
-293,Remi Matthews,Crystal Palace,goalkeeper,31,Goalkeeper,30,England,ENG
-305,Sam Johnstone,Crystal Palace,goalkeeper,32,Goalkeeper,31,England,ENG
-307,Chadi Riad,Crystal Palace,defender,34,Centre-Back,21,Morocco,MAR
-432,Jordan Pickford,Everton FC,goalkeeper,1,Goalkeeper,30,England,ENG
-450,Nathan Patterson,Everton FC,defender,2,Right-Back,22,Scotland,SCT
-436,Mason Holgate,Everton FC,defender,4,Centre-Back,27,England,ENG
-448,Michael Keane,Everton FC,defender,5,Centre-Back,31,England,ENG
-447,James Tarkowski,Everton FC,defender,6,Centre-Back,31,England,ENG
-441,Dwight McNeil,Everton FC,attacker,7,Left Winger,24,England,ENG
-442,Dominic Calvert-Lewin,Everton FC,attacker,9,Centre-Forward,27,England,ENG
-443,Iliman Ndiaye,Everton FC,attacker,10,Centre-Forward,24,Senegal,SEN
-454,Jack Harrison,Everton FC,attacker,11,Right Winger,27,England,ENG
-445,João Virgínia,Everton FC,goalkeeper,12,Goalkeeper,24,Portugal,PRT
-456,Neal Maupay,Everton FC,attacker,13,Centre-Forward,28,France,FRA
-455,Beto,Everton FC,attacker,14,Centre-Forward,26,Portugal,PRT
-435,Jake O'Brien,Everton FC,defender,15,Centre-Back,23,Ireland,IRL
-439,Abdoulaye Doucouré,Everton FC,midfielder,16,Central Midfield,31,Mali,MLI
-437,Ashley Young,Everton FC,defender,18,Left-Back,39,England,ENG
-449,Vitaliy Mykolenko,Everton FC,defender,19,Left-Back,25,Ukraine,UKR
-438,Séamus Coleman,Everton FC,defender,23,Right-Back,35,Ireland,IRL
-440,Idrissa Gueye,Everton FC,midfielder,27,Central Midfield,34,Senegal,SEN
-444,Chermiti,Everton FC,attacker,28,Centre-Forward,20,Portugal,PRT
-453,Jesper Lindstrøm,Everton FC,midfielder,29,Attacking Midfield,24,Denmark,DNK
-434,Jarrad Branthwaite,Everton FC,defender,32,Centre-Back,22,England,ENG
-451,James Garner,Everton FC,midfielder,37,Defensive Midfield,23,England,ENG
-452,Tim Iroegbunam,Everton FC,midfielder,42,Central Midfield,21,England,ENG
-433,Billy Crellin,Everton FC,goalkeeper,43,Goalkeeper,24,England,ENG
-446,Harry Tyrer,Everton FC,goalkeeper,53,Goalkeeper,22,England,ENG
-457,Bernd Leno,Fulham FC,goalkeeper,1,Goalkeeper,32,Germany,DEU
-461,Kenny Tete,Fulham FC,defender,2,Right-Back,28,Netherlands,NLD
-468,Calvin Bassey,Fulham FC,defender,3,Centre-Back,24,Nigeria,NGA
-462,Harrison Reed,Fulham FC,midfielder,6,Central Midfield,29,England,ENG
-475,Raúl Jiménez,Fulham FC,attacker,7,Centre-Forward,33,Mexico,MEX
-465,Harry Wilson,Fulham FC,attacker,8,Right Winger,27,Wales,WLS
-466,Rodrigo Muniz,Fulham FC,attacker,9,Centre-Forward,23,Brazil,BRA
-463,Tom Cairney,Fulham FC,midfielder,10,Central Midfield,33,Scotland,SCT
-474,Adama Traoré,Fulham FC,attacker,11,Right Winger,28,Spain,ESP
-459,Jorge Cuenca,Fulham FC,defender,15,Centre-Back,24,Spain,ESP
-473,Alex Iwobi,Fulham FC,attacker,17,Left Winger,28,Nigeria,NGA
-464,Andreas Pereira,Fulham FC,midfielder,18,Attacking Midfield,28,Brazil,BRA
-471,Saša Lukić,Fulham FC,midfielder,20,Central Midfield,28,Serbia,SRB
-470,Timothy Castagne,Fulham FC,defender,21,Right-Back,28,Belgium,BEL
-467,Steven Benda,Fulham FC,goalkeeper,23,Goalkeeper,25,Germany,DEU
-476,Jay Stansfield,Fulham FC,attacker,28,Centre-Forward,21,England,ENG
-460,Ryan Sessegnon,Fulham FC,defender,30,Left-Back,24,England,ENG
-458,Issa Diop,Fulham FC,defender,31,Centre-Back,27,France,FRA
-472,Emile Smith Rowe,Fulham FC,midfielder,32,Attacking Midfield,24,England,ENG
-469,Antonee Robinson,Fulham FC,defender,33,Left-Back,27,United States,USA
-535,Arijanet Muric,Ipswich Town,goalkeeper,1,Goalkeeper,25,Kosovo,XKX
-554,Harry Clarke,Ipswich Town,defender,2,Right-Back,23,England,ENG
-539,Leif Davis,Ipswich Town,defender,3,Left-Back,24,England,ENG
-552,George Edmundson,Ipswich Town,defender,4,Centre-Back,27,England,ENG
-555,Sam Morsy,Ipswich Town,midfielder,5,Central Midfield,32,Egypt,EGY
-551,Luke Woolfenden,Ipswich Town,defender,6,Centre-Back,25,England,ENG
-544,Wes Burns,Ipswich Town,midfielder,7,Right Midfield,29,Wales,WLS
-541,Kalvin Phillips,Ipswich Town,midfielder,8,Defensive Midfield,28,England,ENG
-559,Conor Chaplin,Ipswich Town,attacker,10,Second Striker,27,England,ENG
-558,Marcus Harness,Ipswich Town,attacker,11,Left Winger,28,Ireland,IRL
-536,Cieran Slicker,Ipswich Town,goalkeeper,13,Goalkeeper,21,Scotland,SCT
-542,Jack Taylor,Ipswich Town,midfielder,14,Central Midfield,26,Ireland,IRL
-538,Cameron Burgess,Ipswich Town,defender,15,Centre-Back,28,Australia,AUS
-548,Ali Al-Hamadi,Ipswich Town,attacker,16,Centre-Forward,22,Iraq,IRQ
-540,Ben Johnson,Ipswich Town,defender,18,Right-Back,24,England,ENG
-547,Liam Delap,Ipswich Town,attacker,19,Centre-Forward,21,England,ENG
-546,Omari Hutchinson,Ipswich Town,attacker,20,Right Winger,20,Jamaica,JAM
-553,Conor Townsend,Ipswich Town,defender,22,Left-Back,31,England,ENG
-557,Sammie Szmodics,Ipswich Town,midfielder,23,Attacking Midfield,28,Ireland,IRL
-550,Jacob Greaves,Ipswich Town,defender,24,Centre-Back,23,England,ENG
-543,Massimo Luongo,Ipswich Town,midfielder,25,Central Midfield,31,Australia,AUS
-560,George Hirst,Ipswich Town,attacker,27,Centre-Forward,25,England,ENG
-549,Christian Walton,Ipswich Town,goalkeeper,28,Goalkeeper,28,England,ENG
-561,Freddie Ladapo,Ipswich Town,attacker,29,Centre-Forward,31,England,ENG
-556,Cameron Humphreys,Ipswich Town,midfielder,30,Central Midfield,20,England,ENG
-545,Nathan Broadhead,Ipswich Town,attacker,33,Left Winger,26,Wales,WLS
-537,Axel Tuanzebe,Ipswich Town,defender,40,Centre-Back,26,DR Congo,COD
-510,Danny Ward,Leicester City,goalkeeper,1,Goalkeeper,31,Wales,WLS
-513,James Justin,Leicester City,defender,2,Left-Back,26,England,ENG
-511,Wout Faes,Leicester City,defender,3,Centre-Back,26,Belgium,BEL
-512,Conor Coady,Leicester City,defender,4,Centre-Back,31,England,ENG
-525,Caleb Okoli,Leicester City,defender,5,Centre-Back,23,Italy,ITA
-515,Wilfred Ndidi,Leicester City,midfielder,6,Defensive Midfield,27,Nigeria,NGA
-519,Issahaku Fatawu,Leicester City,attacker,7,Right Winger,20,Ghana,GHA
-529,Harry Winks,Leicester City,midfielder,8,Defensive Midfield,28,England,ENG
-522,Jamie Vardy,Leicester City,attacker,9,Centre-Forward,37,England,ENG
-531,Stephy Mavididi,Leicester City,attacker,10,Left Winger,26,England,ENG
-532,Bobby De Cordova-Reid,Leicester City,attacker,14,Right Winger,31,Jamaica,JAM
-527,Victor Kristiansen,Leicester City,defender,16,Left-Back,21,Denmark,DNK
-517,Hamza Choudhury,Leicester City,midfielder,17,Defensive Midfield,26,England,ENG
-521,Patson Daka,Leicester City,attacker,20,Centre-Forward,25,Zambia,ZMB
-528,Ricardo Pereira,Leicester City,defender,21,Right-Back,30,Portugal,PRT
-526,Jannik Vestergaard,Leicester City,defender,23,Centre-Back,32,Denmark,DNK
-516,Boubakary Soumaré,Leicester City,midfielder,24,Defensive Midfield,25,France,FRA
-533,Wanya Marçal,Leicester City,attacker,27,Right Winger,21,Portugal,PRT
-534,Tom Cannon,Leicester City,attacker,28,Centre-Forward,21,Ireland,IRL
-509,Mads Hermansen,Leicester City,goalkeeper,30,Goalkeeper,24,Denmark,DNK
-523,Daniel Iversen,Leicester City,goalkeeper,31,Goalkeeper,27,Denmark,DNK
-514,Luke Thomas,Leicester City,defender,33,Left-Back,23,England,ENG
-530,Michael Golding,Leicester City,midfielder,34,Central Midfield,18,England,ENG
-520,Kasey McAteer,Leicester City,attacker,35,Right Winger,22,England,ENG
-518,Facundo Buonanotte,Leicester City,midfielder,40,Attacking Midfield,19,Argentina,ARG
-524,Jakub Stolarczyk,Leicester City,goalkeeper,41,Goalkeeper,23,Poland,POL
-85,Alisson,Liverpool FC,goalkeeper,1,Goalkeeper,31,Brazil,BRA
-101,Joe Gomez,Liverpool FC,defender,2,Centre-Back,27,England,ENG
-92,Wataru Endo,Liverpool FC,midfielder,3,Defensive Midfield,31,Japan,JPN
-87,Virgil van Dijk,Liverpool FC,defender,4,Centre-Back,33,Netherlands,NLD
-100,Ibrahima Konaté,Liverpool FC,defender,5,Centre-Back,25,France,FRA
-109,Luis Díaz,Liverpool FC,attacker,7,Left Winger,27,Colombia,COL
-93,Dominik Szoboszlai,Liverpool FC,midfielder,8,Central Midfield,23,Hungary,HUN
-98,Darwin Núñez,Liverpool FC,attacker,9,Centre-Forward,25,Uruguay,URY
-107,Alexis Mac Allister,Liverpool FC,midfielder,10,Central Midfield,25,Argentina,ARG
-97,Mohamed Salah,Liverpool FC,attacker,11,Right Winger,32,Egypt,EGY
-94,Curtis Jones,Liverpool FC,midfielder,17,Central Midfield,23,England,ENG
-96,Cody Gakpo,Liverpool FC,attacker,18,Left Winger,25,Netherlands,NLD
-108,Harvey Elliott,Liverpool FC,midfielder,19,Central Midfield,21,England,ENG
-110,Diogo Jota,Liverpool FC,attacker,20,Left Winger,27,Portugal,PRT
-104,Konstantinos Tsimikas,Liverpool FC,defender,21,Left-Back,28,Greece,GRC
-90,Andrew Robertson,Liverpool FC,defender,26,Left-Back,30,Scotland,SCT
-95,Ryan Gravenberch,Liverpool FC,midfielder,38,Central Midfield,22,Netherlands,NLD
-106,Stefan Bajcetic,Liverpool FC,midfielder,43,Defensive Midfield,19,Spain,ESP
-103,Rhys Williams,Liverpool FC,defender,46,Centre-Back,23,England,ENG
-89,Nathaniel Phillips,Liverpool FC,defender,47,Centre-Back,27,England,ENG
-111,Ben Doak,Liverpool FC,attacker,50,Right Winger,18,Scotland,SCT
-86,Vitezslav Jaros,Liverpool FC,goalkeeper,56,Goalkeeper,23,Czech Republic,CZE
-99,Caoimhín Kelleher,Liverpool FC,goalkeeper,62,Goalkeeper,25,Ireland,IRL
-91,Trent Alexander-Arnold,Liverpool FC,defender,66,Right-Back,25,England,ENG
-102,Sepp van den Berg,Liverpool FC,defender,72,Centre-Back,22,Netherlands,NLD
-88,Jarell Quansah,Liverpool FC,defender,78,Centre-Back,21,England,ENG
-105,Conor Bradley,Liverpool FC,defender,84,Right-Back,21,Northern Ireland,NIR
+78,Ângelo,Chelsea FC,attacker,41,Right Winger,19,Brazil,BRA
+71,Roméo Lavia,Chelsea FC,midfielder,45,Defensive Midfield,20,Belgium,BEL
+66,Lucas Bergström,Chelsea FC,goalkeeper,47,Goalkeeper,21,Finland,FIN
+318,Dean Henderson,Crystal Palace,goalkeeper,1,Goalkeeper,27,England,ENG
+334,Joel Ward,Crystal Palace,defender,2,Right-Back,34,England,ENG
+322,Tyrick Mitchell,Crystal Palace,defender,3,Left-Back,24,England,ENG
+332,Rob Holding,Crystal Palace,defender,4,Centre-Back,28,England,ENG
+320,Marc Guéhi,Crystal Palace,defender,6,Centre-Back,24,England,ENG
+339,Ismaïla Sarr,Crystal Palace,attacker,7,Right Winger,26,Senegal,SEN
+325,Jefferson Lerma,Crystal Palace,midfielder,8,Defensive Midfield,29,Colombia,COL
+327,Eberechi Eze,Crystal Palace,midfielder,10,Attacking Midfield,26,England,ENG
+328,Matheus França,Crystal Palace,midfielder,11,Attacking Midfield,20,Brazil,BRA
+333,Daniel Muñoz,Crystal Palace,defender,12,Right-Back,28,Colombia,COL
+329,Jean-Philippe Mateta,Crystal Palace,attacker,14,Centre-Forward,27,France,FRA
+337,Jeffrey Schlupp,Crystal Palace,midfielder,15,Left Midfield,31,Ghana,GHA
+323,Nathaniel Clyne,Crystal Palace,defender,17,Right-Back,33,England,ENG
+338,Daichi Kamada,Crystal Palace,midfielder,18,Attacking Midfield,28,Japan,JPN
+336,Will Hughes,Crystal Palace,midfielder,19,Central Midfield,29,England,ENG
+335,Adam Wharton,Crystal Palace,midfielder,20,Defensive Midfield,20,England,ENG
+340,Odsonne Edouard,Crystal Palace,attacker,22,Centre-Forward,26,France,FRA
+321,Chris Richards,Crystal Palace,defender,26,Centre-Back,24,United States,USA
+324,Cheick Doucouré,Crystal Palace,midfielder,28,Defensive Midfield,24,Mali,MLI
+326,Naouirou Ahamada,Crystal Palace,midfielder,29,Central Midfield,22,France,FRA
+319,Remi Matthews,Crystal Palace,goalkeeper,31,Goalkeeper,30,England,ENG
+330,Sam Johnstone,Crystal Palace,goalkeeper,32,Goalkeeper,31,England,ENG
+331,Chadi Riad,Crystal Palace,defender,34,Centre-Back,21,Morocco,MAR
+450,Jordan Pickford,Everton FC,goalkeeper,1,Goalkeeper,30,England,ENG
+455,Nathan Patterson,Everton FC,defender,2,Right-Back,22,Scotland,SCT
+466,Mason Holgate,Everton FC,defender,4,Centre-Back,27,England,ENG
+453,Michael Keane,Everton FC,defender,5,Centre-Back,31,England,ENG
+452,James Tarkowski,Everton FC,defender,6,Centre-Back,31,England,ENG
+471,Dwight McNeil,Everton FC,attacker,7,Left Winger,24,England,ENG
+472,Dominic Calvert-Lewin,Everton FC,attacker,9,Centre-Forward,27,England,ENG
+473,Iliman Ndiaye,Everton FC,attacker,10,Centre-Forward,24,Senegal,SEN
+459,Jack Harrison,Everton FC,attacker,11,Right Winger,27,England,ENG
+462,João Virgínia,Everton FC,goalkeeper,12,Goalkeeper,24,Portugal,PRT
+460,Beto,Everton FC,attacker,14,Centre-Forward,26,Portugal,PRT
+465,Jake O'Brien,Everton FC,defender,15,Centre-Back,23,Ireland,IRL
+469,Abdoulaye Doucouré,Everton FC,midfielder,16,Central Midfield,31,Mali,MLI
+474,Chermiti,Everton FC,attacker,17,Centre-Forward,20,Portugal,PRT
+467,Ashley Young,Everton FC,defender,18,Left-Back,39,England,ENG
+454,Vitaliy Mykolenko,Everton FC,defender,19,Left-Back,25,Ukraine,UKR
+461,Neal Maupay,Everton FC,attacker,21,Centre-Forward,28,France,FRA
+468,Séamus Coleman,Everton FC,defender,23,Right-Back,35,Ireland,IRL
+470,Idrissa Gueye,Everton FC,midfielder,27,Central Midfield,34,Senegal,SEN
+458,Jesper Lindstrøm,Everton FC,midfielder,29,Attacking Midfield,24,Denmark,DNK
+464,Jarrad Branthwaite,Everton FC,defender,32,Centre-Back,22,England,ENG
+456,James Garner,Everton FC,midfielder,37,Defensive Midfield,23,England,ENG
+457,Tim Iroegbunam,Everton FC,midfielder,42,Central Midfield,21,England,ENG
+463,Billy Crellin,Everton FC,goalkeeper,43,Goalkeeper,24,England,ENG
+451,Harry Tyrer,Everton FC,goalkeeper,53,Goalkeeper,22,England,ENG
+427,Bernd Leno,Fulham FC,goalkeeper,1,Goalkeeper,32,Germany,DEU
+442,Kenny Tete,Fulham FC,defender,2,Right-Back,28,Netherlands,NLD
+429,Calvin Bassey,Fulham FC,defender,3,Centre-Back,24,Nigeria,NGA
+428,Joachim Andersen,Fulham FC,defender,5,Centre-Back,28,Denmark,DNK
+433,Harrison Reed,Fulham FC,midfielder,6,Central Midfield,29,England,ENG
+448,Raúl Jiménez,Fulham FC,attacker,7,Centre-Forward,33,Mexico,MEX
+436,Harry Wilson,Fulham FC,attacker,8,Right Winger,27,Wales,WLS
+437,Rodrigo Muniz,Fulham FC,attacker,9,Centre-Forward,23,Brazil,BRA
+434,Tom Cairney,Fulham FC,midfielder,10,Central Midfield,33,Scotland,SCT
+447,Adama Traoré,Fulham FC,attacker,11,Right Winger,28,Spain,ESP
+440,Jorge Cuenca,Fulham FC,defender,15,Centre-Back,24,Spain,ESP
+443,Sander Berge,Fulham FC,midfielder,16,Central Midfield,26,Norway,NOR
+446,Alex Iwobi,Fulham FC,attacker,17,Left Winger,28,Nigeria,NGA
+435,Andreas Pereira,Fulham FC,midfielder,18,Attacking Midfield,28,Brazil,BRA
+444,Saša Lukić,Fulham FC,midfielder,20,Central Midfield,28,Serbia,SRB
+431,Timothy Castagne,Fulham FC,defender,21,Right-Back,28,Belgium,BEL
+438,Steven Benda,Fulham FC,goalkeeper,23,Goalkeeper,25,Germany,DEU
+432,Kevin Mbabu,Fulham FC,defender,27,Right-Back,29,Switzerland,CHE
+449,Jay Stansfield,Fulham FC,attacker,28,Centre-Forward,21,England,ENG
+441,Ryan Sessegnon,Fulham FC,defender,30,Left-Back,24,England,ENG
+439,Issa Diop,Fulham FC,defender,31,Centre-Back,27,France,FRA
+445,Emile Smith Rowe,Fulham FC,midfielder,32,Attacking Midfield,24,England,ENG
+430,Antonee Robinson,Fulham FC,defender,33,Left-Back,27,United States,USA
+536,Arijanet Muric,Ipswich Town,goalkeeper,1,Goalkeeper,25,Kosovo,XKX
+542,Harry Clarke,Ipswich Town,defender,2,Right-Back,23,England,ENG
+555,Leif Davis,Ipswich Town,defender,3,Left-Back,24,England,ENG
+540,George Edmundson,Ipswich Town,defender,4,Centre-Back,27,England,ENG
+544,Sam Morsy,Ipswich Town,midfielder,5,Central Midfield,32,Egypt,EGY
+539,Luke Woolfenden,Ipswich Town,defender,6,Centre-Back,25,England,ENG
+562,Wes Burns,Ipswich Town,attacker,7,Right Winger,29,Wales,WLS
+557,Kalvin Phillips,Ipswich Town,midfielder,8,Defensive Midfield,28,England,ENG
+560,Jack Clarke,Ipswich Town,attacker,9,Left Winger,23,England,ENG
+548,Conor Chaplin,Ipswich Town,attacker,10,Second Striker,27,England,ENG
+561,Marcus Harness,Ipswich Town,attacker,11,Left Winger,28,Ireland,IRL
+543,Jens Cajuste,Ipswich Town,midfielder,12,Defensive Midfield,25,Sweden,SWE
+537,Cieran Slicker,Ipswich Town,goalkeeper,13,Goalkeeper,21,Scotland,SCT
+558,Jack Taylor,Ipswich Town,midfielder,14,Central Midfield,26,Ireland,IRL
+554,Cameron Burgess,Ipswich Town,defender,15,Centre-Back,28,Australia,AUS
+564,Ali Al-Hamadi,Ipswich Town,attacker,16,Centre-Forward,22,Iraq,IRQ
+556,Ben Johnson,Ipswich Town,defender,18,Right-Back,24,England,ENG
+563,Liam Delap,Ipswich Town,attacker,19,Centre-Forward,21,England,ENG
+547,Omari Hutchinson,Ipswich Town,attacker,20,Right Winger,20,Jamaica,JAM
+541,Conor Townsend,Ipswich Town,defender,22,Left-Back,31,England,ENG
+545,Sammie Szmodics,Ipswich Town,midfielder,23,Attacking Midfield,28,Ireland,IRL
+552,Jacob Greaves,Ipswich Town,defender,24,Centre-Back,23,England,ENG
+559,Massimo Luongo,Ipswich Town,midfielder,25,Central Midfield,31,Australia,AUS
+538,Dara O'Shea,Ipswich Town,defender,26,Centre-Back,25,Ireland,IRL
+549,George Hirst,Ipswich Town,attacker,27,Centre-Forward,25,England,ENG
+551,Christian Walton,Ipswich Town,goalkeeper,28,Goalkeeper,28,England,ENG
+550,Freddie Ladapo,Ipswich Town,attacker,29,Centre-Forward,31,England,ENG
+546,Nathan Broadhead,Ipswich Town,attacker,33,Left Winger,26,Wales,WLS
+553,Axel Tuanzebe,Ipswich Town,defender,40,Centre-Back,26,DR Congo,COD
+508,Danny Ward,Leicester City,goalkeeper,1,Goalkeeper,31,Wales,WLS
+526,James Justin,Leicester City,defender,2,Left-Back,26,England,ENG
+509,Wout Faes,Leicester City,defender,3,Centre-Back,26,Belgium,BEL
+510,Conor Coady,Leicester City,defender,4,Centre-Back,31,England,ENG
+524,Caleb Okoli,Leicester City,defender,5,Centre-Back,23,Italy,ITA
+528,Wilfred Ndidi,Leicester City,midfielder,6,Defensive Midfield,27,Nigeria,NGA
+532,Issahaku Fatawu,Leicester City,attacker,7,Right Winger,20,Ghana,GHA
+515,Harry Winks,Leicester City,midfielder,8,Defensive Midfield,28,England,ENG
+521,Jamie Vardy,Leicester City,attacker,9,Centre-Forward,37,England,ENG
+517,Stephy Mavididi,Leicester City,attacker,10,Left Winger,26,England,ENG
+518,Bobby De Cordova-Reid,Leicester City,attacker,14,Right Winger,31,Jamaica,JAM
+512,Victor Kristiansen,Leicester City,defender,16,Left-Back,21,Denmark,DNK
+530,Hamza Choudhury,Leicester City,midfielder,17,Defensive Midfield,26,England,ENG
+520,Jordan Ayew,Leicester City,attacker,18,Centre-Forward,32,Ghana,GHA
+534,Patson Daka,Leicester City,attacker,20,Centre-Forward,25,Zambia,ZMB
+513,Ricardo Pereira,Leicester City,defender,21,Right-Back,30,Portugal,PRT
+514,Oliver Skipp,Leicester City,midfielder,22,Defensive Midfield,23,England,ENG
+525,Jannik Vestergaard,Leicester City,defender,23,Centre-Back,32,Denmark,DNK
+529,Boubakary Soumaré,Leicester City,midfielder,24,Defensive Midfield,25,France,FRA
+511,Ben Nelson,Leicester City,defender,26,Centre-Back,20,England,ENG
+519,Wanya Marçal,Leicester City,attacker,27,Right Winger,21,Portugal,PRT
+535,Tom Cannon,Leicester City,attacker,28,Centre-Forward,21,Ireland,IRL
+507,Mads Hermansen,Leicester City,goalkeeper,30,Goalkeeper,24,Denmark,DNK
+522,Daniel Iversen,Leicester City,goalkeeper,31,Goalkeeper,27,Denmark,DNK
+527,Luke Thomas,Leicester City,defender,33,Left-Back,23,England,ENG
+516,Michael Golding,Leicester City,midfielder,34,Central Midfield,18,England,ENG
+533,Kasey McAteer,Leicester City,attacker,35,Right Winger,22,England,ENG
+531,Facundo Buonanotte,Leicester City,midfielder,40,Attacking Midfield,19,Argentina,ARG
+523,Jakub Stolarczyk,Leicester City,goalkeeper,41,Goalkeeper,23,Poland,POL
+81,Alisson,Liverpool FC,goalkeeper,1,Goalkeeper,31,Brazil,BRA
+96,Joe Gomez,Liverpool FC,defender,2,Centre-Back,27,England,ENG
+87,Wataru Endo,Liverpool FC,midfielder,3,Defensive Midfield,31,Japan,JPN
+83,Virgil van Dijk,Liverpool FC,defender,4,Centre-Back,33,Netherlands,NLD
+95,Ibrahima Konaté,Liverpool FC,defender,5,Centre-Back,25,France,FRA
+103,Luis Díaz,Liverpool FC,attacker,7,Left Winger,27,Colombia,COL
+88,Dominik Szoboszlai,Liverpool FC,midfielder,8,Central Midfield,23,Hungary,HUN
+93,Darwin Núñez,Liverpool FC,attacker,9,Centre-Forward,25,Uruguay,URY
+101,Alexis Mac Allister,Liverpool FC,midfielder,10,Central Midfield,25,Argentina,ARG
+92,Mohamed Salah,Liverpool FC,attacker,11,Right Winger,32,Egypt,EGY
+89,Curtis Jones,Liverpool FC,midfielder,17,Central Midfield,23,England,ENG
+91,Cody Gakpo,Liverpool FC,attacker,18,Left Winger,25,Netherlands,NLD
+102,Harvey Elliott,Liverpool FC,midfielder,19,Central Midfield,21,England,ENG
+104,Diogo Jota,Liverpool FC,attacker,20,Left Winger,27,Portugal,PRT
+98,Konstantinos Tsimikas,Liverpool FC,defender,21,Left-Back,28,Greece,GRC
+85,Andrew Robertson,Liverpool FC,defender,26,Left-Back,30,Scotland,SCT
+90,Ryan Gravenberch,Liverpool FC,midfielder,38,Central Midfield,22,Netherlands,NLD
+100,Stefan Bajcetic,Liverpool FC,midfielder,43,Defensive Midfield,19,Spain,ESP
+97,Nathaniel Phillips,Liverpool FC,defender,47,Centre-Back,27,England,ENG
+105,Ben Doak,Liverpool FC,attacker,50,Right Winger,18,Scotland,SCT
+82,Vitezslav Jaros,Liverpool FC,goalkeeper,56,Goalkeeper,23,Czech Republic,CZE
+94,Caoimhín Kelleher,Liverpool FC,goalkeeper,62,Goalkeeper,25,Ireland,IRL
+86,Trent Alexander-Arnold,Liverpool FC,defender,66,Right-Back,25,England,ENG
+84,Jarell Quansah,Liverpool FC,defender,78,Centre-Back,21,England,ENG
+99,Conor Bradley,Liverpool FC,defender,84,Right-Back,21,Northern Ireland,NIR
 18,Kyle Walker,Manchester City,defender,2,Right-Back,34,England,ENG
 14,Rúben Dias,Manchester City,defender,3,Centre-Back,27,Portugal,PRT
 3,John Stones,Manchester City,defender,5,Centre-Back,30,England,ENG
 15,Nathan Aké,Manchester City,defender,6,Centre-Back,29,Netherlands,NLD
 5,João Cancelo,Manchester City,defender,7,Right-Back,30,Portugal,PRT
-8,Mateo Kovacic,Manchester City,midfielder,8,Central Midfield,30,Croatia,HRV
+20,Mateo Kovacic,Manchester City,midfielder,8,Central Midfield,30,Croatia,HRV
 25,Erling Haaland,Manchester City,attacker,9,Centre-Forward,24,Norway,NOR
 23,Jack Grealish,Manchester City,attacker,10,Left Winger,28,England,ENG
 10,Jérémy Doku,Manchester City,attacker,11,Left Winger,22,Belgium,BEL
 19,Rodri,Manchester City,midfielder,16,Defensive Midfield,28,Spain,ESP
 22,Kevin De Bruyne,Manchester City,midfielder,17,Attacking Midfield,33,Belgium,BEL
 13,Stefan Ortega,Manchester City,goalkeeper,18,Goalkeeper,31,Germany,DEU
+8,İlkay Gündoğan,Manchester City,midfielder,19,Central Midfield,33,Germany,DEU
 9,Bernardo Silva,Manchester City,midfielder,20,Attacking Midfield,30,Portugal,PRT
 16,Josko Gvardiol,Manchester City,defender,24,Left-Back,22,Croatia,HRV
 2,Manuel Akanji,Manchester City,defender,25,Centre-Back,29,Switzerland,CHE
 24,Savinho,Manchester City,attacker,26,Right Winger,20,Brazil,BRA
-20,Matheus Nunes,Manchester City,midfielder,27,Central Midfield,25,Portugal,PRT
+7,Matheus Nunes,Manchester City,midfielder,27,Central Midfield,25,Portugal,PRT
 0,Ederson,Manchester City,goalkeeper,31,Goalkeeper,31,Brazil,BRA
-7,Máximo Perrone,Manchester City,midfielder,32,Defensive Midfield,21,Argentina,ARG
 1,Scott Carson,Manchester City,goalkeeper,33,Goalkeeper,38,England,ENG
 11,Phil Foden,Manchester City,attacker,47,Right Winger,24,England,ENG
 12,Oscar Bobb,Manchester City,attacker,52,Right Winger,21,Norway,NOR
@@ -352,212 +357,210 @@ PlayerId,Name,Team,PositionType,ShirtNumber,Position,Age,Country,CountryCode
 17,Rico Lewis,Manchester City,defender,82,Right-Back,19,England,ENG
 21,James McAtee,Manchester City,midfielder,87,Central Midfield,21,England,ENG
 4,Josh Wilson-Esbrand,Manchester City,defender,97,Left-Back,21,England,ENG
-128,Altay Bayındır,Manchester United,goalkeeper,1,Goalkeeper,26,Türkiye,TUR
-131,Victor Lindelöf,Manchester United,defender,2,Centre-Back,30,Sweden,SWE
-134,Noussair Mazraoui,Manchester United,defender,3,Right-Back,26,Morocco,MAR
-129,Matthijs de Ligt,Manchester United,defender,4,Centre-Back,25,Netherlands,NLD
-115,Harry Maguire,Manchester United,defender,5,Centre-Back,31,England,ENG
-114,Lisandro Martínez,Manchester United,defender,6,Centre-Back,26,Argentina,ARG
-138,Mason Mount,Manchester United,midfielder,7,Attacking Midfield,25,England,ENG
-122,Bruno Fernandes,Manchester United,midfielder,8,Attacking Midfield,29,Portugal,PRT
-142,Rasmus Højlund,Manchester United,attacker,9,Centre-Forward,21,Denmark,DNK
-139,Marcus Rashford,Manchester United,attacker,10,Left Winger,26,England,ENG
-127,Joshua Zirkzee,Manchester United,attacker,11,Centre-Forward,23,Netherlands,NLD
-117,Tyrell Malacia,Manchester United,defender,12,Left-Back,25,Netherlands,NLD
-121,Christian Eriksen,Manchester United,midfielder,14,Central Midfield,32,Denmark,DNK
-130,Leny Yoro,Manchester United,defender,15,Centre-Back,18,France,FRA
-141,Amad Diallo,Manchester United,attacker,16,Right Winger,22,Cote d'Ivoire,CIV
-124,Alejandro Garnacho,Manchester United,attacker,17,Left Winger,20,Argentina,ARG
-119,Casemiro,Manchester United,midfielder,18,Defensive Midfield,32,Brazil,BRA
-118,Diogo Dalot,Manchester United,defender,20,Right-Back,25,Portugal,PRT
-125,Antony,Manchester United,attacker,21,Right Winger,24,Brazil,BRA
-113,Tom Heaton,Manchester United,goalkeeper,22,Goalkeeper,38,England,ENG
-132,Luke Shaw,Manchester United,defender,23,Left-Back,29,England,ENG
-112,André Onana,Manchester United,goalkeeper,24,Goalkeeper,28,Cameroon,CMR
-140,Jadon Sancho,Manchester United,attacker,25,Left Winger,24,England,ENG
-126,Facundo Pellistri,Manchester United,attacker,28,Right Winger,22,Uruguay,URY
-116,Jonny Evans,Manchester United,defender,35,Centre-Back,36,Northern Ireland,NIR
-143,Ethan Wheatley,Manchester United,attacker,36,Centre-Forward,18,England,ENG
-120,Kobbie Mainoo,Manchester United,midfielder,37,Central Midfield,19,England,ENG
-136,Scott McTominay,Manchester United,midfielder,39,Central Midfield,27,Scotland,SCT
-133,Harry Amass,Manchester United,defender,41,Left-Back,17,England,ENG
-135,Toby Collyer,Manchester United,midfielder,43,Defensive Midfield,20,England,ENG
-137,Daniel Gore,Manchester United,midfielder,44,Central Midfield,19,England,ENG
-123,Hannibal,Manchester United,midfielder,46,Attacking Midfield,21,Tunisia,TUN
-174,Martin Dúbravka,Newcastle United,goalkeeper,1,Goalkeeper,35,Slovakia,SVK
-196,Kieran Trippier,Newcastle United,defender,2,Right-Back,33,England,ENG
-191,Sven Botman,Newcastle United,defender,4,Centre-Back,24,Netherlands,NLD
-192,Fabian Schär,Newcastle United,defender,5,Centre-Back,32,Switzerland,CHE
-177,Jamaal Lascelles,Newcastle United,defender,6,Centre-Back,30,England,ENG
-199,Joelinton,Newcastle United,midfielder,7,Central Midfield,28,Brazil,BRA
-198,Sandro Tonali,Newcastle United,midfielder,8,Defensive Midfield,24,Italy,ITA
-205,Callum Wilson,Newcastle United,attacker,9,Centre-Forward,32,England,ENG
-185,Anthony Gordon,Newcastle United,attacker,10,Left Winger,23,England,ENG
-202,Harvey Barnes,Newcastle United,attacker,11,Left Winger,26,England,ENG
-179,Jamal Lewis,Newcastle United,defender,12,Left-Back,26,Northern Ireland,NIR
-178,Matt Targett,Newcastle United,defender,13,Left-Back,28,England,ENG
-187,Alexander Isak,Newcastle United,attacker,14,Centre-Forward,24,Sweden,SWE
-181,Emil Krafth,Newcastle United,defender,17,Right-Back,30,Sweden,SWE
-188,William Osula,Newcastle United,attacker,18,Centre-Forward,21,Denmark,DNK
-189,Odysseas Vlachodimos,Newcastle United,goalkeeper,19,Goalkeeper,30,Greece,GRC
-193,Lewis Hall,Newcastle United,defender,20,Left-Back,19,England,ENG
-180,Tino Livramento,Newcastle United,defender,21,Right-Back,21,England,ENG
-173,Nick Pope,Newcastle United,goalkeeper,22,Goalkeeper,32,England,ENG
-204,Jacob Murphy,Newcastle United,attacker,23,Right Winger,29,England,ENG
-186,Miguel Almirón,Newcastle United,attacker,24,Right Winger,30,Paraguay,PRY
-176,Lloyd Kelly,Newcastle United,defender,25,Centre-Back,25,England,ENG
-175,John Ruddy,Newcastle United,goalkeeper,26,Goalkeeper,37,England,ENG
-183,Joe Willock,Newcastle United,midfielder,28,Central Midfield,25,England,ENG
-190,Mark Gillespie,Newcastle United,goalkeeper,29,Goalkeeper,32,England,ENG
-197,Harrison Ashby,Newcastle United,defender,30,Right-Back,22,Scotland,SCT
-194,Dan Burn,Newcastle United,defender,33,Left-Back,32,England,ENG
-200,Sean Longstaff,Newcastle United,midfielder,36,Central Midfield,26,England,ENG
-195,Alex Murphy,Newcastle United,defender,37,Left-Back,20,Ireland,IRL
-203,Garang Kuol,Newcastle United,attacker,38,Left Winger,19,Australia,AUS
-182,Bruno Guimarães,Newcastle United,midfielder,39,Defensive Midfield,26,Brazil,BRA
-201,Joe White,Newcastle United,midfielder,40,Attacking Midfield,21,England,ENG
-184,Lewis Miley,Newcastle United,midfielder,67,Central Midfield,18,England,ENG
-346,Matt Turner,Nottingham Forest,goalkeeper,1,Goalkeeper,30,United States,USA
-349,Joe Worrall,Nottingham Forest,defender,4,Centre-Back,27,England,ENG
-362,Murillo,Nottingham Forest,defender,5,Centre-Back,22,Brazil,BRA
-352,Ibrahim Sangaré,Nottingham Forest,midfielder,6,Defensive Midfield,26,Cote d'Ivoire,CIV
-351,Neco Williams,Nottingham Forest,defender,7,Right-Back,23,Wales,WLS
-368,Elliot Anderson,Nottingham Forest,midfielder,8,Central Midfield,21,Scotland,SCT
-371,Taiwo Awoniyi,Nottingham Forest,attacker,9,Centre-Forward,27,Nigeria,NGA
-369,Morgan Gibbs-White,Nottingham Forest,midfielder,10,Attacking Midfield,24,England,ENG
-359,Chris Wood,Nottingham Forest,attacker,11,Centre-Forward,32,New Zealand,NZL
-363,Andrew Omobamidele,Nottingham Forest,defender,12,Centre-Back,22,Ireland,IRL
-355,Callum Hudson-Odoi,Nottingham Forest,attacker,14,Left Winger,23,England,ENG
-365,Harry Toffolo,Nottingham Forest,defender,15,Left-Back,29,England,ENG
-353,Nicolás Domínguez,Nottingham Forest,midfielder,16,Central Midfield,26,Argentina,ARG
-358,Eric da Silva Moreira,Nottingham Forest,attacker,17,Right Winger,18,Germany,DEU
-356,Jota Silva,Nottingham Forest,attacker,20,Left Winger,25,Portugal,PRT
-357,Anthony Elanga,Nottingham Forest,attacker,21,Right Winger,22,Sweden,SWE
-354,Ryan Yates,Nottingham Forest,midfielder,22,Central Midfield,26,England,ENG
-370,Ramón Sosa,Nottingham Forest,attacker,24,Left Winger,24,Paraguay,PRY
-372,Emmanuel Dennis,Nottingham Forest,attacker,25,Centre-Forward,26,Nigeria,NGA
-361,Matz Sels,Nottingham Forest,goalkeeper,26,Goalkeeper,32,Belgium,BEL
-367,Danilo,Nottingham Forest,midfielder,28,Defensive Midfield,23,Brazil,BRA
-364,Willy Boly,Nottingham Forest,defender,30,Centre-Back,33,Cote d'Ivoire,CIV
-348,Nikola Milenković,Nottingham Forest,defender,31,Centre-Back,26,Serbia,SRB
-347,Carlos Miguel,Nottingham Forest,goalkeeper,33,Goalkeeper,25,Brazil,BRA
-366,Ola Aina,Nottingham Forest,defender,34,Right-Back,27,Nigeria,NGA
-360,Ui-jo Hwang,Nottingham Forest,attacker,35,Centre-Forward,31,South Korea,KOR
-350,Zach Abbott,Nottingham Forest,defender,44,Centre-Back,18,England,ENG
-493,Alex McCarthy,Southampton FC,goalkeeper,1,Goalkeeper,34,England,ENG
-498,Kyle Walker-Peters,Southampton FC,defender,2,Right-Back,27,England,ENG
-497,Ryan Manning,Southampton FC,defender,3,Left-Back,28,Ireland,IRL
-485,Flynn Downes,Southampton FC,midfielder,4,Defensive Midfield,25,England,ENG
-496,Jack Stephens,Southampton FC,defender,5,Centre-Back,30,England,ENG
-479,Taylor Harwood-Bellis,Southampton FC,defender,6,Centre-Back,22,England,ENG
-502,Joe Aribo,Southampton FC,midfielder,7,Central Midfield,28,Nigeria,NGA
-486,Will Smallbone,Southampton FC,midfielder,8,Central Midfield,24,Ireland,IRL
-506,Adam Armstrong,Southampton FC,attacker,9,Centre-Forward,27,England,ENG
-503,Adam Lallana,Southampton FC,midfielder,10,Attacking Midfield,36,England,ENG
-508,Ross Stewart,Southampton FC,attacker,11,Centre-Forward,28,Scotland,SCT
-495,Ronnie Edwards,Southampton FC,defender,12,Centre-Back,21,England,ENG
-478,Joe Lumley,Southampton FC,goalkeeper,13,Goalkeeper,29,England,ENG
-499,James Bree,Southampton FC,defender,14,Right-Back,26,England,ENG
-481,Nathan Wood,Southampton FC,defender,15,Centre-Back,22,England,ENG
-484,Yukinari Sugawara,Southampton FC,defender,16,Right-Back,24,Japan,JPN
-504,Ben Brereton Díaz,Southampton FC,attacker,17,Left Winger,25,Chile,CHL
-491,Sékou Mara,Southampton FC,attacker,18,Centre-Forward,22,France,FRA
-490,Cameron Archer,Southampton FC,attacker,19,Centre-Forward,22,England,ENG
-487,Kamaldeen Sulemana,Southampton FC,attacker,20,Left Winger,22,Ghana,GHA
-483,Charlie Taylor,Southampton FC,defender,21,Left-Back,30,England,ENG
-501,Carlos Alcaraz,Southampton FC,midfielder,22,Central Midfield,21,Argentina,ARG
-488,Samuel Edozie,Southampton FC,attacker,23,Left Winger,21,England,ENG
-500,Shea Charles,Southampton FC,midfielder,24,Defensive Midfield,20,Northern Ireland,NIR
-505,Samuel Amo-Ameyaw,Southampton FC,attacker,27,Right Winger,18,England,ENG
-482,Juan Larios,Southampton FC,defender,28,Left-Back,20,Spain,ESP
-492,Mateusz Lis,Southampton FC,goalkeeper,30,Goalkeeper,27,Poland,POL
-477,Gavin Bazunu,Southampton FC,goalkeeper,31,Goalkeeper,22,Ireland,IRL
-507,Paul Onuachu,Southampton FC,attacker,32,Centre-Forward,30,Nigeria,NGA
-489,Tyler Dibling,Southampton FC,attacker,33,Right Winger,18,England,ENG
-480,Jan Bednarek,Southampton FC,defender,35,Centre-Back,28,Poland,POL
-494,Armel Bella-Kotchap,Southampton FC,defender,37,Centre-Back,22,Germany,DEU
-144,Guglielmo Vicario,Tottenham Hotspur,goalkeeper,1,Goalkeeper,27,Italy,ITA
-149,Sergio Reguilón,Tottenham Hotspur,defender,3,Left-Back,27,Spain,ESP
-147,Radu Drăgușin,Tottenham Hotspur,defender,6,Centre-Back,22,Romania,ROU
-169,Heung-min Son,Tottenham Hotspur,attacker,7,Left Winger,32,South Korea,KOR
-165,Yves Bissouma,Tottenham Hotspur,midfielder,8,Defensive Midfield,27,Mali,MLI
-158,Richarlison,Tottenham Hotspur,attacker,9,Centre-Forward,27,Brazil,BRA
-153,James Maddison,Tottenham Hotspur,midfielder,10,Attacking Midfield,27,England,ENG
-163,Destiny Udogie,Tottenham Hotspur,defender,13,Left-Back,21,Italy,ITA
-152,Archie Gray,Tottenham Hotspur,midfielder,14,Central Midfield,18,England,ENG
-168,Lucas Bergvall,Tottenham Hotspur,midfielder,15,Attacking Midfield,18,Sweden,SWE
-155,Timo Werner,Tottenham Hotspur,attacker,16,Left Winger,28,Germany,DEU
-146,Cristian Romero,Tottenham Hotspur,defender,17,Centre-Back,26,Argentina,ARG
-167,Giovani Lo Celso,Tottenham Hotspur,midfielder,18,Central Midfield,28,Argentina,ARG
-172,Dominic Solanke,Tottenham Hotspur,attacker,19,Centre-Forward,26,England,ENG
-159,Fraser Forster,Tottenham Hotspur,goalkeeper,20,Goalkeeper,36,England,ENG
-171,Dejan Kulusevski,Tottenham Hotspur,attacker,21,Right Winger,24,Sweden,SWE
-157,Brennan Johnson,Tottenham Hotspur,attacker,22,Right Winger,23,Wales,WLS
-164,Pedro Porro,Tottenham Hotspur,defender,23,Right-Back,24,Spain,ESP
-150,Djed Spence,Tottenham Hotspur,defender,24,Right-Back,24,England,ENG
-170,Manor Solomon,Tottenham Hotspur,attacker,27,Left Winger,25,Israel,ISR
-156,Wilson Odobert,Tottenham Hotspur,attacker,28,Left Winger,19,France,FRA
-151,Pape Matar Sarr,Tottenham Hotspur,midfielder,29,Central Midfield,21,Senegal,SEN
-166,Rodrigo Bentancur,Tottenham Hotspur,midfielder,30,Central Midfield,27,Uruguay,URY
-162,Ben Davies,Tottenham Hotspur,defender,33,Centre-Back,31,Wales,WLS
-148,Ashley Phillips,Tottenham Hotspur,defender,35,Centre-Back,19,England,ENG
-161,Micky van de Ven,Tottenham Hotspur,defender,37,Centre-Back,23,Netherlands,NLD
-145,Brandon Austin,Tottenham Hotspur,goalkeeper,40,Goalkeeper,25,England,ENG
-160,Alfie Whiteman,Tottenham Hotspur,goalkeeper,41,Goalkeeper,25,England,ENG
-154,Alfie Devine,Tottenham Hotspur,midfielder,45,Attacking Midfield,20,England,ENG
-235,Lukasz Fabianski,West Ham United,goalkeeper,1,Goalkeeper,39,Poland,POL
-251,Aaron Cresswell,West Ham United,defender,3,Left-Back,34,England,ENG
-237,Kurt Zouma,West Ham United,defender,4,Centre-Back,29,France,FRA
-252,Vladimír Coufal,West Ham United,defender,5,Right-Back,31,Czech Republic,CZE
-256,Crysencio Summerville,West Ham United,attacker,7,Left Winger,22,Netherlands,NLD
-254,James Ward-Prowse,West Ham United,midfielder,8,Central Midfield,29,England,ENG
-259,Michail Antonio,West Ham United,attacker,9,Centre-Forward,34,Jamaica,JAM
-255,Lucas Paquetá,West Ham United,midfielder,10,Attacking Midfield,26,Brazil,BRA
-258,Niclas Füllkrug,West Ham United,attacker,11,Centre-Forward,31,Germany,DEU
-243,Mohammed Kudus,West Ham United,midfielder,14,Attacking Midfield,24,Ghana,GHA
-250,Konstantinos Mavropanos,West Ham United,defender,15,Centre-Back,26,Greece,GRC
-245,Luis Guilherme,West Ham United,attacker,17,Right Winger,18,Brazil,BRA
-246,Danny Ings,West Ham United,attacker,18,Centre-Forward,32,England,ENG
-240,Edson Álvarez,West Ham United,midfielder,19,Defensive Midfield,26,Mexico,MEX
-257,Jarrod Bowen,West Ham United,attacker,20,Right Winger,27,England,ENG
-247,Wes Foderingham,West Ham United,goalkeeper,21,Goalkeeper,33,England,ENG
-244,Maxwel Cornet,West Ham United,attacker,22,Left Winger,27,Cote d'Ivoire,CIV
-234,Alphonse Areola,West Ham United,goalkeeper,23,Goalkeeper,31,France,FRA
-241,Guido Rodríguez,West Ham United,midfielder,24,Defensive Midfield,30,Argentina,ARG
-248,Jean-Clair Todibo,West Ham United,defender,25,Centre-Back,24,France,FRA
-249,Max Kilman,West Ham United,defender,26,Centre-Back,27,England,ENG
-236,Nayef Aguerd,West Ham United,defender,27,Centre-Back,28,Morocco,MAR
-253,Tomas Soucek,West Ham United,midfielder,28,Defensive Midfield,29,Czech Republic,CZE
-239,Aaron Wan-Bissaka,West Ham United,defender,29,Right-Back,26,England,ENG
-238,Emerson,West Ham United,defender,33,Left-Back,30,Italy,ITA
-242,Andy Irving,West Ham United,midfielder,39,Central Midfield,24,Scotland,SCT
-402,José Sá,Wolverhampton Wanderers,goalkeeper,1,Goalkeeper,31,Portugal,PRT
-407,Matt Doherty,Wolverhampton Wanderers,defender,2,Right-Back,32,Ireland,IRL
-419,Rayan Aït-Nouri,Wolverhampton Wanderers,defender,3,Left-Back,23,Algeria,DZA
-404,Santiago Bueno,Wolverhampton Wanderers,defender,4,Centre-Back,25,Uruguay,URY
-408,Mario Lemina,Wolverhampton Wanderers,midfielder,5,Defensive Midfield,30,Gabon,GAB
-422,Boubacar Traoré,Wolverhampton Wanderers,midfielder,6,Defensive Midfield,23,Mali,MLI
-423,João Gomes,Wolverhampton Wanderers,midfielder,8,Central Midfield,23,Brazil,BRA
-415,Jørgen Strand Larsen,Wolverhampton Wanderers,attacker,9,Centre-Forward,24,Norway,NOR
-428,Daniel Podence,Wolverhampton Wanderers,attacker,10,Right Winger,28,Portugal,PRT
-430,Hee-chan Hwang,Wolverhampton Wanderers,attacker,11,Centre-Forward,28,South Korea,KOR
-429,Matheus Cunha,Wolverhampton Wanderers,attacker,12,Centre-Forward,25,Brazil,BRA
-418,Yerson Mosquera,Wolverhampton Wanderers,defender,14,Centre-Back,23,Colombia,COL
-405,Craig Dawson,Wolverhampton Wanderers,defender,15,Centre-Back,34,England,ENG
-431,Sasa Kalajdzic,Wolverhampton Wanderers,attacker,18,Centre-Forward,27,Austria,AUT
-425,Rodrigo Gomes,Wolverhampton Wanderers,midfielder,19,Right Midfield,21,Portugal,PRT
-424,Tommy Doyle,Wolverhampton Wanderers,midfielder,20,Central Midfield,22,England,ENG
-414,Pablo Sarabia,Wolverhampton Wanderers,attacker,21,Right Winger,32,Spain,ESP
-406,Nélson Semedo,Wolverhampton Wanderers,defender,22,Right-Back,30,Portugal,PRT
-417,Toti,Wolverhampton Wanderers,defender,24,Centre-Back,25,Portugal,PRT
-416,Daniel Bentley,Wolverhampton Wanderers,goalkeeper,25,Goalkeeper,31,England,ENG
-410,Jean-Ricner Bellegarde,Wolverhampton Wanderers,midfielder,27,Central Midfield,26,France,FRA
-426,Tawanda Chirewa,Wolverhampton Wanderers,midfielder,28,Attacking Midfield,20,Zimbabwe,ZWE
-427,Enso González,Wolverhampton Wanderers,attacker,30,Left Winger,19,Paraguay,PRY
-409,Joe Hodge,Wolverhampton Wanderers,midfielder,32,Defensive Midfield,21,Ireland,IRL
-420,Ki-Jana Hoever,Wolverhampton Wanderers,defender,35,Right-Back,22,Netherlands,NLD
-413,Chiquinho,Wolverhampton Wanderers,attacker,36,Left Winger,24,Portugal,PRT
-421,Pedro Lima,Wolverhampton Wanderers,defender,37,Right-Back,18,Brazil,BRA
-411,Luke Cundle,Wolverhampton Wanderers,midfielder,39,Central Midfield,22,England,ENG
-403,Tom King,Wolverhampton Wanderers,goalkeeper,40,Goalkeeper,29,Wales,WLS
-412,Chem Campbell,Wolverhampton Wanderers,midfielder,77,Attacking Midfield,21,Wales,WLS
+122,Altay Bayındır,Manchester United,goalkeeper,1,Goalkeeper,26,Türkiye,TUR
+125,Victor Lindelöf,Manchester United,defender,2,Centre-Back,30,Sweden,SWE
+128,Noussair Mazraoui,Manchester United,defender,3,Right-Back,26,Morocco,MAR
+123,Matthijs de Ligt,Manchester United,defender,4,Centre-Back,25,Netherlands,NLD
+109,Harry Maguire,Manchester United,defender,5,Centre-Back,31,England,ENG
+108,Lisandro Martínez,Manchester United,defender,6,Centre-Back,26,Argentina,ARG
+132,Mason Mount,Manchester United,midfielder,7,Attacking Midfield,25,England,ENG
+116,Bruno Fernandes,Manchester United,midfielder,8,Attacking Midfield,29,Portugal,PRT
+120,Rasmus Højlund,Manchester United,attacker,9,Centre-Forward,21,Denmark,DNK
+133,Marcus Rashford,Manchester United,attacker,10,Left Winger,26,England,ENG
+136,Joshua Zirkzee,Manchester United,attacker,11,Centre-Forward,23,Netherlands,NLD
+111,Tyrell Malacia,Manchester United,defender,12,Left-Back,25,Netherlands,NLD
+115,Christian Eriksen,Manchester United,midfielder,14,Central Midfield,32,Denmark,DNK
+124,Leny Yoro,Manchester United,defender,15,Centre-Back,18,France,FRA
+135,Amad Diallo,Manchester United,attacker,16,Right Winger,22,Cote d'Ivoire,CIV
+118,Alejandro Garnacho,Manchester United,attacker,17,Left Winger,20,Argentina,ARG
+113,Casemiro,Manchester United,midfielder,18,Defensive Midfield,32,Brazil,BRA
+112,Diogo Dalot,Manchester United,defender,20,Right-Back,25,Portugal,PRT
+119,Antony,Manchester United,attacker,21,Right Winger,24,Brazil,BRA
+107,Tom Heaton,Manchester United,goalkeeper,22,Goalkeeper,38,England,ENG
+126,Luke Shaw,Manchester United,defender,23,Left-Back,29,England,ENG
+106,André Onana,Manchester United,goalkeeper,24,Goalkeeper,28,Cameroon,CMR
+134,Jadon Sancho,Manchester United,attacker,25,Left Winger,24,England,ENG
+110,Jonny Evans,Manchester United,defender,35,Centre-Back,36,Northern Ireland,NIR
+121,Ethan Wheatley,Manchester United,attacker,36,Centre-Forward,18,England,ENG
+114,Kobbie Mainoo,Manchester United,midfielder,37,Central Midfield,19,England,ENG
+130,Scott McTominay,Manchester United,midfielder,39,Central Midfield,27,Scotland,SCT
+127,Harry Amass,Manchester United,defender,41,Left-Back,17,England,ENG
+129,Toby Collyer,Manchester United,midfielder,43,Defensive Midfield,20,England,ENG
+131,Daniel Gore,Manchester United,midfielder,44,Central Midfield,19,England,ENG
+117,Hannibal,Manchester United,midfielder,46,Attacking Midfield,21,Tunisia,TUN
+166,Martin Dúbravka,Newcastle United,goalkeeper,1,Goalkeeper,35,Slovakia,SVK
+188,Kieran Trippier,Newcastle United,defender,2,Right-Back,33,England,ENG
+183,Sven Botman,Newcastle United,defender,4,Centre-Back,24,Netherlands,NLD
+184,Fabian Schär,Newcastle United,defender,5,Centre-Back,32,Switzerland,CHE
+169,Jamaal Lascelles,Newcastle United,defender,6,Centre-Back,30,England,ENG
+191,Joelinton,Newcastle United,midfielder,7,Central Midfield,28,Brazil,BRA
+190,Sandro Tonali,Newcastle United,midfielder,8,Defensive Midfield,24,Italy,ITA
+197,Callum Wilson,Newcastle United,attacker,9,Centre-Forward,32,England,ENG
+177,Anthony Gordon,Newcastle United,attacker,10,Left Winger,23,England,ENG
+194,Harvey Barnes,Newcastle United,attacker,11,Left Winger,26,England,ENG
+171,Jamal Lewis,Newcastle United,defender,12,Left-Back,26,Northern Ireland,NIR
+170,Matt Targett,Newcastle United,defender,13,Left-Back,28,England,ENG
+179,Alexander Isak,Newcastle United,attacker,14,Centre-Forward,24,Sweden,SWE
+173,Emil Krafth,Newcastle United,defender,17,Right-Back,30,Sweden,SWE
+180,William Osula,Newcastle United,attacker,18,Centre-Forward,21,Denmark,DNK
+181,Odysseas Vlachodimos,Newcastle United,goalkeeper,19,Goalkeeper,30,Greece,GRC
+185,Lewis Hall,Newcastle United,defender,20,Left-Back,19,England,ENG
+172,Tino Livramento,Newcastle United,defender,21,Right-Back,21,England,ENG
+165,Nick Pope,Newcastle United,goalkeeper,22,Goalkeeper,32,England,ENG
+196,Jacob Murphy,Newcastle United,attacker,23,Right Winger,29,England,ENG
+178,Miguel Almirón,Newcastle United,attacker,24,Right Winger,30,Paraguay,PRY
+168,Lloyd Kelly,Newcastle United,defender,25,Centre-Back,25,England,ENG
+167,John Ruddy,Newcastle United,goalkeeper,26,Goalkeeper,37,England,ENG
+175,Joe Willock,Newcastle United,midfielder,28,Central Midfield,25,England,ENG
+182,Mark Gillespie,Newcastle United,goalkeeper,29,Goalkeeper,32,England,ENG
+189,Harrison Ashby,Newcastle United,defender,30,Right-Back,22,Scotland,SCT
+186,Dan Burn,Newcastle United,defender,33,Left-Back,32,England,ENG
+192,Sean Longstaff,Newcastle United,midfielder,36,Central Midfield,26,England,ENG
+187,Alex Murphy,Newcastle United,defender,37,Left-Back,20,Ireland,IRL
+195,Garang Kuol,Newcastle United,attacker,38,Left Winger,19,Australia,AUS
+174,Bruno Guimarães,Newcastle United,midfielder,39,Defensive Midfield,26,Brazil,BRA
+193,Joe White,Newcastle United,midfielder,40,Attacking Midfield,21,England,ENG
+176,Lewis Miley,Newcastle United,midfielder,67,Central Midfield,18,England,ENG
+341,Matt Turner,Nottingham Forest,goalkeeper,1,Goalkeeper,30,United States,USA
+357,Murillo,Nottingham Forest,defender,5,Centre-Back,22,Brazil,BRA
+347,Ibrahim Sangaré,Nottingham Forest,midfielder,6,Defensive Midfield,26,Cote d'Ivoire,CIV
+346,Neco Williams,Nottingham Forest,defender,7,Right-Back,23,Wales,WLS
+363,Elliot Anderson,Nottingham Forest,midfielder,8,Central Midfield,21,Scotland,SCT
+367,Taiwo Awoniyi,Nottingham Forest,attacker,9,Centre-Forward,27,Nigeria,NGA
+364,Morgan Gibbs-White,Nottingham Forest,midfielder,10,Attacking Midfield,24,England,ENG
+354,Chris Wood,Nottingham Forest,attacker,11,Centre-Forward,32,New Zealand,NZL
+358,Andrew Omobamidele,Nottingham Forest,defender,12,Centre-Back,22,Ireland,IRL
+350,Callum Hudson-Odoi,Nottingham Forest,attacker,14,Left Winger,23,England,ENG
+360,Harry Toffolo,Nottingham Forest,defender,15,Left-Back,29,England,ENG
+348,Nicolás Domínguez,Nottingham Forest,midfielder,16,Central Midfield,26,Argentina,ARG
+353,Eric da Silva Moreira,Nottingham Forest,attacker,17,Right Winger,18,Germany,DEU
+345,Álex Moreno,Nottingham Forest,defender,19,Left-Back,31,Spain,ESP
+351,Jota Silva,Nottingham Forest,attacker,20,Left Winger,25,Portugal,PRT
+352,Anthony Elanga,Nottingham Forest,attacker,21,Right Winger,22,Sweden,SWE
+349,Ryan Yates,Nottingham Forest,midfielder,22,Central Midfield,26,England,ENG
+365,Ramón Sosa,Nottingham Forest,attacker,24,Left Winger,24,Paraguay,PRY
+368,Emmanuel Dennis,Nottingham Forest,attacker,25,Centre-Forward,26,Nigeria,NGA
+356,Matz Sels,Nottingham Forest,goalkeeper,26,Goalkeeper,32,Belgium,BEL
+362,Danilo,Nottingham Forest,midfielder,28,Defensive Midfield,23,Brazil,BRA
+344,Willy Boly,Nottingham Forest,defender,30,Centre-Back,33,Cote d'Ivoire,CIV
+343,Nikola Milenković,Nottingham Forest,defender,31,Centre-Back,26,Serbia,SRB
+342,Carlos Miguel,Nottingham Forest,goalkeeper,33,Goalkeeper,25,Brazil,BRA
+361,Ola Aina,Nottingham Forest,defender,34,Right-Back,27,Nigeria,NGA
+355,Ui-jo Hwang,Nottingham Forest,attacker,35,Centre-Forward,31,South Korea,KOR
+366,Josh Bowler,Nottingham Forest,attacker,38,Right Winger,25,England,ENG
+359,Zach Abbott,Nottingham Forest,defender,44,Centre-Back,18,England,ENG
+476,Alex McCarthy,Southampton FC,goalkeeper,1,Goalkeeper,34,England,ENG
+481,Kyle Walker-Peters,Southampton FC,defender,2,Right-Back,27,England,ENG
+480,Ryan Manning,Southampton FC,defender,3,Left-Back,28,Ireland,IRL
+499,Flynn Downes,Southampton FC,midfielder,4,Defensive Midfield,25,England,ENG
+479,Jack Stephens,Southampton FC,defender,5,Centre-Back,30,England,ENG
+492,Taylor Harwood-Bellis,Southampton FC,defender,6,Centre-Back,22,England,ENG
+485,Joe Aribo,Southampton FC,midfielder,7,Central Midfield,28,Nigeria,NGA
+501,Will Smallbone,Southampton FC,midfielder,8,Central Midfield,24,Ireland,IRL
+489,Adam Armstrong,Southampton FC,attacker,9,Centre-Forward,27,England,ENG
+486,Adam Lallana,Southampton FC,midfielder,10,Attacking Midfield,36,England,ENG
+506,Ross Stewart,Southampton FC,attacker,11,Centre-Forward,28,Scotland,SCT
+478,Ronnie Edwards,Southampton FC,defender,12,Centre-Back,21,England,ENG
+491,Joe Lumley,Southampton FC,goalkeeper,13,Goalkeeper,29,England,ENG
+482,James Bree,Southampton FC,defender,14,Right-Back,26,England,ENG
+494,Nathan Wood,Southampton FC,defender,15,Centre-Back,22,England,ENG
+497,Yukinari Sugawara,Southampton FC,defender,16,Right-Back,24,Japan,JPN
+487,Ben Brereton Díaz,Southampton FC,attacker,17,Left Winger,25,Chile,CHL
+500,Mateus Fernandes,Southampton FC,midfielder,18,Central Midfield,20,Portugal,PRT
+505,Cameron Archer,Southampton FC,attacker,19,Centre-Forward,22,England,ENG
+502,Kamaldeen Sulemana,Southampton FC,attacker,20,Left Winger,22,Ghana,GHA
+496,Charlie Taylor,Southampton FC,defender,21,Left-Back,30,England,ENG
+484,Carlos Alcaraz,Southampton FC,midfielder,22,Central Midfield,21,Argentina,ARG
+503,Samuel Edozie,Southampton FC,attacker,23,Left Winger,21,England,ENG
+483,Shea Charles,Southampton FC,midfielder,24,Defensive Midfield,20,Northern Ireland,NIR
+498,Lesley Ugochukwu,Southampton FC,midfielder,26,Defensive Midfield,20,France,FRA
+488,Samuel Amo-Ameyaw,Southampton FC,attacker,27,Right Winger,18,England,ENG
+495,Juan Larios,Southampton FC,defender,28,Left-Back,20,Spain,ESP
+475,Gavin Bazunu,Southampton FC,goalkeeper,31,Goalkeeper,22,Ireland,IRL
+490,Paul Onuachu,Southampton FC,attacker,32,Centre-Forward,30,Nigeria,NGA
+504,Tyler Dibling,Southampton FC,attacker,33,Right Winger,18,England,ENG
+493,Jan Bednarek,Southampton FC,defender,35,Centre-Back,28,Poland,POL
+477,Armel Bella-Kotchap,Southampton FC,defender,37,Centre-Back,22,Germany,DEU
+137,Guglielmo Vicario,Tottenham Hotspur,goalkeeper,1,Goalkeeper,27,Italy,ITA
+155,Sergio Reguilón,Tottenham Hotspur,defender,3,Left-Back,27,Spain,ESP
+140,Radu Drăgușin,Tottenham Hotspur,defender,6,Centre-Back,22,Romania,ROU
+147,Heung-min Son,Tottenham Hotspur,attacker,7,Left Winger,32,South Korea,KOR
+143,Yves Bissouma,Tottenham Hotspur,midfielder,8,Defensive Midfield,27,Mali,MLI
+164,Richarlison,Tottenham Hotspur,attacker,9,Centre-Forward,27,Brazil,BRA
+159,James Maddison,Tottenham Hotspur,midfielder,10,Attacking Midfield,27,England,ENG
+141,Destiny Udogie,Tottenham Hotspur,defender,13,Left-Back,21,Italy,ITA
+158,Archie Gray,Tottenham Hotspur,midfielder,14,Central Midfield,18,England,ENG
+146,Lucas Bergvall,Tottenham Hotspur,midfielder,15,Attacking Midfield,18,Sweden,SWE
+161,Timo Werner,Tottenham Hotspur,attacker,16,Left Winger,28,Germany,DEU
+139,Cristian Romero,Tottenham Hotspur,defender,17,Centre-Back,26,Argentina,ARG
+145,Giovani Lo Celso,Tottenham Hotspur,midfielder,18,Central Midfield,28,Argentina,ARG
+150,Dominic Solanke,Tottenham Hotspur,attacker,19,Centre-Forward,26,England,ENG
+151,Fraser Forster,Tottenham Hotspur,goalkeeper,20,Goalkeeper,36,England,ENG
+149,Dejan Kulusevski,Tottenham Hotspur,attacker,21,Right Winger,24,Sweden,SWE
+163,Brennan Johnson,Tottenham Hotspur,attacker,22,Right Winger,23,Wales,WLS
+142,Pedro Porro,Tottenham Hotspur,defender,23,Right-Back,24,Spain,ESP
+156,Djed Spence,Tottenham Hotspur,defender,24,Right-Back,24,England,ENG
+148,Manor Solomon,Tottenham Hotspur,attacker,27,Left Winger,25,Israel,ISR
+162,Wilson Odobert,Tottenham Hotspur,attacker,28,Left Winger,19,France,FRA
+157,Pape Matar Sarr,Tottenham Hotspur,midfielder,29,Central Midfield,21,Senegal,SEN
+144,Rodrigo Bentancur,Tottenham Hotspur,midfielder,30,Central Midfield,27,Uruguay,URY
+154,Ben Davies,Tottenham Hotspur,defender,33,Centre-Back,31,Wales,WLS
+153,Micky van de Ven,Tottenham Hotspur,defender,37,Centre-Back,23,Netherlands,NLD
+138,Brandon Austin,Tottenham Hotspur,goalkeeper,40,Goalkeeper,25,England,ENG
+152,Alfie Whiteman,Tottenham Hotspur,goalkeeper,41,Goalkeeper,25,England,ENG
+160,Alfie Devine,Tottenham Hotspur,midfielder,45,Attacking Midfield,20,England,ENG
+227,Lukasz Fabianski,West Ham United,goalkeeper,1,Goalkeeper,39,Poland,POL
+243,Aaron Cresswell,West Ham United,defender,3,Left-Back,34,England,ENG
+229,Kurt Zouma,West Ham United,defender,4,Centre-Back,29,France,FRA
+244,Vladimír Coufal,West Ham United,defender,5,Right-Back,32,Czech Republic,CZE
+248,Crysencio Summerville,West Ham United,attacker,7,Left Winger,22,Netherlands,NLD
+246,James Ward-Prowse,West Ham United,midfielder,8,Central Midfield,29,England,ENG
+251,Michail Antonio,West Ham United,attacker,9,Centre-Forward,34,Jamaica,JAM
+247,Lucas Paquetá,West Ham United,midfielder,10,Attacking Midfield,26,Brazil,BRA
+250,Niclas Füllkrug,West Ham United,attacker,11,Centre-Forward,31,Germany,DEU
+235,Mohammed Kudus,West Ham United,midfielder,14,Attacking Midfield,24,Ghana,GHA
+242,Konstantinos Mavropanos,West Ham United,defender,15,Centre-Back,26,Greece,GRC
+237,Luis Guilherme,West Ham United,attacker,17,Right Winger,18,Brazil,BRA
+238,Danny Ings,West Ham United,attacker,18,Centre-Forward,32,England,ENG
+232,Edson Álvarez,West Ham United,midfielder,19,Defensive Midfield,26,Mexico,MEX
+249,Jarrod Bowen,West Ham United,attacker,20,Right Winger,27,England,ENG
+239,Wes Foderingham,West Ham United,goalkeeper,21,Goalkeeper,33,England,ENG
+236,Maxwel Cornet,West Ham United,attacker,22,Left Winger,27,Cote d'Ivoire,CIV
+226,Alphonse Areola,West Ham United,goalkeeper,23,Goalkeeper,31,France,FRA
+233,Guido Rodríguez,West Ham United,midfielder,24,Defensive Midfield,30,Argentina,ARG
+240,Jean-Clair Todibo,West Ham United,defender,25,Centre-Back,24,France,FRA
+241,Max Kilman,West Ham United,defender,26,Centre-Back,27,England,ENG
+228,Nayef Aguerd,West Ham United,defender,27,Centre-Back,28,Morocco,MAR
+245,Tomas Soucek,West Ham United,midfielder,28,Defensive Midfield,29,Czech Republic,CZE
+231,Aaron Wan-Bissaka,West Ham United,defender,29,Right-Back,26,England,ENG
+230,Emerson,West Ham United,defender,33,Left-Back,30,Italy,ITA
+234,Andy Irving,West Ham United,midfielder,39,Central Midfield,24,Scotland,SCT
+398,José Sá,Wolverhampton Wanderers,goalkeeper,1,Goalkeeper,31,Portugal,PRT
+416,Matt Doherty,Wolverhampton Wanderers,defender,2,Right-Back,32,Ireland,IRL
+415,Rayan Aït-Nouri,Wolverhampton Wanderers,defender,3,Left-Back,23,Algeria,DZA
+400,Santiago Bueno,Wolverhampton Wanderers,defender,4,Centre-Back,25,Uruguay,URY
+417,Mario Lemina,Wolverhampton Wanderers,midfielder,5,Defensive Midfield,30,Gabon,GAB
+404,Boubacar Traoré,Wolverhampton Wanderers,midfielder,6,Defensive Midfield,23,Mali,MLI
+405,João Gomes,Wolverhampton Wanderers,midfielder,8,Central Midfield,23,Brazil,BRA
+411,Jørgen Strand Larsen,Wolverhampton Wanderers,attacker,9,Centre-Forward,24,Norway,NOR
+423,Daniel Podence,Wolverhampton Wanderers,attacker,10,Right Winger,28,Portugal,PRT
+425,Hee-chan Hwang,Wolverhampton Wanderers,attacker,11,Centre-Forward,28,South Korea,KOR
+424,Matheus Cunha,Wolverhampton Wanderers,attacker,12,Centre-Forward,25,Brazil,BRA
+414,Yerson Mosquera,Wolverhampton Wanderers,defender,14,Centre-Back,23,Colombia,COL
+401,Craig Dawson,Wolverhampton Wanderers,defender,15,Centre-Back,34,England,ENG
+426,Sasa Kalajdzic,Wolverhampton Wanderers,attacker,18,Centre-Forward,27,Austria,AUT
+407,Rodrigo Gomes,Wolverhampton Wanderers,midfielder,19,Right Midfield,21,Portugal,PRT
+406,Tommy Doyle,Wolverhampton Wanderers,midfielder,20,Central Midfield,22,England,ENG
+410,Pablo Sarabia,Wolverhampton Wanderers,attacker,21,Right Winger,32,Spain,ESP
+402,Nélson Semedo,Wolverhampton Wanderers,defender,22,Right-Back,30,Portugal,PRT
+413,Toti,Wolverhampton Wanderers,defender,24,Centre-Back,25,Portugal,PRT
+412,Daniel Bentley,Wolverhampton Wanderers,goalkeeper,25,Goalkeeper,31,England,ENG
+419,Jean-Ricner Bellegarde,Wolverhampton Wanderers,midfielder,27,Central Midfield,26,France,FRA
+408,Gonçalo Guedes,Wolverhampton Wanderers,attacker,29,Left Winger,27,Portugal,PRT
+422,Enso González,Wolverhampton Wanderers,attacker,30,Left Winger,19,Paraguay,PRY
+418,Joe Hodge,Wolverhampton Wanderers,midfielder,32,Defensive Midfield,21,Ireland,IRL
+409,Chiquinho,Wolverhampton Wanderers,attacker,36,Left Winger,24,Portugal,PRT
+403,Pedro Lima,Wolverhampton Wanderers,defender,37,Right-Back,18,Brazil,BRA
+420,Luke Cundle,Wolverhampton Wanderers,midfielder,39,Central Midfield,22,England,ENG
+399,Tom King,Wolverhampton Wanderers,goalkeeper,40,Goalkeeper,29,Wales,WLS
+421,Chem Campbell,Wolverhampton Wanderers,midfielder,77,Attacking Midfield,21,Wales,WLS
