@@ -7,6 +7,7 @@ import 'package:plordle/ui/pages/filter_players_page.dart';
 import 'package:plordle/ui/pages/home_page.dart';
 import 'package:plordle/services/service_locator.dart';
 import 'package:plordle/ui/pages/landing_page.dart';
+import 'package:plordle/ui/pages/settings_page.dart';
 import 'package:plordle/ui/pages/theme_selection_page.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
@@ -54,7 +55,8 @@ class Plordle extends StatelessWidget {
             routes: {
               'game': (context) => const HomePage(),
               'themeSelect': (context) => const ThemeSelectionPage(),
-              'filter': (context) => const FilterPlayersPage()
+              'filter': (context) => const FilterPlayersPage(),
+              'settings': (context) => const SettingsPage()
             }));
   }
 }
