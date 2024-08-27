@@ -53,6 +53,7 @@ class PlayerViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Clears the list of excluded teams used by the Player View Model
   void clearTeamExclusions() {
     _excludedTeams.clear();
     notifyListeners();
@@ -70,6 +71,12 @@ class PlayerViewModel extends ChangeNotifier {
 
   void storeTeamExclusions() {
     _storageService.saveExcludedTeams(_excludedTeams.toList());
+  }
+
+  /// Deletes the locally stored list of team exclusions from shared preferences
+  void deleteSavedTeamExclusions() {
+    _storageService.clearFilterListData();
+    clearTeamExclusions();
   }
 
   //Build a list of players to suggest to the user for guesses

@@ -51,4 +51,11 @@ class ThemeViewModel extends ChangeNotifier {
 
     notifyListeners();
   }
+
+  void clearThemeData() async {
+    _storageService.clearThemeModelData();
+    //Reset theme to default
+    setSelectedTheme('Premier League');
+    notifyListeners();
+  }
 }
