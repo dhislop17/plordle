@@ -32,7 +32,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 - [ ] Finish Updates For 2024-25 Season
     - [x] UI Updates (Flag Emojis, Variable Themes)
     - [x] Filtering The List of Teams to Play Against
-    - [ ] Migrate away from default SharedPreferences API
+    - [x] Migrate away from default SharedPreferences API
     - [ ] Difficulty Options 
     - [ ] Update the players list once the transfer window closes
     - [ ] Update Readme GIF
@@ -40,6 +40,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 
 ## Stretch Goals
 - Hints for the Countries Column (color based on continents)
+- More Options for Filtering Players (by country/continent, min/max age or shirt number)
 - Support for historical squads 
     - Support for squads after specific points during a season (after the summer or winter transfer windows)
     - Support for multiple seasons

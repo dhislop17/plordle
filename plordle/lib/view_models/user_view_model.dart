@@ -96,9 +96,15 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  //TODO: make model specific version of this method
-  void deleteSavedData() async {
-    _storageService.clearSavedData();
+  void deleteSavedUserModelData() async {
+    _storageService.clearUserModelData();
+    _unlimitedModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
+    _mysteryModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
+    notifyListeners();
+  }
+
+  void resetGameStats() async {
+    _storageService.resetStats();
     _unlimitedModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
     _mysteryModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
     notifyListeners();
