@@ -3,8 +3,10 @@
 An English Premier League themed Wordle game to practice my Flutter skills and try out some new technologies
 
 ## Features
-- Player database populated from all 20 Premier League teams' 2024-25 squads (up to date as of August 26, 2024)
-- Options to guess a new mystery player everyday or continuously guess random players (players who don't have a shirt number are not included)
+- Player database populated from all 20 Premier League teams' 2024-25 squads (up to date as of September 5, 2024)
+- Guesses are updated with the flag emoji for the player's country (or a Shamrock For Northern Ireland)
+- Variable Themes and Difficulties
+- Options to guess a new mystery player every day or continuously guess random players (players who don't have a shirt number are not included)
 - Stat tracking
 - Dockerized API
 - Customizable web scraper to pull player data from Transfermarkt
@@ -12,9 +14,9 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 
 ## How To Play
 - 10 guesses to figure out the mystery player
-- Each guess has color coded columns giving the player feedback on how close they are to the correct answer
+- Each guess has color-coded columns giving the player feedback on how close they are to the correct answer
     - Green in any column means a successful match
-    - Yellow in the position column means the mystery player has the same position type put plays in a different role (ex: Correctly guessed a Defender but specifically guessed a Left Back when the mystery player was a Center Back)
+    - Yellow in the position column means the mystery player has the same position type but normally plays in a different role (ex: Correctly guessed a Defender but specifically guessed a Left Back when the mystery player was a Center Back)
     - Yellow in the age or number column means the mystery player is within 5 of the guessed player's age or shirt number
 
 ## Demo
@@ -32,15 +34,15 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 - [ ] Finish Updates For 2024-25 Season
     - [x] UI Updates (Flag Emojis, Variable Themes)
     - [x] Filtering The List of Teams to Play Against
-    - [x] Migrate away from default SharedPreferences API
-    - [ ] Difficulty Options 
+    - [x] Migrate away from the default SharedPreferences API
+    - [x] Difficulty Options 
     - [ ] Update the players list once the transfer window closes
     - [ ] Update Readme GIF
 - [ ] Finish App onboarding flow
 
 ## Stretch Goals
 - Hints for the Countries Column (color based on continents)
-- More Options for Filtering Players (by country/continent, min/max age or shirt number)
+- More Options for Filtering Players (by country/continent, min/max age, or shirt number)
 - Support for historical squads 
     - Support for squads after specific points during a season (after the summer or winter transfer windows)
     - Support for multiple seasons
