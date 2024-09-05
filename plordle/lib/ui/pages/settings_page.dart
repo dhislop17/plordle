@@ -25,6 +25,10 @@ class SettingsPage extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, 'filter'),
           ),
           ListTile(
+            title: const Text("Change Difficulty"),
+            onTap: () => Navigator.pushNamed(context, 'difficulty'),
+          ),
+          ListTile(
               title: const Text("Reset Game Stats"),
               onTap: () => Provider.of<UserViewModel>(context, listen: false)
                   .resetGameStats()),

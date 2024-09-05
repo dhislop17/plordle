@@ -10,6 +10,18 @@ import 'package:plordle/view_models/player_view_model.dart';
 
 enum GameState { inProgress, won, lost, doneForTheDay }
 
+enum DifficultyOptions {
+  easy("Relegation Battle"),
+  normal("Mid Table Club"),
+  hard("Top 4 Challenger"),
+  extraHard("Title Challenger"),
+  challenge("PL Champion"),
+  expert("Invincibles");
+
+  const DifficultyOptions(this.label);
+  final String label;
+}
+
 class UserViewModel extends ChangeNotifier {
   final StorageService _storageService = serviceLocator<StorageService>();
   final Logger logger = Logger(printer: PrettyPrinter());
@@ -21,6 +33,7 @@ class UserViewModel extends ChangeNotifier {
   int _numberOfGuesses = 1;
   final int _maxNumOfGuesses = 10;
   GameState _currentState = GameState.inProgress;
+  DifficultyOptions _currentDifficulty = DifficultyOptions.normal;
   bool _inUnlimitedMode = false;
   late Stat _mysteryModeStat;
   late Stat _unlimitedModeStat;
@@ -34,6 +47,7 @@ class UserViewModel extends ChangeNotifier {
   int get maxNumOfGuesses => _maxNumOfGuesses;
   CountryCoder get countryCoder => _countryCoder;
   GameState get currentState => _currentState;
+  DifficultyOptions get currentDifficulty => _currentDifficulty;
   bool get isUnlimitedMode => _inUnlimitedMode;
   bool get solvedMystery => _solvedMystery;
   bool get onboardingDone => _onboardingDone;
@@ -54,6 +68,9 @@ class UserViewModel extends ChangeNotifier {
     _mysteryModeStat = await _storageService.getMysteryModeStat();
     _unlimitedModeStat = await _storageService.getUnlimitedModeStat();
     _solvedMystery = await _storageService.getSolvedMystery();
+    var difficulty = await _storageService.getDifficulty();
+    _currentDifficulty = DifficultyOptions.values.byName(difficulty);
+    logger.i("Loaded Diff was $difficulty, set diff to $_currentDifficulty");
     _countryCoder = CountryCoder.instance
         .load(await compute(CountryCoder.prepareData, null));
 
@@ -62,6 +79,16 @@ class UserViewModel extends ChangeNotifier {
     logger.i("Onboarding complete: $_onboardingDone");
     logger.i("Solved Today's Mystery Player: $_solvedMystery");
     notifyListeners();
+  }
+
+  void changeDifficulty(DifficultyOptions newDifficultyOption) {
+    _currentDifficulty = newDifficultyOption;
+    notifyListeners();
+  }
+
+  void saveDifficulty() async {
+    logger.i("Saving diff as ${_currentDifficulty.name}");
+    await _storageService.saveDifficulty(_currentDifficulty.name);
   }
 
   void getNewRandomPlayer() {
@@ -74,12 +101,6 @@ class UserViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void saveData() async {
-    await _storageService.saveMysteryModeStat(_mysteryModeStat);
-    await _storageService.saveUnlimitedModeStat(_unlimitedModeStat);
-    await _storageService.saveSolvedMystery(_solvedMystery);
-  }
-
   void getNewMysteryPlayer() async {
     _guesses.clear();
     _guessedPlayers.clear();
@@ -88,6 +109,14 @@ class UserViewModel extends ChangeNotifier {
     _currentState = GameState.inProgress;
     playerViewModel.getNewMysteryPlayer();
     notifyListeners();
+  }
+
+  // TODO: Look into this for refactoring and renaming
+  /// Used for saving game stats and mystery status
+  void saveGameStatData() async {
+    await _storageService.saveMysteryModeStat(_mysteryModeStat);
+    await _storageService.saveUnlimitedModeStat(_unlimitedModeStat);
+    await _storageService.saveSolvedMystery(_solvedMystery);
   }
 
   void resetToWait() {
@@ -150,7 +179,7 @@ class UserViewModel extends ChangeNotifier {
       _mysteryModeStat.gamesPlayed++;
       _solvedMystery = true;
     }
-    saveData();
+    saveGameStatData();
   }
 
   Guess _createGuess(Player guessedPlayer) {

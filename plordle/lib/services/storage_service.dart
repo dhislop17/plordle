@@ -8,6 +8,7 @@ class StorageService {
     prefs = SharedPreferencesAsync();
   }
 
+  //UserViewModel Saved Data
   Future<Stat> getUnlimitedModeStat() async {
     int gamesPlayed = await prefs.getInt('unlimited_gp') ?? 0;
     int wins = await prefs.getInt('unlimited_wins') ?? 0;
@@ -52,6 +53,16 @@ class StorageService {
     await prefs.setBool('onboarding_done', onboardingFinished);
   }
 
+  Future<String> getDifficulty() async {
+    return await prefs.getString('difficulty') ?? 'easy';
+  }
+
+  Future<void> saveDifficulty(String difficulty) async {
+    await prefs.setString('difficulty', difficulty);
+  }
+
+  //ThemeViewModel Saved Data
+
   /// Gets the name of the theme saved in data or defaults
   /// to the Premier League theme
   Future<String> getThemeName() async {
@@ -63,6 +74,7 @@ class StorageService {
     await prefs.setString('theme_name', themeName);
   }
 
+  //PlayerViewModel Saved Data
   Future<List<String>> getExcludedTeams() async {
     return await prefs.getStringList('excluded_teams') ?? [];
   }
@@ -70,6 +82,8 @@ class StorageService {
   Future<void> saveExcludedTeams(List<String> excludedTeams) async {
     await prefs.setStringList('excluded_teams', excludedTeams);
   }
+
+  //Saved Data Clear Functions
 
   void clearThemeModelData() async {
     await prefs.remove('theme_name');

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:plordle/ui/pages/change_difficulty_page.dart';
 import 'package:plordle/ui/pages/filter_players_page.dart';
 
 import 'package:plordle/ui/pages/home_page.dart';
@@ -56,6 +57,7 @@ class Plordle extends StatelessWidget {
               'game': (context) => const HomePage(),
               'themeSelect': (context) => const ThemeSelectionPage(),
               'filter': (context) => const FilterPlayersPage(),
+              'difficulty': (context) => const ChangeDifficultyPage(),
               'settings': (context) => const SettingsPage()
             }));
   }

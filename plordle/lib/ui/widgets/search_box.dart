@@ -46,9 +46,11 @@ class SearchBox extends StatelessWidget {
           },
           itemBuilder: (context, player) {
             return ListTile(
-              title: Text(player.name),
-              subtitle: Text(player.getSecondaryPlayerInfo()),
-            );
+                title: Text(player.name),
+                subtitle: (model.currentDifficulty != DifficultyOptions.expert)
+                    ? Text(
+                        player.getPlayerAdditionalInfo(model.currentDifficulty))
+                    : null);
           },
           onSelected: (selectedPlayer) {
             FocusManager.instance.primaryFocus?.unfocus();
