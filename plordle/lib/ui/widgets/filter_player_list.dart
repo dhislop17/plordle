@@ -22,7 +22,7 @@ class FilterPlayerList extends StatelessWidget {
       builder: (context, model, child) {
         return CheckboxListTile(
             controlAffinity: ListTileControlAffinity.platform,
-            title: const Text("Select All"),
+            title: const Text("All Teams"),
             value: model.excludedTeams.isEmpty && selected,
             onChanged: (status) {
               if (model.excludedTeams.isEmpty) {

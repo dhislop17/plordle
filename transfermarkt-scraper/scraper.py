@@ -37,8 +37,8 @@ def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: lis
                 position_type = constants.DEFENDER
             elif position in constants.MIDFIELD_TYPES:
                 position_type = constants.MIDFIELD
-            elif position in constants.ATTACKER_TYPES:
-                position_type = constants.ATTACK
+            elif position in constants.FORWARD_TYPES:
+                position_type = constants.FORWARD
             else:
                 position_type = constants.GOALKEEPER
 
