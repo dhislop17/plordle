@@ -18,6 +18,15 @@ class ThemeSelectionList extends StatelessWidget {
 
   Widget _buildTeamRow(String teamName) {
     return Consumer<ThemeViewModel>(builder: (context, model, child) {
+      bool isDarkMode =
+          MediaQuery.of(context).platformBrightness == Brightness.dark;
+      Color mainColor = model.primarySelectedThemeColor;
+
+      if (isDarkMode && mainColor == Colors.black ||
+          mainColor == Themes.premPurple) {
+        mainColor = model.secondarySelectedThemeColor;
+      }
+
       return RadioListTile(
         title: Text(teamName),
         value: teamName,
@@ -25,7 +34,7 @@ class ThemeSelectionList extends StatelessWidget {
         onChanged: (selectedTeam) {
           model.setSelectedTheme(selectedTeam!);
         },
-        activeColor: model.primarySelectedThemeColor,
+        activeColor: mainColor,
         selected: teamName == model.selectedTheme,
       );
     });

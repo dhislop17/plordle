@@ -46,19 +46,25 @@ class Plordle extends StatelessWidget {
               create: (_) => UserViewModel(),
               update: (_, player, user) => user!.update(player))
         ],
-        child: MaterialApp(
-            title: 'PLordle',
-            theme: ThemeData(
-                primarySwatch: Colors.purple, brightness: Brightness.light),
-            darkTheme: ThemeData(
-                primaryColor: Colors.purple, brightness: Brightness.dark),
-            home: LandingPage(),
-            routes: {
-              'game': (context) => const HomePage(),
-              'themeSelect': (context) => const ThemeSelectionPage(),
-              'filter': (context) => const FilterPlayersPage(),
-              'difficulty': (context) => const ChangeDifficultyPage(),
-              'settings': (context) => const SettingsPage()
-            }));
+        builder: (context, child) {
+          var themeModel = Provider.of<ThemeViewModel>(context);
+          return MaterialApp(
+              title: 'PLordle',
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(
+                    seedColor: themeModel.primarySelectedThemeColor),
+              ),
+              darkTheme: ThemeData(
+                  brightness: Brightness.dark,
+                  colorSchemeSeed: themeModel.primarySelectedThemeColor),
+              home: LandingPage(),
+              routes: {
+                'game': (context) => const HomePage(),
+                'themeSelect': (context) => const ThemeSelectionPage(),
+                'filter': (context) => const FilterPlayersPage(),
+                'difficulty': (context) => const ChangeDifficultyPage(),
+                'settings': (context) => const SettingsPage()
+              });
+        });
   }
 }

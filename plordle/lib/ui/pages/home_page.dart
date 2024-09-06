@@ -33,13 +33,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double paddingWidth = MediaQuery.of(context).size.width * .1;
     double paddingHeight = MediaQuery.of(context).size.height * .05;
+    ThemeViewModel themeViewModel = Provider.of<ThemeViewModel>(context);
+
+    bool isDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
+    Color divColor = themeViewModel.accentColor;
+
+    if (isDarkMode && divColor == Colors.black) {
+      divColor = themeViewModel.primarySelectedThemeColor;
+    }
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:
-            Provider.of<ThemeViewModel>(context).primarySelectedThemeColor,
-        foregroundColor:
-            Provider.of<ThemeViewModel>(context).secondarySelectedThemeColor,
+        backgroundColor: themeViewModel.primarySelectedThemeColor,
+        foregroundColor: themeViewModel.secondarySelectedThemeColor,
         title: const Text(
           TextConstants.gameTitle,
           style: TextStyle(fontSize: 32),
@@ -94,10 +101,7 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: paddingHeight),
               child: const GridHeader(),
             ),
-            Divider(
-                height: 10,
-                thickness: 10,
-                color: Provider.of<ThemeViewModel>(context).accentColor),
+            Divider(height: 10, thickness: 10, color: divColor),
             Expanded(
               child: Consumer<UserViewModel>(
                 builder: (context, model, child) {
