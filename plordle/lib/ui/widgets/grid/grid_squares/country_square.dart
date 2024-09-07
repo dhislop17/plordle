@@ -36,6 +36,8 @@ class CountrySquare extends StatelessWidget {
   Color? _colorCountrySquare(Player player, Guess guess) {
     if (guess.sameCountry) {
       return Themes.guessGreen;
+    } else if (guess.sameContinent) {
+      return Themes.guessYellow;
     } else {
       return Themes.guessGrey;
     }

@@ -24,5 +24,7 @@ public class Player
     public string Country { get; set; } = null!;
     [BsonElement("countryCode")]
     public string CountryCode { get; set; } = null!;
+    [BsonElement("continent")]
+    public string Continent { get; set; } = null!;
 
 }

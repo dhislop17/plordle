@@ -17,8 +17,55 @@ class Player:
     age: int
     country: str
     country_code: str
+    continent: str
 
-def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: list):
+def pull_continents():
+    #Hardcoding the Home Nations, Kosovo, and Turkey to be in Europe
+    #Save time and resources by hard coding the most likely Oceanic countries
+    continent_map = {constants.EUROPE: {"ENG", "SCT", "WLS", "NIR", "TUR", "XKX"}, constants.OCEANIA : {'AUS', 'NZL'}}
+
+    #### Africa #####
+    continent_map[constants.AFRICA] = set()
+    response = requests.get("https://restcountries.com/v3.1/region/africa?fields=cca3")
+    continent_data = response.json()
+
+    for mapping in continent_data:
+        continent_map[constants.AFRICA].add(mapping['cca3'])
+    
+    #### Asia #####
+    continent_map[constants.ASIA] = set()
+    response = requests.get("https://restcountries.com/v3.1/region/asia?fields=cca3")
+    continent_data = response.json()
+
+    for mapping in continent_data:
+        continent_map[constants.ASIA].add(mapping['cca3'])
+
+    #Turkey is a member of UEFA and the EU so it will be included in only Europe
+    continent_map[constants.ASIA].remove("TUR")
+
+    #### EUROPE #####
+    response = requests.get("https://restcountries.com/v3.1/region/europe?fields=cca3")
+    continent_data = response.json()
+
+    for mapping in continent_data:
+        continent_map[constants.EUROPE].add(mapping['cca3'])
+    #The UK is replaced with the unoffical three letter codes for each of the Home Nations
+    continent_map[constants.EUROPE].remove("GBR")
+
+    # #### South America #####
+    continent_map[constants.SOUTH_AMERICA] = set()
+    response = requests.get("https://restcountries.com/v3.1/region/south america?fields=cca3")
+    continent_data = response.json()
+
+    for mapping in continent_data:
+        continent_map[constants.SOUTH_AMERICA].add(mapping['cca3'])
+
+    # By process of elimiation anywhere else is in North America. 
+    # Doing this avoids doing extra calls for each of the subregions in North America
+    return continent_map
+
+
+def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: list, continent_map: dict):
     #The Home Nations don't have offical codes
     country_code_map = {"England": "ENG", "Scotland" : "SCT", "Wales": "WLS", "Northern Ireland": "NIR"}
 
@@ -58,6 +105,21 @@ def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: lis
                 country_code = coco.convert(names=[country], to="ISO3")
                 country_code_map[country] = country_code
 
+            #Map the player's country to the continent
+            if country_code in continent_map[constants.AFRICA]:
+                continent = constants.AFRICA
+            elif country_code in continent_map[constants.ASIA]:
+                continent = constants.ASIA
+            elif country_code in continent_map[constants.EUROPE]:
+                continent = constants.EUROPE
+            elif country_code in continent_map[constants.OCEANIA]:
+                continent = constants.OCEANIA
+            elif country_code in continent_map[constants.SOUTH_AMERICA]:
+                continent = constants.SOUTH_AMERICA
+            else:
+                continent = constants.NORTH_AMERICA
+
+
             player_list.append(Player(
                 name=name,
                 shirt_number=int(shirt_number),
@@ -66,7 +128,8 @@ def scrape_player_data(team_tree, css_row_type: str, team: str, player_list: lis
                 position=position, 
                 age=int(strippedAge), 
                 country=country,
-                country_code=country_code))
+                country_code=country_code,
+                continent=continent))
 
 def main():
     teamMap = {}
@@ -74,6 +137,7 @@ def main():
 
     page = requests.get(constants.LEAGUE_ROUTE, headers= constants.HEADERS)
     league_tree = html.fromstring(page.content)
+    continent_map = pull_continents()
     start_time = time.time()
 
     for i in range(constants.NUMBER_OF_TEAMS):
@@ -88,8 +152,8 @@ def main():
 
         #There are separate style sheets for odd and even rows on Transfermarkt player tables
         #Scrape data from both
-        scrape_player_data(teamTree, ".items tbody tr.odd", team, player_list)
-        scrape_player_data(teamTree, ".items tbody tr.even", team, player_list)
+        scrape_player_data(team_tree=teamTree, css_row_type=".items tbody tr.odd", team=team, player_list=player_list, continent_map=continent_map)
+        scrape_player_data(team_tree=teamTree, css_row_type=".items tbody tr.even", team=team, player_list=player_list, continent_map=continent_map)
 
         player_data = pd.DataFrame(player_list)
 
@@ -102,7 +166,8 @@ def main():
                                     'shirt_number': 'ShirtNumber',
                                     'age': 'Age',
                                     'country': 'Country',
-                                    'country_code': 'CountryCode'}, inplace= True)
+                                    'country_code': 'CountryCode',
+                                    'continent': 'Continent'}, inplace= True)
 
     #The teams on Transfermarkt are listed by finishing position from the previous season
     #Sort the list to be alphabetical by team name then by the player's shirt number

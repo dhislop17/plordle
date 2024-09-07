@@ -12,19 +12,20 @@ class Player {
   final int age;
   final String country;
   final String countryCode;
+  final String continent;
 
-  const Player({
-    required this.playerId,
-    required this.name,
-    required this.team,
-    required this.teamAbbr,
-    required this.position,
-    required this.positionType,
-    required this.shirtNumber,
-    required this.age,
-    required this.country,
-    required this.countryCode,
-  });
+  const Player(
+      {required this.playerId,
+      required this.name,
+      required this.team,
+      required this.teamAbbr,
+      required this.position,
+      required this.positionType,
+      required this.shirtNumber,
+      required this.age,
+      required this.country,
+      required this.countryCode,
+      required this.continent});
 
   factory Player.fromJson(Map<String, dynamic> json) {
     String? teamAbbr = TextConstants.teamAbbreviations[json['team']];
@@ -40,7 +41,8 @@ class Player {
         shirtNumber: json['shirtNumber'],
         age: json['age'],
         country: json['country'],
-        countryCode: json['countryCode']);
+        countryCode: json['countryCode'],
+        continent: json['continent']);
   }
 
   String getFullTeamName() {
@@ -67,13 +69,12 @@ class Player {
       case DifficultyOptions.normal: //Mid Table
         additionalInfo =
             "#$shirtNumber - $positionType - $team - $age y/o - $country";
-      case DifficultyOptions
-            .hard: //Top Four Challenger (Maybe this could become contient one day)
+      case DifficultyOptions.hard: //Top Four Challenger
         additionalInfo = "#$shirtNumber - $positionType - $team - $country";
       case DifficultyOptions.extraHard: //Title Challenger
-        additionalInfo = "#$shirtNumber - $positionType - $team";
+        additionalInfo = "#$shirtNumber - $positionType - $team - $continent";
       case DifficultyOptions.challenge: //Premier League Champion
-        additionalInfo = "#$shirtNumber - $team";
+        additionalInfo = "#$shirtNumber - $positionType - $team";
       default: //Invincibles
         additionalInfo = "";
     }

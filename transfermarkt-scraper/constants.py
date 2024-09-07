@@ -12,3 +12,10 @@ FORWARD = "Forward"
 FORWARD_TYPES = {"Centre-Forward", "Second Striker", "Right Winger", "Left Winger"}
 MIDFIELD_TYPES = {"Attacking Midfield", "Central Midfield", "Left Midfield", "Right Midfield", "Defensive Midfield"}
 DEFENDER_TYPES = {"Right-Back", "Centre-Back", "Left-Back"}
+
+EUROPE = "Europe"
+ASIA = "Asia"
+AFRICA = "Africa"
+OCEANIA = "Oceania"
+NORTH_AMERICA = "North America"
+SOUTH_AMERICA = "South America"

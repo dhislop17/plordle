@@ -13,11 +13,10 @@ class PlayerViewModel extends ChangeNotifier {
 
   final Set<String> _excludedTeams = {};
   List<Player> _players = [];
-  //TODO: Rename today's player
-  late Player _todaysPlayer;
+  late Player _currentMysteryPlayer;
 
   List<Player> get players => _players;
-  Player get todaysPlayer => _todaysPlayer;
+  Player get currentMysteryPlayer => _currentMysteryPlayer;
   Set<String> get excludedTeams => _excludedTeams;
 
   PlayerViewModel() {
@@ -28,18 +27,21 @@ class PlayerViewModel extends ChangeNotifier {
     _players = await _playerService.getPlayers();
     _excludedTeams.addAll(await _storageService.getExcludedTeams());
     //TODO: Consider if additional work is necessary for todays player to update across days
-    _todaysPlayer = await _playerService.getTodaysPlayer(_excludedTeams);
+    _currentMysteryPlayer =
+        await _playerService.getTodaysPlayer(_excludedTeams);
     logger.i("Today's Player Loaded");
     notifyListeners();
   }
 
   void getNextRandom() async {
-    _todaysPlayer = await _playerService.getRandomPlayer(_excludedTeams);
+    _currentMysteryPlayer =
+        await _playerService.getRandomPlayer(_excludedTeams);
     logger.i("Loaded New Random Player");
   }
 
   void getNewMysteryPlayer() async {
-    _todaysPlayer = await _playerService.getTodaysPlayer(_excludedTeams);
+    _currentMysteryPlayer =
+        await _playerService.getTodaysPlayer(_excludedTeams);
     logger.i("Loaded New Mystery Player");
     notifyListeners();
   }
