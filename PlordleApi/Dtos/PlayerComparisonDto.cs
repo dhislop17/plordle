@@ -9,4 +9,5 @@ public class PlayerComparisonDto
     public int? AgeDiff { get; set; }
     public int? ShirtNumberDiffernce { get; set; }
     public bool? SameCountry { get; set; }
+    public bool? SameContinent { get; set; }
 }

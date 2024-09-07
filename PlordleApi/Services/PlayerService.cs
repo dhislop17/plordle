@@ -128,6 +128,7 @@ public class PlayerService : IPlayerService
                 SameType = todaysPlayer.PositionType.Equals(guess.PositionType),
                 SamePosition = todaysPlayer.Position.Equals(guess.Position),
                 SameCountry = todaysPlayer.Country.Equals(guess.Country),
+                SameContinent = todaysPlayer.Continent.Equals(guess.Continent),
                 AgeDiff = Math.Abs(todaysPlayer.Age - guess.Age),
                 ShirtNumberDiffernce = Math.Abs(todaysPlayer.ShirtNumber - guess.ShirtNumber)
             };
