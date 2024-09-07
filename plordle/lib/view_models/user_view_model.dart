@@ -184,21 +184,23 @@ class UserViewModel extends ChangeNotifier {
 
   Guess _createGuess(Player guessedPlayer) {
     return Guess(
-        guessName: guessedPlayer.name == playerViewModel.todaysPlayer.name
-            ? 'True'
-            : guessedPlayer.name,
-        sameTeam: guessedPlayer.team == playerViewModel.todaysPlayer.team,
+        guessName:
+            guessedPlayer.name == playerViewModel.currentMysteryPlayer.name
+                ? 'True'
+                : guessedPlayer.name,
+        sameTeam:
+            guessedPlayer.team == playerViewModel.currentMysteryPlayer.team,
         sameType: guessedPlayer.positionType ==
-            playerViewModel.todaysPlayer.positionType,
-        samePosition:
-            guessedPlayer.position == playerViewModel.todaysPlayer.position,
+            playerViewModel.currentMysteryPlayer.positionType,
+        samePosition: guessedPlayer.position ==
+            playerViewModel.currentMysteryPlayer.position,
         shirtNumberDiff: guessedPlayer.shirtNumber -
-            playerViewModel.todaysPlayer.shirtNumber,
-        ageDiff: guessedPlayer.age - playerViewModel.todaysPlayer.age,
-        sameCountry:
-            guessedPlayer.country == playerViewModel.todaysPlayer.country,
-        sameContinent:
-            guessedPlayer.continent == playerViewModel.todaysPlayer.continent);
+            playerViewModel.currentMysteryPlayer.shirtNumber,
+        ageDiff: guessedPlayer.age - playerViewModel.currentMysteryPlayer.age,
+        sameCountry: guessedPlayer.country ==
+            playerViewModel.currentMysteryPlayer.country,
+        sameContinent: guessedPlayer.continent ==
+            playerViewModel.currentMysteryPlayer.continent);
   }
 
   void _addGuess(Guess guess) {

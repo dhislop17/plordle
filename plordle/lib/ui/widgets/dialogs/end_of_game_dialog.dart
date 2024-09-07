@@ -25,7 +25,7 @@ class EndOfGameDialog extends StatelessWidget {
                 children: [
                   const Text(TextConstants.playerHint),
                   const SizedBox(height: 20),
-                  Text(model.playerViewModel.todaysPlayer.toString()),
+                  Text(model.playerViewModel.currentMysteryPlayer.toString()),
                   const SizedBox(height: 20),
                   const MysteryPlayerTimer()
                 ],
