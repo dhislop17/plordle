@@ -20,7 +20,7 @@ class Player:
     continent: str
 
 def pull_continents():
-    #Hardcoding the Home Nations and Kosovo to be in Europe
+    #Hardcoding the Home Nations, Kosovo, and Turkey to be in Europe
     #Save time and resources by hard coding the most likely Oceanic countries
     continent_map = {constants.EUROPE: {"ENG", "SCT", "WLS", "NIR", "TUR", "XKX"}, constants.OCEANIA : {'AUS', 'NZL'}}
 
