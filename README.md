@@ -3,7 +3,7 @@
 An English Premier League themed Wordle game to practice my Flutter skills and try out some new technologies
 
 ## Features
-- Player database populated from all 20 Premier League teams' 2024-25 squads (up to date as of September 5, 2024)
+- Player database populated from all 20 Premier League teams' 2024-25 squads (up to date as of September 7, 2024)
 - Guesses are updated with the flag emoji for the player's country (or a Shamrock For Northern Ireland)
 - Variable Themes and Difficulties
 - Options to guess a new mystery player every day or continuously guess random players (players who don't have a shirt number are not included)
@@ -18,6 +18,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
     - Green in any column means a successful match
     - Yellow in the position column means the mystery player has the same position type but normally plays in a different role (ex: Correctly guessed a Defender but specifically guessed a Left Back when the mystery player was a Center Back)
     - Yellow in the age or number column means the mystery player is within 5 of the guessed player's age or shirt number
+    - Yellow in the country column means the mystery player is from the same continent but not the same country
 
 ## Demo
 *NEW GIF COMING SOON  - Guessing the daily player for 7/8/22 - Harry Lewis (former Southampton Goalkeeper)*
@@ -36,12 +37,12 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
     - [x] Filtering The List of Teams to Play Against
     - [x] Migrate away from the default SharedPreferences API
     - [x] Difficulty Options 
+    - [x] Add support for hints for the country box in guesses
     - [ ] Update the players list once the transfer window closes
     - [ ] Update Readme GIF
 - [ ] Finish App onboarding flow
 
 ## Stretch Goals
-- Hints for the Countries Column (color based on continents)
 - More Options for Filtering Players (by country/continent, min/max age, or shirt number)
 - Support for historical squads 
     - Support for squads after specific points during a season (after the summer or winter transfer windows)
