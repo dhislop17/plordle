@@ -73,6 +73,18 @@ class HelpDialog extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              RichText(
+                  text: TextSpan(
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      children: const [
+                    TextSpan(
+                        text: TextConstants.helpDialogCountryText,
+                        style: TextStyle(backgroundColor: Themes.guessYellow)),
+                    TextSpan(text: TextConstants.helpDialogCountrySubtext)
+                  ])),
+              const SizedBox(
+                height: 10,
+              ),
               Text(
                 TextConstants.helpDialogGameInfo,
                 style: Theme.of(context).textTheme.bodyMedium,

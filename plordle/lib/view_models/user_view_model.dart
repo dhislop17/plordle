@@ -196,7 +196,9 @@ class UserViewModel extends ChangeNotifier {
             playerViewModel.todaysPlayer.shirtNumber,
         ageDiff: guessedPlayer.age - playerViewModel.todaysPlayer.age,
         sameCountry:
-            guessedPlayer.country == playerViewModel.todaysPlayer.country);
+            guessedPlayer.country == playerViewModel.todaysPlayer.country,
+        sameContinent:
+            guessedPlayer.continent == playerViewModel.todaysPlayer.continent);
   }
 
   void _addGuess(Guess guess) {

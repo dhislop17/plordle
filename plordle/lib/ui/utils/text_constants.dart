@@ -31,7 +31,10 @@ class TextConstants {
   static const String helpDialogNumberText =
       'Yellow in the age or number column';
   static const String helpDialogNumberSubtext =
-      " means guessed player is within 5 of the mystery player's age or shirt number";
+      " means the mystery player is within 5 of the guessed player's age or shirt number";
+  static const String helpDialogCountryText = 'Yellow in the country column';
+  static const String helpDialogCountrySubtext =
+      " means the mystery player is from the same continent but from a different country";
   static const String helpDialogGameInfo =
       "New mystery player at midnight in your timezone, or play in unlimited mode to keep getting a new mystery player";
 
