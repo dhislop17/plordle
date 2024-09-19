@@ -3,7 +3,7 @@
 An English Premier League themed Wordle game to practice my Flutter skills and try out some new technologies
 
 ## Features
-- Player database populated from all 20 Premier League teams' 2024-25 squads (up to date as of September 7, 2024)
+- Player database populated from all 20 Premier League teams' 2024-25 squads (up to date as of September 19, 2024)
 - Guesses are updated with the flag emoji for the player's country (or a Shamrock For Northern Ireland)
 - Variable Themes and Difficulties
 - Options to guess a new mystery player every day or continuously guess random players (players who don't have a shirt number are not included)
@@ -38,7 +38,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
     - [x] Migrate away from the default SharedPreferences API
     - [x] Difficulty Options 
     - [x] Add support for hints for the country box in guesses
-    - [ ] Update the players list once the transfer window closes
+    - [x] Update the players list once the transfer window closes and squad lists are finalized
     - [ ] Update Readme GIF
 - [ ] Finish App onboarding flow
 
