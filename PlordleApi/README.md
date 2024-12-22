@@ -1,6 +1,6 @@
 # Plordle API
 
-A .NET 6 API that interacts with a MongoDB database for player data. Has been containerized and deployed to AWS
+A .NET 9 API that interacts with a MongoDB database for player data. Has been containerized and deployed to AWS
 
 
 ## Features
