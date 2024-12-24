@@ -130,7 +130,7 @@ public class PlayerService : IPlayerService
                 SameCountry = todaysPlayer.Country.Equals(guess.Country),
                 SameContinent = todaysPlayer.Continent.Equals(guess.Continent),
                 AgeDiff = Math.Abs(todaysPlayer.Age - guess.Age),
-                ShirtNumberDiffernce = Math.Abs(todaysPlayer.ShirtNumber - guess.ShirtNumber)
+                ShirtNumberDifference = Math.Abs(todaysPlayer.ShirtNumber - guess.ShirtNumber)
             };
         }
         else
