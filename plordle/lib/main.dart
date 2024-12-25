@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:plordle/config/platform_config.dart';
 import 'package:plordle/ui/pages/change_difficulty_page.dart';
 import 'package:plordle/ui/pages/filter_players_page.dart';
 
@@ -19,6 +20,7 @@ Future main() async {
   setupServiceLocator();
   HttpOverrides.global = MyHttpOverrides();
   await dotenv.load(fileName: '.env');
+  await PlatformConfig().initialize();
   runApp(const Plordle());
 }
 
@@ -42,9 +44,12 @@ class Plordle extends StatelessWidget {
               create: (context) => PlayerViewModel()),
           ChangeNotifierProvider<ThemeViewModel>(
               create: (context) => ThemeViewModel()),
+          //Set up a dependency relationship (UserModel depends on Player)
+          //to support changing between game modes (random vs todays player)
           ChangeNotifierProxyProvider<PlayerViewModel, UserViewModel>(
               create: (_) => UserViewModel(),
-              update: (_, player, user) => user!.update(player))
+              update: (_, playerModel, userModel) =>
+                  userModel!.update(playerModel))
         ],
         builder: (context, child) {
           var themeModel = Provider.of<ThemeViewModel>(context);
