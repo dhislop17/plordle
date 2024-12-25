@@ -1,37 +1,30 @@
 import 'dart:convert';
-import 'dart:io';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
+import 'package:plordle/config/platform_config.dart';
 import 'package:plordle/models/player.dart';
 
 class PlayerService {
   final Logger logger = Logger(printer: PrettyPrinter());
-
-  String _baseHost() {
-    String route;
-    //Running on the emulator
-    if (Platform.isAndroid) {
-      route = dotenv.env["API_CONNECTION_STRING"] ?? '10.0.2.2';
-    }
-    // Running on a real device
-    else {
-      route = dotenv.env["API_CONNECTION_STRING"] ?? 'localhost';
-    }
-
-    return route;
-  }
+  final PlatformConfig _platformConfig = PlatformConfig();
 
   //Method for geting players
   Future<List<Player>> getPlayers() async {
     Uri uri = Uri(
-        scheme: "https", host: _baseHost(), path: "/api/Players", port: 7160);
+      scheme: "https",
+      host: _platformConfig.baseUrl,
+      path: "/api/Players",
+      port: 7161,
+    );
     logger.i(uri);
     final response = await http.get(uri);
 
     List<Player> result = [];
     if (response.statusCode == 200) {
-      return _parsePlayerList(response.body);
+      result = _parsePlayerList(response.body);
+    } else {
+      logger.e("Unable to load players");
+      throw Exception('Unable to load all players');
     }
     return result;
   }
@@ -45,8 +38,8 @@ class PlayerService {
   Future<Player> getRandomPlayer(Set<String> excludedTeams) async {
     Uri uri = Uri(
         scheme: "https",
-        host: _baseHost(),
-        port: 7160,
+        host: _platformConfig.baseUrl,
+        port: 7161,
         path: "/api/Players/random",
         queryParameters: {'excludedTeams': excludedTeams});
 
@@ -64,8 +57,8 @@ class PlayerService {
   Future<Player> getTodaysPlayer(Set<String> excludedTeams) async {
     Uri uri = Uri(
         scheme: "https",
-        host: _baseHost(),
-        port: 7160,
+        host: _platformConfig.baseUrl,
+        port: 7161,
         path: "/api/Players/today",
         queryParameters: {'excludedTeams': excludedTeams});
 
