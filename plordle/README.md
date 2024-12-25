@@ -13,5 +13,5 @@ Front End built in Flutter version 3.27
 - [flutter_dotenv](https://pub.dev/packages/flutter_dotenv)
 - [country_coder](https://pub.dev/packages/country_coder)
 - [logger](https://pub.dev/packages/logger)
-- [device_info_plus]((https://pub.dev/packages/device_info_plus))
+- [device_info_plus](https://pub.dev/packages/device_info_plus)
 
