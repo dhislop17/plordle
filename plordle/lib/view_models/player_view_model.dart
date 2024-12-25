@@ -30,6 +30,7 @@ class PlayerViewModel extends ChangeNotifier {
     _currentMysteryPlayer =
         await _playerService.getTodaysPlayer(_excludedTeams);
     logger.i("Today's Player Loaded");
+    logger.i("Loaded ${_players.length} players");
     notifyListeners();
   }
 
