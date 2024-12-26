@@ -13,8 +13,8 @@ class PlayerService {
     Uri uri = Uri(
       scheme: "https",
       host: _platformConfig.baseUrl,
-      path: "/api/Players",
-      port: 7161,
+      path: "/api/players",
+      port: 7160,
     );
     logger.i(uri);
     final response = await http.get(uri);
@@ -39,8 +39,8 @@ class PlayerService {
     Uri uri = Uri(
         scheme: "https",
         host: _platformConfig.baseUrl,
-        port: 7161,
-        path: "/api/Players/random",
+        port: 7160,
+        path: "/api/players/random",
         queryParameters: {'excludedTeams': excludedTeams});
 
     logger.i(uri);
@@ -58,8 +58,8 @@ class PlayerService {
     Uri uri = Uri(
         scheme: "https",
         host: _platformConfig.baseUrl,
-        port: 7161,
-        path: "/api/Players/today",
+        port: 7160,
+        path: "/api/players/today",
         queryParameters: {'excludedTeams': excludedTeams});
 
     logger.i(uri);
