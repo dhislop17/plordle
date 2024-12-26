@@ -1,26 +1,55 @@
 services:
   mongo:
-    image: mongo
+    image: mongo:latest
+    container_name: mongo
     restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: devadmin
+      MONGO_INITDB_ROOT_PASSWORD: devpass
     ports:
       - 27017:27017
+    networks:
+      - admin_network
+      - api_network  
 
   mongo-express:
-    image: mongo-express
+    image: mongo-express:latest
+    container_name: mongo-express
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: devadmin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: devpass
+      ME_CONFIG_MONGODB_SERVER: mongo
     ports:
       - 8081:8081
     depends_on:
       - mongo
+    networks:
+      - admin_network
 
   plordleapi:
     build: 
       context: ..
-      dockerfile: ./PlordleApi/Dockerfile
+      dockerfile: ./PlordleApi/Dockerfile.dev
     restart: always
     ports: 
-      - 8080:80
+      - 5160:5160
+      - 7160:7160
     environment:
-      PlordleDatabase__Host: mongo
+      ASPNETCORE_ENVIRONMENT: DockerCompose
+      ASPNETCORE_Kestrel__Certificates__Default__Password: password
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ASPNETCORE_URLS: https://+:7160;http://+:5160
     depends_on:
       - mongo
     container_name: plordleapi
+    networks:
+      - api_network
+    volumes:
+      - ~/.aspnet/https:/https:ro
+
+networks:
+  admin_network:
+    driver: bridge
+  api_network:
+    driver: bridge  
