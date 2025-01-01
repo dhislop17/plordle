@@ -1,0 +1,152 @@
+[
+    {
+        "name": "Oscar Bobb",
+        "team": "Manchester City",
+        "country": "Norway",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Sven Botman",
+        "team": "Newcastle United",
+        "country": "Netherlands",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Tom King",
+        "team": "Wolverhampton Wanderers",
+        "country": "Wales",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Sasha Kalajdzic",
+        "team": "Wolverhampton Wanderers",
+        "country": "Austria",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Gavin Bazunu",
+        "team": "Southampton",
+        "country": "Ireland",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Juan Larios",
+        "team": "Southampton",
+        "country": "Spain",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Alfie Whiteman",
+        "team": "Tottenham Hotspur",
+        "country": "England",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Lucas Bergström",
+        "team": "Chelsea",
+        "country": "Finland",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Ben Chilwell",
+        "team": "Chelsea",
+        "country": "England",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Aaron Hickey",
+        "team": "Brentford",
+        "country": "Scotland",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Rico Henry",
+        "team": "Brentford",
+        "country": "England",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Josh Dasilva",
+        "team": "Brentford",
+        "country": "England",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Emmanuel Dennis",
+        "team": "Nottingham Forest",
+        "country": "Nigeria",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+    },
+    {
+        "name": "Daniel Iversen",
+        "team": "Leicester City",
+        "country": "Denmark",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+      },
+      {
+        "name": "Jamaal Lascelles",
+        "team": "Newcastle United",
+        "country": "England",
+        "age": null,
+        "position_type": null,
+        "shirt_number": null,
+        "country_code": null,
+        "continent": null
+      }
+]
