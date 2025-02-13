@@ -25,9 +25,9 @@ class TextConstants {
       'The column color after each guess will inidicate how close the guess was to the correct answer';
   static const String helpDialogGreenText = 'Green in any column';
   static const String helpDialogGreenSub = ' means a successful match';
-  static const String helpDialogPositionText = 'Yellow in the position column';
-  static const String helpDialogPositionSubtext =
-      ' means the mystery player has the same position type but plays in a different role';
+  //static const String helpDialogPositionText = 'Yellow in the position column';
+  //static const String helpDialogPositionSubtext =
+  // ' means the mystery player has the same position type but plays in a different role';
   static const String helpDialogNumberText =
       'Yellow in the age or number column';
   static const String helpDialogNumberSubtext =
@@ -60,71 +60,78 @@ class TextConstants {
   ];
 
   //Abbreviations Maps
-  static final Map<String, String> shortenedPositons = {
+  // static final Map<String, String> shortenedPositions = {
+  //   'Goalkeeper': 'GK',
+  //   'Right-Back': 'RB',
+  //   'Centre-Back': 'CB',
+  //   'Left-Back': 'LB',
+  //   'Right Midfield': 'RM',
+  //   'Defensive Midfield': 'DM',
+  //   'Central Midfield': 'CM',
+  //   'Left Midfield': 'LM',
+  //   'Right Winger': 'RW',
+  //   'Attacking Midfield': 'AM',
+  //   'Left Winger': 'LW',
+  //   'Second Striker': 'SS',
+  //   'Centre-Forward': 'CF'
+  // };
+
+  static final Map<String, String> shortenedPositionTypes = {
     'Goalkeeper': 'GK',
-    'Right-Back': 'RB',
-    'Centre-Back': 'CB',
-    'Left-Back': 'LB',
-    'Right Midfield': 'RM',
-    'Defensive Midfield': 'DM',
-    'Central Midfield': 'CM',
-    'Left Midfield': 'LM',
-    'Right Winger': 'RW',
-    'Attacking Midfield': 'AM',
-    'Left Winger': 'LW',
-    'Second Striker': 'SS',
-    'Centre-Forward': 'CF'
+    'Defender': 'DF',
+    'Midfielder': 'MF',
+    'Forward': 'FW'
   };
 
   static final List<String> teamsList = [
-    'Arsenal FC',
+    'Arsenal',
     'Aston Villa',
-    'AFC Bournemouth',
-    'Brentford FC',
+    'Bournemouth',
+    'Brentford',
     'Brighton & Hove Albion',
-    'Chelsea FC',
+    'Chelsea',
     'Crystal Palace',
-    'Everton FC',
-    'Fulham FC',
+    'Everton',
+    'Fulham',
     'Ipswich Town',
     'Leicester City',
-    'Liverpool FC',
+    'Liverpool',
     'Manchester City',
     'Manchester United',
     'Newcastle United',
     'Nottingham Forest',
-    'Southampton FC',
+    'Southampton',
     'Tottenham Hotspur',
     'West Ham United',
     'Wolverhampton Wanderers'
   ];
 
   static final Map<String, String> teamAbbreviations = {
-    'Arsenal FC': 'ARS',
+    'Arsenal': 'ARS',
     'Aston Villa': 'AVL',
-    'AFC Bournemouth': 'BOU',
-    'Brentford FC': 'BRE',
+    'Bournemouth': 'BOU',
+    'Brentford': 'BRE',
     'Brighton & Hove Albion': 'BHA',
-    'Burnley FC': 'BUR', //Championship
-    'Chelsea FC': 'CHE',
+    'Burnley': 'BUR', //Championship
+    'Chelsea': 'CHE',
     'Crystal Palace': 'CRY',
-    'Everton FC': 'EVE',
-    'Fulham FC': 'FUL',
+    'Everton': 'EVE',
+    'Fulham': 'FUL',
     'Ipswich Town': 'IPS',
     'Leeds United': 'LEE', //Championship
     'Leicester City': 'LEI',
-    'Liverpool FC': 'LIV',
+    'Liverpool': 'LIV',
     'Luton Town': 'LUT', //Championship
     'Manchester City': 'MCI',
     'Manchester United': 'MUN',
-    'Middlesbrough FC': 'MID', //Championship
+    'Middlesbrough': 'MID', //Championship
     'Newcastle United': 'NEW',
     'Norwich City': 'NOR', //Championship
     'Nottingham Forest': 'NFO',
     'Sheffield United': 'SHU', //Championship
-    'Southampton FC': 'SOU',
+    'Southampton': 'SOU',
     'Tottenham Hotspur': 'TOT',
-    'Watford FC': 'WAT', //Championship
+    'Watford': 'WAT', //Championship
     'West Ham United': 'WHU',
     'Wolverhampton Wanderers': 'WOL',
     'West Bromwich Albion': 'WBA' //Championship

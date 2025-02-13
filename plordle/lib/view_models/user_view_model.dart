@@ -14,7 +14,6 @@ enum DifficultyOptions {
   easy("Relegation Battle"),
   normal("Mid Table Club"),
   hard("Top 4 Challenger"),
-  extraHard("Title Challenger"),
   challenge("PL Champion"),
   expert("Invincibles");
 
@@ -192,8 +191,8 @@ class UserViewModel extends ChangeNotifier {
             guessedPlayer.team == playerViewModel.currentMysteryPlayer.team,
         sameType: guessedPlayer.positionType ==
             playerViewModel.currentMysteryPlayer.positionType,
-        samePosition: guessedPlayer.position ==
-            playerViewModel.currentMysteryPlayer.position,
+        // samePosition: guessedPlayer.position ==
+        //     playerViewModel.currentMysteryPlayer.position,
         shirtNumberDiff: guessedPlayer.shirtNumber -
             playerViewModel.currentMysteryPlayer.shirtNumber,
         ageDiff: guessedPlayer.age - playerViewModel.currentMysteryPlayer.age,

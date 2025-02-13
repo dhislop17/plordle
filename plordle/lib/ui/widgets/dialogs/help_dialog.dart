@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
 
-//TODO: Make this popup on game startup if they have never played before
 //TODO: Update dialog to include info about filtering players, themes, etc.
 class HelpDialog extends StatelessWidget {
   const HelpDialog({
@@ -49,15 +48,15 @@ class HelpDialog extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              RichText(
-                  text: TextSpan(
-                      style: Theme.of(context).textTheme.bodyMedium,
-                      children: const [
-                    TextSpan(
-                        text: TextConstants.helpDialogPositionText,
-                        style: TextStyle(backgroundColor: Themes.guessYellow)),
-                    TextSpan(text: TextConstants.helpDialogPositionSubtext)
-                  ])),
+              // RichText(
+              //     text: TextSpan(
+              //         style: Theme.of(context).textTheme.bodyMedium,
+              //         children: const [
+              //       TextSpan(
+              //           text: TextConstants.helpDialogPositionText,
+              //           style: TextStyle(backgroundColor: Themes.guessYellow)),
+              //       TextSpan(text: TextConstants.helpDialogPositionSubtext)
+              //     ])),
               const SizedBox(
                 height: 10,
               ),

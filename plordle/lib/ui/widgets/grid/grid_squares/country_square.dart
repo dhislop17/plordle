@@ -48,16 +48,16 @@ class CountrySquare extends StatelessWidget {
 
     //Represent (ENG, SCT, and WLS as their flag emoji from unicode)
     if (TextConstants.albionNationsFlagMap.keys.contains(player.countryCode)) {
-      var homeNationFlagData =
+      var albionNationFlagData =
           TextConstants.albionNationsFlagMap[player.countryCode]!;
 
       columnData = [
-        Text(player.country, maxLines: 1, overflow: TextOverflow.ellipsis),
-        Text(String.fromCharCodes(homeNationFlagData))
+        Text(player.country),
+        Text(String.fromCharCodes(albionNationFlagData))
       ];
     } else if (player.countryCode == "NIR") {
       //Shamrock for NIR
-      var homeNationFlagData = TextConstants.northernIrelandCharSequence;
+      var northernIrelandFlagData = TextConstants.northernIrelandCharSequence;
 
       columnData = [
         Text(
@@ -67,8 +67,8 @@ class CountrySquare extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(homeNationFlagData[0]),
-          Text(homeNationFlagData[1])
+          Text(northernIrelandFlagData[0]),
+          Text(northernIrelandFlagData[1])
         ])
       ];
     } else {
