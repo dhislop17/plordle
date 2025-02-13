@@ -107,7 +107,7 @@ def pull_players_from_api_football(api_key: str, team_ids: Dict[str, str]):
                 'team': team_ids[id],
                 'country': None,
                 'age': player_json['age'],
-                'position_type': player_json['position'],
+                'position_type': player_json['position'] if player_json['position'] != "Attacker" else "Forward",
                 'shirt_number': player_json['number'],
                 'country_code': None,
                 'continent': None
