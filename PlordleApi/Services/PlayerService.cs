@@ -34,7 +34,7 @@ public class PlayerService : IPlayerService
     public async Task<List<Player>> GetAllPlayers()
     {
         var players = await _playerRepo.GetAllPlayersAsync();
-        _logger.LogInformation($"Retrieved: {players.Count} players");
+        _logger.LogDebug($"Retrieved: {players.Count} players");
         return players;
     }
 
