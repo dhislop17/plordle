@@ -2,7 +2,7 @@ class Guess {
   final String guessName;
   final bool sameTeam;
   final bool sameType;
-  final bool samePosition;
+  //final bool samePosition;
   final int ageDiff;
   final int shirtNumberDiff;
   final bool sameCountry;
@@ -11,7 +11,7 @@ class Guess {
   const Guess(
       {required this.guessName,
       required this.sameTeam,
-      required this.samePosition,
+      //required this.samePosition,
       required this.sameType,
       required this.shirtNumberDiff,
       required this.ageDiff,
@@ -20,6 +20,6 @@ class Guess {
 
   @override
   String toString() {
-    return '$guessName Team:$sameTeam Position:$samePosition';
+    return '$guessName Team:$sameTeam Position:$sameType';
   }
 }

@@ -10,7 +10,8 @@ builder.Services.Configure<PlordleDatabaseSettings>(builder.Configuration.GetSec
 // Add services to the container.
 builder.Services.AddSingleton<MongoPlordleDBContext>();
 builder.Services.AddTransient<IPlayerRepository, PlayerRepository>();
-builder.Services.AddTransient<IFileReaderService, FileReaderService>();
+//builder.Services.AddTransient<IFileReaderService, CsvReaderService>();
+builder.Services.AddTransient<IFileReaderService, JsonReaderService>();
 builder.Services.AddTransient<IPlayerService, PlayerService>();
 
 

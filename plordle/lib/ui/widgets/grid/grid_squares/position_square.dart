@@ -24,10 +24,10 @@ class PositionSquare extends StatelessWidget {
   }
 
   Color _colorPositionSquare(Player player, Guess guess) {
-    if (guess.samePosition) {
+    if (guess.sameType) {
       return Themes.guessGreen;
-    } else if (guess.sameType) {
-      return Themes.guessYellow;
+      // } else if (guess.sameType) {
+      //   return Themes.guessYellow;
     } else {
       return Themes.guessGrey;
     }

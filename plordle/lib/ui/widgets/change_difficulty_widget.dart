@@ -12,13 +12,13 @@ class ChangeDifficultyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<UserViewModel>(builder: (context, model, child) {
       Player demoPlayer = const Player(
-          age: 25,
-          playerId: 1,
+          age: 26,
+          //playerId: 1,
           name: "Example Player",
           continent: "North America",
           country: "Canada",
           countryCode: "CAN",
-          position: "Central Midfield",
+          position: "Left Winger", //This isn't displayed
           positionType: "Midfielder",
           shirtNumber: 17,
           team: "Manchester United",

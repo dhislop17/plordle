@@ -1,22 +1,29 @@
 # Plordle
-(Updates in progress ahead of the new season) <br>
 An English Premier League themed Wordle game to practice my Flutter skills and try out some new technologies
 
 ## Features
-- Player database populated from all 20 Premier League teams' 2024-25 squads (up to date as of September 19, 2024)
+### Game Features
+- Includes every player from all 20 Premier League teams' 2024-25 squads (up to date as of January 1, 2025)
+    - Players who don't have a shirt number are not included
 - Guesses are updated with the flag emoji for the player's country (or a Shamrock For Northern Ireland)
-- Variable Themes and Difficulties
-- Options to guess a new mystery player every day or continuously guess random players (players who don't have a shirt number are not included)
+- 5 Difficulty Levels
+- 21 different themes and support for Light and Dark Mode
+    - Default Theme based on the Premier League's color scheme
+    - All 20 teams have their own theme matching their color scheme
+- Options to guess a new mystery player every day or continuously guess random players
+- Options to to choose which teams to guess players from
 - Stat tracking
-- Dockerized API
-- Customizable web scraper to pull player data from Transfermarkt
 
+### Technical Features
+- Built using Flutter 3.27, .NET, Python, and MongoDB
+- Player database populated using a Python script that pulls data from API-FOOTBALL and FBRef
+    - Uses fuzzy matching to combine player information from each datasource into a useable datapoint for the app
+- Dockerized API
 
 ## How To Play
 - 10 guesses to figure out the mystery player
 - Each guess has color-coded columns giving the player feedback on how close they are to the correct answer
     - Green in any column means a successful match
-    - Yellow in the position column means the mystery player has the same position type but normally plays in a different role (ex: Correctly guessed a Defender but specifically guessed a Left Back when the mystery player was a Center Back)
     - Yellow in the age or number column means the mystery player is within 5 of the guessed player's age or shirt number
     - Yellow in the country column means the mystery player is from the same continent but not the same country
 
@@ -24,7 +31,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 *NEW GIF COMING SOON  - Guessing the daily player for 7/8/22 - Harry Lewis (former Southampton Goalkeeper)*
   
 
-<img alt="7/8/22 Player of the Day -  Harry Lewis" src = "./readme-gifs/plordleDemoGif.gif" width = 300>
+<img alt="7/8/22 Player of the Day - Harry Lewis" src = "./readme-gifs/plordleDemoGif.gif" width = 300>
   
 
 
