@@ -34,7 +34,7 @@ public class PlayerService : IPlayerService
     public async Task<List<Player>> GetAllPlayers()
     {
         var players = await _playerRepo.GetAllPlayersAsync();
-        _logger.LogDebug($"Retrieved: {players.Count} players");
+        _logger.LogInformation($"Retrieved: {players.Count} players");
         return players;
     }
 
@@ -52,16 +52,16 @@ public class PlayerService : IPlayerService
             var teamFilter = filterBuilder.Nin(player => player.Team, excludedTeams);
 
             //Filter out players from excluded teams
-            List<Player> players = await _playerRepo.GetPlayersUsingFilter(teamFilter);
+            var players = await _playerRepo.GetPlayersUsingFilter(teamFilter);
             _logger.LogDebug($"Retrieved: {players.Count} players");
             player = players.ElementAt(random.Next(players.Count));
 
         }
         else
         {
-            var count = await GetPlayerCount();
-            var todaysId = random.Next(count);
-            player = await GetPlayerById(todaysId);
+            var players = await _playerRepo.GetAllPlayersAsync();
+            var nextId = random.Next(players.Count);
+            player = players.ElementAt(nextId);
         }
         return player;
     }
@@ -76,16 +76,16 @@ public class PlayerService : IPlayerService
             var filterBuilder = Builders<Player>.Filter;
             var teamFilter = filterBuilder.Nin(player => player.Team, excludedTeams);
 
-            List<Player> players = await _playerRepo.GetPlayersUsingFilter(teamFilter);
+            var players = await _playerRepo.GetPlayersUsingFilter(teamFilter);
 
             _logger.LogDebug($"Retrieved: {players.Count} players");
             player = players.ElementAt(random.Next(players.Count));
         }
         else
         {
-            var count = await GetPlayerCount();
-            var id = random.Next(count);
-            player = await GetPlayerById(id);
+            var players = await _playerRepo.GetAllPlayersAsync();
+            var nextId = random.Next(players.Count);
+            player = players.ElementAt(nextId);
         }
 
         return player;
@@ -96,14 +96,14 @@ public class PlayerService : IPlayerService
         return await _playerRepo.GetPlayerCountAsync();
     }
 
-    public async Task<Player> GetPlayerById(int playerId)
-    {
-        var builder = Builders<Player>.Filter;
-        var filter = builder.Eq(player => player.PlayerId, playerId);
-        var player = await _playerRepo.GetPlayerAsync(filter);
+    //public async Task<Player> GetPlayerById(int playerId)
+    //{
+    //    var builder = Builders<Player>.Filter;
+    //    var filter = builder.Eq(player => player.PlayerId, playerId);
+    //    var player = await _playerRepo.GetPlayerAsync(filter);
         
-        return player;      
-    }
+    //    return player;      
+    //}
 
     public async Task<Player> GetPlayerByName(string name)
     {
@@ -126,7 +126,7 @@ public class PlayerService : IPlayerService
                 GuessName = todaysPlayer.Name.Equals(guess.Name) ? todaysPlayer.Name : guess.Name,
                 SameTeam = todaysPlayer.Team.Equals(guess.Team),
                 SameType = todaysPlayer.PositionType.Equals(guess.PositionType),
-                SamePosition = todaysPlayer.Position.Equals(guess.Position),
+                //SamePosition = todaysPlayer.Position.Equals(guess.Position),
                 SameCountry = todaysPlayer.Country.Equals(guess.Country),
                 SameContinent = todaysPlayer.Continent.Equals(guess.Continent),
                 AgeDiff = Math.Abs(todaysPlayer.Age - guess.Age),
@@ -135,6 +135,7 @@ public class PlayerService : IPlayerService
         }
         else
         {
+            _logger.LogError($"Unable to compare mystery player:{todaysPlayer} and guessed player: {guess}");
             return new PlayerComparisonDto();
         }
 

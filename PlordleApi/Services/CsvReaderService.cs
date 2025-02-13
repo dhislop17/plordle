@@ -3,10 +3,10 @@ using System.Globalization;
 
 namespace PlordleApi.Services;
 
-public class FileReaderService : IFileReaderService
+public class CsvReaderService : IFileReaderService
 {
     private string _fileName;
-    public FileReaderService(IOptions<FileReaderSettings> options)
+    public CsvReaderService(IOptions<FileReaderSettings> options)
     {
         _fileName = options.Value.FilePath;
     }
