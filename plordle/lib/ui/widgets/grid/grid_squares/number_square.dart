@@ -35,9 +35,9 @@ class NumberSquare extends StatelessWidget {
 
   Widget _numberSquareChild(Player player, Guess guess) {
     String guessedNumber = player.shirtNumber.toString();
-    if (guess.shirtNumberDiff == 0 || guess.shirtNumberDiff.abs() > 5) {
+    if (guess.shirtNumberDiff == 0 || guess.shirtNumberDiff.abs() > 10) {
       return Text(guessedNumber);
-    } else if (guess.shirtNumberDiff.abs() <= 5 && guess.shirtNumberDiff > 0) {
+    } else if (guess.shirtNumberDiff.abs() <= 10 && guess.shirtNumberDiff > 0) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -65,7 +65,7 @@ class NumberSquare extends StatelessWidget {
   Color _colorNumberSquare(Player player, Guess guess) {
     if (guess.shirtNumberDiff == 0) {
       return Themes.guessGreen;
-    } else if (guess.shirtNumberDiff.abs() <= 5) {
+    } else if (guess.shirtNumberDiff.abs() <= 10) {
       return Themes.guessYellow;
     } else {
       return Themes.guessGrey;

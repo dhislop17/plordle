@@ -48,6 +48,7 @@ class HelpDialog extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              // Old section text for specific positions
               // RichText(
               //     text: TextSpan(
               //         style: Theme.of(context).textTheme.bodyMedium,
@@ -57,6 +58,15 @@ class HelpDialog extends StatelessWidget {
               //           style: TextStyle(backgroundColor: Themes.guessYellow)),
               //       TextSpan(text: TextConstants.helpDialogPositionSubtext)
               //     ])),
+              RichText(
+                  text: TextSpan(
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      children: const [
+                    TextSpan(
+                        text: TextConstants.helpDialogShirtText,
+                        style: TextStyle(backgroundColor: Themes.guessYellow)),
+                    TextSpan(text: TextConstants.helpDialogShirtSubtext)
+                  ])),
               const SizedBox(
                 height: 10,
               ),

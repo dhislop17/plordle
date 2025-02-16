@@ -54,13 +54,13 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         actions: [
           //TODO: Make Cancel Button appear conditionally after the first guess
-          IconButton(
-            icon: const Icon(Icons.cancel),
-            onPressed: () {
-              //On pressed this should show a confirmation for giving up before
-              //showing the game over dialog
-            },
-          ),
+          // IconButton(
+          //   icon: const Icon(Icons.cancel),
+          //   onPressed: () {
+          //     //On pressed this should show a confirmation for giving up before
+          //     //showing the game over dialog
+          //   },
+          // ),
           IconButton(
               icon: const Icon(
                 Icons.help,
