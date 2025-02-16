@@ -212,9 +212,10 @@ def main():
     manual_players_df = pd.read_json(Path(constants.MANUAL_PLAYERS_FILE_NAME))
 
     #Merge the maunal players into the FBRef dataset
-    #fbref_players_df = pd.concat([fbref_players_df, manual_players_df], ignore_index=True)
     fbref_players_df = pd.concat([fbref_players_df, manual_players_df])
 
+    #Some players get sold or go on loan to other teams within the league during
+    #the winter transfer window, so manually update their teams from the FBRef pull
     intra_league_file_path = Path(constants.INTRA_LEAGUE_TRANSFERS_FILE_NAME)
     if intra_league_file_path.exists():
         intra_league_df = pd.read_json(intra_league_file_path)
