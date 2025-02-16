@@ -28,10 +28,12 @@ class TextConstants {
   //static const String helpDialogPositionText = 'Yellow in the position column';
   //static const String helpDialogPositionSubtext =
   // ' means the mystery player has the same position type but plays in a different role';
-  static const String helpDialogNumberText =
-      'Yellow in the age or number column';
+  static const String helpDialogShirtText = 'Yellow in the number column';
+  static const String helpDialogShirtSubtext =
+      " means the mystery player is within is within 10 of the guessed player's shirt number";
+  static const String helpDialogNumberText = 'Yellow in the age column';
   static const String helpDialogNumberSubtext =
-      " means the mystery player is within 5 of the guessed player's age or shirt number";
+      " means the mystery player is within 5 of the guessed player's age";
   static const String helpDialogCountryText = 'Yellow in the country column';
   static const String helpDialogCountrySubtext =
       " means the mystery player is from the same continent but from a different country";

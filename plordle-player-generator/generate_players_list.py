@@ -5,10 +5,11 @@ from sportsipy.fb.team import Team as fb_team
 from pathlib import Path
 from retry import retry
 from player import Player
+from utils import country_utils, data_utils
+import constants
 import country_converter as coco
 import pandas as pd
 import requests, time, orjson
-import country_utils, data_utils, constants
 
 @retry(requests.ReadTimeout, tries=2, delay=10, backoff=2)
 def pull_players_from_fbref():
@@ -28,7 +29,7 @@ def pull_players_from_fbref():
     for i in range (len(team_ids)):
         #FBRef rate limits to 10 requests per about a minute
         #So set a sleep that will keep us under that
-        if i > 0 and i % 5 == 0:
+        if 0 < i <= 15 and i % 5 == 0:
             time.sleep(40)
 
         team = fb_team(team_ids[i])
@@ -39,10 +40,10 @@ def pull_players_from_fbref():
     for team in teams:
         for player in team.roster:
             player_data = {
-                'name': player.name,
+                'name': data_utils.shorten_FBRef_player_names(player.name),
                 'team': team.name,
                 'country': player.nationality,
-                'age': None,
+                'age': data_utils.convert_FBRef_player_age(player._age),
                 'position_type': None,
                 'shirt_number': None,
                 'country_code': None,
@@ -103,7 +104,7 @@ def pull_players_from_api_football(api_key: str, team_ids: Dict[str, str]):
         #Create a player object for reach player in the squad
         for player_json in team_squad:                
             player_data = {
-                'name': data_utils.fix_api_football_player_names(player_json['name']),
+                'name': data_utils.fix_api_football_player_names(player_json['name'], team_ids[id]),
                 'team': team_ids[id],
                 'country': None,
                 'age': player_json['age'],
@@ -120,14 +121,14 @@ def pull_players_from_api_football(api_key: str, team_ids: Dict[str, str]):
 
     return
 
-def finalize_players(fbref_df: pd.DataFrame, players_map: Dict[str, Player]):
+def finalize_players(fbref_df: pd.DataFrame, api_football_players_map: Dict[str, Player]):
     """
     Combines data from the main source (API FOOTBALL) and the enhancing source (FBRef)
     to create a final list of players to be used by Plordle.
 
     Args:
         fbref_df: A pandas data frame containing data from FBRef
-        players_map: A Dictionary mapping a player's name as its was from API FOOTBALL and it's player object.\
+        api_football_players_map: A Dictionary mapping a player's name as its was from API FOOTBALL and it's player object.\
               These will be the objects in the final json list
 
     Returns:
@@ -143,8 +144,8 @@ def finalize_players(fbref_df: pd.DataFrame, players_map: Dict[str, Player]):
     full_player_names = fbref_df['name']
     full_team_names = fbref_df['team'].unique()
 
-    for short_player_name in players_map:      
-        player = players_map[short_player_name]
+    for short_player_name in api_football_players_map:      
+        player = api_football_players_map[short_player_name]
         short_team_name = player.team
 
         #If we've already seen this team then we don't have to redo the fuzzy matching
@@ -175,6 +176,9 @@ def finalize_players(fbref_df: pd.DataFrame, players_map: Dict[str, Player]):
                 player.country = correct_player_row['country'].values[0]
                 player.country_code = correct_player_row['country_code'].values[0]
                 player.continent = correct_player_row['continent'].values[0]
+                player.age = int(correct_player_row['age'].values[0])
+                if player.shirt_number is None:
+                    player.shirt_number = int(correct_player_row['shirt_number'].values[0])
                 final_player_list.append(player)
             else:
                 #The fuzzy match returned a false positive
@@ -208,17 +212,31 @@ def main():
     manual_players_df = pd.read_json(Path(constants.MANUAL_PLAYERS_FILE_NAME))
 
     #Merge the maunal players into the FBRef dataset
-    fbref_players_df = pd.concat([fbref_players_df, manual_players_df], ignore_index=True)
+    fbref_players_df = pd.concat([fbref_players_df, manual_players_df])
+
+    #Some players get sold or go on loan to other teams within the league during
+    #the winter transfer window, so manually update their teams from the FBRef pull
+    intra_league_file_path = Path(constants.INTRA_LEAGUE_TRANSFERS_FILE_NAME)
+    if intra_league_file_path.exists():
+        intra_league_df = pd.read_json(intra_league_file_path)
+        fbref_players_df = fbref_players_df.merge(intra_league_df, on="name", how="left")
+        fbref_players_df['team'] = fbref_players_df['newTeam'].combine_first(fbref_players_df['team'])
+        fbref_players_df.drop(columns=['newTeam'], inplace=True)
+
 
     #Fill in the country data for every player on fbref
     set_player_country_data(fbref_players_df)
 
-    api_key = dotenv_values(".env")["RAPID_API_KEY"]
-
     # If there already isn't a saved list of players from API-FOOTBALL we need to pull a fresh one down
     api_football_path = Path(constants.API_FOOTBALL_PLAYERS_FILE_NAME)
     if not api_football_path.exists():
-    #Call Teams Endpoint to get team ids
+        try:
+            api_key = dotenv_values(".env")["RAPID_API_KEY"]
+        except KeyError:
+            print(f"Missing Rapid Api Key. Exiting")
+            return
+    
+        #Call Teams Endpoint to get team ids
         teams = data_utils.call_api_football(constants.API_FOOTBALL_LEAGUE_ENDPOINT, api_key, constants.LEAGUE_API_PARAMS)
         team_map = {team_object['team']['id']:team_object['team']['name'] for team_object in teams['response']}
 
