@@ -24,7 +24,8 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 - 10 guesses to figure out the mystery player
 - Each guess has color-coded columns giving the player feedback on how close they are to the correct answer
     - Green in any column means a successful match
-    - Yellow in the age or number column means the mystery player is within 5 of the guessed player's age or shirt number
+    - Yellow in the number column means the mystery player is within 10 of the guessed player's shirt number
+    - Yellow in the age column means the mystery player is within 5 of the guessed player's age
     - Yellow in the country column means the mystery player is from the same continent but not the same country
 
 ## Demo
