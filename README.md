@@ -18,6 +18,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 - Built using Flutter 3.27, .NET, Python, and MongoDB
 - Player database populated using a Python script that pulls data from API-FOOTBALL and FBRef
     - Uses fuzzy matching to combine player information from each datasource into a useable datapoint for the app
+- Diacrtic (accent mark) insensitve search on player names
 - Dockerized API
 
 ## How To Play
@@ -35,39 +36,19 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 <img alt="2/15/25 Player of the Day - Guglielmo Vicario" src = "./plordle-media/newPlordleRecording.gif" width = 300>
 
 
-## Select Screenshots of Themes
-*(Default) Premier League Mode Theme*
+## Example Theme Screenshots
+
+| Manchester United Light Theme | Newcastle United Light Theme | Brighton & Hove Albion Light Theme | 
+| :---: | :---: | :---: | 
+| <img alt="Manchester United Light Mode Theme" src = "./plordle-media/Manchester United Light Mode.jpg" width = 300> |<img alt="Newcastle Light Mode Theme" src = "./plordle-media/Newcastle Light Theme.jpg" width = 300> | <img alt="Brighton & Hove Albion Light Mode Theme" src = "./plordle-media/Brighton Light Mode.jpg" width = 300> | 
 
 
-<img alt="Premier League Dark Mode Theme" src = "./plordle-media/Premier League Dark Mode.jpg" width = 300>
-
-*Manchester United Light Mode Theme*
-
-
-<img alt="Manchester United Light Mode Theme" src = "./plordle-media/Manchester United Light Mode.jpg" width = 300>
-
-*Aston Villa Light Mode Theme*
-
-
-<img alt="Aston Villa Light Mode Theme" src = "./plordle-media/Aston Villa Light Mode.jpg" width = 300> <br>
-
-*Liverpool Dark Mode Theme*
-
-
-<img alt="Liverpool Dark Mode Theme" src = "./plordle-media/Liverpool Dark Mode.jpg" width = 300>
-
-*Brighton & Hove Albion Light Mode Theme*
-
-
-<img alt="Brighton and Hove Albion Light Mode Theme" src = "./plordle-media/Brighton Light Mode.jpg" width = 300>
-
-
+| Premier League Dark Theme | Liverpool Dark Theme | Aston Villa Dark Theme | 
+| :---: | :---: | :---: | 
+| <img alt="Premier League Dark Mode Theme" src = "./plordle-media/Premier League Dark Mode.jpg" width = 300> |<img alt="Liverpool Dark Mode Theme" src = "./plordle-media/Liverpool Dark Mode.jpg" width = 300> | <img alt="Aston Villa Light Mode Theme" src = "./plordle-media/Aston Villa Dark Theme.jpg" width = 300> | 
 
 ## To-Do
-- [x] Finish Readme
-- [x] Finish Containerization of API
-- [x] Finish Updates For 2024-25 Season
-- [ ] Finish App onboarding flow
+- [ ] Finish up game flow
 
 ## Stretch Goals
 - More Options for Filtering Players (by country/continent, min/max age, or shirt number)
