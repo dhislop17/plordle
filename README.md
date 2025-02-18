@@ -11,14 +11,14 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
     - Default Theme based on the Premier League's color scheme
     - All 20 teams have their own theme matching their color scheme
 - Options to guess a new mystery player every day or continuously guess random players
-- Options to to choose which teams to guess players from
+- Options to choose which teams to guess players from
 - Stat tracking
 
 ### Technical Features
 - Built using Flutter 3.27, .NET, Python, and MongoDB
 - Player database populated using a Python script that pulls data from API-FOOTBALL and FBRef
-    - Uses fuzzy matching to combine player information from each datasource into a useable datapoint for the app
-- Diacrtic (accent mark) insensitve search on player names
+    - Uses fuzzy matching to combine player information from each data source into a useable datapoint for the app
+- Diacritic (accent mark) insensitive search on player names
 - Dockerized API
 
 ## How To Play
