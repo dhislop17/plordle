@@ -11,7 +11,7 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("App Settings"),
+        title: const Text("Settings"),
       ),
       body: ListView(
         shrinkWrap: true,
