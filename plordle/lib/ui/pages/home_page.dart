@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:plordle/ui/utils/text_constants.dart';
-import 'package:plordle/ui/widgets/grid/grid_header.dart';
-import 'package:plordle/ui/widgets/grid/grid_row.dart';
 import 'package:plordle/ui/widgets/dialogs/help_dialog.dart';
-import 'package:plordle/ui/widgets/search_box.dart';
+import 'package:plordle/ui/widgets/main_game_column.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
-import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,8 +28,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    double paddingWidth = MediaQuery.of(context).size.width * .1;
-    double paddingHeight = MediaQuery.of(context).size.height * .05;
     ThemeViewModel themeViewModel = Provider.of<ThemeViewModel>(context);
 
     bool isDarkMode =
@@ -80,52 +75,19 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding:
-                  EdgeInsets.only(top: paddingHeight, bottom: paddingHeight),
-              child: const Text(
-                TextConstants.gameSubtitle,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: paddingWidth, right: paddingWidth),
-              child: const SearchBox(),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: paddingHeight),
-              child: const GridHeader(),
-            ),
-            Divider(height: 10, thickness: 10, color: divColor),
-            Expanded(
-              child: Consumer<UserViewModel>(
-                builder: (context, model, child) {
-                  ScrollController scrollController = ScrollController();
-                  SchedulerBinding.instance.addPostFrameCallback((_) {
-                    scrollController
-                        .jumpTo(scrollController.position.maxScrollExtent);
-                  });
-                  return ListView.builder(
-                      controller: scrollController,
-                      itemCount: model.guesses.length,
-                      itemBuilder: (context, index) {
-                        return GridRow(
-                          player: model.guessedPlayers[index],
-                          guess: model.guesses[index],
-                          countryCoder: model.countryCoder,
-                        );
-                      });
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth > TextConstants.bigScreenCutoffWidth) {
+          return Center(
+            child: ConstrainedBox(
+                constraints: const BoxConstraints(
+                    maxWidth: TextConstants.bigScreenMaxWidth),
+                child: MainGameColumn(divColor: divColor)),
+          );
+        } else {
+          return SafeArea(child: MainGameColumn(divColor: divColor));
+        }
+      }),
     );
   }
 }
