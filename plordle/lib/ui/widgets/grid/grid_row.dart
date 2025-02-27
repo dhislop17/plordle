@@ -21,19 +21,24 @@ class GridRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.sizeOf(context).width;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        NameSquare(player: player, guess: guess),
-        TeamSquare(player: player, guess: guess),
-        PositionSquare(player: player, guess: guess),
-        NumberSquare(player: player, guess: guess),
-        AgeSquare(player: player, guess: guess),
-        CountrySquare(
+        NameSquare(
           player: player,
           guess: guess,
-          countryCoder: countryCoder,
+          screenWidth: screenWidth,
         ),
+        TeamSquare(player: player, guess: guess, screenWidth: screenWidth),
+        PositionSquare(player: player, guess: guess, screenWidth: screenWidth),
+        NumberSquare(player: player, guess: guess, screenWidth: screenWidth),
+        AgeSquare(player: player, guess: guess, screenWidth: screenWidth),
+        CountrySquare(
+            player: player,
+            guess: guess,
+            countryCoder: countryCoder,
+            screenWidth: screenWidth)
       ],
     );
   }

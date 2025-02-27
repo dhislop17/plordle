@@ -7,13 +7,20 @@ import 'package:plordle/ui/utils/text_constants.dart';
 class AgeSquare extends StatelessWidget {
   final Player player;
   final Guess guess;
-  const AgeSquare({super.key, required this.player, required this.guess});
+  final double screenWidth;
+  const AgeSquare(
+      {super.key,
+      required this.player,
+      required this.guess,
+      required this.screenWidth});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: AspectRatio(
-        aspectRatio: 1,
+        aspectRatio: (screenWidth > TextConstants.bigScreenCutoffWidth)
+            ? TextConstants.bigScreenGridAspectRatio
+            : TextConstants.smallScreenGridAspectRatio,
         child: _createAgeContainer(player, guess),
       ),
     );

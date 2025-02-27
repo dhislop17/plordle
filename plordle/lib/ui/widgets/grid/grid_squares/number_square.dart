@@ -7,13 +7,20 @@ import 'package:plordle/ui/utils/text_constants.dart';
 class NumberSquare extends StatelessWidget {
   final Player player;
   final Guess guess;
-  const NumberSquare({super.key, required this.player, required this.guess});
+  final double screenWidth;
+  const NumberSquare(
+      {super.key,
+      required this.player,
+      required this.guess,
+      required this.screenWidth});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: AspectRatio(
-        aspectRatio: 1,
+        aspectRatio: (screenWidth > TextConstants.bigScreenCutoffWidth)
+            ? TextConstants.bigScreenGridAspectRatio
+            : TextConstants.smallScreenGridAspectRatio,
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(

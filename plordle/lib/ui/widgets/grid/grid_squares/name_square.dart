@@ -2,17 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
+import 'package:plordle/ui/utils/text_constants.dart';
 
 class NameSquare extends StatelessWidget {
   final Player player;
   final Guess guess;
-  const NameSquare({super.key, required this.player, required this.guess});
+  final double screenWidth;
+  const NameSquare(
+      {super.key,
+      required this.player,
+      required this.guess,
+      required this.screenWidth});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: AspectRatio(
-        aspectRatio: 1,
+        aspectRatio: (screenWidth > TextConstants.bigScreenCutoffWidth)
+            ? TextConstants.bigScreenGridAspectRatio
+            : TextConstants.smallScreenGridAspectRatio,
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
