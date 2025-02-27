@@ -6,7 +6,7 @@ class GridHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
       Container(
           width: 60,
           alignment: Alignment.center,
