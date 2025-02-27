@@ -19,6 +19,8 @@ import 'package:provider/provider.dart';
 Future main() async {
   setupServiceLocator();
   HttpOverrides.global = MyHttpOverrides();
+
+  //TODO: Consider how this would work in production
   await dotenv.load(fileName: '.env');
   await PlatformConfig().initialize();
   runApp(const Plordle());
