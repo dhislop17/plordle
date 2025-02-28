@@ -37,9 +37,11 @@ class AgeSquare extends StatelessWidget {
 
   Widget _ageSquareChild(Player player, Guess guess) {
     String guessedAge = player.age.toString();
-    if (guess.ageDiff == 0 || guess.ageDiff.abs() > 5) {
+    if (guess.ageDiff == 0 ||
+        guess.ageDiff.abs() > Constants.ageGuessThreshold) {
       return Text(guessedAge);
-    } else if (guess.ageDiff.abs() <= 5 && guess.ageDiff > 0) {
+    } else if (guess.ageDiff > 0 &&
+        guess.ageDiff.abs() <= Constants.ageGuessThreshold) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -67,7 +69,7 @@ class AgeSquare extends StatelessWidget {
   Color _colorAgeSquare(Player player, Guess guess) {
     if (guess.ageDiff == 0) {
       return Themes.guessGreen;
-    } else if (guess.ageDiff.abs() <= 5) {
+    } else if (guess.ageDiff.abs() <= Constants.ageGuessThreshold) {
       return Themes.guessYellow;
     } else {
       return Themes.guessGrey;
