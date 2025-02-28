@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 
 //TODO: Update dialog to include info about filtering players, themes, etc.
 class HelpDialog extends StatelessWidget {
@@ -23,16 +23,16 @@ class HelpDialog extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(TextConstants.helpDialogTitle,
+              Text(Constants.helpDialogTitle,
                   style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 20),
               Text(
-                TextConstants.helpDialogSubtitle,
+                Constants.helpDialogSubtitle,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 15),
               Text(
-                TextConstants.helpDialogInfoText,
+                Constants.helpDialogInfoText,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 15),
@@ -41,9 +41,9 @@ class HelpDialog extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyMedium,
                       children: const [
                     TextSpan(
-                        text: TextConstants.helpDialogGreenText,
+                        text: Constants.helpDialogGreenText,
                         style: TextStyle(backgroundColor: Themes.guessGreen)),
-                    TextSpan(text: TextConstants.helpDialogGreenSub)
+                    TextSpan(text: Constants.helpDialogGreenSub)
                   ])),
               const SizedBox(
                 height: 10,
@@ -63,9 +63,9 @@ class HelpDialog extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyMedium,
                       children: const [
                     TextSpan(
-                        text: TextConstants.helpDialogShirtText,
+                        text: Constants.helpDialogShirtText,
                         style: TextStyle(backgroundColor: Themes.guessYellow)),
-                    TextSpan(text: TextConstants.helpDialogShirtSubtext)
+                    TextSpan(text: Constants.helpDialogShirtSubtext)
                   ])),
               const SizedBox(
                 height: 10,
@@ -75,9 +75,9 @@ class HelpDialog extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyMedium,
                       children: const [
                     TextSpan(
-                        text: TextConstants.helpDialogNumberText,
+                        text: Constants.helpDialogNumberText,
                         style: TextStyle(backgroundColor: Themes.guessYellow)),
-                    TextSpan(text: TextConstants.helpDialogNumberSubtext)
+                    TextSpan(text: Constants.helpDialogNumberSubtext)
                   ])),
               const SizedBox(
                 height: 10,
@@ -87,15 +87,15 @@ class HelpDialog extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyMedium,
                       children: const [
                     TextSpan(
-                        text: TextConstants.helpDialogCountryText,
+                        text: Constants.helpDialogCountryText,
                         style: TextStyle(backgroundColor: Themes.guessYellow)),
-                    TextSpan(text: TextConstants.helpDialogCountrySubtext)
+                    TextSpan(text: Constants.helpDialogCountrySubtext)
                   ])),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                TextConstants.helpDialogGameInfo,
+                Constants.helpDialogGameInfo,
                 style: Theme.of(context).textTheme.bodyMedium,
               )
             ],

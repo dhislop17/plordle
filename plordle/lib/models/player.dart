@@ -1,4 +1,4 @@
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 
 class Player {
@@ -29,9 +29,9 @@ class Player {
       required this.continent});
 
   factory Player.fromJson(Map<String, dynamic> json) {
-    String? teamAbbr = TextConstants.teamAbbreviations[json['team']];
+    String? teamAbbr = Constants.teamAbbreviations[json['team']];
     String? shortPosType =
-        TextConstants.shortenedPositionTypes[json['position_type']];
+        Constants.shortenedPositionTypes[json['position_type']];
 
     return Player(
         //playerId: json['playerId'],
@@ -48,8 +48,8 @@ class Player {
   }
 
   String getFullTeamName() {
-    return TextConstants.teamAbbreviations.keys.firstWhere(
-        (fullName) => TextConstants.teamAbbreviations[fullName] == team);
+    return Constants.teamAbbreviations.keys.firstWhere(
+        (fullName) => Constants.teamAbbreviations[fullName] == team);
   }
 
   // String getFullPosition() {

@@ -1,4 +1,4 @@
-class TextConstants {
+class Constants {
   //Titles and info strings
   static const String onboardingPageTitle = 'Welcome to Plordle';
   static const String gameTitle = 'PLORDLE';

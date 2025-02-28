@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:provider/provider.dart';
 
 class FilterPlayerList extends StatelessWidget {
-  final List<String> teams = TextConstants.teamsList;
+  final List<String> teams = Constants.teamsList;
 
   FilterPlayerList({super.key});
 

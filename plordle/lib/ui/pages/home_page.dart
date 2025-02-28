@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/widgets/dialogs/help_dialog.dart';
 import 'package:plordle/ui/widgets/main_game_column.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: themeViewModel.primarySelectedThemeColor,
         foregroundColor: themeViewModel.secondarySelectedThemeColor,
         title: const Text(
-          TextConstants.gameTitle,
+          Constants.gameTitle,
           style: TextStyle(fontSize: 32),
         ),
         centerTitle: true,
@@ -77,11 +77,11 @@ class _HomePageState extends State<HomePage> {
       ),
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth > TextConstants.bigScreenCutoffWidth) {
+        if (constraints.maxWidth > Constants.bigScreenCutoffWidth) {
           return Center(
             child: ConstrainedBox(
-                constraints: const BoxConstraints(
-                    maxWidth: TextConstants.bigScreenMaxWidth),
+                constraints:
+                    const BoxConstraints(maxWidth: Constants.bigScreenMaxWidth),
                 child: MainGameColumn(divColor: divColor)),
           );
         } else {

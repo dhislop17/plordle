@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/widgets/filter_player_list.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
@@ -35,7 +35,7 @@ class FilterPlayersPage extends StatelessWidget {
             appBar: AppBar(
                 backgroundColor: themeModel.primarySelectedThemeColor,
                 foregroundColor: themeModel.secondarySelectedThemeColor,
-                title: const Text(TextConstants.filterPageTitle)),
+                title: const Text(Constants.filterPageTitle)),
             body: FilterPlayerList(),
           ));
     });

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/widgets/mystery_player_timer.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
@@ -16,14 +16,14 @@ class EndOfGameDialog extends StatelessWidget {
     return AlertDialog(
       title: Center(
           child: (model.currentState == GameState.won)
-              ? const Text(TextConstants.winnerText)
-              : const Text(TextConstants.loserText)),
+              ? const Text(Constants.winnerText)
+              : const Text(Constants.loserText)),
       content: SingleChildScrollView(
         child: (model.currentState == GameState.won)
             ? const MysteryPlayerTimer()
             : ListBody(
                 children: [
-                  const Text(TextConstants.playerHint),
+                  const Text(Constants.playerHint),
                   const SizedBox(height: 20),
                   Text(model.playerViewModel.currentMysteryPlayer.toString()),
                   const SizedBox(height: 20),
@@ -68,13 +68,13 @@ class EndOfGameDialog extends StatelessWidget {
                     );
                   });
             },
-            child: const Text(TextConstants.viewStats)),
+            child: const Text(Constants.viewStats)),
         TextButton(
             onPressed: () {
               model.getNewRandomPlayer();
               Navigator.pop(context);
             },
-            child: const Text(TextConstants.continueGameText))
+            child: const Text(Constants.continueGameText))
       ],
     );
   }
