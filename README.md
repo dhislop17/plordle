@@ -48,8 +48,8 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 | <img alt="Premier League Dark Mode Theme" src = "./plordle-media/Premier League Dark Mode.jpg" width = 300> |<img alt="Liverpool Dark Mode Theme" src = "./plordle-media/Liverpool Dark Mode.jpg" width = 300> | <img alt="Aston Villa Light Mode Theme" src = "./plordle-media/Aston Villa Dark Theme.jpg" width = 300> | 
 
 ## To-Do
--[ ] Finish setting up the web layout
--[ ] Finish up game flow
+- [ ] Finish setting up the web layout
+- [ ] Finish up game flow
 
 ## Stretch Goals
 - More Options for Filtering Players (by country/continent, min/max age, or shirt number)

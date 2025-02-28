@@ -44,8 +44,8 @@ class FilterPlayerList extends StatelessWidget {
           value: !model.excludedTeams.contains(teamName),
           onChanged: (status) {
             //TODO: This may need to work with Game State
-            //depending on when the user changes this list there may
-            //need to be additional calls to the api to get the correct player
+            // depending on when the user changes this list there may
+            // need to be additional calls to the api to get the correct player
             model.updateTeamExclusions(teamName);
           },
         );
