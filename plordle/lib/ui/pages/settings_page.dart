@@ -11,7 +11,7 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("App Settings"),
+        title: const Text("Settings"),
       ),
       body: ListView(
         shrinkWrap: true,
@@ -29,6 +29,7 @@ class SettingsPage extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, 'difficulty'),
           ),
           ListTile(
+              //TODO: Consider how these would work on web if using cookies
               title: const Text("Reset Game Stats"),
               onTap: () => Provider.of<UserViewModel>(context, listen: false)
                   .resetGameStats()),

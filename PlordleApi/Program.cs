@@ -3,6 +3,13 @@ using PlordleApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//TODO: Consider how this will work when deployed
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(policy => { 
+        policy.AllowAnyOrigin(); 
+    });
+});
+
 // Setup service configuration
 builder.Services.Configure<FileReaderSettings>(builder.Configuration.GetSection("FileReader"));
 builder.Services.Configure<PlordleDatabaseSettings>(builder.Configuration.GetSection("PlordleDatabase"));
@@ -25,11 +32,13 @@ builder.Services.AddHealthChecks();
 var app = builder.Build();
 app.MapHealthChecks("/health");
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.UseCors();
 }
 
 var provider = app.Services.GetRequiredService<IPlayerService>();

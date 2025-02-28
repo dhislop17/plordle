@@ -34,7 +34,7 @@ public class PlayerService : IPlayerService
     public async Task<List<Player>> GetAllPlayers()
     {
         var players = await _playerRepo.GetAllPlayersAsync();
-        _logger.LogDebug($"Retrieved: {players.Count} players");
+        _logger.LogDebug($"{DateTime.Now} - Retrieved: {players.Count} players");
         return players;
     }
 
@@ -78,13 +78,14 @@ public class PlayerService : IPlayerService
 
             var players = await _playerRepo.GetPlayersUsingFilter(teamFilter);
 
-            _logger.LogDebug($"Retrieved: {players.Count} players");
+            _logger.LogDebug($"{DateTime.Now} - After filtering, retrieved: {players.Count} players");
             player = players.ElementAt(random.Next(players.Count));
         }
         else
         {
             var players = await _playerRepo.GetAllPlayersAsync();
             var nextId = random.Next(players.Count);
+            _logger.LogDebug($"{DateTime.Now} - Found random player, with no filter");
             player = players.ElementAt(nextId);
         }
 

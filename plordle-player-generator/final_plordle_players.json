@@ -90,7 +90,7 @@
     "continent": "South America"
   },
   {
-    "name": "Patrick Drogu",
+    "name": "Patrick Dorgu",
     "team": "Manchester United",
     "shirt_number": 13,
     "age": 20,
@@ -5702,7 +5702,7 @@
   {
     "name": "Marco Asensio",
     "team": "Aston Villa",
-    "shirt_number": 14,
+    "shirt_number": 21,
     "age": 29,
     "position_type": "Forward",
     "country": "Spain",

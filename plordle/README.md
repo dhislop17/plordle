@@ -1,6 +1,6 @@
 # plordle
 
-Front End built in Flutter version 3.27
+Front End built in Flutter version 3.29
 
 ## Packages Used
 - [http](https://pub.dev/packages/http)

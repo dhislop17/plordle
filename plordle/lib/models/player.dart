@@ -6,7 +6,7 @@ class Player {
   final String name;
   final String team;
   final String teamAbbr;
-  final String position;
+  final String shortPositionType;
   final String positionType;
   final int shirtNumber;
   final int age;
@@ -20,7 +20,7 @@ class Player {
       required this.name,
       required this.team,
       required this.teamAbbr,
-      required this.position,
+      required this.shortPositionType,
       required this.positionType,
       required this.shirtNumber,
       required this.age,
@@ -38,7 +38,7 @@ class Player {
         name: json['name'],
         team: json['team'],
         teamAbbr: teamAbbr ?? "None",
-        position: shortPosType ?? 'None',
+        shortPositionType: shortPosType ?? 'None',
         positionType: json['position_type'],
         shirtNumber: json['shirt_number'],
         age: json['age'],

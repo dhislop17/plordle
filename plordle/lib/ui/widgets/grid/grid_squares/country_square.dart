@@ -9,17 +9,21 @@ class CountrySquare extends StatelessWidget {
   final Player player;
   final Guess guess;
   final CountryCoder countryCoder;
+  final double screenWidth;
   const CountrySquare(
       {super.key,
       required this.player,
       required this.guess,
-      required this.countryCoder});
+      required this.countryCoder,
+      required this.screenWidth});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: AspectRatio(
-        aspectRatio: 1,
+        aspectRatio: (screenWidth > TextConstants.bigScreenCutoffWidth)
+            ? TextConstants.bigScreenGridAspectRatio
+            : TextConstants.smallScreenGridAspectRatio,
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(

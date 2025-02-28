@@ -138,4 +138,10 @@ class TextConstants {
     'Wolverhampton Wanderers': 'WOL',
     'West Bromwich Albion': 'WBA' //Championship
   };
+
+  static const double bigScreenCutoffWidth = 600;
+  static const double bigScreenMaxWidth = 960;
+  static const double smallScreenGridAspectRatio = 1;
+  static const double bigScreenGridAspectRatio = 4 / 3;
+  static const double gridHeaderWidth = 60;
 }

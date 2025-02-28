@@ -15,7 +15,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 - Stat tracking
 
 ### Technical Features
-- Built using Flutter 3.27, .NET, Python, and MongoDB
+- Built using Flutter 3.29, .NET, Python, and MongoDB
 - Player database populated using a Python script that pulls data from API-FOOTBALL and FBRef
     - Uses fuzzy matching to combine player information from each data source into a useable datapoint for the app
 - Diacritic (accent mark) insensitive search on player names
@@ -48,7 +48,8 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 | <img alt="Premier League Dark Mode Theme" src = "./plordle-media/Premier League Dark Mode.jpg" width = 300> |<img alt="Liverpool Dark Mode Theme" src = "./plordle-media/Liverpool Dark Mode.jpg" width = 300> | <img alt="Aston Villa Light Mode Theme" src = "./plordle-media/Aston Villa Dark Theme.jpg" width = 300> | 
 
 ## To-Do
-- [ ] Finish up game flow
+-[ ] Finish setting up the web layout
+-[ ] Finish up game flow
 
 ## Stretch Goals
 - More Options for Filtering Players (by country/continent, min/max age, or shirt number)
