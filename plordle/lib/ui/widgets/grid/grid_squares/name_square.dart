@@ -30,6 +30,7 @@ class NameSquare extends StatelessWidget {
               player.name,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
             )),
       ),
     );

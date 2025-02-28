@@ -27,7 +27,7 @@ class TeamSquare extends StatelessWidget {
               color: _colorTeamSquare(player, guess),
             ),
             child: (screenWidth > TextConstants.bigScreenCutoffWidth)
-                ? Text(player.team)
+                ? Text(player.team, textAlign: TextAlign.center)
                 : Text(player.teamAbbr)),
       ),
     );
