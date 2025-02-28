@@ -16,17 +16,19 @@ class PlayerService {
       path: "/api/players",
       port: 7160,
     );
-    logger.i(uri);
-    final response = await http.get(uri);
-
-    List<Player> result = [];
-    if (response.statusCode == 200) {
-      result = _parsePlayerList(response.body);
-    } else {
-      logger.e("Unable to load players");
-      throw Exception('Unable to load all players');
+    logger.d(uri);
+    try {
+      final response = await http.get(uri);
+      if (response.statusCode == 200) {
+        return _parsePlayerList(response.body);
+      } else {
+        logger.d("API returned unexpected status code: ${response.statusCode}");
+        throw Exception("Recieved unexpected status code");
+      }
+    } catch (exception) {
+      logger.e(exception);
+      throw Exception("Unable to connect to the API");
     }
-    return result;
   }
 
   List<Player> _parsePlayerList(String responseBody) {
@@ -43,14 +45,20 @@ class PlayerService {
         path: "/api/players/random",
         queryParameters: {'excludedTeams': excludedTeams});
 
-    logger.i(uri);
+    logger.d(uri);
 
-    final response = await http.get(uri);
-
-    if (response.statusCode == 200) {
-      return _parsePlayer(response.body);
-    } else {
-      throw Exception('Failed to get a random player');
+    try {
+      final response = await http.get(uri);
+      if (response.statusCode == 200) {
+        return _parsePlayer(response.body);
+      } else {
+        logger.e(
+            "Unable to retrieve mystery player. Response returned status code ${response.statusCode}");
+        throw Exception('Failed to get a random player');
+      }
+    } catch (exception) {
+      logger.e(exception);
+      throw Exception("Unable to connect to the API");
     }
   }
 
@@ -62,20 +70,29 @@ class PlayerService {
         path: "/api/players/today",
         queryParameters: {'excludedTeams': excludedTeams});
 
-    logger.i(uri);
+    // TODO: Consider the log levels
+    logger.d(uri);
 
-    final response = await http.get(uri);
-    if (response.statusCode == 200) {
-      return _parsePlayer(response.body);
-    } else {
-      throw Exception('Failed to get todays player');
+    try {
+      final response = await http.get(uri);
+      if (response.statusCode == 200) {
+        return _parsePlayer(response.body);
+      } else {
+        logger.e(
+            "Unable to retrieve daily player. Response returned status code ${response.statusCode}");
+        throw Exception('Failed to get todays player');
+      }
+    } catch (exception) {
+      logger.e(exception);
+      throw Exception("Unable to connect to the API");
     }
   }
 
   Player _parsePlayer(String reponseBody) {
-    final parsed = json.decode(reponseBody);
-    final result = Player.fromJson(parsed);
-    logger.i(result);
-    return result;
+    final parsedResponseBody = json.decode(reponseBody);
+    final parsedPlayer = Player.fromJson(parsedResponseBody);
+
+    logger.d(parsedPlayer);
+    return parsedPlayer;
   }
 }
