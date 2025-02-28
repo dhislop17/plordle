@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 
 class NumberSquare extends StatelessWidget {
   final Player player;
@@ -18,9 +18,9 @@ class NumberSquare extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: AspectRatio(
-        aspectRatio: (screenWidth > TextConstants.bigScreenCutoffWidth)
-            ? TextConstants.bigScreenGridAspectRatio
-            : TextConstants.smallScreenGridAspectRatio,
+        aspectRatio: (screenWidth > Constants.bigScreenCutoffWidth)
+            ? Constants.bigScreenGridAspectRatio
+            : Constants.smallScreenGridAspectRatio,
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -42,15 +42,17 @@ class NumberSquare extends StatelessWidget {
 
   Widget _numberSquareChild(Player player, Guess guess) {
     String guessedNumber = player.shirtNumber.toString();
-    if (guess.shirtNumberDiff == 0 || guess.shirtNumberDiff.abs() > 10) {
+    if (guess.shirtNumberDiff == 0 ||
+        guess.shirtNumberDiff.abs() > Constants.numberGuessThreshold) {
       return Text(guessedNumber);
-    } else if (guess.shirtNumberDiff.abs() <= 10 && guess.shirtNumberDiff > 0) {
+    } else if (guess.shirtNumberDiff > 0 &&
+        guess.shirtNumberDiff.abs() <= Constants.numberGuessThreshold) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(guessedNumber),
           const Text(
-            TextConstants.downArrow,
+            Constants.downArrow,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ],
@@ -60,7 +62,7 @@ class NumberSquare extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            TextConstants.upArrow,
+            Constants.upArrow,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Text(guessedNumber),
@@ -72,7 +74,7 @@ class NumberSquare extends StatelessWidget {
   Color _colorNumberSquare(Player player, Guess guess) {
     if (guess.shirtNumberDiff == 0) {
       return Themes.guessGreen;
-    } else if (guess.shirtNumberDiff.abs() <= 10) {
+    } else if (guess.shirtNumberDiff.abs() <= Constants.numberGuessThreshold) {
       return Themes.guessYellow;
     } else {
       return Themes.guessGrey;

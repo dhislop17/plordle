@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 
 class NameSquare extends StatelessWidget {
   final Player player;
@@ -18,9 +18,9 @@ class NameSquare extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: AspectRatio(
-        aspectRatio: (screenWidth > TextConstants.bigScreenCutoffWidth)
-            ? TextConstants.bigScreenGridAspectRatio
-            : TextConstants.smallScreenGridAspectRatio,
+        aspectRatio: (screenWidth > Constants.bigScreenCutoffWidth)
+            ? Constants.bigScreenGridAspectRatio
+            : Constants.smallScreenGridAspectRatio,
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(

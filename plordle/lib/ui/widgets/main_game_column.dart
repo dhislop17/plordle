@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/widgets/grid/grid_header.dart';
 import 'package:plordle/ui/widgets/grid/grid_row.dart';
 import 'package:plordle/ui/widgets/search_box.dart';
@@ -26,7 +26,7 @@ class MainGameColumn extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: paddingHeight, bottom: paddingHeight),
           child: const Text(
-            TextConstants.gameSubtitle,
+            Constants.gameSubtitle,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
         ),

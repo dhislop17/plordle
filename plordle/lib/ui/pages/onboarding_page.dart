@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/widgets/change_difficulty_widget.dart';
 import 'package:plordle/ui/widgets/filter_player_list.dart';
 import 'package:plordle/ui/widgets/theme_selection_list.dart';
@@ -53,7 +53,7 @@ class _OnboardingPageState extends State<OnboardingPage>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(TextConstants.onboardingPageTitle),
+        title: const Text(Constants.onboardingPageTitle),
         centerTitle: true,
         bottom: TabBar(tabs: tabs, controller: _tabController),
       ),

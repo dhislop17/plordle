@@ -1,4 +1,4 @@
-class TextConstants {
+class Constants {
   //Titles and info strings
   static const String onboardingPageTitle = 'Welcome to Plordle';
   static const String gameTitle = 'PLORDLE';
@@ -25,9 +25,9 @@ class TextConstants {
       'The column color after each guess will inidicate how close the guess was to the correct answer';
   static const String helpDialogGreenText = 'Green in any column';
   static const String helpDialogGreenSub = ' means a successful match';
-  //static const String helpDialogPositionText = 'Yellow in the position column';
-  //static const String helpDialogPositionSubtext =
-  // ' means the mystery player has the same position type but plays in a different role';
+  /*static const String helpDialogPositionText = 'Yellow in the position column';
+  static const String helpDialogPositionSubtext =
+   ' means the mystery player has the same position type but plays in a different role';*/
   static const String helpDialogShirtText = 'Yellow in the number column';
   static const String helpDialogShirtSubtext =
       " means the mystery player is within is within 10 of the guessed player's shirt number";
@@ -44,11 +44,11 @@ class TextConstants {
   static const String downArrow = '\u{2193}';
   static const String upArrow = '\u{2191}';
 
-  //Home Nations Emoji Flag Data - UK's subcountires don't
-  //have offical flag emojis
+  /*Home Nations Emoji Flag Data - UK's subcountires don't
+  have offical flag emojis*/
 
-  //England, Scotland, and Wales all have to use converted unicode values
-  //to have their flag represented
+  /*England, Scotland, and Wales all have to use converted unicode values
+  to have their flag represented*/
   static const Map<String, List<int>> albionNationsFlagMap = {
     'ENG': [127988, 917607, 917602, 917605, 917614, 917607, 917631],
     'SCT': [127988, 917607, 917602, 917619, 917603, 917620, 917631],
@@ -62,21 +62,21 @@ class TextConstants {
   ];
 
   //Abbreviations Maps
-  // static final Map<String, String> shortenedPositions = {
-  //   'Goalkeeper': 'GK',
-  //   'Right-Back': 'RB',
-  //   'Centre-Back': 'CB',
-  //   'Left-Back': 'LB',
-  //   'Right Midfield': 'RM',
-  //   'Defensive Midfield': 'DM',
-  //   'Central Midfield': 'CM',
-  //   'Left Midfield': 'LM',
-  //   'Right Winger': 'RW',
-  //   'Attacking Midfield': 'AM',
-  //   'Left Winger': 'LW',
-  //   'Second Striker': 'SS',
-  //   'Centre-Forward': 'CF'
-  // };
+  /*static final Map<String, String> shortenedPositions = {
+    'Goalkeeper': 'GK',
+    'Right-Back': 'RB',
+    'Centre-Back': 'CB',
+    'Left-Back': 'LB',
+    'Right Midfield': 'RM',
+    'Defensive Midfield': 'DM',
+    'Central Midfield': 'CM',
+    'Left Midfield': 'LM',
+    'Right Winger': 'RW',
+    'Attacking Midfield': 'AM',
+    'Left Winger': 'LW',
+    'Second Striker': 'SS',
+    'Centre-Forward': 'CF'
+  };*/
 
   static final Map<String, String> shortenedPositionTypes = {
     'Goalkeeper': 'GK',
@@ -144,4 +144,6 @@ class TextConstants {
   static const double smallScreenGridAspectRatio = 1;
   static const double bigScreenGridAspectRatio = 4 / 3;
   static const double gridHeaderWidth = 60;
+  static const double numberGuessThreshold = 10;
+  static const double ageGuessThreshold = 5;
 }

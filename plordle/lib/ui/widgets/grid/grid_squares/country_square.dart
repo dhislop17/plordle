@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
-import 'package:plordle/ui/utils/text_constants.dart';
+import 'package:plordle/ui/utils/constants.dart';
 
 class CountrySquare extends StatelessWidget {
   final Player player;
@@ -21,9 +21,9 @@ class CountrySquare extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: AspectRatio(
-        aspectRatio: (screenWidth > TextConstants.bigScreenCutoffWidth)
-            ? TextConstants.bigScreenGridAspectRatio
-            : TextConstants.smallScreenGridAspectRatio,
+        aspectRatio: (screenWidth > Constants.bigScreenCutoffWidth)
+            ? Constants.bigScreenGridAspectRatio
+            : Constants.smallScreenGridAspectRatio,
         child: Container(
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -51,9 +51,9 @@ class CountrySquare extends StatelessWidget {
     List<Widget> columnData;
 
     //Represent (ENG, SCT, and WLS as their flag emoji from unicode)
-    if (TextConstants.albionNationsFlagMap.keys.contains(player.countryCode)) {
+    if (Constants.albionNationsFlagMap.keys.contains(player.countryCode)) {
       var albionNationFlagData =
-          TextConstants.albionNationsFlagMap[player.countryCode]!;
+          Constants.albionNationsFlagMap[player.countryCode]!;
 
       columnData = [
         Text(player.country),
@@ -61,7 +61,7 @@ class CountrySquare extends StatelessWidget {
       ];
     } else if (player.countryCode == "NIR") {
       //Shamrock for NIR
-      var northernIrelandFlagData = TextConstants.northernIrelandCharSequence;
+      var northernIrelandFlagData = Constants.northernIrelandCharSequence;
 
       columnData = [
         Text(
