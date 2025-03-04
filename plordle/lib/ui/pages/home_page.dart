@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/widgets/dialogs/help_dialog.dart';
-import 'package:plordle/ui/widgets/main_game_column.dart';
+import 'package:plordle/ui/widgets/columns/main_game_column.dart';
+import 'package:plordle/ui/widgets/plordle_layout_builder.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -75,19 +76,8 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth > Constants.bigScreenCutoffWidth) {
-          return Center(
-            child: ConstrainedBox(
-                constraints:
-                    const BoxConstraints(maxWidth: Constants.bigScreenMaxWidth),
-                child: MainGameColumn(divColor: divColor)),
-          );
-        } else {
-          return SafeArea(child: MainGameColumn(divColor: divColor));
-        }
-      }),
+      body:
+          PlordleLayoutBuilder(childWidget: MainGameColumn(divColor: divColor)),
     );
   }
 }

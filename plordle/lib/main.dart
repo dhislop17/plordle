@@ -3,14 +3,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:plordle/config/platform_config.dart';
-import 'package:plordle/ui/pages/change_difficulty_page.dart';
+import 'package:plordle/ui/pages/appearance_difficulty_page.dart';
 import 'package:plordle/ui/pages/filter_players_page.dart';
 
 import 'package:plordle/ui/pages/home_page.dart';
 import 'package:plordle/services/service_locator.dart';
 import 'package:plordle/ui/pages/landing_page.dart';
 import 'package:plordle/ui/pages/settings_page.dart';
-import 'package:plordle/ui/pages/theme_selection_page.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
@@ -67,9 +66,9 @@ class Plordle extends StatelessWidget {
               home: LandingPage(),
               routes: {
                 'game': (context) => const HomePage(),
-                'themeSelect': (context) => const ThemeSelectionPage(),
                 'filter': (context) => const FilterPlayersPage(),
-                'difficulty': (context) => const ChangeDifficultyPage(),
+                'appearanceDifficulty': (context) =>
+                    const AppearanceDifficultyPage(),
                 'settings': (context) => const SettingsPage()
               });
         });
