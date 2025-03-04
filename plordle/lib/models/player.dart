@@ -59,7 +59,7 @@ class Player {
 
   @override
   String toString() {
-    return "#$shirtNumber - $name - $positionType - $team - $age y/o - $country";
+    return "#$shirtNumber - $name - $positionType - $team - Age: $age - $country";
   }
 
   String getPlayerAdditionalInfo(DifficultyOptions difficultyOption) {
@@ -67,7 +67,7 @@ class Player {
     switch (difficultyOption) {
       case DifficultyOptions.easy: //Relegation Battle
         additionalInfo =
-            "#$shirtNumber - $positionType - $team - $age y/o - $country";
+            "#$shirtNumber - $positionType - $team - Age: $age - $country";
       case DifficultyOptions.normal: //Mid Table Club
         additionalInfo = "#$shirtNumber - $positionType - $team - $country";
       case DifficultyOptions.hard: //Top 4 Challenger
