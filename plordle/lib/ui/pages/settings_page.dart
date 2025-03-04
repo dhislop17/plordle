@@ -17,16 +17,12 @@ class SettingsPage extends StatelessWidget {
         shrinkWrap: true,
         children: [
           ListTile(
-            title: const Text("Change Theme"),
-            onTap: () => Navigator.pushNamed(context, 'themeSelect'),
+            title: const Text("Appearance & Difficulty"),
+            onTap: () => Navigator.pushNamed(context, 'appearanceDifficulty'),
           ),
           ListTile(
             title: const Text("Filter Teams"),
             onTap: () => Navigator.pushNamed(context, 'filter'),
-          ),
-          ListTile(
-            title: const Text("Change Difficulty"),
-            onTap: () => Navigator.pushNamed(context, 'difficulty'),
           ),
           ListTile(
               //TODO: Consider how these would work on web if using cookies
