@@ -25,10 +25,7 @@ class ChangeDifficultyWidget extends StatelessWidget {
         teamAbbr: "MUN");
 
     return Consumer<UserViewModel>(builder: (context, model, child) {
-      //TODO: Add something says how each level adds or removes detail
-      // to the player tile that comes up with search
-      return SafeArea(
-          child: Column(children: [
+      return Column(children: [
         const Padding(padding: EdgeInsets.only(bottom: 20)),
         DropdownMenu<DifficultyOptions>(
             label: const Text("Difficulty"),
@@ -40,6 +37,13 @@ class ChangeDifficultyWidget extends StatelessWidget {
               return DropdownMenuEntry(value: option, label: option.label);
             }).toList()),
         const Padding(padding: EdgeInsets.only(top: 20, bottom: 20)),
+        const Padding(
+            padding: EdgeInsets.only(bottom: 20),
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child: Text(
+                  "Changing the difficulty level changes what additional details are provided for the suggested players that match the current guess."),
+            )),
         const Text("Preview",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
         Padding(
@@ -52,8 +56,8 @@ class ChangeDifficultyWidget extends StatelessWidget {
                         .getPlayerAdditionalInfo(model.currentDifficulty))
                     : null),
           ),
-        )
-      ]));
+        ),
+      ]);
     });
   }
 }
