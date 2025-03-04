@@ -78,19 +78,6 @@ class _HomePageState extends State<HomePage> {
       ),
       body:
           PlordleLayoutBuilder(childWidget: MainGameColumn(divColor: divColor)),
-      // body: LayoutBuilder(
-      //     builder: (BuildContext context, BoxConstraints constraints) {
-      //   if (constraints.maxWidth > Constants.bigScreenCutoffWidth) {
-      //     return Center(
-      //       child: ConstrainedBox(
-      //           constraints:
-      //               const BoxConstraints(maxWidth: Constants.bigScreenMaxWidth),
-      //           child: MainGameColumn(divColor: divColor)),
-      //     );
-      //   } else {
-      //     return SafeArea(child: MainGameColumn(divColor: divColor));
-      //   }
-      // }),
     );
   }
 }
