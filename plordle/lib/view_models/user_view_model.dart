@@ -96,17 +96,17 @@ class UserViewModel extends ChangeNotifier {
     _numberOfGuesses = 1;
     _inUnlimitedMode = true;
     _currentState = GameState.inProgress;
-    playerViewModel.getNextRandom();
+    playerViewModel.getNextRandomPlayer(isNewDay: false);
     notifyListeners();
   }
 
-  void getNewMysteryPlayer() async {
+  void getNextDailyMysteryPlayer() async {
     _guesses.clear();
     _guessedPlayers.clear();
     _inUnlimitedMode = false;
     _numberOfGuesses = 1;
     _currentState = GameState.inProgress;
-    playerViewModel.getNewMysteryPlayer();
+    playerViewModel.getNextRandomPlayer(isNewDay: true);
     notifyListeners();
   }
 
