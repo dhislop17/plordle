@@ -34,7 +34,6 @@ class PlayerViewModel extends ChangeNotifier {
 
     _excludedTeams.addAll(await _storageService.getExcludedTeams());
     buildCurrentPlayset();
-    logger.i("Current Playset contains ${_currentPlayset.length} players");
 
     //TODO: Consider if additional work is necessary for todays player to update across days
     getNextRandomPlayer(isNewDay: true);
