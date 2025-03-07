@@ -14,7 +14,7 @@ HOME_NATIONS_MAP = {"England": "ENG", "Scotland" : "SCT", "Wales": "WLS", "North
 FBREF_PLAYERS_FILE_NAME = 'fbref_players.json'
 MANUAL_PLAYERS_FILE_NAME = "manually_created_players.json"
 API_FOOTBALL_PLAYERS_FILE_NAME = "apifootball_players.json"
-FINAL_OUTPUT_FILE_NAME = "final_plordle_players.json"
+FINAL_OUTPUT_FILE_NAME = "../plordle/assets/season_lists/2024_2025_players.json"
 INTRA_LEAGUE_TRANSFERS_FILE_NAME = "winter_intra_league_transfers.json"
 
 ##### API FOOTBALL Constants #####

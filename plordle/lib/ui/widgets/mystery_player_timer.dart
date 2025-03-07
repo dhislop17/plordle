@@ -21,7 +21,7 @@ class MysteryPlayerTimer extends StatelessWidget {
           format: CountDownTimerFormat.hoursMinutesSeconds,
           endTime: nextTime,
           onEnd: () async {
-            model.getNewMysteryPlayer();
+            model.getNextDailyMysteryPlayer();
             Navigator.pop(context);
           },
           timeTextStyle: const TextStyle(
