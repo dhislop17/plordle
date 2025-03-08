@@ -4,6 +4,7 @@ import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/widgets/dialogs/help_dialog.dart';
 import 'package:plordle/ui/widgets/columns/main_game_column.dart';
 import 'package:plordle/ui/widgets/plordle_layout_builder.dart';
+import 'package:plordle/ui/widgets/settings_anchor_menu.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -51,7 +52,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           //TODO: Make Cancel Button appear conditionally after the first guess
           // IconButton(
-          //   icon: const Icon(Icons.cancel),
+          //   icon: const Icon(Icons.flag_rounded),
           //   onPressed: () {
           //     //On pressed this should show a confirmation for giving up before
           //     //showing the game over dialog
@@ -68,12 +69,7 @@ class _HomePageState extends State<HomePage> {
                       return const HelpDialog();
                     });
               }),
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              Navigator.pushNamed(context, 'settings');
-            },
-          )
+          const SettingsAnchorMenu()
         ],
       ),
       body:
