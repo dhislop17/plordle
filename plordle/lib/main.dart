@@ -9,7 +9,7 @@ import 'package:plordle/ui/pages/filter_players_page.dart';
 import 'package:plordle/ui/pages/home_page.dart';
 import 'package:plordle/services/service_locator.dart';
 import 'package:plordle/ui/pages/landing_page.dart';
-import 'package:plordle/ui/pages/onboarding_page.dart';
+import 'package:plordle/ui/pages/welcome_page.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
@@ -69,7 +69,7 @@ class Plordle extends StatelessWidget {
                 'filter': (context) => const FilterPlayersPage(),
                 'appearanceDifficulty': (context) =>
                     const AppearanceDifficultyPage(),
-                'welcome': (context) => const OnboardingPage()
+                'welcome': (context) => const WelcomePage()
               });
         });
   }

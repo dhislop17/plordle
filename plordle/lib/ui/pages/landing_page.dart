@@ -3,7 +3,7 @@ import 'package:logger/logger.dart';
 import 'package:plordle/services/service_locator.dart';
 import 'package:plordle/services/storage_service.dart';
 import 'package:plordle/ui/pages/home_page.dart';
-import 'package:plordle/ui/pages/onboarding_page.dart';
+import 'package:plordle/ui/pages/welcome_page.dart';
 
 class LandingPage extends StatelessWidget {
   final Logger logger = Logger(printer: PrettyPrinter());
@@ -24,11 +24,11 @@ class LandingPage extends StatelessWidget {
             return const HomePage();
           } else {
             logger.i("Onboarding Incomplete, loading Onboarding Page");
-            return const OnboardingPage();
+            return const WelcomePage();
           }
         } else {
           logger.i("No Snapshot Data, loading Onboarding Page");
-          return const OnboardingPage();
+          return const WelcomePage();
         }
       },
     );

@@ -9,14 +9,14 @@ import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
-class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({super.key});
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key});
 
   @override
-  State<OnboardingPage> createState() => _OnboardingPageState();
+  State<WelcomePage> createState() => _WelcomePageState();
 }
 
-class _OnboardingPageState extends State<OnboardingPage>
+class _WelcomePageState extends State<WelcomePage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final Logger logger = Logger(printer: PrettyPrinter());
