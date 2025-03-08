@@ -25,7 +25,6 @@ class SettingsPage extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, 'filter'),
           ),
           ListTile(
-              //TODO: Consider how these would work on web if using cookies
               title: const Text("Reset Game Stats"),
               onTap: () => Provider.of<UserViewModel>(context, listen: false)
                   .resetGameStats()),
