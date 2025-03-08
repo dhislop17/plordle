@@ -72,8 +72,7 @@ class _HomePageState extends State<HomePage> {
           const SettingsAnchorMenu()
         ],
       ),
-      body:
-          PlordleLayoutBuilder(childWidget: MainGameColumn(divColor: divColor)),
+      body: PlordleLayoutBuilder(child: MainGameColumn(divColor: divColor)),
     );
   }
 }
