@@ -25,8 +25,7 @@ class AppearanceDifficultyPage extends StatelessWidget {
               foregroundColor: Provider.of<ThemeViewModel>(context)
                   .secondarySelectedThemeColor,
               title: const Text("Appearance & Difficulty")),
-          body: const PlordleLayoutBuilder(
-              childWidget: AppearanceDifficultyColumn()),
+          body: const PlordleLayoutBuilder(child: AppearanceDifficultyColumn()),
         ));
   }
 }

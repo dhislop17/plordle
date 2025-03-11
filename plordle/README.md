@@ -14,4 +14,4 @@ Front End built in Flutter version 3.29
 - [country_coder](https://pub.dev/packages/country_coder)
 - [logger](https://pub.dev/packages/logger)
 - [device_info_plus](https://pub.dev/packages/device_info_plus)
-
+- [wolt_modal_sheet](https://pub.dev/packages/wolt_modal_sheet)

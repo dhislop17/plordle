@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/constants.dart';
 
 class PlordleLayoutBuilder extends StatelessWidget {
-  final Widget childWidget;
-  const PlordleLayoutBuilder({super.key, required this.childWidget});
+  final Widget child;
+  const PlordleLayoutBuilder({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +13,11 @@ class PlordleLayoutBuilder extends StatelessWidget {
           child: ConstrainedBox(
             constraints:
                 const BoxConstraints(maxWidth: Constants.bigScreenMaxWidth),
-            child: childWidget,
+            child: child,
           ),
         );
       } else {
-        return SafeArea(child: childWidget);
+        return SafeArea(child: child);
       }
     });
   }

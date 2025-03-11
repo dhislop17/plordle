@@ -3,7 +3,7 @@ class Constants {
   static const String onboardingPageTitle = 'Welcome to Plordle';
   static const String gameTitle = 'PLORDLE';
   static const String gameSubtitle = 'Guess The Player';
-  static const String filterPageTitle = 'Choose Teams to Include';
+  static const String filterPageTitle = 'Filter Teams';
   static const String gridNameHeader = 'Name';
   static const String gridTeamHeader = 'Team';
   static const String gridPositionHeader = 'Position';
@@ -39,6 +39,10 @@ class Constants {
       " means the mystery player is from the same continent but from a different country";
   static const String helpDialogGameInfo =
       "New mystery player at midnight in your timezone, or play in unlimited mode to keep getting a new mystery player";
+
+  //Filter Menu
+  static const String filterHelpText =
+      "Use the filter to determine which teams the mystery player can come from. All teams are included by default and you must include at least 1 team.";
 
   //Grid number boxes arrows
   static const String downArrow = '\u{2193}';
