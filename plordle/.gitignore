@@ -32,8 +32,8 @@
 .pub/
 /build/
 
-# Web related
-lib/generated_plugin_registrant.dart
+#Firebase hosting related
+.firebase
 
 # Symbolication related
 app.*.symbols
