@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:plordle/config/platform_config.dart';
 import 'package:plordle/ui/pages/appearance_difficulty_page.dart';
 
 import 'package:plordle/ui/pages/home_page.dart';
@@ -18,9 +16,6 @@ Future main() async {
   setupServiceLocator();
   HttpOverrides.global = MyHttpOverrides();
 
-  //TODO: Consider how this would work in production
-  await dotenv.load(fileName: '.env');
-  await PlatformConfig().initialize();
   runApp(const Plordle());
 }
 

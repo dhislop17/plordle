@@ -36,7 +36,6 @@ dependencies:
   diacritic: ^0.1.5
   get_it: ^7.7.0
   flutter_timer_countdown: ^1.0.7
-  flutter_dotenv: ^5.1.0
   country_coder: ^1.2.0
   logger: ^2.4.0
   cupertino_icons: ^1.0.8
