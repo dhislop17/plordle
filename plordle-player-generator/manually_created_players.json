@@ -10,16 +10,6 @@
         "continent": null
     },
     {
-        "name": "Sven Botman",
-        "team": "Newcastle United",
-        "country": "Netherlands",
-        "age": 25,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-    },
-    {
         "name": "Tom King",
         "team": "Wolverhampton Wanderers",
         "country": "Wales",
@@ -60,16 +50,6 @@
         "continent": null
     },
     {
-        "name": "Alfie Whiteman",
-        "team": "Tottenham Hotspur",
-        "country": "England",
-        "age": 26,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-    },
-    {
         "name": "Lucas Bergström",
         "team": "Chelsea",
         "country": "Finland",
@@ -80,30 +60,10 @@
         "continent": null
     },
     {
-        "name": "Ben Chilwell",
-        "team": "Crystal Palace",
-        "country": "England",
-        "age": 28,
-        "position_type": null,
-        "shirt_number": 25,
-        "country_code": null,
-        "continent": null
-    },
-    {
         "name": "Aaron Hickey",
         "team": "Brentford",
         "country": "Scotland",
         "age": 22,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-    },
-    {
-        "name": "Rico Henry",
-        "team": "Brentford",
-        "country": "England",
-        "age": 27,
         "position_type": null,
         "shirt_number": null,
         "country_code": null,
@@ -120,153 +80,13 @@
         "continent": null
     },
     {
-        "name": "Daniel Iversen",
-        "team": "Leicester City",
-        "country": "Denmark",
-        "age": 27,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Jamaal Lascelles",
-        "team": "Newcastle United",
-        "country": "England",
-        "age": 31,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Patrick Dorgu",
-        "team": "Manchester United",
-        "country": "Netherlands",
-        "age": 20,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Marco Asensio",
-        "team": "Aston Villa",
-        "country": "Spain",
-        "age": 29,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Nico González",
-        "team": "Aston Villa",
-        "country": "Argentina",
-        "age": 26,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Mathys Tel",
-        "team": "Tottenham Hotspur",
-        "country": "France",
-        "age": 19,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Antonin Kinsky",
-        "team": "Tottenham Hotspur",
-        "country": "Czech-Republic",
-        "age": 21,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Marshall Munetsi",
-        "team": "Wolverhampton Wanderers",
-        "country": "Zimbabwe",
-        "age": 28,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Nasser Djiga",
-        "team": "Wolverhampton Wanderers",
-        "country": "Burkina-Faso",
-        "age": 22,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Wayne Hennessey",
-        "team": "Nottingham Forest",
-        "country": "Wales",
-        "age": 38,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Willian",
-        "team": "Fulham",
-        "country": "Brazil",
-        "age": 36,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Eiran Cashin",
-        "team": "Brighton & Hove Albion",
-        "country": "Ireland",
-        "age": 23,
-        "position_type": null,
-        "shirt_number": 16,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Michael Akinmboni",
-        "team": "Bournemouth",
-        "country": "United-States",
-        "age": 18,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Andrés García",
-        "team": "Aston Villa",
-        "country": "Spain",
-        "age": 22,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      },
-      {
-        "name": "Kevin Danso",
-        "team": "Tottenham Hotspur",
-        "country": "Austria",
-        "age": 26,
-        "position_type": null,
-        "shirt_number": null,
-        "country_code": null,
-        "continent": null
-      }
+      "name": "Jamaal Lascelles",
+      "team": "Newcastle United",
+      "country": "England",
+      "age": 31,
+      "position_type": null,
+      "shirt_number": null,
+      "country_code": null,
+      "continent": null
+    }
 ]
