@@ -350,6 +350,16 @@
     "continent": "South America"
   },
   {
+    "name": "Chido Obi",
+    "team": "Manchester United",
+    "shirt_number": 56,
+    "age": 17,
+    "position_type": "Forward",
+    "country": "Denmark",
+    "country_code": "DNK",
+    "continent": "Europe"
+  },
+  {
     "name": "Martin Dúbravka",
     "team": "Newcastle United",
     "shirt_number": 1,
