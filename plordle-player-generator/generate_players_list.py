@@ -224,7 +224,7 @@ def main():
         fbref_players_df.drop(columns=['newTeam'], inplace=True)
     # with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
     #     print(fbref_players_df)
-    print(fbref_players_df)
+    #print(fbref_players_df)
 
 
     #Fill in the country data for every player on fbref
