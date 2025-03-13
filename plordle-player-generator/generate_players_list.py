@@ -214,14 +214,17 @@ def main():
     #Merge the maunal players into the FBRef dataset
     fbref_players_df = pd.concat([fbref_players_df, manual_players_df])
 
-    #Some players get sold or go on loan to other teams within the league during
-    #the winter transfer window, so manually update their teams from the FBRef pull
+    # Some players get sold or go on loan to other teams within the league during
+    # the winter transfer window, so manually update their teams from the FBRef pull
     intra_league_file_path = Path(constants.INTRA_LEAGUE_TRANSFERS_FILE_NAME)
     if intra_league_file_path.exists():
         intra_league_df = pd.read_json(intra_league_file_path)
         fbref_players_df = fbref_players_df.merge(intra_league_df, on="name", how="left")
         fbref_players_df['team'] = fbref_players_df['newTeam'].combine_first(fbref_players_df['team'])
         fbref_players_df.drop(columns=['newTeam'], inplace=True)
+    # with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+    #     print(fbref_players_df)
+    #print(fbref_players_df)
 
 
     #Fill in the country data for every player on fbref
