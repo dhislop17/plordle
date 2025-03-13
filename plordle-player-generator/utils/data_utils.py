@@ -46,7 +46,8 @@ def shorten_FBRef_player_names(player_name: str) -> str:
         "Kepa Arrizabalaga": "Kepa",
         "Kim Jisoo":"Kim Ji-soo",
         "Edmond-Paris Maghoma": "Paris Maghoma",
-        "Jaden Philogene Bidace": "Jaden Philogene"
+        "Jaden Philogene Bidace": "Jaden Philogene",
+        "Chidozie Obi-Martin": "Chido Obi"
     }
 
     if player_name in common_name_map:
@@ -89,6 +90,8 @@ def fix_api_football_player_names(player_name: str, team_name: str) -> str:
         return "Franco Umeh-Chibueze"
     elif player_name == "W. Dennis":
         return "Will Dennis"
+    elif player_name == "O. Martin":
+        return "Chido Obi"
     # elif player_name == "E. Dennis":
     #     return "Emmanuel Dennis"
     else:

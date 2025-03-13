@@ -30,13 +30,33 @@
     "continent": "Africa"
   },
   {
+    "name": "Hubert Graczyk",
+    "team": "Manchester United",
+    "shirt_number": 48,
+    "age": 22,
+    "position_type": "Goalkeeper",
+    "country": "Poland",
+    "country_code": "POL",
+    "continent": "Europe"
+  },
+  {
     "name": "Elyh Harrison",
     "team": "Manchester United",
     "shirt_number": 50,
-    "age": 18,
+    "age": 19,
     "position_type": "Goalkeeper",
     "country": "England",
     "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
+    "name": "Dermot Mee",
+    "team": "Manchester United",
+    "shirt_number": 45,
+    "age": 22,
+    "position_type": "Goalkeeper",
+    "country": "Northern Ireland",
+    "country_code": "NIR",
     "continent": "Europe"
   },
   {
@@ -73,7 +93,7 @@
     "name": "Harry Maguire",
     "team": "Manchester United",
     "shirt_number": 5,
-    "age": 31,
+    "age": 32,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -95,8 +115,8 @@
     "shirt_number": 13,
     "age": 20,
     "position_type": "Defender",
-    "country": "Netherlands",
-    "country_code": "NLD",
+    "country": "Denmark",
+    "country_code": "DNK",
     "continent": "Europe"
   },
   {
@@ -160,6 +180,16 @@
     "continent": "Europe"
   },
   {
+    "name": "Tyler Fredricson",
+    "team": "Manchester United",
+    "shirt_number": 55,
+    "age": 20,
+    "position_type": "Defender",
+    "country": "England",
+    "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
     "name": "Godwill Kukonki",
     "team": "Manchester United",
     "shirt_number": 87,
@@ -203,7 +233,7 @@
     "name": "Casemiro",
     "team": "Manchester United",
     "shirt_number": 18,
-    "age": 32,
+    "age": 33,
     "position_type": "Midfielder",
     "country": "Brazil",
     "country_code": "BRA",
@@ -230,6 +260,16 @@
     "continent": "Europe"
   },
   {
+    "name": "Sekou Koné",
+    "team": "Manchester United",
+    "shirt_number": 42,
+    "age": 19,
+    "position_type": "Midfielder",
+    "country": "Mali",
+    "country_code": "MLI",
+    "continent": "Africa"
+  },
+  {
     "name": "Toby Collyer",
     "team": "Manchester United",
     "shirt_number": 43,
@@ -244,6 +284,16 @@
     "team": "Manchester United",
     "shirt_number": 57,
     "age": 17,
+    "position_type": "Midfielder",
+    "country": "England",
+    "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
+    "name": "Jack Moorhouse",
+    "team": "Manchester United",
+    "shirt_number": 64,
+    "age": 19,
     "position_type": "Midfielder",
     "country": "England",
     "country_code": "ENG",
@@ -453,7 +503,7 @@
     "name": "Jacob Murphy",
     "team": "Newcastle United",
     "shirt_number": 23,
-    "age": 29,
+    "age": 30,
     "position_type": "Midfielder",
     "country": "England",
     "country_code": "ENG",
@@ -513,7 +563,7 @@
     "name": "Callum Wilson",
     "team": "Newcastle United",
     "shirt_number": 9,
-    "age": 32,
+    "age": 33,
     "position_type": "Forward",
     "country": "England",
     "country_code": "ENG",
@@ -523,7 +573,7 @@
     "name": "Anthony Gordon",
     "team": "Newcastle United",
     "shirt_number": 10,
-    "age": 23,
+    "age": 24,
     "position_type": "Forward",
     "country": "England",
     "country_code": "ENG",
@@ -547,6 +597,16 @@
     "position_type": "Forward",
     "country": "Denmark",
     "country_code": "DNK",
+    "continent": "Europe"
+  },
+  {
+    "name": "Sean Neave",
+    "team": "Newcastle United",
+    "shirt_number": 78,
+    "age": 17,
+    "position_type": "Forward",
+    "country": "England",
+    "country_code": "ENG",
     "continent": "Europe"
   },
   {
@@ -618,6 +678,16 @@
     "country": "England",
     "country_code": "ENG",
     "continent": "Europe"
+  },
+  {
+    "name": "Julio Soler",
+    "team": "Bournemouth",
+    "shirt_number": 20,
+    "age": 20,
+    "position_type": "Defender",
+    "country": "Argentina",
+    "country_code": "ARG",
+    "continent": "South America"
   },
   {
     "name": "Julian Araujo",
@@ -713,7 +783,7 @@
     "name": "Ryan Christie",
     "team": "Bournemouth",
     "shirt_number": 10,
-    "age": 29,
+    "age": 30,
     "position_type": "Midfielder",
     "country": "Scotland",
     "country_code": "SCT",
@@ -853,7 +923,7 @@
     "name": "Remy Rees-Dottin",
     "team": "Bournemouth",
     "shirt_number": 51,
-    "age": 18,
+    "age": 19,
     "position_type": "Forward",
     "country": "England",
     "country_code": "ENG",
@@ -863,7 +933,7 @@
     "name": "Bernd Leno",
     "team": "Fulham",
     "shirt_number": 1,
-    "age": 32,
+    "age": 33,
     "position_type": "Goalkeeper",
     "country": "Germany",
     "country_code": "DEU",
@@ -953,7 +1023,7 @@
     "name": "Samuel Amissah",
     "team": "Fulham",
     "shirt_number": 35,
-    "age": 17,
+    "age": 18,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -1018,16 +1088,6 @@
     "country": "Serbia",
     "country_code": "SRB",
     "continent": "Europe"
-  },
-  {
-    "name": "Willian",
-    "team": "Fulham",
-    "shirt_number": 22,
-    "age": 36,
-    "position_type": "Midfielder",
-    "country": "Brazil",
-    "country_code": "BRA",
-    "continent": "South America"
   },
   {
     "name": "Joshua King",
@@ -1118,6 +1178,16 @@
     "country": "England",
     "country_code": "ENG",
     "continent": "Europe"
+  },
+  {
+    "name": "Willian",
+    "team": "Fulham",
+    "shirt_number": 22,
+    "age": 36,
+    "position_type": "Forward",
+    "country": "Brazil",
+    "country_code": "BRA",
+    "continent": "South America"
   },
   {
     "name": "Martial Godo",
@@ -1283,7 +1353,7 @@
     "name": "Alfie Pond",
     "team": "Wolverhampton Wanderers",
     "shirt_number": 46,
-    "age": 20,
+    "age": 21,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -1430,6 +1500,16 @@
     "continent": "Europe"
   },
   {
+    "name": "Mateus Mane",
+    "team": "Wolverhampton Wanderers",
+    "shirt_number": 59,
+    "age": 17,
+    "position_type": "Forward",
+    "country": "England",
+    "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
     "name": "Tom Edozie",
     "team": "Wolverhampton Wanderers",
     "shirt_number": 74,
@@ -1523,7 +1603,7 @@
     "name": "Andrew Robertson",
     "team": "Liverpool",
     "shirt_number": 26,
-    "age": 30,
+    "age": 31,
     "position_type": "Defender",
     "country": "Scotland",
     "country_code": "SCT",
@@ -1843,7 +1923,7 @@
     "name": "Welington",
     "team": "Southampton",
     "shirt_number": 34,
-    "age": 23,
+    "age": 24,
     "position_type": "Defender",
     "country": "Brazil",
     "country_code": "BRA",
@@ -1893,7 +1973,7 @@
     "name": "William Smallbone",
     "team": "Southampton",
     "shirt_number": 8,
-    "age": 24,
+    "age": 25,
     "position_type": "Midfielder",
     "country": "Ireland",
     "country_code": "IRL",
@@ -1933,7 +2013,7 @@
     "name": "Ryan Fraser",
     "team": "Southampton",
     "shirt_number": 24,
-    "age": 30,
+    "age": 31,
     "position_type": "Midfielder",
     "country": "Scotland",
     "country_code": "SCT",
@@ -1963,7 +2043,7 @@
     "name": "Tyler Dibling",
     "team": "Southampton",
     "shirt_number": 33,
-    "age": 18,
+    "age": 19,
     "position_type": "Midfielder",
     "country": "England",
     "country_code": "ENG",
@@ -2303,7 +2383,7 @@
     "name": "Jordan Pickford",
     "team": "Everton",
     "shirt_number": 1,
-    "age": 30,
+    "age": 31,
     "position_type": "Goalkeeper",
     "country": "England",
     "country_code": "ENG",
@@ -2440,6 +2520,16 @@
     "continent": "Africa"
   },
   {
+    "name": "Carlos Alcaraz",
+    "team": "Everton",
+    "shirt_number": 24,
+    "age": 22,
+    "position_type": "Midfielder",
+    "country": "Argentina",
+    "country_code": "ARG",
+    "continent": "South America"
+  },
+  {
     "name": "Idrissa Gana Gueye",
     "team": "Everton",
     "shirt_number": 27,
@@ -2453,7 +2543,7 @@
     "name": "Jesper Lindstrøm",
     "team": "Everton",
     "shirt_number": 29,
-    "age": 24,
+    "age": 25,
     "position_type": "Midfielder",
     "country": "Denmark",
     "country_code": "DNK",
@@ -2490,26 +2580,6 @@
     "continent": "Europe"
   },
   {
-    "name": "Carlos Alcaraz",
-    "team": "Everton",
-    "shirt_number": 24,
-    "age": 22,
-    "position_type": "Midfielder",
-    "country": "Argentina",
-    "country_code": "ARG",
-    "continent": "South America"
-  },
-  {
-    "name": "Isaac Heath",
-    "team": "Everton",
-    "shirt_number": 83,
-    "age": 20,
-    "position_type": "Midfielder",
-    "country": "England",
-    "country_code": "ENG",
-    "continent": "Europe"
-  },
-  {
     "name": "Dwight McNeil",
     "team": "Everton",
     "shirt_number": 7,
@@ -2533,7 +2603,7 @@
     "name": "Iliman Ndiaye",
     "team": "Everton",
     "shirt_number": 10,
-    "age": 24,
+    "age": 25,
     "position_type": "Forward",
     "country": "Senegal",
     "country_code": "SEN",
@@ -2590,6 +2660,26 @@
     "continent": "Europe"
   },
   {
+    "name": "Isaac Heath",
+    "team": "Everton",
+    "shirt_number": 83,
+    "age": 20,
+    "position_type": "Forward",
+    "country": "England",
+    "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
+    "name": "Coby Ebere",
+    "team": "Everton",
+    "shirt_number": 84,
+    "age": 19,
+    "position_type": "Forward",
+    "country": "Germany",
+    "country_code": "DEU",
+    "continent": "Europe"
+  },
+  {
     "name": "Danny Ward",
     "team": "Leicester City",
     "shirt_number": 1,
@@ -2633,7 +2723,7 @@
     "name": "James Justin",
     "team": "Leicester City",
     "shirt_number": 2,
-    "age": 26,
+    "age": 27,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -2653,7 +2743,7 @@
     "name": "Conor Coady",
     "team": "Leicester City",
     "shirt_number": 4,
-    "age": 31,
+    "age": 32,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -2763,7 +2853,7 @@
     "name": "Boubakary Soumaré",
     "team": "Leicester City",
     "shirt_number": 24,
-    "age": 25,
+    "age": 26,
     "position_type": "Midfielder",
     "country": "France",
     "country_code": "FRA",
@@ -2803,7 +2893,7 @@
     "name": "Abdul Fatawu Issahaku",
     "team": "Leicester City",
     "shirt_number": 7,
-    "age": 20,
+    "age": 21,
     "position_type": "Forward",
     "country": "Ghana",
     "country_code": "GHA",
@@ -3023,7 +3113,7 @@
     "name": "Malachi Hardy",
     "team": "Tottenham Hotspur",
     "shirt_number": 79,
-    "age": 16,
+    "age": 17,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -3053,7 +3143,7 @@
     "name": "Archie Gray",
     "team": "Tottenham Hotspur",
     "shirt_number": 14,
-    "age": 18,
+    "age": 19,
     "position_type": "Midfielder",
     "country": "England",
     "country_code": "ENG",
@@ -3143,7 +3233,7 @@
     "name": "Timo Werner",
     "team": "Tottenham Hotspur",
     "shirt_number": 16,
-    "age": 28,
+    "age": 29,
     "position_type": "Forward",
     "country": "Germany",
     "country_code": "DEU",
@@ -3233,7 +3323,7 @@
     "name": "Alphonse Areola",
     "team": "West Ham United",
     "shirt_number": 23,
-    "age": 31,
+    "age": 32,
     "position_type": "Goalkeeper",
     "country": "France",
     "country_code": "FRA",
@@ -3403,7 +3493,7 @@
     "name": "Tomáš Souček",
     "team": "West Ham United",
     "shirt_number": 28,
-    "age": 29,
+    "age": 30,
     "position_type": "Midfielder",
     "country": "Czechia",
     "country_code": "CZE",
@@ -3423,7 +3513,7 @@
     "name": "Lewis Orford",
     "team": "West Ham United",
     "shirt_number": 61,
-    "age": 18,
+    "age": 19,
     "position_type": "Midfielder",
     "country": "England",
     "country_code": "ENG",
@@ -3573,7 +3663,17 @@
     "name": "Levi Colwill",
     "team": "Chelsea",
     "shirt_number": 6,
-    "age": 21,
+    "age": 22,
+    "position_type": "Defender",
+    "country": "England",
+    "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
+    "name": "Trevoh Chalobah",
+    "team": "Chelsea",
+    "shirt_number": 23,
+    "age": 25,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -3610,6 +3710,16 @@
     "continent": "Europe"
   },
   {
+    "name": "Aaron Anselmino",
+    "team": "Chelsea",
+    "shirt_number": 30,
+    "age": 19,
+    "position_type": "Defender",
+    "country": "Argentina",
+    "country_code": "ARG",
+    "continent": "South America"
+  },
+  {
     "name": "Joshua Acheampong",
     "team": "Chelsea",
     "shirt_number": 34,
@@ -3620,14 +3730,14 @@
     "continent": "Europe"
   },
   {
-    "name": "Aaron Anselmino",
+    "name": "Ishé Samuels-Smith",
     "team": "Chelsea",
-    "shirt_number": 30,
-    "age": 19,
+    "shirt_number": 62,
+    "age": 18,
     "position_type": "Defender",
-    "country": "Argentina",
-    "country_code": "ARG",
-    "continent": "South America"
+    "country": "England",
+    "country_code": "ENG",
+    "continent": "Europe"
   },
   {
     "name": "Enzo Fernández",
@@ -3680,6 +3790,16 @@
     "continent": "South America"
   },
   {
+    "name": "Mathis Amougou",
+    "team": "Chelsea",
+    "shirt_number": 39,
+    "age": 19,
+    "position_type": "Midfielder",
+    "country": "France",
+    "country_code": "FRA",
+    "continent": "Europe"
+  },
+  {
     "name": "Roméo Lavia",
     "team": "Chelsea",
     "shirt_number": 45,
@@ -3700,20 +3820,20 @@
     "continent": "Europe"
   },
   {
-    "name": "Mathis Amougou",
+    "name": "Genesis Antwi",
     "team": "Chelsea",
-    "shirt_number": 39,
-    "age": 19,
+    "shirt_number": 64,
+    "age": 17,
     "position_type": "Midfielder",
-    "country": "France",
-    "country_code": "FRA",
+    "country": "Sweden",
+    "country_code": "SWE",
     "continent": "Europe"
   },
   {
     "name": "Pedro Neto",
     "team": "Chelsea",
     "shirt_number": 7,
-    "age": 24,
+    "age": 25,
     "position_type": "Forward",
     "country": "Portugal",
     "country_code": "PRT",
@@ -3723,7 +3843,7 @@
     "name": "Noni Madueke",
     "team": "Chelsea",
     "shirt_number": 11,
-    "age": 22,
+    "age": 23,
     "position_type": "Forward",
     "country": "England",
     "country_code": "ENG",
@@ -3777,6 +3897,16 @@
     "position_type": "Forward",
     "country": "Spain",
     "country_code": "ESP",
+    "continent": "Europe"
+  },
+  {
+    "name": "Shumaira Mheuka",
+    "team": "Chelsea",
+    "shirt_number": 76,
+    "age": 17,
+    "position_type": "Forward",
+    "country": "England",
+    "country_code": "ENG",
     "continent": "Europe"
   },
   {
@@ -3843,7 +3973,7 @@
     "name": "Nathan Aké",
     "team": "Manchester City",
     "shirt_number": 6,
-    "age": 29,
+    "age": 30,
     "position_type": "Defender",
     "country": "Netherlands",
     "country_code": "NLD",
@@ -3883,7 +4013,7 @@
     "name": "Abdukodir Khusanov",
     "team": "Manchester City",
     "shirt_number": 45,
-    "age": 20,
+    "age": 21,
     "position_type": "Defender",
     "country": "Uzbekistan",
     "country_code": "UZB",
@@ -3937,6 +4067,16 @@
     "position_type": "Midfielder",
     "country": "England",
     "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
+    "name": "Nicolás González",
+    "team": "Manchester City",
+    "shirt_number": 14,
+    "age": 23,
+    "position_type": "Midfielder",
+    "country": "Spain",
+    "country_code": "ESP",
     "continent": "Europe"
   },
   {
@@ -4160,6 +4300,16 @@
     "continent": "Europe"
   },
   {
+    "name": "Eiran Cashin",
+    "team": "Brighton & Hove Albion",
+    "shirt_number": 16,
+    "age": 23,
+    "position_type": "Defender",
+    "country": "Ireland",
+    "country_code": "IRL",
+    "continent": "Europe"
+  },
+  {
     "name": "Jan Paul van Hecke",
     "team": "Brighton & Hove Albion",
     "shirt_number": 29,
@@ -4197,16 +4347,6 @@
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
-    "continent": "Europe"
-  },
-  {
-    "name": "Eiran Cashin",
-    "team": "Brighton & Hove Albion",
-    "shirt_number": 16,
-    "age": 23,
-    "position_type": "Defender",
-    "country": "Ireland",
-    "country_code": "IRL",
     "continent": "Europe"
   },
   {
@@ -4383,7 +4523,7 @@
     "name": "Dean Henderson",
     "team": "Crystal Palace",
     "shirt_number": 1,
-    "age": 27,
+    "age": 28,
     "position_type": "Goalkeeper",
     "country": "England",
     "country_code": "ENG",
@@ -4470,6 +4610,16 @@
     "continent": "Europe"
   },
   {
+    "name": "Ben Chilwell",
+    "team": "Crystal Palace",
+    "shirt_number": 25,
+    "age": 28,
+    "position_type": "Defender",
+    "country": "England",
+    "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
     "name": "Chris Richards",
     "team": "Crystal Palace",
     "shirt_number": 26,
@@ -4494,16 +4644,6 @@
     "team": "Crystal Palace",
     "shirt_number": 58,
     "age": 18,
-    "position_type": "Defender",
-    "country": "England",
-    "country_code": "ENG",
-    "continent": "Europe"
-  },
-  {
-    "name": "Ben Chilwell",
-    "team": "Crystal Palace",
-    "shirt_number": 25,
-    "age": 28,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -4603,7 +4743,7 @@
     "name": "Ismaila Sarr",
     "team": "Crystal Palace",
     "shirt_number": 7,
-    "age": 26,
+    "age": 27,
     "position_type": "Forward",
     "country": "Senegal",
     "country_code": "SEN",
@@ -4618,6 +4758,16 @@
     "country": "England",
     "country_code": "ENG",
     "continent": "Europe"
+  },
+  {
+    "name": "Matheus França",
+    "team": "Crystal Palace",
+    "shirt_number": 11,
+    "age": 20,
+    "position_type": "Forward",
+    "country": "Brazil",
+    "country_code": "BRA",
+    "continent": "South America"
   },
   {
     "name": "Jean-Philippe Mateta",
@@ -4780,10 +4930,20 @@
     "continent": "Europe"
   },
   {
+    "name": "Benjamin Fredrick",
+    "team": "Brentford",
+    "shirt_number": 43,
+    "age": 19,
+    "position_type": "Defender",
+    "country": "Nigeria",
+    "country_code": "NGA",
+    "continent": "Africa"
+  },
+  {
     "name": "Christian Nørgaard",
     "team": "Brentford",
     "shirt_number": 6,
-    "age": 30,
+    "age": 31,
     "position_type": "Midfielder",
     "country": "Denmark",
     "country_code": "DNK",
@@ -4843,7 +5003,7 @@
     "name": "Yehor Yarmoliuk",
     "team": "Brentford",
     "shirt_number": 18,
-    "age": 20,
+    "age": 21,
     "position_type": "Midfielder",
     "country": "Ukraine",
     "country_code": "UKR",
@@ -4913,10 +5073,20 @@
     "name": "Keane Lewis-Potter",
     "team": "Brentford",
     "shirt_number": 23,
-    "age": 23,
+    "age": 24,
     "position_type": "Forward",
     "country": "England",
     "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
+    "name": "Iwan Morgan",
+    "team": "Brentford",
+    "shirt_number": 40,
+    "age": 19,
+    "position_type": "Forward",
+    "country": "Wales",
+    "country_code": "WLS",
     "continent": "Europe"
   },
   {
@@ -4944,6 +5114,16 @@
     "team": "Ipswich Town",
     "shirt_number": 28,
     "age": 29,
+    "position_type": "Goalkeeper",
+    "country": "England",
+    "country_code": "ENG",
+    "continent": "Europe"
+  },
+  {
+    "name": "Alex Palmer",
+    "team": "Ipswich Town",
+    "shirt_number": 31,
+    "age": 28,
     "position_type": "Goalkeeper",
     "country": "England",
     "country_code": "ENG",
@@ -4983,7 +5163,7 @@
     "name": "Conor Townsend",
     "team": "Ipswich Town",
     "shirt_number": 22,
-    "age": 31,
+    "age": 32,
     "position_type": "Defender",
     "country": "England",
     "country_code": "ENG",
@@ -5003,7 +5183,7 @@
     "name": "Dara O'Shea",
     "team": "Ipswich Town",
     "shirt_number": 26,
-    "age": 25,
+    "age": 26,
     "position_type": "Defender",
     "country": "Ireland",
     "country_code": "IRL",
@@ -5113,7 +5293,7 @@
     "name": "Conor Chaplin",
     "team": "Ipswich Town",
     "shirt_number": 10,
-    "age": 27,
+    "age": 28,
     "position_type": "Forward",
     "country": "England",
     "country_code": "ENG",
@@ -5203,7 +5383,7 @@
     "name": "Matz Sels",
     "team": "Nottingham Forest",
     "shirt_number": 26,
-    "age": 32,
+    "age": 33,
     "position_type": "Goalkeeper",
     "country": "Belgium",
     "country_code": "BEL",
@@ -5480,6 +5660,16 @@
     "continent": "Europe"
   },
   {
+    "name": "Axel Disasi",
+    "team": "Aston Villa",
+    "shirt_number": 3,
+    "age": 27,
+    "position_type": "Defender",
+    "country": "France",
+    "country_code": "FRA",
+    "continent": "Europe"
+  },
+  {
     "name": "Ezri Konsa",
     "team": "Aston Villa",
     "shirt_number": 4,
@@ -5533,7 +5723,7 @@
     "name": "Ian Maatsen",
     "team": "Aston Villa",
     "shirt_number": 22,
-    "age": 22,
+    "age": 23,
     "position_type": "Defender",
     "country": "Netherlands",
     "country_code": "NLD",
@@ -5547,16 +5737,6 @@
     "position_type": "Defender",
     "country": "Netherlands",
     "country_code": "NLD",
-    "continent": "Europe"
-  },
-  {
-    "name": "Axel Disasi",
-    "team": "Aston Villa",
-    "shirt_number": 3,
-    "age": 26,
-    "position_type": "Defender",
-    "country": "France",
-    "country_code": "FRA",
     "continent": "Europe"
   },
   {
@@ -5680,26 +5860,6 @@
     "continent": "Europe"
   },
   {
-    "name": "Morgan Rogers",
-    "team": "Aston Villa",
-    "shirt_number": 27,
-    "age": 22,
-    "position_type": "Forward",
-    "country": "England",
-    "country_code": "ENG",
-    "continent": "Europe"
-  },
-  {
-    "name": "Kadan Young",
-    "team": "Aston Villa",
-    "shirt_number": 72,
-    "age": 19,
-    "position_type": "Forward",
-    "country": "England",
-    "country_code": "ENG",
-    "continent": "Europe"
-  },
-  {
     "name": "Marco Asensio",
     "team": "Aston Villa",
     "shirt_number": 21,
@@ -5707,6 +5867,16 @@
     "position_type": "Forward",
     "country": "Spain",
     "country_code": "ESP",
+    "continent": "Europe"
+  },
+  {
+    "name": "Morgan Rogers",
+    "team": "Aston Villa",
+    "shirt_number": 27,
+    "age": 22,
+    "position_type": "Forward",
+    "country": "England",
+    "country_code": "ENG",
     "continent": "Europe"
   }
 ]
