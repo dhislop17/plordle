@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - plordle/lib/**
+      - plordle/assets/**
       - plordle/pubspec.yaml
       - plordle/pubspec.loc
 
