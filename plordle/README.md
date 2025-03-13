@@ -10,7 +10,6 @@ Front End built in Flutter version 3.29
 - [get_it](https://pub.dev/packages/get_it)
 - [diacritic](https://pub.dev/packages/diacritic)
 - [flutter_timer_countdown](https://pub.dev/packages/flutter_timer_countdown)
-- [flutter_dotenv](https://pub.dev/packages/flutter_dotenv)
 - [country_coder](https://pub.dev/packages/country_coder)
 - [logger](https://pub.dev/packages/logger)
 - [device_info_plus](https://pub.dev/packages/device_info_plus)

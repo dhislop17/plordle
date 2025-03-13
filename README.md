@@ -3,7 +3,7 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 
 ## Features
 ### Game Features
-- Includes every player from all 20 Premier League teams' 2024-25 squads (up to date as of February 15, 2025)
+- Includes every player from all 20 Premier League teams' 2024-25 squads (up to date as of March 12, 2025)
     - Players who don't have a shirt number are not included
 - Guesses are updated with the flag emoji for the player's country (or a Shamrock For Northern Ireland)
 - 5 Difficulty Levels
