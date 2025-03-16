@@ -1,6 +1,5 @@
 class Constants {
   //Titles and info strings
-  static const String onboardingPageTitle = 'Welcome to Plordle';
   static const String gameTitle = 'PLORDLE';
   static const String gameSubtitle = 'Guess The Player';
   static const String filterPageTitle = 'Filter Teams';
@@ -41,8 +40,15 @@ class Constants {
       "New mystery player at midnight in your timezone, or play in unlimited mode to keep getting a new mystery player";
 
   //Filter Menu
-  static const String filterHelpText =
-      "Use the filter to determine which teams the mystery player can come from. All teams are included by default and you must include at least 1 team.";
+  static const String filterHelpTextCombined =
+      "$filterHelpTextFirstLine $filterHelpTextSecondLine";
+  static const String filterHelpTextFirstLine =
+      "Use the filter to determine which teams the mystery player can come from.";
+  static const String filterHelpTextSecondLine =
+      "All teams are included by default and you must include at least 1 team.";
+
+  //Button Labels
+  static const String startButtonLabel = "Start Game";
 
   //Grid number boxes arrows
   static const String downArrow = '\u{2193}';

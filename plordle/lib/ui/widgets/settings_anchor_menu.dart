@@ -148,7 +148,7 @@ class _SettingsAnchorMenuState extends State<SettingsAnchorMenu> {
             children: [
               const Padding(
                 padding: EdgeInsets.only(left: 16, right: 16),
-                child: Text(Constants.filterHelpText),
+                child: Text(Constants.filterHelpTextCombined),
               ),
               const SizedBox(height: 8),
               FilterChipsWidget(),

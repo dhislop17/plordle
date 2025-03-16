@@ -6,7 +6,7 @@ import 'package:plordle/ui/pages/appearance_difficulty_page.dart';
 import 'package:plordle/ui/pages/home_page.dart';
 import 'package:plordle/services/service_locator.dart';
 import 'package:plordle/ui/pages/landing_page.dart';
-import 'package:plordle/ui/pages/welcome_page.dart';
+import 'package:plordle/ui/pages/welcome_flow_page.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
@@ -62,7 +62,7 @@ class Plordle extends StatelessWidget {
                 'game': (context) => const HomePage(),
                 'appearanceDifficulty': (context) =>
                     const AppearanceDifficultyPage(),
-                'welcome': (context) => const WelcomePage()
+                'welcome': (context) => const WelcomeFlowPage()
               });
         });
   }
