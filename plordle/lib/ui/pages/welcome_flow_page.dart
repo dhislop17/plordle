@@ -73,8 +73,8 @@ class _WelcomeFlowPageState extends State<WelcomeFlowPage>
     ThemeViewModel themeViewModel = Provider.of<ThemeViewModel>(context);
 
     const appBarTitles = [
-      'Customize Appearance and Difficulty',
-      'Filter Teams'
+      Constants.appAndDiffPageTitle,
+      Constants.filterPageTitle
     ];
     if (_currPageIndex > 0) {
       return AppBar(

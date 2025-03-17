@@ -28,7 +28,7 @@ class _SettingsAnchorMenuState extends State<SettingsAnchorMenu> {
       childFocusNode: _buttonFocusNode,
       menuChildren: <Widget>[
         MenuItemButton(
-          child: const ListTile(title: Text("Appearance & Difficulty")),
+          child: const ListTile(title: Text(Constants.appAndDiffPageTitle)),
           onPressed: () {
             Navigator.pushNamed(context, 'appearanceDifficulty');
           },

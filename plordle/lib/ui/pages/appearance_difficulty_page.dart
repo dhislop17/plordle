@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/widgets/columns/appearance_difficulty_column.dart';
 import 'package:plordle/ui/widgets/plordle_layout_builder.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
@@ -20,11 +21,12 @@ class AppearanceDifficultyPage extends StatelessWidget {
         },
         child: Scaffold(
           appBar: AppBar(
+              centerTitle: true,
               backgroundColor: Provider.of<ThemeViewModel>(context)
                   .primarySelectedThemeColor,
               foregroundColor: Provider.of<ThemeViewModel>(context)
                   .secondarySelectedThemeColor,
-              title: const Text("Appearance & Difficulty")),
+              title: const Text(Constants.appAndDiffPageTitle)),
           body: const PlordleLayoutBuilder(child: AppearanceDifficultyColumn()),
         ));
   }

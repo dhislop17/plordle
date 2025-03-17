@@ -3,6 +3,7 @@ class Constants {
   static const String gameTitle = 'PLORDLE';
   static const String gameSubtitle = 'Guess The Player';
   static const String filterPageTitle = 'Filter Teams';
+  static const String appAndDiffPageTitle = 'Appearance & Difficulty';
   static const String gridNameHeader = 'Name';
   static const String gridTeamHeader = 'Team';
   static const String gridPositionHeader = 'Position';
