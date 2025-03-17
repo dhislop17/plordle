@@ -24,7 +24,7 @@ class IntroTextColumn extends StatelessWidget {
   Widget _buildSwipeOrClickHint() {
     final hintText = (isOnDesktop)
         ? "Click the arrow to continue"
-        : "Swipe right to continue";
+        : "Swipe left to continue";
 
     return Text(hintText);
   }
