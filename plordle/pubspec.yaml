@@ -19,6 +19,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=3.1.0 <4.0.0"
+  flutter: ^3.29.0
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,7 +39,7 @@ dependencies:
   flutter_timer_countdown: ^1.0.7
   country_coder: ^1.2.0
   logger: ^2.4.0
-  cupertino_icons: ^1.0.8
+  #cupertino_icons: ^1.0.8
   device_info_plus: ^11.2.0
   flutter_keyboard_visibility_web: ^2.0.0
   shared_preferences_web: ^2.4.1
