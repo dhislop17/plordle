@@ -6,9 +6,7 @@ import 'package:plordle/ui/widgets/columns/intro_filter_column.dart';
 import 'package:plordle/ui/widgets/columns/intro_text_column.dart';
 import 'package:plordle/ui/widgets/page_indicator.dart';
 import 'package:plordle/ui/widgets/plordle_layout_builder.dart';
-import 'package:plordle/view_models/player_view_model.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
-import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class WelcomeFlowPage extends StatefulWidget {
@@ -51,22 +49,31 @@ class _WelcomeFlowPageState extends State<WelcomeFlowPage>
 
   @override
   Widget build(BuildContext context) {
-    var userModel = Provider.of<UserViewModel>(context, listen: false);
-
     return Scaffold(
-      appBar: _buildAppBar(context),
-      body: PlordleLayoutBuilder(child: _buildPageView(context)),
-      floatingActionButton: (!_isOnDesktop &&
-              _currPageIndex == 2) // Only show FAB if on the third page
-          ? FloatingActionButton.extended(
-              label: const Text(Constants.startButtonLabel),
-              icon: const Icon(Icons.arrow_forward),
-              onPressed: () {
-                _completeWelcomeFlow(userModel);
-              },
-            )
-          : null,
-    );
+        appBar: _buildAppBar(context),
+        body: PlordleLayoutBuilder(
+            child: Stack(
+          alignment: Alignment.bottomCenter,
+          children: <Widget>[
+            PageView(
+              controller: _pageViewController,
+              onPageChanged: _handlePageViewChanged,
+              children: <Widget>[
+                IntroTextColumn(isOnDesktop: _isOnDesktop),
+                AppearanceDifficultyColumn(),
+                IntroFilterColumn(
+                  isOnDesktop: _isOnDesktop,
+                )
+              ],
+            ),
+            PageIndicator(
+              tabController: _tabController,
+              currentPageIndex: _currPageIndex,
+              onUpdateCurrentPageIndex: _updateCurrentPageIndex,
+              isOnDesktop: _isOnDesktop,
+            ),
+          ],
+        )));
   }
 
   AppBar? _buildAppBar(BuildContext context) {
@@ -88,31 +95,6 @@ class _WelcomeFlowPageState extends State<WelcomeFlowPage>
     }
   }
 
-  Widget _buildPageView(BuildContext context) {
-    return Stack(
-      alignment: Alignment.bottomCenter,
-      children: <Widget>[
-        PageView(
-          controller: _pageViewController,
-          onPageChanged: _handlePageViewChanged,
-          children: <Widget>[
-            IntroTextColumn(isOnDesktop: _isOnDesktop),
-            AppearanceDifficultyColumn(),
-            IntroFilterColumn(
-                isOnDesktop: _isOnDesktop,
-                completeWelcomeFlow: _completeWelcomeFlow)
-          ],
-        ),
-        PageIndicator(
-          tabController: _tabController,
-          currentPageIndex: _currPageIndex,
-          onUpdateCurrentPageIndex: _updateCurrentPageIndex,
-          isOnDesktop: _isOnDesktop,
-        ),
-      ],
-    );
-  }
-
   void _handlePageViewChanged(int currentPageIndex) {
     setState(() {
       _currPageIndex = currentPageIndex;
@@ -127,15 +109,5 @@ class _WelcomeFlowPageState extends State<WelcomeFlowPage>
       duration: const Duration(milliseconds: 400),
       curve: Curves.easeInOut,
     );
-  }
-
-  void _completeWelcomeFlow(UserViewModel userModel) {
-    //save theme selection, team exclusions, difficulty level, and mark onboarding complete
-    Provider.of<ThemeViewModel>(context, listen: false).saveData();
-    Provider.of<PlayerViewModel>(context, listen: false).storeTeamExclusions();
-    userModel.saveDifficulty();
-    userModel.completeOnboarding();
-
-    Navigator.pushReplacementNamed(context, 'game');
   }
 }
