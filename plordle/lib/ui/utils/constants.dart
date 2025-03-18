@@ -44,12 +44,13 @@ class Constants {
   static const String filterHelpTextCombined =
       "$filterHelpTextFirstLine $filterHelpTextSecondLine";
   static const String filterHelpTextFirstLine =
-      "Use the filter to determine which teams the mystery player can come from.";
+      "Use the filter to narrow down the teams the mystery player could belong to.";
   static const String filterHelpTextSecondLine =
-      "All teams are included by default and you must include at least 1 team.";
+      "By default, all teams are included and you must select at least one team.";
 
   //Button Labels
   static const String startButtonLabel = "Start Game";
+  static const String resetFilterButtonLabel = "Reset Filter";
 
   //Grid number boxes arrows
   static const String downArrow = '\u{2193}';

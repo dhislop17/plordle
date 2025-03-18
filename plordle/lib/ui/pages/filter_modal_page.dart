@@ -51,7 +51,8 @@ class FilterModalPage extends WoltModalSheetPage {
                                       listen: false)
                                   .clearTeamExclusions();
                             },
-                            label: const Text("Reset Filter"))),
+                            label:
+                                const Text(Constants.resetFilterButtonLabel))),
                     SizedBox(
                         child: FilledButton(
                             onPressed: () {
