@@ -10,13 +10,11 @@ class FilterChipsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<PlayerViewModel>(builder: (context, model, child) {
-      return Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Wrap(
+    return Consumer<PlayerViewModel>(
+      builder: (context, model, child) {
+        return Padding(
+          padding: const EdgeInsets.only(left: 4, right: 4),
+          child: Wrap(
             spacing: 4,
             runSpacing: 8,
             children: teams.map((String teamName) {
@@ -34,9 +32,8 @@ class FilterChipsWidget extends StatelessWidget {
                   });
             }).toList(),
           ),
-          const SizedBox(height: 80)
-        ],
-      ));
-    });
+        );
+      },
+    );
   }
 }

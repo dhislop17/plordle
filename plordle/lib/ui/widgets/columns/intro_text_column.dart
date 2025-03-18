@@ -13,7 +13,7 @@ class IntroTextColumn extends StatelessWidget {
           child: Text(Constants.gameTitle,
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold))),
       SizedBox(height: 40),
-      Text("A guessing game about Premier League Players"),
+      Text("A guessing game about Premier League players"),
       SizedBox(height: 220),
       Text("Before we get started, let's customize some game settings"),
       SizedBox(height: 20),
@@ -24,7 +24,7 @@ class IntroTextColumn extends StatelessWidget {
   Widget _buildSwipeOrClickHint() {
     final hintText = (isOnDesktop)
         ? "Click the arrow to continue"
-        : "Swipe right to continue";
+        : "Swipe left to continue";
 
     return Text(hintText);
   }
