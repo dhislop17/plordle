@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/constants.dart';
+import 'package:plordle/ui/utils/enums.dart';
 import 'package:plordle/ui/widgets/mystery_player_timer.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
@@ -54,8 +55,6 @@ class EndOfGameDialog extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20)),
                               const SizedBox(height: 20),
-                              /* MysteryPlayerTimer(),
-                              const SizedBox(height: 20), */
                               const Text("Mystery Mode Stats:"),
                               Text(model.mysteryModeStat.toString()),
                               const SizedBox(height: 20),

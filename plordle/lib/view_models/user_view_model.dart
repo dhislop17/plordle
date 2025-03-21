@@ -6,20 +6,8 @@ import 'package:plordle/models/player.dart';
 import 'package:plordle/models/stat.dart';
 import 'package:plordle/services/service_locator.dart';
 import 'package:plordle/services/storage_service.dart';
+import 'package:plordle/ui/utils/enums.dart';
 import 'package:plordle/view_models/player_view_model.dart';
-
-enum GameState { inProgress, won, lost, doneForTheDay }
-
-enum DifficultyOptions {
-  easy("Relegation Battle"),
-  normal("Mid Table Club"),
-  hard("Top 4 Challenger"),
-  challenge("PL Champion"),
-  expert("Invincibles");
-
-  const DifficultyOptions(this.label);
-  final String label;
-}
 
 class UserViewModel extends ChangeNotifier {
   final StorageService _storageService = serviceLocator<StorageService>();
