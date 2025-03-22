@@ -19,7 +19,7 @@ class UserViewModel extends ChangeNotifier {
   late CountryCoder _countryCoder;
   int _numberOfGuesses = 1;
   final int _maxNumOfGuesses = 10;
-  GameState _currentState = GameState.inProgress;
+  GameState _currentState = GameState.pregame;
   DifficultyOptions _currentDifficulty = DifficultyOptions.normal;
   bool _inUnlimitedMode = false;
   late Stat _mysteryModeStat;
@@ -83,7 +83,7 @@ class UserViewModel extends ChangeNotifier {
     _guessedPlayers.clear();
     _numberOfGuesses = 1;
     _inUnlimitedMode = true;
-    _currentState = GameState.inProgress;
+    _currentState = GameState.pregame;
     playerViewModel.getNextRandomPlayer(isNewDay: false);
     notifyListeners();
   }
@@ -93,7 +93,7 @@ class UserViewModel extends ChangeNotifier {
     _guessedPlayers.clear();
     _inUnlimitedMode = false;
     _numberOfGuesses = 1;
-    _currentState = GameState.inProgress;
+    _currentState = GameState.pregame;
     playerViewModel.getNextRandomPlayer(isNewDay: true);
     notifyListeners();
   }
@@ -108,7 +108,7 @@ class UserViewModel extends ChangeNotifier {
 
   void resetToWait() {
     _inUnlimitedMode = false;
-    _currentState = GameState.doneForTheDay;
+    _currentState = GameState.postgame;
     notifyListeners();
   }
 
@@ -134,19 +134,29 @@ class UserViewModel extends ChangeNotifier {
   }
 
   void comparePlayers(Player guessedPlayer) {
+    // Flip the game state after the first guess
+    if (_numberOfGuesses == 1) {
+      _currentState = GameState.inGame;
+    }
     _guessedPlayers.add(guessedPlayer);
     Guess guess = _createGuess(guessedPlayer);
     _numberOfGuesses++;
 
-    if (_numberOfGuesses <= _maxNumOfGuesses + 1 && guess.guessName == 'True') {
+    if (_numberOfGuesses <= _maxNumOfGuesses + 1 &&
+        guess.guessName == "Matched") {
       _currentState = GameState.won;
       _completeGame();
     } else if (_numberOfGuesses == _maxNumOfGuesses + 1 &&
-        guess.guessName != 'True') {
+        guess.guessName != "Matched") {
       _currentState = GameState.lost;
       _completeGame();
     }
     _addGuess(guess);
+  }
+
+  void abandonGame() {
+    _currentState = GameState.lost;
+    _completeGame();
   }
 
   void _completeGame() async {
@@ -173,7 +183,7 @@ class UserViewModel extends ChangeNotifier {
     return Guess(
         guessName:
             guessedPlayer.name == playerViewModel.currentMysteryPlayer.name
-                ? 'True'
+                ? "Matched"
                 : guessedPlayer.name,
         sameTeam:
             guessedPlayer.team == playerViewModel.currentMysteryPlayer.team,
