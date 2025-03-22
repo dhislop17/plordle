@@ -48,4 +48,17 @@ class Themes {
     'West Ham United': [Color(0xFF7A263A), Color(0xFF1BB1E7)],
     'Wolverhampton Wanderers': [Color(0xFFFDB913), Colors.black],
   };
+
+  static const List<String> primaryColorLightModeClashThemes = [
+    'Aston Villa',
+    'Wolverhampton Wanderers'
+  ];
+
+  static const List<String> primaryColorDarkModeClashThemes = [
+    'Premier League',
+    'Chelsea',
+    'Fulham',
+    'Newcastle United',
+    'Tottenham Hotspur'
+  ];
 }
