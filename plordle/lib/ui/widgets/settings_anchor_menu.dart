@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:plordle/ui/pages/filter_modal_page.dart';
 import 'package:plordle/ui/utils/constants.dart';
+import 'package:plordle/ui/utils/enums.dart';
 import 'package:plordle/ui/widgets/dialogs/clear_saved_data_dialog.dart';
+import 'package:plordle/view_models/user_view_model.dart';
+import 'package:provider/provider.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
 class SettingsAnchorMenu extends StatefulWidget {
@@ -31,31 +34,48 @@ class _SettingsAnchorMenuState extends State<SettingsAnchorMenu> {
             Navigator.pushNamed(context, 'appearanceDifficulty');
           },
         ),
-        MenuItemButton(
-          child: const ListTile(title: Text(Constants.filterPageTitle)),
-          onPressed: () {
-            WoltModalSheet.show(
-              context: context,
-              pageListBuilder: (context) {
-                return [FilterModalPage()];
-              },
-              modalTypeBuilder: (context) {
-                final size = MediaQuery.sizeOf(context).width;
-                if (size > Constants.bigScreenCutoffWidth) {
-                  return WoltModalType.sideSheet();
-                } else {
-                  return WoltModalType.bottomSheet();
-                }
-              },
-              onModalDismissedWithBarrierTap: () {
-                Navigator.of(context).pop();
-              },
-              onModalDismissedWithDrag: () {
-                Navigator.of(context).pop();
-              },
-            );
-          },
-        ),
+        Consumer<UserViewModel>(builder: (_, model, child) {
+          return MenuItemButton(
+            child: const ListTile(title: Text(Constants.filterPageTitle)),
+            onPressed: () {
+              if (model.currentState == GameState.inGame) {
+                //Block filter changes while a game is in progress
+                ScaffoldMessenger.of(context).showMaterialBanner(MaterialBanner(
+                  content: Text(
+                      "You cannot change the filter while a game is in progress"),
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).clearMaterialBanners();
+                        },
+                        child: const Text("Dismiss"))
+                  ],
+                ));
+              } else {
+                WoltModalSheet.show(
+                  context: context,
+                  pageListBuilder: (context) {
+                    return [FilterModalPage()];
+                  },
+                  modalTypeBuilder: (context) {
+                    final size = MediaQuery.sizeOf(context).width;
+                    if (size > Constants.bigScreenCutoffWidth) {
+                      return WoltModalType.sideSheet();
+                    } else {
+                      return WoltModalType.bottomSheet();
+                    }
+                  },
+                  onModalDismissedWithBarrierTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  onModalDismissedWithDrag: () {
+                    Navigator.of(context).pop();
+                  },
+                );
+              }
+            },
+          );
+        }),
         MenuItemButton(
           child: const ListTile(
             title: Text("Reset Game Stats"),

@@ -1,4 +1,4 @@
-enum GameState { pregame, inProgress, won, lost, doneForTheDay }
+enum GameState { pregame, inGame, won, lost, postgame }
 
 enum DifficultyOptions {
   easy("Relegation Battle"),
