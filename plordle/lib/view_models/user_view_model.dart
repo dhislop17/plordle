@@ -3,9 +3,10 @@ import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 import 'package:plordle/models/guess.dart';
 import 'package:plordle/models/player.dart';
-import 'package:plordle/models/stat.dart';
+import 'package:plordle/models/user.dart';
 import 'package:plordle/services/service_locator.dart';
 import 'package:plordle/services/storage_service.dart';
+import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/utils/enums.dart';
 import 'package:plordle/view_models/player_view_model.dart';
 
@@ -18,28 +19,23 @@ class UserViewModel extends ChangeNotifier {
   late PlayerViewModel playerViewModel;
   late CountryCoder _countryCoder;
   int _numberOfGuesses = 1;
-  final int _maxNumOfGuesses = 10;
   GameState _currentState = GameState.pregame;
   DifficultyOptions _currentDifficulty = DifficultyOptions.normal;
-  bool _inUnlimitedMode = false;
-  late Stat _mysteryModeStat;
-  late Stat _unlimitedModeStat;
-  late bool _solvedMystery;
+  bool _inChallengeMode = false;
+  late User _user;
+  late bool _completedDailyChallenge;
   late bool _onboardingDone;
   //Number of wins per guesses?
 
   List<Guess> get guesses => _guesses;
   List<Player> get guessedPlayers => _guessedPlayers;
   int get numberOfGuesses => _numberOfGuesses;
-  int get maxNumOfGuesses => _maxNumOfGuesses;
   CountryCoder get countryCoder => _countryCoder;
   GameState get currentState => _currentState;
   DifficultyOptions get currentDifficulty => _currentDifficulty;
-  bool get isUnlimitedMode => _inUnlimitedMode;
-  bool get solvedMystery => _solvedMystery;
+  User get user => _user;
+  bool get completedDailyChallenge => _completedDailyChallenge;
   bool get onboardingDone => _onboardingDone;
-  Stat get mysteryModeStat => _mysteryModeStat;
-  Stat get unlimitedModeStat => _unlimitedModeStat;
 
   UserViewModel() {
     _loadSavedData();
@@ -52,19 +48,19 @@ class UserViewModel extends ChangeNotifier {
 
   void _loadSavedData() async {
     _onboardingDone = await _storageService.getOnboardingStatus();
-    _mysteryModeStat = await _storageService.getMysteryModeStat();
-    _unlimitedModeStat = await _storageService.getUnlimitedModeStat();
-    _solvedMystery = await _storageService.getSolvedMystery();
+    _user = await _storageService.getUser();
+    _completedDailyChallenge = _user.lastAttemptedChallengeDate
+        .isAtSameMomentAs(DateTime(
+            DateTime.now().year, DateTime.now().month, DateTime.now().day));
     var difficulty = await _storageService.getDifficulty();
     _currentDifficulty = DifficultyOptions.values.byName(difficulty);
-    logger.i("Loaded Diff was $difficulty, set diff to $_currentDifficulty");
+    logger.d(
+        "Loaded difficulty was $difficulty, set diff to $_currentDifficulty");
     _countryCoder = CountryCoder.instance
         .load(await compute(CountryCoder.prepareData, null));
 
-    logger.i("Mystery Mode Stat: $_mysteryModeStat");
-    logger.i("Unlimited Mode Stat: $_unlimitedModeStat");
-    logger.i("Onboarding complete: $_onboardingDone");
-    logger.i("Solved Today's Mystery Player: $_solvedMystery");
+    logger.d("Onboarding complete: $_onboardingDone");
+    logger.d("Attempted Daily Challenge: $_completedDailyChallenge");
     notifyListeners();
   }
 
@@ -74,7 +70,7 @@ class UserViewModel extends ChangeNotifier {
   }
 
   void saveDifficulty() async {
-    logger.i("Saving diff as ${_currentDifficulty.name}");
+    logger.d("Saving diff as ${_currentDifficulty.name}");
     await _storageService.saveDifficulty(_currentDifficulty.name);
   }
 
@@ -82,54 +78,47 @@ class UserViewModel extends ChangeNotifier {
     _guesses.clear();
     _guessedPlayers.clear();
     _numberOfGuesses = 1;
-    _inUnlimitedMode = true;
+    _inChallengeMode = false;
     _currentState = GameState.pregame;
-    playerViewModel.getNextRandomPlayer(isNewDay: false);
+    playerViewModel.getNextRandomPlayer(isChallengeMode: _inChallengeMode);
     notifyListeners();
   }
 
-  void getNextDailyMysteryPlayer() async {
+  void getNextChallengeModePlayer() async {
     _guesses.clear();
     _guessedPlayers.clear();
-    _inUnlimitedMode = false;
+    _inChallengeMode = true;
+    _completedDailyChallenge = false;
     _numberOfGuesses = 1;
     _currentState = GameState.pregame;
-    playerViewModel.getNextRandomPlayer(isNewDay: true);
+    playerViewModel.getNextRandomPlayer(isChallengeMode: _inChallengeMode);
     notifyListeners();
   }
 
-  // TODO: Look into this for refactoring and renaming
   /// Used for saving game stats and mystery status
   void saveGameStatData() async {
-    await _storageService.saveMysteryModeStat(_mysteryModeStat);
-    await _storageService.saveUnlimitedModeStat(_unlimitedModeStat);
-    await _storageService.saveSolvedMystery(_solvedMystery);
-  }
-
-  void resetToWait() {
-    _inUnlimitedMode = false;
-    _currentState = GameState.postgame;
-    notifyListeners();
+    await _storageService.saveUser(_user);
   }
 
   void deleteSavedUserModelData() async {
     _storageService.clearUserModelData();
-    _unlimitedModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
-    _mysteryModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
-    notifyListeners();
+    _user.resetUser();
+    _completedDailyChallenge = false;
+    _onboardingDone = false;
+    _currentDifficulty = DifficultyOptions.easy;
+    getNewRandomPlayer();
   }
 
   void resetGameStats() async {
     _storageService.resetStats();
-    _unlimitedModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
-    _mysteryModeStat = Stat(gamesPlayed: 0, wins: 0, losses: 0);
+    _user.resetStats();
     notifyListeners();
   }
 
   void completeOnboarding() async {
     _onboardingDone = true;
     _storageService.saveOnboardingStatus(_onboardingDone);
-    logger.i("Onboarding Complete");
+    logger.d("Onboarding Complete");
     notifyListeners();
   }
 
@@ -142,11 +131,11 @@ class UserViewModel extends ChangeNotifier {
     Guess guess = _createGuess(guessedPlayer);
     _numberOfGuesses++;
 
-    if (_numberOfGuesses <= _maxNumOfGuesses + 1 &&
+    if (_numberOfGuesses <= Constants.maxNumOfGuesses + 1 &&
         guess.guessName == "Matched") {
       _currentState = GameState.won;
       _completeGame();
-    } else if (_numberOfGuesses == _maxNumOfGuesses + 1 &&
+    } else if (_numberOfGuesses == Constants.maxNumOfGuesses + 1 &&
         guess.guessName != "Matched") {
       _currentState = GameState.lost;
       _completeGame();
@@ -160,21 +149,12 @@ class UserViewModel extends ChangeNotifier {
   }
 
   void _completeGame() async {
-    if (_inUnlimitedMode) {
-      if (_currentState == GameState.won) {
-        _unlimitedModeStat.wins++;
-      } else {
-        _unlimitedModeStat.losses++;
-      }
-      _unlimitedModeStat.gamesPlayed++;
+    bool wonGame = _currentState == GameState.won;
+    if (_inChallengeMode) {
+      _user.playedChallengeModeGame(wonGame);
+      _completedDailyChallenge = true;
     } else {
-      if (_currentState == GameState.won) {
-        _mysteryModeStat.wins++;
-      } else {
-        _mysteryModeStat.losses++;
-      }
-      _mysteryModeStat.gamesPlayed++;
-      _solvedMystery = true;
+      _user.playedNormalModeGame(wonGame);
     }
     saveGameStatData();
   }
