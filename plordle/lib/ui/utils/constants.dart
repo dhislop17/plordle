@@ -15,8 +15,9 @@ class Constants {
   static const String winnerText = 'You Win';
   static const String loserText = 'Game Over';
   static const String viewStats = 'View Stats';
-  static const String continueGameText = 'Unlimited Mode';
   static const String playerHint = 'The correct player was:';
+  static const String continueNormalModeText = 'Continue Normal Mode';
+  static const String tryChallengeModeText = 'Try Challenge Mode';
 
   //Help Dialog
   static const String helpDialogTitle = 'How To Play';
@@ -158,4 +159,5 @@ class Constants {
   static const double gridHeaderWidth = 60;
   static const double numberGuessThreshold = 10;
   static const double ageGuessThreshold = 5;
+  static const int maxNumOfGuesses = 10;
 }
