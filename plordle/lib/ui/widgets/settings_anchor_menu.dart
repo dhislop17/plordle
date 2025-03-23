@@ -3,6 +3,7 @@ import 'package:plordle/ui/pages/filter_modal_page.dart';
 import 'package:plordle/ui/utils/constants.dart';
 import 'package:plordle/ui/utils/enums.dart';
 import 'package:plordle/ui/widgets/dialogs/clear_saved_data_dialog.dart';
+import 'package:plordle/ui/widgets/dialogs/stats_dialog.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
@@ -28,6 +29,16 @@ class _SettingsAnchorMenuState extends State<SettingsAnchorMenu> {
     return MenuAnchor(
       childFocusNode: _buttonFocusNode,
       menuChildren: <Widget>[
+        MenuItemButton(
+          child: ListTile(title: Text("View Stats")),
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (_) {
+                  return StatsDialog();
+                });
+          },
+        ),
         MenuItemButton(
           child: const ListTile(title: Text(Constants.appAndDiffPageTitle)),
           onPressed: () {
