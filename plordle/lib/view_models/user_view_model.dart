@@ -36,6 +36,7 @@ class UserViewModel extends ChangeNotifier {
   User get user => _user;
   bool get completedDailyChallenge => _completedDailyChallenge;
   bool get onboardingDone => _onboardingDone;
+  bool get inChallengeMode => _inChallengeMode;
 
   UserViewModel() {
     _loadSavedData();
