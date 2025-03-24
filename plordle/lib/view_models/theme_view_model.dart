@@ -58,7 +58,7 @@ class ThemeViewModel extends ChangeNotifier {
     }
   }
 
-  Color getSearchBoxColor(bool isDarkMode) {
+  Color getDecorationColor(bool isDarkMode) {
     //Avoid too dark primary color in dark mode or too light primary color in light mode
     if ((isDarkMode &&
             Themes.primaryColorDarkModeClashThemes.contains(_selectedTheme)) ||

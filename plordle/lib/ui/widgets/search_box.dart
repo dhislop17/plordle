@@ -30,7 +30,7 @@ class _SearchBoxState extends State<SearchBox> {
 
     bool isDarkMode =
         MediaQuery.of(context).platformBrightness == Brightness.dark;
-    Color boxColor = themeViewModel.getSearchBoxColor(isDarkMode);
+    Color boxColor = themeViewModel.getDecorationColor(isDarkMode);
 
     return Consumer<UserViewModel>(
       builder: (context, model, child) {
