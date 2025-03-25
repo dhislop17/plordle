@@ -17,9 +17,9 @@ class PlayerViewModel extends ChangeNotifier {
   final Set<String> _excludedTeams = {};
   List<Player> _players = [];
   List<Player> _normalModePlayset = [];
+  List<Player> _playset = [];
   late Player _currentMysteryPlayer;
 
-  List<Player> get players => _players;
   Player get currentMysteryPlayer => _currentMysteryPlayer;
   Set<String> get excludedTeams => _excludedTeams;
 
@@ -47,24 +47,30 @@ class PlayerViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void _setPlayset(bool isChallengeMode) {
+    if (isChallengeMode) {
+      _playset = _players;
+    } else {
+      _playset = _normalModePlayset;
+    }
+  }
+
   void getNextRandomPlayer({required bool isChallengeMode}) {
     Random rng;
-    List<Player> playset;
+    _setPlayset(isChallengeMode);
 
     if (isChallengeMode) {
       var date = DateTime.now();
       var dateSeed = date.year * 1000 + date.month * 100 + date.day;
       rng = Random(dateSeed);
-      playset = _players;
       logger.d("Retrieving challenge mode player");
     } else {
       rng = Random();
-      playset = _normalModePlayset;
       logger.d("Retrieving normal mode player");
     }
-    var nextRandomIdx = rng.nextInt(playset.length);
-    _currentMysteryPlayer = playset[nextRandomIdx];
-    logger.d("Player from file is ${playset[nextRandomIdx]}");
+    var nextRandomIdx = rng.nextInt(_playset.length);
+    _currentMysteryPlayer = _playset[nextRandomIdx];
+    logger.d("Player from file is ${_playset[nextRandomIdx]}");
     notifyListeners();
   }
 
@@ -102,6 +108,7 @@ class PlayerViewModel extends ChangeNotifier {
   void storeTeamExclusions() {
     _storageService.saveExcludedTeams(_excludedTeams.toList());
     _buildNormalModePlayset();
+    getNextRandomPlayer(isChallengeMode: false);
   }
 
   /// Deletes the locally stored list of team exclusions from shared preferences
@@ -113,7 +120,7 @@ class PlayerViewModel extends ChangeNotifier {
   ///Build a list of players to suggest to the user for guesses
   /// based on what they have typed so far
   List<Player> buildPlayerSuggestionList(String userInput) {
-    List<Player> filteredPlayers = _normalModePlayset.where((player) {
+    List<Player> filteredPlayers = _playset.where((player) {
       //remove diacritical marks from the user input and
       //player names to simplify filtering and searching for players
       var strippedInput = removeDiacritics(userInput);

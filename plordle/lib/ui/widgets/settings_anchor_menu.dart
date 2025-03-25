@@ -62,6 +62,18 @@ class _SettingsAnchorMenuState extends State<SettingsAnchorMenu> {
                         child: const Text("Dismiss"))
                   ],
                 ));
+              } else if (model.inChallengeMode) {
+                ScaffoldMessenger.of(context).showMaterialBanner(MaterialBanner(
+                  content: Text(
+                      "You cannot use or update the filter while in Challenge Mode"),
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).clearMaterialBanners();
+                        },
+                        child: const Text("Dismiss"))
+                  ],
+                ));
               } else {
                 WoltModalSheet.show(
                   context: context,
