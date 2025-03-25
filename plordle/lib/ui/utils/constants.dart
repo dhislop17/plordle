@@ -1,7 +1,8 @@
 class Constants {
   //Titles and info strings
   static const String gameTitle = 'PLORDLE';
-  static const String gameSubtitle = 'Guess The Player';
+  static const String normalModeSubtitle = 'Normal Mode';
+  static const String challengeModeSubtitle = 'Challenge Mode';
   static const String filterPageTitle = 'Filter Teams';
   static const String appAndDiffPageTitle = 'Appearance & Difficulty';
   static const String gridNameHeader = 'Name';
@@ -16,14 +17,15 @@ class Constants {
   static const String loserText = 'Game Over';
   static const String viewStats = 'View Stats';
   static const String playerHint = 'The correct player was:';
-  static const String continueNormalModeText = 'Continue Normal Mode';
-  static const String tryChallengeModeText = 'Try Challenge Mode';
+  static const String continueNormalModeText = 'Keep Playing';
+  static const String tryChallengeModeText = 'Try Challenge';
 
   //Help Dialog
   static const String helpDialogTitle = 'How To Play';
-  static const String helpDialogSubtitle = 'Guess the player in 10 tries';
+  static const String helpDialogSubtitle =
+      'You have 10 guesses to figure out the Premier League player';
   static const String helpDialogInfoText =
-      'The column color after each guess will inidicate how close the guess was to the correct answer';
+      'The column color after each guess will indicate how close it was to the correct answer';
   static const String helpDialogGreenText = 'Green in any column';
   static const String helpDialogGreenSub = ' means a successful match';
   /*static const String helpDialogPositionText = 'Yellow in the position column';
@@ -31,21 +33,23 @@ class Constants {
    ' means the mystery player has the same position type but plays in a different role';*/
   static const String helpDialogShirtText = 'Yellow in the number column';
   static const String helpDialogShirtSubtext =
-      " means the mystery player is within is within 10 of the guessed player's shirt number";
+      " means the mystery player's shirt number is within 10 of your guess";
   static const String helpDialogNumberText = 'Yellow in the age column';
   static const String helpDialogNumberSubtext =
-      " means the mystery player is within 5 of the guessed player's age";
+      " means the mystery player's age is within 5 of your guess";
   static const String helpDialogCountryText = 'Yellow in the country column';
   static const String helpDialogCountrySubtext =
-      " means the mystery player is from the same continent but from a different country";
+      " means the mystery player is from the same continent but a different country";
   static const String helpDialogGameInfo =
-      "New mystery player at midnight in your timezone, or play in unlimited mode to keep getting a new mystery player";
+      "Play freely in normal mode or take on the daily challenge.";
+  static const String modeSwitchText =
+      "Switch game modes using the button in the top right, unless you've already attempted today's challenge.";
 
   //Filter Menu
   static const String filterHelpTextCombined =
       "$filterHelpTextFirstLine $filterHelpTextSecondLine";
   static const String filterHelpTextFirstLine =
-      "Use the filter to narrow down the teams the mystery player could belong to.";
+      "Use the filter to narrow down the teams the mystery player could belong to in normal mode.";
   static const String filterHelpTextSecondLine =
       "By default, all teams are included and you must select at least one team.";
 

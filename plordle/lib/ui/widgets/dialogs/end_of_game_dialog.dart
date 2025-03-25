@@ -13,10 +13,7 @@ class EndOfGameDialog extends StatelessWidget {
     var model = Provider.of<UserViewModel>(context, listen: false);
 
     return AlertDialog(
-        title: Center(
-            child: (model.currentState == GameState.won)
-                ? const Text(Constants.winnerText)
-                : const Text(Constants.loserText)),
+        title: Center(child: _buildDialogTitle(context, model)),
         content: SingleChildScrollView(
           child: (model.currentState == GameState.won)
               ? MysteryPlayerTimer(
@@ -24,15 +21,32 @@ class EndOfGameDialog extends StatelessWidget {
               : ListBody(
                   children: [
                     const Text(Constants.playerHint),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 16),
                     Text(model.playerViewModel.currentMysteryPlayer.toString()),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 16),
                     MysteryPlayerTimer(
                         completedChallenge: model.completedDailyChallenge)
                   ],
                 ),
         ),
         actions: _buildDialogActions(context, model));
+  }
+
+  Widget _buildDialogTitle(BuildContext context, UserViewModel model) {
+    bool wonGame = model.currentState == GameState.won;
+    if (model.inChallengeMode) {
+      if (wonGame) {
+        return Text("Challenge Complete");
+      } else {
+        return Text("Challenge Failed");
+      }
+    } else {
+      if (wonGame) {
+        return Text(Constants.winnerText);
+      } else {
+        return Text(Constants.loserText);
+      }
+    }
   }
 
   List<Widget> _buildDialogActions(BuildContext context, UserViewModel model) {
