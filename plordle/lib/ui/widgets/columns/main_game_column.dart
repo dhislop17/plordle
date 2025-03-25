@@ -25,13 +25,29 @@ class MainGameColumn extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(top: paddingHeight, bottom: paddingHeight),
-          child: const Text(
-            Constants.gameSubtitle,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          child: Consumer<UserViewModel>(
+            builder: (context, model, child) {
+              return Text(
+                (model.inChallengeMode)
+                    ? Constants.challengeModeSubtitle
+                    : Constants.normalModeSubtitle,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              );
+            },
           ),
         ),
+        Consumer<UserViewModel>(
+          builder: (context, model, child) {
+            if (model.inChallengeMode) {
+              return Text("One try per day and the filter is disabled");
+            } else {
+              return Text("Unlimited tries per day with the filter enabled");
+            }
+          },
+        ),
         Padding(
-          padding: EdgeInsets.only(left: paddingWidth, right: paddingWidth),
+          padding:
+              EdgeInsets.only(top: 4, left: paddingWidth, right: paddingWidth),
           child: const SearchBox(),
         ),
         Padding(

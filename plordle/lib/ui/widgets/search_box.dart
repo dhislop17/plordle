@@ -1,48 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:plordle/models/player.dart';
-import 'package:plordle/ui/utils/app_theme.dart';
+import 'package:plordle/ui/utils/constants.dart';
+import 'package:plordle/ui/utils/enums.dart';
 import 'package:plordle/ui/widgets/dialogs/end_of_game_dialog.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
-class SearchBox extends StatelessWidget {
+class SearchBox extends StatefulWidget {
   const SearchBox({super.key});
 
   @override
+  State<SearchBox> createState() => _SearchBoxState();
+}
+
+class _SearchBoxState extends State<SearchBox> {
+  TextEditingController textFieldController = TextEditingController();
+
+  @override
+  void dispose() {
+    textFieldController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    TextEditingController textFieldController = TextEditingController();
     ThemeViewModel themeViewModel = Provider.of<ThemeViewModel>(context);
 
     bool isDarkMode =
         MediaQuery.of(context).platformBrightness == Brightness.dark;
-    Color boxColor = themeViewModel.primarySelectedThemeColor;
-
-    if (isDarkMode && boxColor == Colors.black ||
-        boxColor == Themes.premPurple) {
-      boxColor = themeViewModel.secondarySelectedThemeColor;
-    }
+    Color boxColor = themeViewModel.getDecorationColor(isDarkMode);
 
     return Consumer<UserViewModel>(
       builder: (context, model, child) {
         return TypeAheadField<Player>(
           controller: textFieldController,
           builder: (context, controller, focusNode) {
-            return TextField(
-              controller: controller,
-              focusNode: focusNode,
-              cursorColor: boxColor,
-              enabled: (model.currentState == GameState.doneForTheDay)
-                  ? false
-                  : true,
-              decoration: InputDecoration(
-                  labelStyle: TextStyle(color: boxColor),
-                  border: const OutlineInputBorder(),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: boxColor),
-                  ),
-                  labelText: _buildTextFieldLabel(model)),
+            //TODO: Remove this selection area once TextFields have been fixed on Firefox/Safari
+            return SelectionArea(
+              child: TextField(
+                controller: controller,
+                focusNode: focusNode,
+                cursorColor: boxColor,
+                enabled:
+                    (model.currentState == GameState.postgame) ? false : true,
+                decoration: InputDecoration(
+                    labelStyle: TextStyle(color: boxColor),
+                    border: const OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: boxColor),
+                    ),
+                    labelText: _buildTextFieldLabel(model)),
+              ),
             );
           },
           suggestionsCallback: (userInput) {
@@ -62,10 +72,12 @@ class SearchBox extends StatelessWidget {
                     : null);
           },
           onSelected: (selectedPlayer) {
-            FocusManager.instance.primaryFocus?.unfocus();
-
             //Clear the textfield after selecting an answer
-            textFieldController.clear();
+            setState(() {
+              textFieldController.clear();
+            });
+
+            FocusManager.instance.primaryFocus?.unfocus();
 
             model.comparePlayers(selectedPlayer);
             if (model.currentState == GameState.lost ||
@@ -96,7 +108,7 @@ class SearchBox extends StatelessWidget {
     } else {
       int guesses = model.numberOfGuesses;
       if (guesses < 10) {
-        return "Guess ${model.numberOfGuesses} out of ${model.maxNumOfGuesses}";
+        return "Guess ${model.numberOfGuesses} out of ${Constants.maxNumOfGuesses}";
       } else {
         return "Final Guess";
       }

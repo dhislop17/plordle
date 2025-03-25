@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plordle/models/player.dart';
+import 'package:plordle/ui/utils/enums.dart';
 import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -42,7 +43,7 @@ class ChangeDifficultyWidget extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
               child: Text(
-                  "Changing the difficulty level changes what additional details are provided for the suggested players that match the current guess."),
+                  "Changing the difficulty level adjusts the additional details shown for the suggested players that match your current guess."),
             )),
         const Text("Preview",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),

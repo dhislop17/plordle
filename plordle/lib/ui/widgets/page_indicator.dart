@@ -16,51 +16,45 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (!isOnDesktop) {
-      return const SizedBox.shrink();
-    }
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          IgnorePointer(
-            ignoring: (currentPageIndex == 0) ? true : false,
-            child: Visibility.maintain(
-              visible: (currentPageIndex == 0) ? false : true,
-              child: IconButton(
-                splashRadius: 16.0,
-                padding: EdgeInsets.zero,
-                onPressed: () {
-                  onUpdateCurrentPageIndex(currentPageIndex - 1);
-                },
-                icon: const Icon(Icons.arrow_left_rounded, size: 32.0),
-              ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IgnorePointer(
+          ignoring: (currentPageIndex == 0 || !isOnDesktop) ? true : false,
+          child: Visibility.maintain(
+            visible: (currentPageIndex == 0 || !isOnDesktop) ? false : true,
+            child: IconButton(
+              splashRadius: 16.0,
+              padding: EdgeInsets.zero,
+              onPressed: () {
+                onUpdateCurrentPageIndex(currentPageIndex - 1);
+              },
+              icon: const Icon(Icons.arrow_left_rounded, size: 32.0),
             ),
           ),
-          TabPageSelector(
-            controller: tabController,
-            color: colorScheme.surface,
-            selectedColor: colorScheme.primary,
-          ),
-          IgnorePointer(
-            ignoring: (currentPageIndex == 2) ? true : false,
-            child: Visibility.maintain(
-              visible: (currentPageIndex == 2) ? false : true,
-              child: IconButton(
-                splashRadius: 16.0,
-                padding: EdgeInsets.zero,
-                onPressed: () {
-                  onUpdateCurrentPageIndex(currentPageIndex + 1);
-                },
-                icon: const Icon(Icons.arrow_right_rounded, size: 32.0),
-              ),
+        ),
+        TabPageSelector(
+          controller: tabController,
+          color: colorScheme.surface,
+          selectedColor: colorScheme.primary,
+        ),
+        IgnorePointer(
+          ignoring: (currentPageIndex == 2 || !isOnDesktop) ? true : false,
+          child: Visibility.maintain(
+            visible: (currentPageIndex == 2 || !isOnDesktop) ? false : true,
+            child: IconButton(
+              splashRadius: 16.0,
+              padding: EdgeInsets.zero,
+              onPressed: () {
+                onUpdateCurrentPageIndex(currentPageIndex + 1);
+              },
+              icon: const Icon(Icons.arrow_right_rounded, size: 32.0),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -35,8 +35,6 @@ class ThemeViewModel extends ChangeNotifier {
     _primarySelectedThemeColor = teamColors[0];
     _secondarySelectedThemeColor = teamColors[1];
 
-    //TODO: Consider what to do where black is a color and the app is in dark mode
-
     //Team has an accent color so use it
     if (teamColors.length == 3) {
       _accentColor = teamColors[2];
@@ -50,6 +48,26 @@ class ThemeViewModel extends ChangeNotifier {
     }
 
     notifyListeners();
+  }
+
+  Color getDivColor(bool isDarkMode) {
+    if (isDarkMode && accentColor == Colors.black) {
+      return primarySelectedThemeColor;
+    } else {
+      return accentColor;
+    }
+  }
+
+  Color getDecorationColor(bool isDarkMode) {
+    //Avoid too dark primary color in dark mode or too light primary color in light mode
+    if ((isDarkMode &&
+            Themes.primaryColorDarkModeClashThemes.contains(_selectedTheme)) ||
+        (!isDarkMode &&
+            Themes.primaryColorLightModeClashThemes.contains(_selectedTheme))) {
+      return _secondarySelectedThemeColor;
+    } else {
+      return _primarySelectedThemeColor;
+    }
   }
 
   void clearThemeData() async {

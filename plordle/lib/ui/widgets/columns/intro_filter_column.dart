@@ -14,7 +14,7 @@ class IntroFilterColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      SizedBox(height: 16),
+      SizedBox(height: 8),
       Padding(
           padding: EdgeInsets.only(left: 8, right: 8),
           child: Text(Constants.filterHelpTextFirstLine,
@@ -66,10 +66,12 @@ class IntroFilterColumn extends StatelessWidget {
 
     if (isOnDesktop) {
       return Column(
-        children: [buttonRow, SizedBox(height: 48)],
+        children: [buttonRow, SizedBox(height: 40)],
       );
     } else {
-      return SizedBox(height: 48, child: buttonRow);
+      return Column(
+        children: [buttonRow, SizedBox(height: 28)],
+      );
     }
   }
 }

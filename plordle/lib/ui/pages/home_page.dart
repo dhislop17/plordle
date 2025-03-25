@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:plordle/ui/utils/constants.dart';
+import 'package:plordle/ui/utils/enums.dart';
+import 'package:plordle/ui/widgets/dialogs/end_of_game_dialog.dart';
 import 'package:plordle/ui/widgets/dialogs/help_dialog.dart';
 import 'package:plordle/ui/widgets/columns/main_game_column.dart';
 import 'package:plordle/ui/widgets/plordle_layout_builder.dart';
 import 'package:plordle/ui/widgets/settings_anchor_menu.dart';
 import 'package:plordle/view_models/theme_view_model.dart';
+import 'package:plordle/view_models/user_view_model.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,11 +37,7 @@ class _HomePageState extends State<HomePage> {
 
     bool isDarkMode =
         MediaQuery.of(context).platformBrightness == Brightness.dark;
-    Color divColor = themeViewModel.accentColor;
-
-    if (isDarkMode && divColor == Colors.black) {
-      divColor = themeViewModel.primarySelectedThemeColor;
-    }
+    Color divColor = themeViewModel.getDivColor(isDarkMode);
 
     return Scaffold(
       appBar: AppBar(
@@ -46,18 +45,60 @@ class _HomePageState extends State<HomePage> {
         foregroundColor: themeViewModel.secondarySelectedThemeColor,
         title: const Text(
           Constants.gameTitle,
-          style: TextStyle(fontSize: 32),
+          style: TextStyle(fontSize: 28),
         ),
         centerTitle: true,
         actions: [
-          //TODO: Make Cancel Button appear conditionally after the first guess
-          //IconButton(
-          //   icon: const Icon(Icons.flag_rounded),
-          //   onPressed: () {
-          //     //On pressed this should show a confirmation for giving up before
-          //     //showing the game over dialog
-          //   },
-          // ),
+          Consumer<UserViewModel>(
+            builder: (context, model, child) {
+              if (model.currentState == GameState.inGame) {
+                return IconButton(
+                  icon: const Icon(Icons.flag_rounded),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Center(
+                            child: Text("Give Up?"),
+                          ),
+                          content: Text(
+                              "Giving up will end the current game and count as a loss in your game stats."),
+                          actions: [
+                            TextButton(
+                                onPressed: () => Navigator.pop(context),
+                                child: Text("Cancel")),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  model.abandonGame();
+                                  showDialog(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (context) {
+                                      return EndOfGameDialog();
+                                    },
+                                  );
+                                },
+                                child: Text("Confirm"))
+                          ],
+                        );
+                      },
+                    );
+                  },
+                );
+              } else if (!model.completedDailyChallenge &&
+                  model.currentState == GameState.pregame) {
+                return IconButton(
+                    onPressed: () {
+                      model.swapModes();
+                    },
+                    icon: Icon(Icons.swap_horizontal_circle_rounded));
+              } else {
+                return SizedBox.shrink();
+              }
+            },
+          ),
           IconButton(
               icon: const Icon(
                 Icons.help,
