@@ -1,5 +1,5 @@
 import 'package:plordle/ui/utils/constants.dart';
-import 'package:plordle/view_models/user_view_model.dart';
+import 'package:plordle/ui/utils/enums.dart';
 
 class Player {
   //final int playerId;

@@ -16,10 +16,10 @@ class PlayerViewModel extends ChangeNotifier {
 
   final Set<String> _excludedTeams = {};
   List<Player> _players = [];
-  List<Player> _currentPlayset = [];
+  List<Player> _normalModePlayset = [];
+  List<Player> _playset = [];
   late Player _currentMysteryPlayer;
 
-  List<Player> get players => _players;
   Player get currentMysteryPlayer => _currentMysteryPlayer;
   Set<String> get excludedTeams => _excludedTeams;
 
@@ -28,39 +28,49 @@ class PlayerViewModel extends ChangeNotifier {
   }
 
   void _loadData() async {
-    logger.i("Player View Model loaded data");
+    logger.d("Player View Model loaded data");
     _players = await _playerFileService.loadSeasonList();
-    logger.i("Loaded ${_players.length} players");
 
     _excludedTeams.addAll(await _storageService.getExcludedTeams());
-    buildCurrentPlayset();
+    _buildNormalModePlayset();
 
     //TODO: Consider if additional work is necessary for todays player to update across days
-    getNextRandomPlayer(isNewDay: true);
-    logger.i("Retrieved new daily player");
+    getNextRandomPlayer(isChallengeMode: false);
     notifyListeners();
   }
 
-  void buildCurrentPlayset() {
-    _currentPlayset = _players
+  void _buildNormalModePlayset() {
+    _normalModePlayset = _players
         .where((player) => !_excludedTeams.contains(player.team))
         .toList();
-    logger.i("Current playset now has ${_currentPlayset.length} players");
+    logger.d("Current playset now has ${_normalModePlayset.length} players");
     notifyListeners();
   }
 
-  void getNextRandomPlayer({required bool isNewDay}) {
+  void _setPlayset(bool isChallengeMode) {
+    if (isChallengeMode) {
+      _playset = _players;
+    } else {
+      _playset = _normalModePlayset;
+    }
+  }
+
+  void getNextRandomPlayer({required bool isChallengeMode}) {
     Random rng;
-    if (isNewDay) {
+    _setPlayset(isChallengeMode);
+
+    if (isChallengeMode) {
       var date = DateTime.now();
       var dateSeed = date.year * 1000 + date.month * 100 + date.day;
       rng = Random(dateSeed);
+      logger.d("Retrieving challenge mode player");
     } else {
       rng = Random();
+      logger.d("Retrieving normal mode player");
     }
-    var nextRandomIdx = rng.nextInt(_currentPlayset.length);
-    _currentMysteryPlayer = _currentPlayset[nextRandomIdx];
-    logger.i("Player from file is ${_currentPlayset[nextRandomIdx]}");
+    var nextRandomIdx = rng.nextInt(_playset.length);
+    _currentMysteryPlayer = _playset[nextRandomIdx];
+    logger.d("Player from file is ${_playset[nextRandomIdx]}");
     notifyListeners();
   }
 
@@ -97,7 +107,8 @@ class PlayerViewModel extends ChangeNotifier {
 
   void storeTeamExclusions() {
     _storageService.saveExcludedTeams(_excludedTeams.toList());
-    buildCurrentPlayset();
+    _buildNormalModePlayset();
+    getNextRandomPlayer(isChallengeMode: false);
   }
 
   /// Deletes the locally stored list of team exclusions from shared preferences
@@ -109,7 +120,7 @@ class PlayerViewModel extends ChangeNotifier {
   ///Build a list of players to suggest to the user for guesses
   /// based on what they have typed so far
   List<Player> buildPlayerSuggestionList(String userInput) {
-    List<Player> filteredPlayers = _currentPlayset.where((player) {
+    List<Player> filteredPlayers = _playset.where((player) {
       //remove diacritical marks from the user input and
       //player names to simplify filtering and searching for players
       var strippedInput = removeDiacritics(userInput);

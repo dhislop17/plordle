@@ -3,7 +3,6 @@
 Front End built in Flutter version 3.29
 
 ## Packages Used
-- [http](https://pub.dev/packages/http)
 - [shared_preferences](https://pub.dev/packages/shared_preferences)
 - [provider](https://pub.dev/packages/provider)
 - [flutter_typeahead](https://pub.dev/packages/flutter_typeahead)

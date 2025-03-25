@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:plordle/ui/utils/app_theme.dart';
 import 'package:plordle/ui/utils/constants.dart';
 
-//TODO: Update dialog to include info about filtering players, themes, etc.
 class HelpDialog extends StatelessWidget {
   const HelpDialog({
     super.key,
@@ -30,12 +29,12 @@ class HelpDialog extends StatelessWidget {
                 Constants.helpDialogSubtitle,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 16),
               Text(
                 Constants.helpDialogInfoText,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 8),
               RichText(
                   text: TextSpan(
                       style: Theme.of(context).textTheme.bodyMedium,
@@ -46,7 +45,7 @@ class HelpDialog extends StatelessWidget {
                     TextSpan(text: Constants.helpDialogGreenSub)
                   ])),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               // Old section text for specific positions
               // RichText(
@@ -68,7 +67,7 @@ class HelpDialog extends StatelessWidget {
                     TextSpan(text: Constants.helpDialogShirtSubtext)
                   ])),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               RichText(
                   text: TextSpan(
@@ -80,7 +79,7 @@ class HelpDialog extends StatelessWidget {
                     TextSpan(text: Constants.helpDialogNumberSubtext)
                   ])),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               RichText(
                   text: TextSpan(
@@ -92,12 +91,19 @@ class HelpDialog extends StatelessWidget {
                     TextSpan(text: Constants.helpDialogCountrySubtext)
                   ])),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               Text(
                 Constants.helpDialogGameInfo,
                 style: Theme.of(context).textTheme.bodyMedium,
-              )
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Text(
+                Constants.modeSwitchText,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
             ],
           ),
         ),

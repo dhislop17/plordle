@@ -28,11 +28,7 @@ class FilterModalPage extends WoltModalSheetPage {
                 children: [
                   Padding(
                       padding: EdgeInsets.only(left: 8, right: 8),
-                      child: Text(Constants.filterHelpTextFirstLine)),
-                  SizedBox(height: 8),
-                  Padding(
-                      padding: EdgeInsets.only(left: 8, right: 8),
-                      child: Text(Constants.filterHelpTextSecondLine)),
+                      child: Text(Constants.filterHelpTextCombined)),
                   const SizedBox(height: 8),
                   FilterChipsWidget(),
                   const SizedBox(height: 80),

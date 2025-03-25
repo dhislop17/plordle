@@ -13,21 +13,21 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    logger.i("Building Landing Page");
+    logger.d("Building Landing Page");
     return FutureBuilder(
       future: _storageService.getOnboardingStatus(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           bool onboarded = snapshot.data!;
           if (onboarded) {
-            logger.i("Onboarding Complete, loading Main Game Page");
+            logger.d("Onboarding Complete, loading Main Game Page");
             return const HomePage();
           } else {
-            logger.i("Onboarding Incomplete, loading Onboarding Page");
+            logger.d("Onboarding Incomplete, loading Onboarding Page");
             return const WelcomeFlowPage();
           }
         } else {
-          logger.i("No Snapshot Data, loading Onboarding Page");
+          logger.d("No Snapshot Data, loading Onboarding Page");
           return const WelcomeFlowPage();
         }
       },
