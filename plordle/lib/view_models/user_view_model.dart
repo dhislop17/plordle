@@ -22,8 +22,8 @@ class UserViewModel extends ChangeNotifier {
   GameState _currentState = GameState.pregame;
   DifficultyOptions _currentDifficulty = DifficultyOptions.normal;
   bool _inChallengeMode = false;
+  bool _completedDailyChallenge = false;
   late User _user;
-  late bool _completedDailyChallenge;
   late bool _onboardingDone;
   //Number of wins per guesses?
 
@@ -142,6 +142,14 @@ class UserViewModel extends ChangeNotifier {
       _completeGame();
     }
     _addGuess(guess);
+  }
+
+  void swapModes() {
+    if (_inChallengeMode) {
+      getNewRandomPlayer();
+    } else {
+      getNextChallengeModePlayer();
+    }
   }
 
   void abandonGame() {

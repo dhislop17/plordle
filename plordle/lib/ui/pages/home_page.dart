@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                             child: Text("Give Up?"),
                           ),
                           content: Text(
-                              "Giving up will end the current game and count as a loss towards your stats."),
+                              "Giving up will end the current game and count as a loss in your game stats."),
                           actions: [
                             TextButton(
                                 onPressed: () => Navigator.pop(context),
@@ -87,6 +87,13 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
                 );
+              } else if (!model.completedDailyChallenge &&
+                  model.currentState == GameState.pregame) {
+                return IconButton(
+                    onPressed: () {
+                      model.swapModes();
+                    },
+                    icon: Icon(Icons.swap_horizontal_circle_rounded));
               } else {
                 return SizedBox.shrink();
               }
