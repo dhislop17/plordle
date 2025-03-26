@@ -1,25 +1,28 @@
-# Plordle
-An English Premier League themed Wordle game to practice my Flutter skills and try out some new technologies
+# PLORDLE
+A guessing game about English Premier League players
+
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=fff)](#)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
+[![Firebase](https://img.shields.io/badge/Firebase-039BE5?logo=Firebase&logoColor=white)](#)
 
 ## Features
 ### Game Features
-- Includes every player from all 20 Premier League teams' 2024-25 squads (up to date as of March 12, 2025)
+- Includes every player from all 20 Premier League teams' 2024-25 squads (up to date as of March 25, 2025)
     - Players who don't have a shirt number are not included
+- 2 Game Modes
+    - Normal - unlimited tries per day, with the ability to filter out players by team
+    - Challenge - one attempt per day, no filtering allowed
 - Guesses are updated with the flag emoji for the player's country (or a Shamrock For Northern Ireland)
 - 5 Difficulty Levels
 - 21 different themes and support for Light and Dark Mode
     - Default Theme based on the Premier League's color scheme
     - All 20 teams have their own theme matching their color scheme
-- Options to guess a new mystery player every day or continuously guess random players
-- Options to choose which teams to guess players from
 - Stat tracking
 
 ### Technical Features
-- Built using Flutter 3.29, .NET, Python, and MongoDB
-- Player database populated using a Python script that pulls data from API-FOOTBALL and FBRef
+- Players list is generated using a Python script that pulls data from API-FOOTBALL and FBRef
     - Uses fuzzy matching to combine player information from each data source into a useable datapoint for the app
 - Diacritic (accent mark) insensitive search on player names
-- Dockerized API
 
 ## How To Play
 - 10 guesses to figure out the mystery player
@@ -30,10 +33,10 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
     - Yellow in the country column means the mystery player is from the same continent but not the same country
 
 ## Demo
-*Guessing the daily player for 2/15/25 - Guglielmo Vicario (Tottenham Goalkeeper)*
+*Guessing the daily player for 3/25/25 - Matai Akinmboni (Bournemouth Defender)*
   
 
-<img alt="2/15/25 Player of the Day - Guglielmo Vicario" src = "./plordle-media/newPlordleRecording.gif" width = 300>
+<img alt="3/25/25 Player of the Day - Matai Akinmboni" src = "./plordle-media/plordleDemo.gif" width = 300>
 
 
 ## Example Theme Screenshots
@@ -47,12 +50,8 @@ An English Premier League themed Wordle game to practice my Flutter skills and t
 | :---: | :---: | :---: | 
 | <img alt="Premier League Dark Mode Theme" src = "./plordle-media/Premier League Dark Mode.jpg" width = 300> |<img alt="Liverpool Dark Mode Theme" src = "./plordle-media/Liverpool Dark Mode.jpg" width = 300> | <img alt="Aston Villa Light Mode Theme" src = "./plordle-media/Aston Villa Dark Theme.jpg" width = 300> | 
 
-## To-Do
-- [ ] Finish setting up the web layout
-- [ ] Finish up game flow
 
 ## Stretch Goals
-- More Options for Filtering Players (by country/continent, min/max age, or shirt number)
+- More options for filtering players (by country/continent, min/max age, or shirt number)
 - Support for historical squads 
-    - Support for squads after specific points during a season (after the summer or winter transfer windows)
-    - Support for multiple seasons
+- Cross platform stat tracking

@@ -30,6 +30,16 @@
     "continent": null
   },
   {
+    "name": "Dermot William Mee",
+    "team": "Manchester United",
+    "country": null,
+    "age": 23,
+    "position_type": "Goalkeeper",
+    "shirt_number": 45,
+    "country_code": null,
+    "continent": null
+  },
+  {
     "name": "H. Graczyk",
     "team": "Manchester United",
     "country": null,
@@ -50,22 +60,12 @@
     "continent": null
   },
   {
-    "name": "Dermot William Mee",
-    "team": "Manchester United",
-    "country": null,
-    "age": 23,
-    "position_type": "Goalkeeper",
-    "shirt_number": 45,
-    "country_code": null,
-    "continent": null
-  },
-  {
     "name": "William Stephen Murdock",
     "team": "Manchester United",
     "country": null,
     "age": 18,
     "position_type": "Goalkeeper",
-    "shirt_number": null,
+    "shirt_number": 77,
     "country_code": null,
     "continent": null
   },
@@ -326,6 +326,16 @@
     "age": 18,
     "position_type": "Midfielder",
     "shirt_number": 76,
+    "country_code": null,
+    "continent": null
+  },
+  {
+    "name": "J. Scanlon",
+    "team": "Manchester United",
+    "country": null,
+    "age": 19,
+    "position_type": "Midfielder",
+    "shirt_number": null,
     "country_code": null,
     "continent": null
   },
@@ -2290,6 +2300,16 @@
     "continent": null
   },
   {
+    "name": "R. Takaoka",
+    "team": "Southampton",
+    "country": null,
+    "age": 18,
+    "position_type": "Forward",
+    "shirt_number": null,
+    "country_code": null,
+    "continent": null
+  },
+  {
     "name": "David Raya",
     "team": "Arsenal",
     "country": null,
@@ -3085,7 +3105,7 @@
     "country": null,
     "age": 27,
     "position_type": "Defender",
-    "shirt_number": 15,
+    "shirt_number": null,
     "country_code": null,
     "continent": null
   },
@@ -4090,6 +4110,16 @@
     "continent": null
   },
   {
+    "name": "G. Antwi",
+    "team": "Chelsea",
+    "country": null,
+    "age": 18,
+    "position_type": "Defender",
+    "shirt_number": 64,
+    "country_code": null,
+    "continent": null
+  },
+  {
     "name": "E. Fernández",
     "team": "Chelsea",
     "country": null,
@@ -4190,12 +4220,12 @@
     "continent": null
   },
   {
-    "name": "G. Antwi",
+    "name": "R. Walsh",
     "team": "Chelsea",
     "country": null,
-    "age": 18,
+    "age": 17,
     "position_type": "Midfielder",
-    "shirt_number": 64,
+    "shirt_number": null,
     "country_code": null,
     "continent": null
   },
@@ -4600,7 +4630,7 @@
     "continent": null
   },
   {
-    "name": "Sávio",
+    "name": "Savinho",
     "team": "Manchester City",
     "country": null,
     "age": 21,
@@ -4880,16 +4910,6 @@
     "continent": null
   },
   {
-    "name": "Samy Olivier Chouchane",
-    "team": "Brighton",
-    "country": null,
-    "age": 22,
-    "position_type": "Midfielder",
-    "shirt_number": null,
-    "country_code": null,
-    "continent": null
-  },
-  {
     "name": "João Pedro",
     "team": "Brighton",
     "country": null,
@@ -5160,6 +5180,16 @@
     "continent": null
   },
   {
+    "name": "H. Mustapha",
+    "team": "Crystal Palace",
+    "country": null,
+    "age": 19,
+    "position_type": "Midfielder",
+    "shirt_number": null,
+    "country_code": null,
+    "continent": null
+  },
+  {
     "name": "I. Sarr",
     "team": "Crystal Palace",
     "country": null,
@@ -5365,7 +5395,7 @@
     "country": null,
     "age": 20,
     "position_type": "Defender",
-    "shirt_number": 43,
+    "shirt_number": 44,
     "country_code": null,
     "continent": null
   },
@@ -5566,16 +5596,6 @@
     "age": 29,
     "position_type": "Goalkeeper",
     "shirt_number": 31,
-    "country_code": null,
-    "continent": null
-  },
-  {
-    "name": "Woody Scott Williamson Andrews",
-    "team": "Ipswich",
-    "country": null,
-    "age": 19,
-    "position_type": "Goalkeeper",
-    "shirt_number": null,
     "country_code": null,
     "continent": null
   },

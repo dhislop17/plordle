@@ -49,7 +49,7 @@ class Plordle extends StatelessWidget {
         builder: (context, child) {
           var themeModel = Provider.of<ThemeViewModel>(context);
           return MaterialApp(
-              title: 'PLordle',
+              title: 'PLORDLE',
               theme: ThemeData(
                 colorScheme: ColorScheme.fromSeed(
                     seedColor: themeModel.primarySelectedThemeColor),
